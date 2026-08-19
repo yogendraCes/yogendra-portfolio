@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Zap, BarChart2, Calendar, Home, Battery, ChevronRight, ExternalLink, Cpu } from "lucide-react";
+import { Zap, BarChart2, Calendar, Home, Battery, ExternalLink, Cpu, Maximize2, X, ChevronRight } from "lucide-react";
 
 interface ScreenItem {
   id: string;
@@ -101,6 +101,7 @@ export function DuracellMediaGallery() {
   ];
 
   const [activeScreenId, setActiveScreenId] = useState<string>("energy-flow");
+  const [isLightboxOpen, setIsLightboxOpen] = useState<boolean>(false);
   const activeScreen = screens.find((s) => s.id === activeScreenId) || screens[0];
 
   return (
@@ -151,9 +152,9 @@ export function DuracellMediaGallery() {
             <button
               key={screen.id}
               onClick={() => setActiveScreenId(screen.id)}
-              className={`px-3 py-2 rounded-lg font-mono text-xs font-medium whitespace-nowrap transition-all flex items-center gap-2 border shrink-0 ${
+              className={`px-3 py-2 rounded-lg font-mono text-xs font-medium whitespace-nowrap transition-all flex items-center gap-2 border shrink-0 cursor-pointer ${
                 isActive
-                  ? "bg-[#16181D] text-[#F3F4F6] border-[#D97706] shadow-sm shadow-amber-950/30"
+                  ? "bg-[#16181D] text-[#F3F4F6] border-[#D97706] shadow-md shadow-amber-950/40"
                   : "bg-[#0F1115] text-[#9CA3AF] border-[rgba(255,255,255,0.06)] hover:text-[#F3F4F6] hover:border-zinc-700"
               }`}
             >
@@ -166,19 +167,42 @@ export function DuracellMediaGallery() {
 
       {/* Feature Display Grid */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-2">
-        {/* Left Column: Device Presentation */}
+        {/* Left Column: Hyper-Realistic iPhone Hardware Mockup */}
         <div className="md:col-span-5 flex justify-center">
-          <div className="relative w-full max-w-[240px] sm:max-w-[260px] rounded-[24px] bg-[#16181D] p-2 sm:p-2.5 border border-[rgba(255,255,255,0.12)] shadow-xl shadow-black/60">
-            {/* Screen Container */}
-            <div className="relative w-full aspect-[9/19.5] rounded-[18px] overflow-hidden bg-[#08090A]">
-              <Image
-                src={activeScreen.src}
-                alt={activeScreen.alt}
-                fill
-                priority={activeScreen.id === "energy-flow"}
-                sizes="(max-width: 640px) 240px, 260px"
-                className="object-contain object-center"
-              />
+          <div className="relative group cursor-pointer" onClick={() => setIsLightboxOpen(true)}>
+            {/* Ambient Backlight Glow Effect */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-[#D97706]/20 via-[#10B981]/20 to-[#3B82F6]/20 rounded-[40px] blur-xl opacity-60 group-hover:opacity-100 transition-opacity" />
+
+            {/* Phone Chassis Frame */}
+            <div className="relative w-[240px] sm:w-[260px] rounded-[44px] bg-gradient-to-b from-[#2D323E] via-[#16181D] to-[#0B0D10] p-3 border-2 border-zinc-700/80 shadow-2xl shadow-black">
+              {/* Top Notch Dynamic Island */}
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-4 bg-black rounded-full z-30 flex items-center justify-between px-2">
+                <span className="w-2 h-2 rounded-full bg-[#10B981]/80" />
+                <span className="w-1.5 h-1.5 rounded-full bg-zinc-800" />
+              </div>
+
+              {/* Glass Reflection Sheen */}
+              <div className="absolute inset-0 rounded-[44px] bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none z-20" />
+
+              {/* Hover Zoom Overlay Badge */}
+              <div className="absolute inset-0 rounded-[40px] bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity z-30 flex items-center justify-center">
+                <span className="px-3 py-1.5 rounded-full bg-[#0F1115]/90 border border-[#D97706]/50 font-mono text-xs text-[#F3F4F6] font-bold flex items-center gap-1.5 shadow-xl">
+                  <Maximize2 className="w-3.5 h-3.5 text-[#D97706]" />
+                  <span>Click to Zoom</span>
+                </span>
+              </div>
+
+              {/* Screen Display Box */}
+              <div className="relative w-full aspect-[9/19.5] rounded-[34px] overflow-hidden bg-[#08090A] border border-black/80">
+                <Image
+                  src={activeScreen.src}
+                  alt={activeScreen.alt}
+                  fill
+                  priority={activeScreen.id === "energy-flow"}
+                  sizes="(max-width: 640px) 240px, 260px"
+                  className="object-contain object-center"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -203,7 +227,7 @@ export function DuracellMediaGallery() {
             </p>
           </div>
 
-          {/* Technical Implementation */}
+          {/* Technical Implementation Callout */}
           <div className="bg-[#0F1115] border border-[rgba(255,255,255,0.08)] rounded-lg p-4 space-y-2">
             <div className="font-mono text-xs text-[#D97706] font-semibold uppercase flex items-center gap-1.5">
               <Cpu className="w-4 h-4 text-[#10B981]" />
@@ -220,7 +244,38 @@ export function DuracellMediaGallery() {
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal for High-Resolution Inspection */}
+      {isLightboxOpen && (
+        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6" onClick={() => setIsLightboxOpen(false)}>
+          <div className="relative max-w-4xl w-full bg-[#0F1115] border border-zinc-700 rounded-2xl overflow-hidden p-6 space-y-4" onClick={(e) => e.stopPropagation()}>
+            {/* Modal Header */}
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
+              <div>
+                <h3 className="font-bold text-lg text-[#F3F4F6]">{activeScreen.title}</h3>
+                <span className="font-mono text-xs text-[#D97706]">{activeScreen.badge}</span>
+              </div>
+              <button
+                onClick={() => setIsLightboxOpen(false)}
+                className="p-2 rounded-lg bg-[#16181D] hover:bg-zinc-800 text-[#9CA3AF] hover:text-white transition-colors cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* High Res Image Container */}
+            <div className="relative w-full max-h-[70vh] aspect-[9/19] mx-auto overflow-hidden rounded-xl bg-black flex items-center justify-center">
+              <Image
+                src={activeScreen.src}
+                alt={activeScreen.alt}
+                fill
+                sizes="100vw"
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
-
