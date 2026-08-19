@@ -33,26 +33,30 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           {/* Store Buttons if available */}
-          {project.slug === "energy-flow" && (
+          {project.links && (project.links.appStore || project.links.duracellAppStore) && (
             <div className="flex items-center gap-2 shrink-0 pt-1 md:pt-0">
-              <a
-                href="https://apps.apple.com/in/app/duracell-energy/id6460931680"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-2.5 py-1 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.12)] text-[#F3F4F6] font-mono text-[11px] transition-colors flex items-center gap-1"
-              >
-                <span>View on App Store</span>
-                <ExternalLink className="w-3 h-3 text-[#D97706]" />
-              </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.duracell"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-2.5 py-1 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.12)] text-[#F3F4F6] font-mono text-[11px] transition-colors flex items-center gap-1"
-              >
-                <span>Get it on Google Play</span>
-                <ExternalLink className="w-3 h-3 text-[#10B981]" />
-              </a>
+              {(project.links.appStore || project.links.duracellAppStore) && (
+                <a
+                  href={project.links.appStore || project.links.duracellAppStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-2.5 py-1 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.12)] text-[#F3F4F6] font-mono text-[11px] transition-colors flex items-center gap-1"
+                >
+                  <span>View on App Store</span>
+                  <ExternalLink className="w-3 h-3 text-[#D97706]" />
+                </a>
+              )}
+              {(project.links.playStore || project.links.duracellPlayStore) && (
+                <a
+                  href={project.links.playStore || project.links.duracellPlayStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-2.5 py-1 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.12)] text-[#F3F4F6] font-mono text-[11px] transition-colors flex items-center gap-1"
+                >
+                  <span>Get it on Google Play</span>
+                  <ExternalLink className="w-3 h-3 text-[#10B981]" />
+                </a>
+              )}
             </div>
           )}
         </div>
@@ -61,29 +65,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Dynamic Visual Media Container */}
         <div className="py-2">
-          {project.slug === "energy-flow" && <DuracellMediaGallery />}
-          {project.slug === "sdgme" && (
-            <div className="w-full bg-[#0B0D10] border border-[rgba(255,255,255,0.08)] rounded-xl p-4 sm:p-5 font-mono text-xs space-y-3">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between text-[#9CA3AF] border-b border-[rgba(255,255,255,0.08)] pb-2 gap-1">
-                <span>SYSTEMS LINK 2000 LTD // SUSTAINABILITY METRICS</span>
-                <span className="text-[#10B981] font-semibold">ENTERPRISE RELEASE</span>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center pt-1">
-                <div className="bg-[#0F1115] p-2 rounded border border-[rgba(255,255,255,0.06)]">
-                  <div className="text-[9px] sm:text-[10px] text-[#9CA3AF]">TARGET PLATFORMS</div>
-                  <div className="text-xs sm:text-sm font-bold text-[#10B981]">iOS & Android</div>
-                </div>
-                <div className="bg-[#0F1115] p-2 rounded border border-[rgba(255,255,255,0.06)]">
-                  <div className="text-[9px] sm:text-[10px] text-[#9CA3AF]">PUSH METRICS</div>
-                  <div className="text-xs sm:text-sm font-bold text-[#3B82F6]">FCM Active</div>
-                </div>
-                <div className="bg-[#0F1115] p-2 rounded border border-[rgba(255,255,255,0.06)]">
-                  <div className="text-[9px] sm:text-[10px] text-[#9CA3AF]">UN GOAL ALIGN</div>
-                  <div className="text-xs sm:text-sm font-bold text-[#D97706]">SDG 7, 12, 13</div>
-                </div>
-              </div>
-            </div>
-          )}
+          {(project.slug === "duracell-energy" || project.slug === "energy-flow") && <DuracellMediaGallery />}
         </div>
 
         {/* Technical Highlight Callout Box (.arch-block) */}

@@ -49,3 +49,60 @@
 - **Decision:** Configure full static generation (SSG) for all site routes (`/`, `/projects`, `/projects/[slug]`, `/resume`, `/contact`).
 - **Rationale:** Delivers 0ms server processing overhead, optimal Lighthouse scores, static CDN edge caching, and maximum resilience against traffic spikes.
 - **SEO & Canonical Consistency:** Fully configured XML sitemap (`/sitemap.xml`) and `robots.txt` generator pointing to canonical production domain (`https://yogendrayadav.dev`).
+
+---
+
+## 7. Core Positioning Calibration
+- **Decision:** Position Yogendra strictly as **Senior React Native Developer / Mobile Engineer (iOS & Android)** across all site metadata, hero components, resume views, and contact channels.
+- **Rationale:** Prevents over-indexing on a narrow domain niche, ensuring recruiters evaluate Yogendra for senior mobile engineering roles across all industries.
+- **Copy Audit:** Swept visible copy to eliminate banned AI buzzwords and developer clichés ("MOBILE INFRASTRUCTURE ENGINEER", "cutting-edge", "seamless experiences", "mission-critical").
+
+---
+
+## 8. Real Production Media & Visualizer Replacement
+- **Decision:** Completely remove simulated web SVG visualizer widgets (`EnergyFlowVisualizer`, `PipelineVisualizer`) and replace with genuine production mobile app screenshots served from `/projects/duracell-energy/`.
+- **Implementation:** Prioritized 5 core production screens (`energy-flow.png`, `energy-summary.png`, `energy-insights.png`, `scheduled-control.png`, `home-flow.png`). Rendered screens in clean responsive mobile containers with subtle shadows and high-contrast technical details.
+
+---
+
+## 9. Verified App Store & Google Play Links
+- **Decision:** Embed direct, explicit links to public production applications on Apple App Store and Google Play Store for Duracell Energy and Puredrive Energy.
+- **Implementation:** Used clear labels (`View on App Store`, `Get it on Google Play`) with `target="_blank" rel="noopener noreferrer"` attributes. Public product metrics (e.g. 10K+ Google Play downloads) are factually attributed to the product rather than individual claims.
+
+---
+
+## 10. Release Engineering & Portfolio Consolidation
+- **Decision:** Consolidate Fastlane CI/CD and DevOps work directly into the flagship Duracell Energy production case study under "Release Engineering & Production Delivery".
+- **Rationale:** Prevents artificial project count padding while highlighting complete end-to-end mobile shipping capability (TypeScript -> React Native -> Native Code Signing -> Fastlane -> App Store & Play Store). Maintained strict 2-project dataset (`energy-flow` & `sdgme`).
+
+---
+
+## 11. Portfolio Conversion & Direct Contact Architecture
+- **Decision**: Adopt direct 1-click `mailto:yogendra9644@gmail.com` strategy for conversion without backend forms, email APIs, or third-party booking dependencies.
+- **Header & Hero CTAs**: Standardized Header CTA to `Let's Talk` (`/contact`), and Hero CTAs to Primary `View My Work` (`#work`) and Secondary `Let's Talk` (`/contact`), removing fake conversion SaaS language ("Schedule Consultation").
+- **Centralized Profile & Placeholder Safeguards**: Standardized `Profile` structure in `data/profile.ts` with `[NEEDS INPUT]` placeholders for unconfirmed links. Enforced `isValidSocialUrl` runtime utility so unconfigured links are safely hidden rather than emitting broken/invented URLs to production.
+- **Resume Verification**: Verified `/public/resume/Yogendra_Yadav_Resume_2026.pdf` asset exists and works seamlessly for direct downloads.
+
+---
+
+## 12. Resume Source of Truth Alignment & Position Calibration
+- **Decision**: Adopt `/docs/Yogendra_Yadav_Resume_2026.docx` as the sole factual source of truth for all portfolio content.
+- **Primary Positioning Balance**: Calibrated identity to **Senior React Native Developer / Software Engineer**. Communicates broad software engineering capabilities (architecture, APIs, UI, performance, CI/CD, data handling, mentoring) paired with deep React Native specialization. Avoided domain over-specialization ("Energy Systems Specialist", "IoT Specialist") while preserving energy applications as a prime example of production work.
+- **Strict 3-Project Alignment**: Restricted projects to the exact 3 listed in the resume: **Duracell Energy** (flagship case study), **Puredrive**, and **Stain Care Pro**. Removed non-resume projects (SDGme) and avoided treating Fastlane as a standalone project.
+- **Factual Employment Dates & Overlap**: Present exact employment dates as stated in the resume (Cloud Energy Software: April 2021 – Present; Forebear Productions: March 2020 – February 2023) without hiding or inventing explanations for the overlap.
+- **Privacy & Public Exposure Safeguards**: Withheld personal contact phone number (`8120004443`) from public website display to preserve privacy. Direct outreach is channeled via verified public email (`yogendra9644@gmail.com`) and LinkedIn (`https://linkedin.com/in/yogendra9644`).
+
+---
+
+## 13. Verified External Links Integration & Accurate Labeling Architecture
+- **Centralized Data Storage**: Configured all external profile and contact URLs in a single source of truth (`data/profile.ts`). Components consume `profileData` directly without hardcoding links across UI boundaries.
+- **Accurate Resource Labeling**:
+  - **GitHub Repository (`https://github.com/yogendraCes`)**: Accurately labeled as "GitHub Repository" (Portfolio Source Code) rather than a generic profile URL.
+  - **Upwork (`https://www.upwork.com/freelancers/~0111ed1b2c3fadb1f8?mp_source=share`)**: Integrated as "Hire me on Upwork" / "Upwork Profile" for freelance contracts, maintaining portfolio as the primary proof-of-work destination.
+  - **LinkedIn (`https://linkedin.com/in/yogendra9644`)**: Integrated across Contact page, Footer, and CTA sections.
+  - **Email (`yogendra9644@gmail.com`)**: Positioned as primary direct communication method.
+  - **Resume Asset (`/resume/Yogendra_Yadav_Resume_2026.pdf`)**: Verified existing PDF asset and linked across Navigation, Hero, Contact, Footer, and Resume pages.
+- **Security & Accessibility Compliance**: All external links enforce `target="_blank" rel="noopener noreferrer"`, minimum 44px touch targets, and descriptive `aria-label` tags for screen readers.
+
+
+

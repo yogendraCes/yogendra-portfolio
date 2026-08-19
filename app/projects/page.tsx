@@ -8,19 +8,19 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Production Case Studies",
-  description: "Comprehensive list of React Native architectural case studies: Duracell/Puredrive Energy Monitoring, Fastlane DevOps Pipeline, and SDGme Sustainability App.",
+  description: "Comprehensive list of React Native architectural case studies: Duracell Energy, Puredrive, and Stain Care Pro.",
   alternates: {
     canonical: "https://yogendrayadav.dev/projects",
   },
   openGraph: {
     title: "Production Case Studies | Yogendra Yadav",
-    description: "Explore in-depth technical case studies documenting mobile app architecture, live data telemetry, threading optimizations, and release engineering across shipped iOS and Android applications.",
+    description: "Explore in-depth technical case studies documenting mobile app architecture, live data telemetry, rendering optimizations, and production releases across shipped iOS and Android applications.",
     url: "https://yogendrayadav.dev/projects",
   },
   twitter: {
     card: "summary_large_image",
     title: "Production Case Studies | Yogendra Yadav",
-    description: "Explore in-depth technical case studies documenting mobile app architecture, live data telemetry, threading optimizations, and release engineering across shipped iOS and Android applications.",
+    description: "Explore in-depth technical case studies documenting mobile app architecture, live data telemetry, rendering optimizations, and production releases across shipped iOS and Android applications.",
   },
 };
 

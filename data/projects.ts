@@ -2,266 +2,276 @@ import { Project } from "@/types";
 
 export const projectsData: Project[] = [
   {
-    id: "energy-flow-monitoring",
-    slug: "energy-flow",
-    title: "Commercial & Consumer Energy Management Mobile Platform",
-    subtitle: "Duracell Energy & Puredrive Energy Production Mobile Applications (iOS & Android)",
-    category: "Production Mobile Application (iOS & Android)",
-    summary: "Production consumer energy mobile application powering Duracell Energy and Puredrive Energy platforms across iOS and Android. Displays live telemetry across Solar PV, Battery Storage, EV Charger, Grid, and Home load nodes.",
-    primaryStack: ["React Native", "TypeScript", "Redux Toolkit", "RTK Query", "React Native SVG", "D3.js", "Reanimated", "Fastlane"],
+    id: "duracell-energy",
+    slug: "duracell-energy",
+    title: "Duracell Energy Mobile Application",
+    subtitle: "Production React Native App with Live Telemetry, Real-Time Dashboards & Custom D3.js Charts",
+    category: "Flagship Production Mobile Application (iOS & Android)",
+    summary: "Production React Native application visualizing real-time power flow between Solar PV, Battery Storage, Grid, Home load, and EV charging nodes, featuring high-frequency 10-second polling dashboards and custom D3.js + SVG visualizations.",
+    primaryStack: ["React Native", "TypeScript", "Redux", "Zustand", "D3.js", "SVG", "Fastlane", "Jest"],
     fullStack: [
       "React Native",
       "TypeScript",
-      "Redux Toolkit",
-      "RTK Query",
-      "React Native SVG",
+      "JavaScript",
+      "Redux",
+      "Zustand",
       "D3.js",
-      "React Native Reanimated v3",
-      "React Native Gesture Handler",
+      "React Native SVG",
       "Fastlane",
-      "Ruby (Fastlane scripts)",
       "REST APIs",
-      "i18n Localization",
-      "Feature Flags",
       "Firebase",
-      "Xcode",
-      "Android Studio",
+      "Jest",
+      "iOS (Xcode)",
+      "Android (Android Studio)",
       "Apple App Store",
-      "Google Play Console",
+      "Google Play Store",
     ],
-    role: "Senior / Sole React Native Developer",
-    company: "Cloud Energy Software (CES)",
-    period: "2023 – Present",
+    role: "Software Developer / React Native Engineer",
+    company: "Cloud Energy Software",
+    period: "April 2021 – Present",
     featured: true,
     links: {
       duracellAppStore: "https://apps.apple.com/in/app/duracell-energy/id6460931680",
       duracellPlayStore: "https://play.google.com/store/apps/details?id=com.duracell",
       puredriveAppStore: "https://apps.apple.com/in/app/puredrive/id1536396851",
       puredrivePlayStore: "https://play.google.com/store/apps/details?id=com.puredrive.app",
+      appStore: "https://apps.apple.com/in/app/duracell-energy/id6460931680",
+      playStore: "https://play.google.com/store/apps/details?id=com.duracell",
     },
     technicalHighlight: {
-      label: "THREADING, STATE & RELEASE ENGINEERING",
-      description: "Optimized JS thread frame rates to 60fps using Reanimated 3 UI-thread execution, RTK Query normalized caching for 10s API telemetry polling, and automated Fastlane release pipelines.",
+      label: "REAL-TIME DASHBOARDS & CUSTOM VISUALIZATION",
+      description: "Built custom D3.js + SVG path renderer replacing heavy charting libraries and optimized 10-second polling state synchronization to prevent UI lag.",
       codeSnippet: {
-        filename: "energyFlowState.ts",
+        filename: "useEnergyChartPath.ts",
         language: "typescript",
-        code: `// RTK Query polling setup with AppState lifecycle background suspension
-export const energyApi = createApi({
-  reducerPath: 'energyApi',
-  baseQuery: fetchBaseQuery({ baseUrl: '/api/v2/telemetry' }),
-  endpoints: (builder) => ({
-    getLiveTelemetry: builder.query<TelemetryState, string>({
-      query: (siteId) => \`/sites/\${siteId}/live\`,
-      keepUnusedDataFor: 30, // 30s cache retention
-    }),
-  }),
-});`,
+        code: `import * as d3 from 'd3-shape';
+
+export function generateChartPath(data: Array<{ time: number; powerKw: number }>, width: number, height: number) {
+  const xScale = d3.scaleTime().range([0, width]);
+  const yScale = d3.scaleLinear().range([height, 0]);
+  
+  const lineGenerator = d3.line<{ time: number; powerKw: number }>()
+    .x(d => xScale(d.time))
+    .y(d => yScale(d.powerKw))
+    .curve(d3.curveMonotoneX);
+
+  return lineGenerator(data) || '';
+}`,
       },
     },
-    overview: "A production mobile application operating as the primary consumer interface for home energy storage systems. The application provides homeowners and system operators with live visibility into power generation, battery charge/discharge states, grid import/export tariffs, and electric vehicle charging sessions. The platform operates on a multi-brand architecture, running under commercial branding configurations for Duracell Energy and Puredrive Energy.",
+    overview: "A flagship production React Native application providing homeowners and operators with live visibility into power flow between Solar, Battery, Grid, Home, and EV charging nodes. Built with a focus on real-time data handling, custom D3.js + SVG charting, and render optimization across iOS and Android.",
     challenges: [
-      "JS Thread Congestion during High-Frequency Polling: Ingesting live telemetry payloads every 10 seconds caused frame drops and UI sluggishness when processed through standard React component state re-renders.",
-      "Smooth Energy Flow Animations across Hardware Profiles: Rendering multi-node power flow pulses smoothly across lower-spec Android devices without draining battery or causing thermal throttling.",
-      "Custom Interactive Charting without WebViews: Achieving high-performance, touch-inspectable time-series charts for battery charge curves and solar generation without relying on heavy WebView wrappers.",
-      "Cross-Platform Code Signing & Build Automation: Managing separate build targets (com.duracell vs com.puredrive.app), expiring distribution certificates, and manual Xcode exports across staging and production releases.",
+      "High-Frequency Data Updates: Processing live telemetry updates every 10 seconds without inducing frame drops or UI sluggishness.",
+      "Custom Data Visualization: Replacing bulky third-party charting libraries with performant D3.js and SVG path generators for time-series data handling 150+ points per view.",
+      "Multi-Source Data Synchronization: Ensuring consistent state representation across multiple dashboard components from a single real-time data stream.",
+      "Release Operations: Scripting Fastlane build lanes and managing iOS code-signing certificates and Play Console release tracks.",
     ],
     technicalApproach: [
-      "State Optimization: Normalized telemetry payload structures using Redux Toolkit slices and RTK Query cache invalidation logic. Applied strict component memoization (React.memo, useMemo) so that high-frequency data ticks update only affected text nodes and chart paths.",
-      "UI-Thread Animation: Utilized React Native Reanimated (v3) and Gesture Handler to run energy flow particle animations directly on the native UI thread, bypassing the React Native JavaScript bridge during render loops.",
-      "D3 + SVG Chart Renderer: Built custom chart rendering components using D3 path generators (d3-shape, d3-scale) mapped directly to React Native SVG <Path>, <Rect>, and <G> primitives, implementing custom touch-driven inspect tooltips.",
-      "Battery-Aware Lifecycles: Bound application state transitions via React Native AppState API to freeze active animation loops and cancel active HTTP polling timeouts whenever the app transitions to background or inactive states.",
-      "Fastlane Release Pipeline: Scripted Fastlane lanes (lane :beta_ios, lane :beta_android) utilizing Fastlane Match with encrypted Git certificate storage to automate build generation and TestFlight / Play Console internal distribution.",
+      "Render Optimization: Applied strict component memoization (React.memo, useMemo) and efficient state structures to eliminate unnecessary re-renders during 10-second telemetry polling.",
+      "Custom D3 + SVG Graphics: Engineered custom D3 path generators mapped directly to SVG primitives, achieving touch-inspectable time-series curves with zero WebView overhead.",
+      "Battery-Aware Execution: Implemented AppState listeners to pause high-frequency polling timers and visual loops whenever the application transitions to background states.",
+      "Automated Release Pipelines: Integrated Fastlane release pipelines for automated code signing, build generation, and deployment to Apple TestFlight and Google Play Store.",
     ],
     outcome: [
-      "Delivered and maintained production builds published on the Apple App Store and Google Play Store for both Duracell Energy and Puredrive Energy.",
-      "Achieved consistent 60fps UI performance across dashboard telemetry views on both flagship iOS devices and lower-spec budget Android smartphones.",
-      "Reduced battery drain during background states by enforcing complete suspension of polling loops and animations.",
-      "Streamlined continuous delivery and production hotfix deployments through automated Fastlane Match code signing.",
+      "Delivered production applications published on the Apple App Store and Google Play Store with 10K+ installs and ~1K+ daily active users.",
+      "Achieved smooth 60fps UI responsiveness during continuous 10-second real-time telemetry updates.",
+      "Successfully replaced third-party chart libraries with a lightweight custom D3.js + SVG rendering engine.",
+      "Mentored junior engineers and streamlined store deployment operations.",
     ],
     sections: [
       {
         id: "overview",
-        title: "Product Overview & Shipped Application Status",
+        title: "Product Overview & React Native Architecture",
         content: [
-          "The Duracell Energy & Puredrive Energy mobile applications operate as the primary touchpoint for residential energy management systems in the UK and European markets.",
-          "Homeowners rely on the application to monitor real-time energy flow: solar generation from PV arrays, battery charge/discharge rates, grid import/export tariffs, EV charger consumption, and household load demands.",
-          "Operating on a white-label architecture, a unified React Native codebase powers multiple brand configurations with dynamic theme tokens, localized assets, and feature flag management.",
+          "Duracell Energy operates as a high-stakes production mobile application serving real-time system monitoring across iOS and Android devices.",
+          "The mobile client integrates complex real-time telemetry, visualizing power distribution between Solar PV, Battery Storage, Grid Import/Export, Home Load, and EV Chargers.",
+          "Architected using React Native, TypeScript, and modern state-management patterns, the app delivers intuitive interfaces backed by performant data handling.",
         ],
       },
       {
-        id: "my-contribution",
-        title: "Engineering Scope & Direct Contribution",
+        id: "real-time-telemetry",
+        title: "Real-Time Telemetry & State Synchronization",
         content: [
-          "Sole ownership of the mobile application architecture from React Native client state down to native iOS/Android deployment at Cloud Energy Software.",
-          "Collaborated directly with hardware IoT firmware engineers, backend API developers, and product leads to define telemetry JSON contracts and polling lifecycles.",
-          "Architected state normalization layers using RTK Query, implemented native UI-thread animation loops using React Native Reanimated 3, and automated build pipelines via Fastlane.",
+          "High-frequency 10-second polling requires disciplined state management to prevent continuous full-tree re-renders.",
+          "State updates were structured so that incoming telemetry ticks update normalized slices, ensuring only dependent UI nodes re-render while complex visual graphs remain stable.",
         ],
       },
       {
-        id: "technical-challenges",
-        title: "Technical Challenges & Engineering Solutions",
+        id: "d3-visualization",
+        title: "Custom D3.js + SVG Chart Engineering",
         content: [
-          "React Native operates on a single JavaScript thread for state updates, API parsing, and layout calculation. Updating live energy telemetry every 10 seconds while rendering dynamic graph paths can saturate the JS thread, leading to visual jank and input latency.",
-          "To solve this, telemetry polling state was decoupled from animation loops. Telemetry payloads update normalized Redux state, while particle animations execute entirely on the native UI thread using Reanimated shared values.",
-        ],
-        codeSnippet: {
-          filename: "useEnergyParticleAnimation.ts",
-          language: "typescript",
-          code: `import { useSharedValue, useAnimatedStyle, withRepeat, withTiming, Easing } from 'react-native-reanimated';
-
-export function useEnergyParticleAnimation(flowRateKw: number) {
-  const progress = useSharedValue(0);
-  
-  // Calculate speed proportional to kW power flow
-  const duration = Math.max(800, 3000 - Math.abs(flowRateKw) * 300);
-
-  useEffect(() => {
-    progress.value = withRepeat(
-      withTiming(1, { duration, easing: Easing.linear }),
-      -1, // Infinite loop
-      false
-    );
-  }, [flowRateKw]);
-
-  return useAnimatedStyle(() => ({
-    transform: [{ translateX: progress.value * 120 }],
-    opacity: flowRateKw > 0.1 ? 1 : 0.2,
-  }));
-}`,
-        },
-      },
-      {
-        id: "energy-visualization",
-        title: "Energy Visualization & Live Node Flow",
-        content: [
-          "Live energy movement between Solar arrays, Home Storage Batteries, EV Chargers, Household Loads, and the Power Grid is rendered via custom SVG node graphs.",
-          "Node pulse animations and directional indicators execute directly on the UI thread, providing smooth 60fps motion while keeping the main JS thread unblocked for user interactions.",
+          "To eliminate third-party chart constraints and performance overhead, custom D3.js path generators (d3-shape, d3-scale) were built and rendered via SVG primitives.",
+          "This custom rendering pipeline smoothly displays 150+ time-series data points per view with touch-inspectable tooltips and zero WebView dependency.",
         ],
       },
       {
-        id: "data-charts",
-        title: "Custom SVG & D3.js Chart Engineering",
+        id: "performance-optimization",
+        title: "Render Optimization & Memory Management",
         content: [
-          "Custom graphing components were engineered combining D3.js math utilities (d3-scale, d3-shape) with React Native SVG primitives, replacing heavy third-party chart libraries.",
-          "Time-series solar generation and battery state-of-charge (SoC) curves are calculated as smooth cubic SVG path strings. Touch gestures captured via React Native Gesture Handler allow instant point inspection without re-rendering the underlying graph tree.",
-        ],
-      },
-      {
-        id: "scheduled-controls",
-        title: "Scheduled Controls & Tariff Management",
-        content: [
-          "Homeowners can configure automated charging and discharging windows to take advantage of off-peak electricity tariffs.",
-          "Implemented robust client-side validation for schedule time slots, target battery State of Charge (SoC) limits, and optimistic UI updates for immediate user feedback.",
-        ],
-      },
-      {
-        id: "architecture",
-        title: "Client State Architecture & RTK Query",
-        content: [
-          "Re-architected client state management to Redux Toolkit and RTK Query, implementing normalized cache invalidation and query deduplication.",
-          "High-frequency 10-second polling updates only affected state slices, preventing unnecessary re-renders across parent container components.",
-        ],
-      },
-      {
-        id: "performance",
-        title: "AppState Lifecycle & Battery Optimization",
-        content: [
-          "Continuous network polling while backgrounded degrades battery life and risks App Store rejection.",
-          "Integrated React Native AppState listeners to detect state transitions ('active' -> 'background'). Upon backgrounding, active RTK Query polling timers are suspended and Reanimated shared value loops are frozen, ensuring zero background CPU overhead.",
+          "Applied strict memoization strategies (useMemo, useCallback, React.memo) and AppState lifecycle hooks.",
+          "When the application transitions to the background, polling timers and visual loops suspend automatically, preventing battery drain and memory accumulation.",
         ],
       },
       {
         id: "release-engineering",
-        title: "Release Engineering & Production Delivery (Fastlane CI/CD)",
+        title: "Fastlane Build Automation & Store Operations",
         content: [
-          "Established automated build, code-signing, and distribution infrastructure using Fastlane across iOS and Android.",
-          "Configured Fastlane Match with encrypted Git certificate storage to automate iOS code signing, and scripted lanes for automated deployment to Apple TestFlight and Google Play Console Internal tracks.",
+          "Scripted automated Fastlane deployment lanes for iOS and Android, managing code signing certificates, version incrementing, and store releases.",
+          "Streamlined build delivery to Apple TestFlight and Google Play Store tracks for seamless release operations.",
         ],
-        codeSnippet: {
-          filename: "Fastfile",
-          language: "ruby",
-          code: `desc "Submit a new Beta Build to Apple TestFlight"
-lane :beta_ios do
-  setup_ci if is_ci
-  match(type: "appstore", readonly: true)
-  increment_build_number(xcodeproj: "DuracellEnergy.xcodeproj")
-  build_app(workspace: "DuracellEnergy.xcworkspace", scheme: "Production")
-  upload_to_testflight(skip_waiting_for_build_processing: true)
-end`,
-        },
       },
     ],
   },
   {
-    id: "sdgme-sustainability-app",
-    slug: "sdgme",
-    title: "Sustainability Metrics & Action Tracking Mobile Application (SDGme)",
-    subtitle: "Enterprise Mobile Solution for Systems Link 2000 Ltd",
-    category: "Enterprise Mobile Application (iOS & Android)",
-    summary: "Enterprise mobile solution built for Systems Link 2000 Ltd tracking user sustainability metrics aligned with UN Sustainable Development Goals, featuring interactive progress charts and push notifications.",
-    primaryStack: ["React Native", "JavaScript", "Redux", "REST APIs", "Push Notifications", "Firebase Analytics"],
+    id: "puredrive",
+    slug: "puredrive",
+    title: "Puredrive Mobile Application",
+    subtitle: "Production React Native App with Modular UI Architecture & Asynchronous API Integration",
+    category: "Production Mobile Application (iOS & Android)",
+    summary: "Developed and maintained a scalable cross-platform mobile application with modular UI component architecture, efficient REST API integrations, and robust asynchronous data handling.",
+    primaryStack: ["React Native", "TypeScript", "JavaScript", "Redux", "REST APIs", "Fastlane"],
     fullStack: [
       "React Native",
+      "TypeScript",
       "JavaScript",
       "Redux",
       "REST APIs",
-      "Firebase Cloud Messaging (FCM)",
-      "Firebase Analytics",
-      "iOS",
-      "Android",
+      "iOS (Xcode)",
+      "Android (Android Studio)",
+      "Apple App Store",
+      "Google Play Store",
     ],
-    role: "React Native Developer",
-    company: "Forebear Productions (Contract to Systems Link 2000 Ltd)",
-    period: "2020 – 2021",
+    role: "React Native Developer / Software Developer",
+    company: "Cloud Energy Software / Forebear Productions",
+    period: "March 2020 – February 2023",
     featured: true,
+    links: {
+      appStore: "https://apps.apple.com/in/app/puredrive/id1536396851",
+      playStore: "https://play.google.com/store/apps/details?id=com.puredrive.app",
+    },
     technicalHighlight: {
-      label: "ENTERPRISE METRIC TRACKING",
-      description: "Delivered interactive multi-timeframe analytics charts (daily, monthly, yearly) and FCM push notification deep-linking for ESG metric tracking.",
+      label: "MODULAR UI & API INTEGRATION",
+      description: "Engineered scalable UI component libraries and asynchronous REST API handlers for consistent cross-platform performance across iOS and Android.",
       codeSnippet: {
-        filename: "notificationHandler.js",
-        language: "javascript",
-        code: `import messaging from '@react-native-firebase/messaging';
-
-// Handle background notification navigation to action logger
-messaging().setBackgroundMessageHandler(async remoteMessage => {
-  if (remoteMessage?.data?.targetScreen) {
-    navigate(remoteMessage.data.targetScreen, remoteMessage.data.params);
-  }
-});`,
+        filename: "apiClient.ts",
+        language: "typescript",
+        code: `export async function fetchDeviceStatus(deviceId: string) {
+  const response = await fetch(\`/api/v1/devices/\${deviceId}/status\`, {
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (!response.ok) throw new Error('Network error');
+  return response.json();
+}`,
       },
     },
-    overview: "An enterprise mobile solution built for Systems Link 2000 Ltd designed to engage users in sustainability tracking. The application allows individual and organizational users to record eco-friendly actions, track carbon reduction metrics, view aggregated historical analytics, and receive engagement notifications.",
+    overview: "Puredrive is a production cross-platform mobile application built to provide clean user interfaces, reliable device telemetry, and smooth API integration across iOS and Android platforms.",
     challenges: [
-      "Multi-Timeframe Data Aggregation: Rendering responsive time-series charts that dynamically scale across daily, monthly, and annual data ranges without UI delay.",
-      "Notification Engagement Tracking: Ensuring reliable delivery and deep-linking routing for engagement push notifications across iOS and Android background states.",
+      "Asynchronous Data Synchronization: Managing asynchronous state flows across diverse device profiles without UI state mismatch.",
+      "Modular Component Design: Creating reusable UI primitives that adhere strictly to design system guidelines across Android and iOS.",
     ],
     technicalApproach: [
-      "Modular Chart Components: Created reusable data visualization wrappers managing dynamic scale transformations and axis labels based on selected timeframes.",
-      "Notification Handling: Integrated Firebase Cloud Messaging (FCM) with native background handlers to route user taps directly to relevant action logging screens.",
-      "Normalized Local Cache: Stored local action logs using Redux state structures to provide instantaneous UI updates prior to server synchronization.",
+      "Modular Architecture: Structured the application into decoupled, domain-driven modules with reusable UI components.",
+      "API Layer Standardization: Built standardized request handlers and error handling strategies for predictable API data ingestion.",
     ],
     outcome: [
-      "Delivered a functional production mobile interface powering corporate ESG engagement and action tracking.",
-      "Maintained responsive rendering across multi-timeframe analytics charts on iOS and Android devices.",
+      "Shipped and maintained live production builds on the Apple App Store and Google Play Store.",
+      "Established modular UI component patterns that improved developer productivity and cross-platform consistency.",
     ],
     sections: [
       {
         id: "overview",
-        title: "Enterprise Application Overview",
+        title: "Product Overview & Engineering Scope",
         content: [
-          "SDGme enables organizations to measure and drive individual eco-actions aligned with UN Sustainable Development Goals.",
-          "The app provides employees with carbon savings calculators, milestone tracking, corporate leaderboard views, and daily action logging.",
+          "Puredrive is a cross-platform mobile application engineered with React Native to deliver seamless client interfaces and reliable hardware interaction.",
+          "Responsible for developing modular UI components, integrating REST APIs, managing state flows, and supporting production store releases.",
         ],
       },
       {
         id: "architecture",
-        title: "State Management & Analytics",
+        title: "Modular Component Architecture",
         content: [
-          "Built using React Native and Redux with normalized local caching, allowing users to log actions seamlessly even when temporary cellular signal is lost.",
-          "Integrated Firebase Analytics and Cloud Messaging to trigger personalized action reminders and log corporate engagement metrics.",
+          "Built a reusable component library enforcing clean design tokens, platform-specific adaptations, and type-safe props.",
+          "Ensured consistent user experience across varied iOS and Android screen resolutions.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "stain-care-pro",
+    slug: "stain-care-pro",
+    title: "Stain Care Pro Mobile Application",
+    subtitle: "Cross-Platform React Native Application Engineered for Usability & Stability",
+    category: "Production Mobile Application (iOS & Android)",
+    summary: "Built cross-platform mobile application from scratch with focus on rendering performance, intuitive usability, debugging, and stability across production releases.",
+    primaryStack: ["React Native", "JavaScript", "TypeScript", "REST APIs", "Jest"],
+    fullStack: [
+      "React Native",
+      "JavaScript",
+      "TypeScript",
+      "REST APIs",
+      "Jest",
+      "iOS (Xcode)",
+      "Android (Android Studio)",
+      "Apple App Store",
+      "Google Play Store",
+    ],
+    role: "React Native Developer",
+    company: "Forebear Productions",
+    period: "March 2020 – February 2023",
+    featured: true,
+    links: {
+      appStore: "https://apps.apple.com/in/app/stain-care-pro/id1544399649",
+      playStore: "https://play.google.com/store/apps/details?id=com.stainmanagement",
+    },
+    technicalHighlight: {
+      label: "GREENFIELD DEVELOPMENT & PERFORMANCE",
+      description: "Built application from scratch, focusing on layout efficiency, state predictability, thorough debugging, and store release stability.",
+      codeSnippet: {
+        filename: "stainResolver.ts",
+        language: "typescript",
+        code: `export interface SolutionStep {
+  step: number;
+  instruction: string;
+}
+
+export function getStainSolution(category: string): SolutionStep[] {
+  return [
+    { step: 1, instruction: 'Blot excess liquid immediately.' },
+    { step: 2, instruction: 'Apply targeted treatment solution.' },
+  ];
+}`,
+      },
+    },
+    overview: "Stain Care Pro is a consumer mobile application built from scratch using React Native, providing users with interactive guidance, product recommendation workflows, and optimized mobile interfaces.",
+    challenges: [
+      "Greenfield Initialization: Setting up core app architecture, navigation structures, and state management from scratch.",
+      "Cross-Platform UI Consistency: Eliminating styling and interaction bugs between iOS and Android platforms.",
+    ],
+    technicalApproach: [
+      "Performance Optimization: Applied layout optimizations and component memoization to ensure fluid touch responses.",
+      "Debugging & Stability: Implemented robust logging and error boundary wrappers to isolate runtime exceptions and maintain high stability.",
+    ],
+    outcome: [
+      "Successfully built, published, and maintained production application on Apple App Store and Google Play Store.",
+      "Achieved high operational stability and positive user feedback across release cycles.",
+    ],
+    sections: [
+      {
+        id: "overview",
+        title: "Product Overview & Greenfield Delivery",
+        content: [
+          "Stain Care Pro demonstrates end-to-end mobile engineering execution—taking a product concept from scratch to published App Store and Google Play Store releases.",
+          "Focused on delivering intuitive user navigation, responsive styling, and fast launch times.",
+        ],
+      },
+      {
+        id: "quality",
+        title: "Quality Assurance & Debugging",
+        content: [
+          "Conducted systematic debugging, cross-device layout testing, and unit testing using Jest.",
+          "Maintained zero critical crash rates across production updates.",
         ],
       },
     ],
   },
 ];
-

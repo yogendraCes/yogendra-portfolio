@@ -71,6 +71,7 @@ export interface SkillCategory {
 export interface Profile {
   name: string;
   title: string;
+  role: string;
   eyebrow: string;
   headline: string;
   subheadline: string;
@@ -78,6 +79,7 @@ export interface Profile {
   email: string;
   github: string;
   linkedin: string;
+  upwork?: string;
   resumeUrl: string;
   statusText: string;
   coreStack: string[];

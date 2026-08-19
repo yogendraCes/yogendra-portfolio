@@ -47,48 +47,56 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
           </p>
 
           {/* Verified Production Proof & Public Store Links */}
-          {project.slug === "energy-flow" && (
+          {project.links && (
             <div className="pt-2 space-y-3">
               <div className="font-mono text-xs text-[#9CA3AF] uppercase tracking-wider">
-                Production Applications Available on iOS & Android:
+                Production Application Links (iOS & Android):
               </div>
               <div className="flex flex-wrap gap-3">
-                <a
-                  href="https://apps.apple.com/in/app/duracell-energy/id6460931680"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
-                >
-                  <span>Duracell Energy — View on App Store</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#D97706]" aria-hidden="true" />
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.duracell"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#10B981]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
-                >
-                  <span>Duracell Energy — Get it on Google Play</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#10B981]" aria-hidden="true" />
-                </a>
-                <a
-                  href="https://apps.apple.com/in/app/puredrive/id1536396851"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#3B82F6]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
-                >
-                  <span>Puredrive — View on App Store</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#3B82F6]" aria-hidden="true" />
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.puredrive.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#3B82F6]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
-                >
-                  <span>Puredrive — Get it on Google Play</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#3B82F6]" aria-hidden="true" />
-                </a>
+                {project.links.duracellAppStore && (
+                  <a
+                    href={project.links.duracellAppStore}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+                  >
+                    <span>Duracell Energy — View on App Store</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-[#D97706]" aria-hidden="true" />
+                  </a>
+                )}
+                {project.links.duracellPlayStore && (
+                  <a
+                    href={project.links.duracellPlayStore}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#10B981]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+                  >
+                    <span>Duracell Energy — Get it on Google Play</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-[#10B981]" aria-hidden="true" />
+                  </a>
+                )}
+                {project.links.appStore && (project.slug !== "duracell-energy" && project.slug !== "energy-flow") && (
+                  <a
+                    href={project.links.appStore}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+                  >
+                    <span>View on App Store</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-[#D97706]" aria-hidden="true" />
+                  </a>
+                )}
+                {project.links.playStore && (project.slug !== "duracell-energy" && project.slug !== "energy-flow") && (
+                  <a
+                    href={project.links.playStore}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#10B981]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+                  >
+                    <span>Get it on Google Play</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-[#10B981]" aria-hidden="true" />
+                  </a>
+                )}
               </div>
             </div>
           )}
@@ -118,20 +126,14 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
       {/* Main Editorial Case Study Column */}
       <main className="max-w-[960px] mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-16">
         {/* Interactive Production Screenshots Node */}
-        <section className="space-y-3">
-          <div className="font-mono text-xs text-[#D97706] uppercase tracking-wider font-semibold">
-            PRODUCTION MOBILE APPLICATION MEDIA GALLERY
-          </div>
-          {project.slug === "energy-flow" && <DuracellMediaGallery />}
-          {project.slug === "sdgme" && (
-            <div className="w-full bg-[#0B0D10] border border-[rgba(255,255,255,0.08)] rounded-xl p-6 font-mono text-xs space-y-4">
-              <div className="text-[#D97706] font-bold">SDGME SUSTAINABILITY METRIC DASHBOARD</div>
-              <p className="text-[#9CA3AF]">
-                Enterprise application consuming REST API endpoints for user goal tracking and aggregated carbon savings analytics aligned with UN SDGs.
-              </p>
+        {(project.slug === "duracell-energy" || project.slug === "energy-flow") && (
+          <section className="space-y-3">
+            <div className="font-mono text-xs text-[#D97706] uppercase tracking-wider font-semibold">
+              PRODUCTION MOBILE APPLICATION MEDIA GALLERY
             </div>
-          )}
-        </section>
+            <DuracellMediaGallery />
+          </section>
+        )}
 
         {/* Modular Case Study Sections */}
         {project.sections.map((section) => (

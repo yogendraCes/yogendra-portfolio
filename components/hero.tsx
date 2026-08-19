@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { profileData } from "@/data/profile";
-import { ArrowDown, Calendar, Download, Terminal, Layers } from "lucide-react";
+import { ArrowDown, MessageSquare, Terminal, Layers, Download } from "lucide-react";
 
 export function Hero() {
   return (
@@ -46,14 +46,14 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Primary Action Triggers (CTAs) */}
+          {/* Action Triggers (CTAs) */}
           <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <Link
               href="#work"
               className="px-4 sm:px-6 py-3 sm:py-3.5 rounded-md bg-[#D97706] text-[#08090A] font-mono text-xs sm:text-sm font-bold hover:bg-[#F59E0B] transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-950/20 min-h-[44px]"
             >
               <Layers className="w-4 h-4 shrink-0" aria-hidden="true" />
-              <span>View Production Case Studies</span>
+              <span>View My Work</span>
               <ArrowDown className="w-4 h-4 shrink-0" aria-hidden="true" />
             </Link>
 
@@ -61,18 +61,18 @@ export function Hero() {
               href="/contact"
               className="px-4 sm:px-6 py-3 sm:py-3.5 rounded-md bg-[#16181D] text-[#F3F4F6] font-mono text-xs sm:text-sm font-semibold border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 hover:bg-[#1C1F26] transition-all flex items-center justify-center gap-2 min-h-[44px]"
             >
-              <Calendar className="w-4 h-4 text-[#D97706] shrink-0" aria-hidden="true" />
-              <span>Schedule Consultation</span>
+              <MessageSquare className="w-4 h-4 text-[#D97706] shrink-0" aria-hidden="true" />
+              <span>Let&apos;s Talk</span>
             </Link>
 
             <a
               href={profileData.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 sm:px-5 py-3 sm:py-3.5 rounded-md bg-transparent text-[#9CA3AF] hover:text-[#F3F4F6] font-mono text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-2 border border-transparent hover:border-[rgba(255,255,255,0.08)] min-h-[44px]"
+              className="px-4 sm:px-5 py-3 sm:py-3.5 rounded-md bg-[#16181D] text-[#9CA3AF] hover:text-[#F3F4F6] font-mono text-xs sm:text-sm font-medium border border-[rgba(255,255,255,0.08)] hover:border-[#D97706]/50 hover:bg-[#1C1F26] transition-all flex items-center justify-center gap-2 min-h-[44px]"
             >
               <Download className="w-4 h-4 text-[#D97706] shrink-0" aria-hidden="true" />
-              <span>Download Resume (PDF)</span>
+              <span>Download Resume</span>
             </a>
           </div>
         </div>

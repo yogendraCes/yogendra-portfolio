@@ -39,7 +39,7 @@ export function ArchitecturePhilosophy() {
             <span>ENGINEERING PHILOSOPHY & STANDARDS</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-            How I Build Mobile Infrastructure
+            Mobile Engineering Architecture & Philosophy
           </h2>
           <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
             Mobile engineering standards focused on low-latency UI responsiveness, predictable state normalization, native battery optimization, and continuous release engineering.
