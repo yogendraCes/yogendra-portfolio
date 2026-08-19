@@ -88,7 +88,14 @@ export default function ResumePage() {
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-3 border-b border-[rgba(255,255,255,0.06)]">
                     <div>
                       <h3 className="text-lg font-bold text-[#F3F4F6]">{exp.role}</h3>
-                      <div className="font-mono text-xs text-[#D97706] font-semibold">{exp.company}</div>
+                      <div className="flex flex-wrap items-center gap-2 mt-0.5">
+                        <span className="font-mono text-xs text-[#D97706] font-semibold">{exp.company}</span>
+                        {exp.subLabel && (
+                          <span className="font-mono text-[10px] px-1.5 py-0.5 rounded bg-[#16181D] text-[#10B981] border border-[rgba(16,185,129,0.2)] font-medium">
+                            {exp.subLabel}
+                          </span>
+                        )}
+                      </div>
                     </div>
                     <div className="font-mono text-xs text-[#9CA3AF]">{exp.period} | {exp.location}</div>
                   </div>

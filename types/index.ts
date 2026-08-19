@@ -58,6 +58,7 @@ export interface Experience {
   period: string;
   location: string;
   scope: string;
+  subLabel?: string;
   responsibilities: string[];
   type: string;
 }

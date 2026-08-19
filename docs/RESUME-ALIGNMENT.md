@@ -19,7 +19,7 @@
 | **Professional Summary** | Senior React Native Developer with 6+ years of experience building high-performance, real-time mobile applications for Android and iOS. Specialized in developing data-intensive systems with complex UI architectures, including custom data visualizations using D3.js and real-time dashboards. Proven track record of owning end-to-end application development, optimizing rendering performance, and delivering scalable production apps used by 10K+ users. |
 | **Key Skills** | JavaScript, TypeScript, React Native, Redux, Zustand, D3.js, SVG, Custom Charting, Android, iOS, Git, GitHub, Azure DevOps, Firebase, Fastlane, Memoization, Lazy Loading, Render Optimization, Debugging, Jest, REST APIs, Real-Time Data Handling, CI/CD Pipelines |
 | **Company 1** | **Cloud Energy Software** — Software Developer (Mumbai, India \| April 2021 – Present) |
-| **Company 2** | **Forebear Productions** — React Native Developer (Indore, India \| March 2020 – February 2023) |
+| **Company 2** | **Forebear Productions** — React Native Developer (Indore, India \| March 2020 – April 2021) |
 | **Project 1** | **Duracell Energy** (iOS & Android) — Live App Store & Google Play links |
 | **Project 2** | **Puredrive** (iOS & Android) — Live App Store & Google Play links |
 | **Project 3** | **Stain Care Pro** (iOS & Android) — Live App Store & Google Play links |
@@ -31,7 +31,7 @@
 ## 2. Categorized Findings & Alignment Analysis
 
 ### A. Information Missing from Previous Portfolio (Now Added)
-1. **Total Experience:** Updated from "5+ years" to **"6+ years"** as stated in resume.
+1. **Total Experience:** Calculated from start date of March 2020 as **"6+ years"**.
 2. **Verified LinkedIn Profile:** Added exact resume link `https://linkedin.com/in/yogendra9644`.
 3. **Stain Care Pro:** Added missing third production mobile application (iOS & Android).
 4. **Daily Active Users Metric:** Added `~1K+ daily active users` metric alongside 10K+ installs.
@@ -39,9 +39,9 @@
 6. **Complete Skills Matrix:** Added Zustand, Azure DevOps, Jest, and CI/CD pipelines to capability matrix.
 
 ### B. Conflicts & Discrepancies Resolved
-1. **Employment Period Overlap (March 2020 – Feb 2023 vs. April 2021 – Present):**
-   - **Context:** During part of the Forebear Productions employment (March 2020 – Feb 2023), Yogendra worked on Cloud Energy Software projects through Forebear Productions on a contract basis. In April 2021, Yogendra transitioned to working directly with Cloud Energy Software (April 2021 – Present). The Forebear engagement ended in February 2023.
-   - **Action Taken:** Dates are presented exactly as stated in the resume (Cloud Energy Software: April 2021 – Present; Forebear Productions: March 2020 – February 2023) with clear, concise scope text explaining the contract-to-direct transition without modifying dates or implying simultaneous unrelated full-time roles.
+1. **Continuous Non-Overlapping Timeline (March 2020 – Present):**
+   - **Context:** March 2020 – April 2021: React Native Developer at Forebear Productions. April 2021 – Feb 18, 2023: Staffed on contract to Cloud Energy Software (CES) via Forebear Productions. Feb 18, 2023 – Present: Permanent direct employee at Cloud Energy Software.
+   - **Action Taken:** Structured experience section into a continuous timeline: Cloud Energy Software (April 2021 – Present) with sub-note clarifying contract-to-permanent conversion on Feb 18, 2023, and Forebear Productions (March 2020 – April 2021) as foundational role.
 2. **Project Portfolio Scope:**
    - **Conflict:** Draft documentation previously included `SDGme / Systems Link 2000 Ltd` and treated Fastlane as a separate project.
    - **Resolution:** Replaced SDGme with **Stain Care Pro** (verified in resume). Fastlane is positioned under release engineering & DevOps responsibilities. Portfolio contains exactly the 3 resume projects: Duracell Energy, Puredrive, Stain Care Pro.

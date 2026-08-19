@@ -85,15 +85,14 @@ Proven track record of owning end-to-end application development, optimizing ren
 
 ### 2. React Native Developer — Forebear Productions
 - **Location:** Indore, India  
-- **Period:** March 2020 – February 2023  
-- **Scope:** Contract engagement: Worked on Cloud Energy Software projects through Forebear Productions before transitioning to Cloud Energy Software directly.  
+- **Period:** March 2020 – April 2021  
+- **Scope:** Foundational React Native Developer role at Forebear Productions prior to full-time contract staffing to Cloud Energy Software in April 2021.  
 - **Key Responsibilities:**
-  - Worked on Cloud Energy Software projects through Forebear Productions on a contract basis before transitioning directly to Cloud Energy Software.
-  - Developed and maintained cross-platform mobile applications from development to production release.
-  - Built responsive and scalable UI components with optimized layouts and animations.
-  - Integrated REST APIs and handled asynchronous data efficiently.
-  - Improved application performance and stability through debugging and optimization.
-  - Collaborated with cross-functional teams to deliver reliable production features.
+  - Built foundational expertise in React Native, developing cross-platform mobile application features from development to production release.
+  - Developed responsive and scalable UI components with optimized layouts, navigation flows, and micro-animations.
+  - Integrated REST APIs and engineered efficient asynchronous data handlers for core client products.
+  - Improved mobile application stability and render performance through targeted debugging and code optimizations.
+  - Collaborated with cross-functional teams to deliver production-ready features during early-stage engineering engagements.
 
 ---
 

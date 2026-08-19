@@ -16,7 +16,7 @@ export function ExperienceTimeline() {
             Work History & Experience
           </h2>
           <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-            6+ years of experience building, shipping, and maintaining production mobile applications across full-time and contract engagements.
+            Over 6 years of verified experience building, shipping, and maintaining production mobile applications across full-time and contract engagements.
           </p>
         </div>
 
@@ -32,7 +32,14 @@ export function ExperienceTimeline() {
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 pb-4 border-b border-[rgba(255,255,255,0.06)]">
                   <div>
                     <h3 className="text-xl sm:text-2xl font-bold text-[#F3F4F6]">{exp.role}</h3>
-                    <div className="font-mono text-sm text-[#D97706] font-semibold mt-0.5">{exp.company}</div>
+                    <div className="flex flex-wrap items-center gap-2 mt-1">
+                      <span className="font-mono text-sm text-[#D97706] font-semibold">{exp.company}</span>
+                      {exp.subLabel && (
+                        <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-[#16181D] text-[#10B981] border border-[rgba(16,185,129,0.2)] font-medium">
+                          {exp.subLabel}
+                        </span>
+                      )}
+                    </div>
                   </div>
                   <div className="flex flex-wrap items-center gap-3 font-mono text-xs text-[#9CA3AF]">
                     <span className="flex items-center gap-1.5 bg-[#1C1F26] px-2.5 py-1 rounded border border-[rgba(255,255,255,0.08)]">
