@@ -20,7 +20,7 @@ export function CTASection() {
             Have a product to build?
           </h2>
           <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-            I help teams build, improve, and ship production applications—from new mobile apps and complex interfaces to performance optimization, architecture, and store releases.
+            I help teams build, improve, and ship reliable mobile applications—from new app features and complex interfaces to performance optimization, architecture, and store releases.
           </p>
         </div>
 

@@ -14,8 +14,8 @@ export const profileData: Profile = {
   title: "Senior React Native Developer / Software Engineer",
   role: "Senior React Native Developer / Software Engineer",
   eyebrow: "SENIOR REACT NATIVE DEVELOPER // SOFTWARE ENGINEER",
-  headline: "Senior React Native Developer building production-grade mobile applications.",
-  subheadline: "6+ years building cross-platform applications, real-time interfaces, data visualizations, scalable UI architectures and production release pipelines.",
+  headline: "Senior React Native Developer building high-performance mobile applications.",
+  subheadline: "6+ years building cross-platform applications, real-time interfaces, data visualizations, scalable UI architectures and automated release pipelines.",
   location: "Indore, India (Available for Remote Global Work)",
   email: "yogendra9644@gmail.com",
   github: "https://github.com/yogendraCes",
@@ -37,11 +37,11 @@ export const profileData: Profile = {
   ],
   overviewParagraphs: [
     "Senior React Native Developer with 6+ years of experience building high-performance, real-time mobile applications for Android and iOS. Specialized in developing data-intensive systems with complex UI architectures, including custom data visualizations using D3.js and real-time dashboards.",
-    "Proven track record of owning end-to-end application development, optimizing rendering performance, and delivering scalable production applications with 10K+ installs and ~1K+ daily active users. Strong expertise in handling frequent state updates, multi-source data synchronization, and cross-platform inconsistencies in complex mobile systems.",
+    "Proven track record of owning end-to-end application development, optimizing rendering performance, and delivering scalable applications with 10K+ installs and ~1K+ daily active users. Strong expertise in handling frequent state updates, multi-source data synchronization, and cross-platform inconsistencies in complex mobile systems.",
   ],
   technicalFocus: [
     {
-      title: "Production Mobile Architecture",
+      title: "Mobile Systems Architecture",
       description: "Designing scalable cross-platform mobile architectures using React Native, TypeScript, Redux, and Zustand, establishing clean type boundaries and predictable state synchronization.",
     },
     {

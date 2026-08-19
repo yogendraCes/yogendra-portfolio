@@ -5,9 +5,9 @@ export const projectsData: Project[] = [
     id: "duracell-energy",
     slug: "duracell-energy",
     title: "Duracell Energy Mobile Application",
-    subtitle: "Production React Native App with Live Telemetry, Real-Time Dashboards & Custom D3.js Charts",
-    category: "Flagship Production Mobile Application (iOS & Android)",
-    summary: "Production React Native application visualizing real-time power flow between Solar PV, Battery Storage, Grid, Home load, and EV charging nodes, featuring high-frequency 10-second polling dashboards and custom D3.js + SVG visualizations.",
+    subtitle: "Flagship React Native App with Live Telemetry, Real-Time Dashboards & Custom D3.js Charts",
+    category: "Flagship Mobile Application (iOS & Android)",
+    summary: "React Native application visualizing real-time power flow between Solar PV, Battery Storage, Grid, Home load, and EV charging nodes, featuring high-frequency 10-second polling dashboards and custom D3.js + SVG visualizations.",
     primaryStack: ["React Native", "TypeScript", "Redux", "Zustand", "D3.js", "SVG", "Fastlane", "Jest"],
     fullStack: [
       "React Native",
@@ -126,8 +126,8 @@ export function generateChartPath(data: Array<{ time: number; powerKw: number }>
     id: "puredrive",
     slug: "puredrive",
     title: "Puredrive Mobile Application",
-    subtitle: "Production React Native App with Modular UI Architecture & Asynchronous API Integration",
-    category: "Production Mobile Application (iOS & Android)",
+    subtitle: "React Native App with Modular UI Architecture & Asynchronous API Integration",
+    category: "Mobile Application (iOS & Android)",
     summary: "Developed and maintained a scalable cross-platform mobile application with modular UI component architecture, efficient REST API integrations, and robust asynchronous data handling.",
     primaryStack: ["React Native", "TypeScript", "JavaScript", "Redux", "REST APIs", "Fastlane"],
     fullStack: [
@@ -164,7 +164,7 @@ export function generateChartPath(data: Array<{ time: number; powerKw: number }>
 }`,
       },
     },
-    overview: "Puredrive is a production cross-platform mobile application built to provide clean user interfaces, reliable device telemetry, and smooth API integration across iOS and Android platforms.",
+    overview: "Puredrive is a cross-platform mobile application built to provide clean user interfaces, reliable device telemetry, and smooth API integration across iOS and Android platforms.",
     challenges: [
       "Asynchronous Data Synchronization: Managing asynchronous state flows across diverse device profiles without UI state mismatch.",
       "Modular Component Design: Creating reusable UI primitives that adhere strictly to design system guidelines across Android and iOS.",
@@ -201,7 +201,7 @@ export function generateChartPath(data: Array<{ time: number; powerKw: number }>
     slug: "stain-care-pro",
     title: "Stain Care Pro Mobile Application",
     subtitle: "Cross-Platform React Native Application Engineered for Usability & Stability",
-    category: "Production Mobile Application (iOS & Android)",
+    category: "Mobile Application (iOS & Android)",
     summary: "Built cross-platform mobile application from scratch with focus on rendering performance, intuitive usability, debugging, and stability across production releases.",
     primaryStack: ["React Native", "JavaScript", "TypeScript", "REST APIs", "Jest"],
     fullStack: [

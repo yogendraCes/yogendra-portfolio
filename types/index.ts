@@ -69,6 +69,15 @@ export interface SkillCategory {
   productionDepth: string;
 }
 
+export interface Testimonial {
+  id: string;
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  relationshipTag?: string;
+}
+
 export interface Profile {
   name: string;
   title: string;

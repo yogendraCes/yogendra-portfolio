@@ -31,7 +31,7 @@ export function Hero() {
             <div className="flex items-center gap-2 mb-3">
               <Terminal className="w-4 h-4 text-[#D97706]" aria-hidden="true" />
               <span className="font-mono text-xs text-[#9CA3AF] uppercase tracking-wider">
-                CORE PRODUCTION STACK
+                CORE TECHNICAL STACK
               </span>
             </div>
             <div className="flex flex-wrap gap-2">

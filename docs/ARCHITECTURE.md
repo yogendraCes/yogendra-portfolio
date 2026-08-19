@@ -162,6 +162,7 @@ Components follow atomic, modular design principles:
   - `ArchitecturePhilosophy`: Renders engineering principles (Reanimated 60fps, RTK Query caching, Fastlane CI/CD, AppState listeners).
   - `SkillsMatrix`: Renders categorized technical matrix with production ownership depth.
   - `ExperienceTimeline`: Renders work history entries for Cloud Energy Software and Forebear Productions.
+  - `Testimonials`: Renders client and manager endorsements driven by centralized data (`data/testimonials.ts`).
   - `CaseStudyView`: Modular case study layout rendering 10 technical sections with dark code blocks.
 
 - **Client Components (`"use client"`):**

@@ -14,7 +14,7 @@ export function ProjectShowcase() {
             <span>SELECTED WORK</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-            Featured Production Projects & Case Studies
+            Selected Work
           </h2>
           <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
             Real-world mobile engineering work—featuring custom SVG data visualizations, state management architectures, UI thread performance, and automated release pipelines.

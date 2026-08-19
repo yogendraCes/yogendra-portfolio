@@ -39,7 +39,7 @@ export function ArchitecturePhilosophy() {
             <span>ENGINEERING STANDARDS</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-            Engineering Approach & Best Practices
+            How I Build
           </h2>
           <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
             Core technical practices focused on smooth UI thread performance, clean state management, native battery optimization, and automated release delivery.

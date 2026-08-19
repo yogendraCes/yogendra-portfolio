@@ -119,7 +119,7 @@ export default function ResumePage() {
           <section className="space-y-4">
             <h2 className="text-xl font-bold text-[#F3F4F6] border-b border-[rgba(255,255,255,0.08)] pb-2 flex items-center gap-2">
               <Wrench className="w-5 h-5 text-[#D97706]" aria-hidden="true" />
-              <span>Technical Skills & Tools</span>
+              <span>Skills & Tools</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs">
               {skillsData.map((cat) => (
