@@ -1,39 +1,142 @@
-# yogendra-portfolio
+# Yogendra Yadav — Senior React Native Engineer Portfolio
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Production developer portfolio and technical case studies for **Yogendra Yadav**, a Senior React Native & Mobile Infrastructure Engineer specializing in cross-platform iOS and Android applications, real-time data telemetry, interactive SVG/D3 graphics, state architecture, and Fastlane CI/CD release pipelines.
 
-## Getting Started
+---
 
-First, run the development server:
+## Technical Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** Next.js 16 (App Router, React Server Components)
+- **Language:** TypeScript 5 (Strict Mode)
+- **UI & Styling:** React 19, Tailwind CSS v4, Vanilla CSS Variables (`globals.css`)
+- **Icons:** Lucide React
+- **Typography:** Geist & Geist Mono (`next/font/google`)
+- **Graphics & Visualizations:** Micro-grid CSS textures, SVG SMIL animations, D3.js path generators
+- **SEO & Metadata:** Schema.org JSON-LD (`Person`, `WebSite`, `TechArticle`), OpenGraph preview cards, Twitter cards, dynamic `sitemap.xml`, and `robots.txt`
+
+---
+
+## Project Structure
+
+```
+yogendra-portfolio/
+├── docs/                   # Architectural & strategic documentation source of truth
+│   ├── PROJECT.md          # Positioning & strategy
+│   ├── DESIGN.md           # Visual design tokens & responsive grid specification
+│   ├── CONTENT.md          # Factually defensible content & copy
+│   ├── ARCHITECTURE.md     # Technical architecture specification
+│   └── DECISIONS.md        # Production engineering decisions & ADR log
+├── data/                   # Decoupled content datasets & typed schema definitions
+│   ├── profile.ts          # Profile bio, social handles, and core stack matrix
+│   ├── projects.ts         # Case study details & architectural highlights
+│   ├── experience.ts       # Verified work history timeline
+│   └── skills.ts           # Technical capability matrix
+├── types/                  # TypeScript interfaces and model definitions
+│   └── index.ts
+├── components/             # Reusable server & client UI components
+│   ├── navigation.tsx      # Top nav bar & mobile sheet drawer
+│   ├── hero.tsx            # High-density introduction hero & CTAs
+│   ├── project-card.tsx    # Production case study card component
+│   ├── project-showcase.tsx# Featured production work grid
+│   ├── energy-flow-visualizer.tsx  # Live energy telemetry flow visualizer
+│   ├── pipeline-visualizer.tsx     # Fastlane CI/CD build lane visualizer
+│   ├── architecture-philosophy.tsx # "How I Build" engineering standards
+│   ├── skills-matrix.tsx   # Categorized technical capabilities grid
+│   ├── experience-timeline.tsx    # Career timeline & deliverables checklist
+│   ├── cta-section.tsx     # Dual-channel project scoping intake
+│   ├── footer.tsx          # Brand monogram, status badge, system notice
+│   └── case-study/
+│       └── case-study-view.tsx    # 10-section case study layout component
+├── app/                    # Next.js App Router routes & layout
+│   ├── layout.tsx          # Root layout with fonts, JSON-LD, dark mode
+│   ├── globals.css         # Tailwind v4 import & design system tokens
+│   ├── page.tsx            # High-density technical homepage
+│   ├── projects/
+│   │   ├── page.tsx        # Case studies index page
+│   │   └── [slug]/
+│   │       └── page.tsx    # Dynamic route for case study deep dives
+│   ├── resume/
+│   │   └── page.tsx        # Web resume hub & PDF download page
+│   ├── contact/
+│   │   └── page.tsx        # Dedicated scoping intake & contact page
+│   ├── sitemap.ts          # Dynamic XML sitemap generator
+│   └── robots.ts           # Robots.txt route handler
+├── public/                 # Static assets (Resume PDF, favicon, og-image)
+│   ├── Yogendra_Yadav_React_Native_Resume.pdf
+│   └── og-image.png
+├── package.json
+├── next.config.ts          # Production security headers & framework configuration
+└── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Local Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
+- Node.js 18.x or 20.x+
+- npm 9.x+
 
-## Learn More
+### Setup & Run
+```bash
+# Clone the repository
+git clone https://github.com/yogendra9644/yogendra-portfolio.git
+cd yogendra-portfolio
 
-To learn more about Next.js, take a look at the following resources:
+# Install dependencies
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Run development server
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Production Build & Verification
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To verify production compilation, linting, and static page generation locally:
 
+```bash
+# Run ESLint check
+npm run lint
+
+# Run TypeScript typecheck
+npx tsc --noEmit
+
+# Run Next.js production build
+npm run build
+
+# Start production preview server locally
+npm run start
+```
+
+---
+
+## Deployment (Vercel)
+
+This application is optimized for 100% Static Site Generation (SSG) on **Vercel**.
+
+### Automatic Deployment via Vercel GitHub Integration
+1. Push your repository to GitHub: `github.com/yogendra9644/yogendra-portfolio`.
+2. Import the project into your Vercel Dashboard.
+3. Vercel will automatically detect **Next.js** and configure:
+   - **Framework Preset:** Next.js
+   - **Build Command:** `next build`
+   - **Output Directory:** `.next`
+4. Click **Deploy**.
+
+### Manual Deployment via Vercel CLI
+```bash
+# Install Vercel CLI globally
+npm i -g vercel
+
+# Deploy to preview environment
+vercel
+
+# Deploy to production
+vercel --prod
+```
+
+No environment variables are required for deployment.

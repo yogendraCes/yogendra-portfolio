@@ -1,0 +1,120 @@
+import React from "react";
+import Link from "next/link";
+import { Project } from "@/types";
+import { ArrowRight, Code2, Cpu } from "lucide-react";
+import { EnergyFlowVisualizer } from "./energy-flow-visualizer";
+import { PipelineVisualizer } from "./pipeline-visualizer";
+
+interface ProjectCardProps {
+  project: Project;
+}
+
+export function ProjectCard({ project }: ProjectCardProps) {
+  return (
+    <article className="w-full bg-[#0F1115] border border-[rgba(255,255,255,0.08)] rounded-xl overflow-hidden hover:border-[rgba(255,255,255,0.16)] transition-all duration-300 flex flex-col">
+      {/* Card Header Top Metadata */}
+      <div className="p-6 pb-4 border-b border-[rgba(255,255,255,0.06)] flex flex-wrap items-center justify-between gap-2">
+        <span className="font-mono text-xs text-[#D97706] font-semibold tracking-wider uppercase bg-[#D97706]/10 px-2.5 py-1 rounded border border-[#D97706]/30">
+          {project.category}
+        </span>
+        <span className="font-mono text-xs text-[#9CA3AF] flex items-center gap-1.5">
+          <Cpu className="w-3.5 h-3.5 text-[#10B981]" />
+          <span>iOS & Android Production</span>
+        </span>
+      </div>
+
+      {/* Main Content Info */}
+      <div className="p-6 space-y-4 flex-1">
+        <div>
+          <h3 className="text-xl sm:text-2xl font-bold text-[#F3F4F6] tracking-tight hover:text-[#D97706] transition-colors">
+            <Link href={`/projects/${project.slug}`}>{project.title}</Link>
+          </h3>
+          <p className="font-mono text-xs text-[#9CA3AF] mt-1">{project.subtitle}</p>
+        </div>
+
+        <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">{project.summary}</p>
+
+        {/* Dynamic Visual Demo Container */}
+        <div className="py-2">
+          {project.slug === "energy-flow" && <EnergyFlowVisualizer />}
+          {project.slug === "release-ci-cd" && <PipelineVisualizer />}
+          {project.slug === "sdgme" && (
+            <div className="w-full bg-[#0B0D10] border border-[rgba(255,255,255,0.08)] rounded-xl p-4 sm:p-5 font-mono text-xs space-y-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between text-[#9CA3AF] border-b border-[rgba(255,255,255,0.08)] pb-2 gap-1">
+                <span>SYSTEMS LINK 2000 LTD // ESG METRICS</span>
+                <span className="text-[#10B981] font-semibold">FCM PUSH ACTIVE</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center pt-1">
+                <div className="bg-[#0F1115] p-2 rounded border border-[rgba(255,255,255,0.06)]">
+                  <div className="text-[9px] sm:text-[10px] text-[#9CA3AF]">DAILY SAVINGS</div>
+                  <div className="text-xs sm:text-sm font-bold text-[#10B981]">14.2 kg CO₂</div>
+                </div>
+                <div className="bg-[#0F1115] p-2 rounded border border-[rgba(255,255,255,0.06)]">
+                  <div className="text-[9px] sm:text-[10px] text-[#9CA3AF]">MONTHLY TREND</div>
+                  <div className="text-xs sm:text-sm font-bold text-[#3B82F6]">+28.5%</div>
+                </div>
+                <div className="bg-[#0F1115] p-2 rounded border border-[rgba(255,255,255,0.06)]">
+                  <div className="text-[9px] sm:text-[10px] text-[#9CA3AF]">UN GOAL ALIGN</div>
+                  <div className="text-xs sm:text-sm font-bold text-[#D97706]">SDG 7, 12, 13</div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Technical Highlight Callout Box (.arch-block) */}
+        <div className="arch-block p-3 sm:p-4 space-y-2">
+          <div className="flex items-center justify-between text-xs text-[#D97706] font-semibold">
+            <span className="flex items-center gap-1.5">
+              <Code2 className="w-3.5 h-3.5" />
+              <span>{project.technicalHighlight.label}</span>
+            </span>
+            <span className="text-[10px] text-[#9CA3AF]">ARCHITECTURAL FOCUS</span>
+          </div>
+          <p className="text-xs text-[#9CA3AF] leading-normal font-sans">
+            {project.technicalHighlight.description}
+          </p>
+
+          {project.technicalHighlight.codeSnippet && (
+            <div className="mt-2 pt-2 border-t border-[rgba(255,255,255,0.06)] font-mono text-[11px] text-[#F3F4F6]">
+              <div className="text-[10px] text-[#9CA3AF] mb-1">
+                {"// "}{project.technicalHighlight.codeSnippet.filename}
+              </div>
+              <pre className="text-emerald-400 opacity-90 leading-tight whitespace-pre-wrap break-words overflow-x-auto">
+                {project.technicalHighlight.codeSnippet.code}
+              </pre>
+            </div>
+          )}
+        </div>
+
+        {/* Stack Badges */}
+        <div className="pt-2">
+          <div className="font-mono text-[11px] text-[#9CA3AF] mb-2 uppercase">TECHNOLOGY MATRIX</div>
+          <div className="flex flex-wrap gap-1.5">
+            {project.primaryStack.map((tech) => (
+              <span
+                key={tech}
+                className="font-mono text-[11px] px-2 py-0.5 rounded bg-[#1C1F26] text-[#9CA3AF] border border-[rgba(255,255,255,0.08)]"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Card Footer CTA */}
+      <div className="p-4 sm:p-6 sm:pt-4 border-t border-[rgba(255,255,255,0.06)] bg-[#0B0D10]/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <span className="font-mono text-xs text-[#9CA3AF]">{project.company}</span>
+        <Link
+          href={`/projects/${project.slug}`}
+          aria-label={`Read Architectural Case Study for ${project.title}`}
+          className="font-mono text-xs font-semibold text-[#D97706] hover:text-[#F59E0B] transition-colors flex items-center gap-1 group py-1 min-h-[44px]"
+        >
+          <span>Read Architectural Case Study</span>
+          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </div>
+    </article>
+  );
+}
