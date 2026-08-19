@@ -5,9 +5,9 @@ export function ArchitecturePhilosophy() {
   const principles = [
     {
       icon: Cpu,
-      title: "UI Threading & 60fps Execution",
+      title: "UI Threading & Frame-Rate Optimization",
       description:
-        "Offloading gesture handlers and frame-critical animations directly to the native UI thread using React Native Reanimated (v3) and Gesture Handler, bypassing the JS thread to prevent visual jank.",
+        "Offloading gesture handlers and frame-critical animations directly to the native UI thread using React Native Reanimated (v3) and Gesture Handler, bypassing JS thread bottlenecks to prevent visual jank.",
     },
     {
       icon: RefreshCw,

@@ -13,9 +13,9 @@ export const profileData: Profile = {
   name: "Yogendra Yadav",
   title: "Senior React Native Developer / Software Engineer",
   role: "Senior React Native Developer / Software Engineer",
-  eyebrow: "SENIOR REACT NATIVE DEVELOPER // SOFTWARE ENGINEER",
-  headline: "Senior React Native Developer building high-performance mobile applications.",
-  subheadline: "6+ years building cross-platform applications, real-time interfaces, data visualizations, scalable UI architectures and automated release pipelines.",
+  eyebrow: "SENIOR REACT NATIVE ENGINEER // MOBILE ARCHITECT",
+  headline: "Senior React Native Developer architecting real-time mobile apps, custom SVG visualizations, and automated release pipelines.",
+  subheadline: "6+ years engineering production iOS and Android applications. Specializing in high-frequency telemetry interfaces, custom D3.js graphics, state selector isolation, and push-button Fastlane release delivery.",
   location: "Indore, India (Available for Remote Global Work)",
   email: "yogendra9644@gmail.com",
   github: "https://github.com/yogendraCes",
@@ -36,8 +36,8 @@ export const profileData: Profile = {
     "Android (Android Studio)",
   ],
   overviewParagraphs: [
-    "Senior React Native Developer with 6+ years of experience building high-performance, real-time mobile applications for Android and iOS. Specialized in developing data-intensive systems with complex UI architectures, including custom data visualizations using D3.js and real-time dashboards.",
-    "Proven track record of owning end-to-end application development, optimizing rendering performance, and delivering scalable applications with 10K+ installs and ~1K+ daily active users. Strong expertise in handling frequent state updates, multi-source data synchronization, and cross-platform inconsistencies in complex mobile systems.",
+    "Senior React Native Developer with 6+ years of experience building real-time mobile applications for Android and iOS. Specialized in developing data-intensive systems with complex UI architectures, including custom data visualizations using D3.js and real-time dashboards.",
+    "Proven track record of owning end-to-end application development, eliminating render bottlenecks, and delivering scalable applications deployed on Apple App Store and Google Play Store with 10K+ installs and ~1K+ daily active users.",
   ],
   technicalFocus: [
     {
@@ -46,15 +46,15 @@ export const profileData: Profile = {
     },
     {
       title: "Custom Graphics & Threading Optimization",
-      description: "Engineering custom D3.js + SVG path generators to replace heavy third-party graphing libraries. Offloading gesture handlers and frame-critical animations to maintain smooth, responsive UI thread performance.",
+      description: "Engineering custom D3.js + SVG path generators to replace heavy third-party graphing libraries. Offloading gesture handlers and frame-critical animations to the native UI thread via Reanimated v3 to prevent JS thread blockage.",
     },
     {
       title: "Release Engineering & Store Delivery",
       description: "Configuring Fastlane build automation lanes, managing iOS code signing certificates and Android keystores, and orchestrating deployment across Apple App Store and Google Play Store.",
     },
     {
-      title: "Real-Time Systems & Performance",
-      description: "Optimizing high-frequency polling dashboards (10-second intervals), suspending background timers via AppState lifecycles to preserve device battery, and applying strict memoization to eliminate render bottlenecks.",
+      title: "Real-Time Systems & Battery Efficiency",
+      description: "Optimizing high-frequency polling dashboards (10-second intervals), suspending background timers via AppState lifecycles to preserve device battery, and applying strict primitive memoization to eliminate render bottlenecks.",
     },
   ],
 };

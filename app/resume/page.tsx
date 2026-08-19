@@ -102,14 +102,36 @@ export default function ResumePage() {
                   <p className="text-xs text-[#F3F4F6] font-medium bg-[#16181D] p-3 rounded border border-[rgba(255,255,255,0.06)]">
                     {exp.scope}
                   </p>
-                  <ul className="space-y-2 text-xs text-[#9CA3AF]">
-                    {exp.responsibilities.map((r, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0 mt-0.5" aria-hidden="true" />
-                        <span>{r}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {exp.responsibilities && (
+                    <ul className="space-y-2 text-xs text-[#9CA3AF]">
+                      {exp.responsibilities.map((r, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0 mt-0.5" aria-hidden="true" />
+                          <span>{r}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {exp.phases && (
+                    <div className="space-y-3 pt-2">
+                      {exp.phases.map((phase) => (
+                        <div key={phase.id} className="p-3 rounded bg-[#16181D] border border-[rgba(255,255,255,0.06)] space-y-2">
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                            <div className="font-bold text-xs text-[#F3F4F6]">{phase.title} ({phase.badge})</div>
+                            <div className="font-mono text-[10px] text-[#D97706]">{phase.period}</div>
+                          </div>
+                          <ul className="space-y-1 text-xs text-[#9CA3AF]">
+                            {phase.responsibilities.map((r, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0 mt-0.5" aria-hidden="true" />
+                                <span>{r}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

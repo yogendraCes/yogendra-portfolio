@@ -62,7 +62,7 @@ export function Hero() {
               className="px-4 sm:px-6 py-3 sm:py-3.5 rounded-md bg-[#16181D] text-[#F3F4F6] font-mono text-xs sm:text-sm font-semibold border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 hover:bg-[#1C1F26] transition-all flex items-center justify-center gap-2 min-h-[44px]"
             >
               <MessageSquare className="w-4 h-4 text-[#D97706] shrink-0" aria-hidden="true" />
-              <span>Let&apos;s Talk</span>
+              <span>Get in Touch</span>
             </Link>
 
             <a

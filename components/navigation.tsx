@@ -88,7 +88,7 @@ export function Navigation() {
             className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded bg-[#D97706] text-[#08090A] font-mono text-xs font-bold hover:bg-[#F59E0B] transition-colors shadow-sm min-h-[40px]"
           >
             <MessageSquare className="w-3.5 h-3.5" aria-hidden="true" />
-            <span>Let&apos;s Talk</span>
+            <span>Get in Touch</span>
           </Link>
         </div>
 
@@ -150,7 +150,7 @@ export function Navigation() {
                 className="w-full h-12 flex items-center justify-center gap-2 rounded bg-[#D97706] text-[#08090A] font-mono text-sm font-bold hover:bg-[#F59E0B] transition-colors min-h-[48px] shadow-md shadow-amber-950/30"
               >
                 <MessageSquare className="w-4 h-4" aria-hidden="true" />
-                <span>Let&apos;s Talk</span>
+                <span>Get in Touch</span>
               </Link>
               <a
                 href={profileData.resumeUrl}

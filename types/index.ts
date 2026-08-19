@@ -51,6 +51,15 @@ export interface Project {
   };
 }
 
+export interface ExperiencePhase {
+  id: string;
+  title: string;
+  period: string;
+  badge: string;
+  scope?: string;
+  responsibilities: string[];
+}
+
 export interface Experience {
   id: string;
   role: string;
@@ -59,8 +68,10 @@ export interface Experience {
   location: string;
   scope: string;
   subLabel?: string;
-  responsibilities: string[];
   type: string;
+  isCurrent?: boolean;
+  phases?: ExperiencePhase[];
+  responsibilities?: string[];
 }
 
 export interface SkillCategory {
