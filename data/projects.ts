@@ -4,11 +4,11 @@ export const projectsData: Project[] = [
   {
     id: "energy-flow-monitoring",
     slug: "energy-flow",
-    title: "Commercial & Consumer Energy Flow Monitoring Platform",
-    subtitle: "Duracell Energy / Puredrive Energy White-Label Mobile Infrastructure",
-    category: "Mobile Telemetry & Data Visualization",
-    summary: "Production white-label consumer energy application powering Duracell-licensed and Puredrive Energy platforms across iOS and Android. Displays real-time telemetry across Solar, Battery, EV Charger, Grid, and Household load nodes.",
-    primaryStack: ["React Native", "TypeScript", "Redux Toolkit", "RTK Query", "React Native SVG", "D3.js", "Reanimated"],
+    title: "Commercial & Consumer Energy Management Mobile Platform",
+    subtitle: "Duracell Energy & Puredrive Energy White-Label Mobile Architecture",
+    category: "Production Mobile Application (iOS & Android)",
+    summary: "Production white-label consumer energy application powering Duracell-licensed and Puredrive Energy platforms across iOS and Android. Displays real-time telemetry across Solar PV, Battery Storage, EV Charger, Grid, and Household load nodes.",
+    primaryStack: ["React Native", "TypeScript", "Redux Toolkit", "RTK Query", "React Native SVG", "D3.js", "Reanimated", "Fastlane"],
     fullStack: [
       "React Native",
       "TypeScript",
@@ -18,6 +18,8 @@ export const projectsData: Project[] = [
       "D3.js",
       "React Native Reanimated v3",
       "React Native Gesture Handler",
+      "Fastlane",
+      "Ruby (Fastlane scripts)",
       "REST APIs",
       "i18n Localization",
       "Feature Flags",
@@ -31,9 +33,13 @@ export const projectsData: Project[] = [
     company: "Cloud Energy Software (CES)",
     period: "2023 – Present",
     featured: true,
+    links: {
+      appStore: "https://apps.apple.com/in/app/duracell-energy/id6460931680",
+      playStore: "https://play.google.com/store/apps/details?id=com.duracell",
+    },
     technicalHighlight: {
-      label: "THREADING & STATE OPTIMIZATION",
-      description: "Optimized JS thread frame rates to 60fps using Reanimated 3 UI-thread execution and RTK Query normalized caching for 10s API telemetry polling.",
+      label: "THREADING, STATE & DEVOPS AUTOMATION",
+      description: "Optimized JS thread frame rates to 60fps using Reanimated 3 UI-thread execution, RTK Query normalized caching for 10s API telemetry polling, and automated Fastlane Match release pipelines.",
       codeSnippet: {
         filename: "energyFlowState.ts",
         language: "typescript",
@@ -55,22 +61,25 @@ export const energyApi = createApi({
       "JS Thread Congestion during High-Frequency Polling: Ingesting live telemetry payloads every 10 seconds caused frame drops and UI sluggishness when processed through standard React component state re-renders.",
       "Smooth Energy Flow Animations across Hardware Profiles: Rendering multi-node power flow pulses smoothly across lower-spec Android devices without draining battery or causing thermal throttling.",
       "Custom Interactive Charting without WebViews: Achieving high-performance, touch-inspectable time-series charts for battery charge curves and solar generation without relying on heavy WebView wrappers.",
+      "Cross-Platform Code Signing & Build Automation: Managing separate white-label build targets (com.duracell vs com.puredrive.app), expiring distribution certificates, and manual Xcode exports across staging and production releases.",
     ],
     technicalApproach: [
       "State Optimization: Normalized telemetry payload structures using Redux Toolkit slices and RTK Query cache invalidation logic. Applied strict component memoization (React.memo, useMemo) so that high-frequency data ticks update only affected text nodes and chart paths.",
       "UI-Thread Animation: Utilized React Native Reanimated (v3) and Gesture Handler to run energy flow particle animations directly on the native UI thread, bypassing the React Native JavaScript bridge during render loops.",
       "D3 + SVG Chart Renderer: Built custom chart rendering components using D3 path generators (d3-shape, d3-scale) mapped directly to React Native SVG <Path>, <Rect>, and <G> primitives, implementing custom touch-driven inspect tooltips.",
       "Battery-Aware Lifecycles: Bound application state transitions via React Native AppState API to freeze active animation loops and cancel active HTTP polling timeouts whenever the app transitions to background or inactive states.",
+      "Fastlane DevOps Pipeline: Scripted Fastlane lanes (lane :beta_ios, lane :beta_android) utilizing Fastlane Match with encrypted Git certificate storage to automate build generation and TestFlight / Play Console internal distribution.",
     ],
     outcome: [
-      "Successfully delivered multiple production releases powering Puredrive and Duracell-licensed consumer energy applications on the Apple App Store and Google Play Store.",
-      "Achieved consistent 60fps UI performance across dashboard telemetry views on both flagship iOS and budget Android hardware.",
+      "Successfully delivered and maintained production builds published on the Apple App Store and Google Play Store for both Duracell Energy (10K+ Google Play downloads) and Puredrive Energy.",
+      "Achieved consistent 60fps UI performance across dashboard telemetry views on both flagship iOS devices and lower-spec budget Android smartphones.",
       "Reduced battery drain during background states by enforcing complete suspension of polling loops and animations.",
+      "Streamlined continuous delivery and emergency hotfix deployments through automated Fastlane Match code signing.",
     ],
     sections: [
       {
         id: "overview",
-        title: "Executive Product Overview",
+        title: "Executive Product Overview & Shipped Status",
         content: [
           "The Duracell Energy & Puredrive mobile app represents the primary touchpoint for residential and commercial energy management systems in the UK and European markets.",
           "Homeowners rely on the application to monitor real-time energy flow: solar generation from PV arrays, battery charge/discharge rate (kW), grid import/export tariffs, EV charger consumption, and total home load demands.",
@@ -81,9 +90,9 @@ export const energyApi = createApi({
         id: "role-scope",
         title: "Engineering Scope & Direct Ownership",
         content: [
-          "Sole ownership of the mobile application architecture from React Native client state down to native iOS/Android bundle distribution.",
+          "Sole ownership of the mobile application architecture from React Native client state down to native iOS/Android bundle distribution at Cloud Energy Software.",
           "Collaborated directly with hardware IoT firmware engineers, backend API developers, and product leads to define telemetry JSON contracts and polling lifecycles.",
-          "Architected state normalization layers using RTK Query and implemented native UI-thread animation loops using React Native Reanimated 3.",
+          "Architected state normalization layers using RTK Query, implemented native UI-thread animation loops using React Native Reanimated 3, and automated build pipelines via Fastlane.",
         ],
       },
       {
@@ -128,6 +137,26 @@ export function useEnergyParticleAnimation(flowRateKw: number) {
         ],
       },
       {
+        id: "release-devops",
+        title: "Fastlane Release Engineering & Automated CI/CD",
+        content: [
+          "Mobile application release engineering is notoriously fragile. Certificate mismatches, mismatched API environment keys, and manual Xcode exports cause costly release delays.",
+          "We established a reproducible, script-driven build environment using Fastlane, automated iOS certificate syncing (Fastlane Match), and Android keystore automation for single-command beta distribution.",
+        ],
+        codeSnippet: {
+          filename: "Fastfile",
+          language: "ruby",
+          code: `desc "Submit a new Beta Build to Apple TestFlight"
+lane :beta_ios do
+  setup_ci if is_ci
+  match(type: "appstore", readonly: true)
+  increment_build_number(xcodeproj: "DuracellEnergy.xcodeproj")
+  build_app(workspace: "DuracellEnergy.xcworkspace", scheme: "Production")
+  upload_to_testflight(skip_waiting_for_build_processing: true)
+end`,
+        },
+      },
+      {
         id: "lifecycle-resiliency",
         title: "AppState Lifecycle & Battery Conservation",
         content: [
@@ -137,95 +166,10 @@ export function useEnergyParticleAnimation(flowRateKw: number) {
       },
       {
         id: "store-results",
-        title: "Production Store Results & Achievements",
+        title: "Production Store Results & Verified Availability",
         content: [
-          "Shipped multiple major and minor releases to Apple App Store and Google Play Store with 99.8%+ crash-free session rates.",
+          "Shipped multiple major and minor releases to the Apple App Store and Google Play Store powering both Duracell Energy (10K+ Google Play downloads) and Puredrive Energy applications.",
           "Achieved sustained 60fps rendering across both flagship iOS devices and lower-spec budget Android smartphones.",
-        ],
-      },
-    ],
-  },
-  {
-    id: "release-ci-cd-pipeline",
-    slug: "release-ci-cd",
-    title: "Cross-Platform Release Engineering & Mobile CI/CD Pipeline",
-    subtitle: "Automated Build, Code Signing, and Distribution Infrastructure",
-    category: "Mobile DevOps & Store Operations",
-    summary: "Automated multi-environment build, code-signing, and store distribution pipeline supporting rapid continuous delivery and emergency hotfix deployments for cross-platform apps.",
-    primaryStack: ["Fastlane", "Xcode", "Android Studio", "App Store Connect", "Google Play Console", "Feature Flags"],
-    fullStack: [
-      "Fastlane",
-      "React Native",
-      "TypeScript",
-      "Ruby (Fastlane scripts)",
-      "Xcode",
-      "Android Studio",
-      "Apple App Store Connect",
-      "TestFlight",
-      "Google Play Console",
-      "Feature Flags",
-      "Git",
-    ],
-    role: "React Native & Mobile Release Engineer",
-    company: "Cloud Energy Software (CES)",
-    period: "2023 – Present",
-    featured: true,
-    technicalHighlight: {
-      label: "DEVOPS & CODE-SIGNING AUTOMATION",
-      description: "Eliminated manual code-signing errors using Fastlane Match with encrypted Git certificate storage and single-command TestFlight / Play Console internal deployment.",
-      codeSnippet: {
-        filename: "Fastfile",
-        language: "ruby",
-        code: `desc "Submit a new Beta Build to Apple TestFlight"
-lane :beta_ios do
-  setup_ci if is_ci
-  match(type: "appstore", readonly: true)
-  increment_build_number(xcodeproj: "DuracellEnergy.xcodeproj")
-  build_app(workspace: "DuracellEnergy.xcworkspace", scheme: "Production")
-  upload_to_testflight(skip_waiting_for_build_processing: true)
-end`,
-      },
-    },
-    overview: "An automated mobile DevOps and release engineering pipeline designed to streamline cross-platform application builds, eliminate manual certificate provisioning errors, and enable continuous delivery across staging, beta testing, and production store tracks.",
-    challenges: [
-      "Code-Signing Friction: Managing expiring iOS distribution certificates and provisioning profiles across multiple build environments.",
-      "Build Configuration Drift: Preventing mismatched environment variables and API endpoints between staging and production build outputs.",
-      "Manual Distribution Bottlenecks: Eliminating manual Xcode and Android Studio export workflows that delayed QA testing cycles and emergency hotfix deployments.",
-    ],
-    technicalApproach: [
-      "Fastlane Automation: Implemented customized Fastfile configurations defining distinct execution lanes (lane :beta_ios, lane :beta_android, lane :release_production).",
-      "Unified Code Signing: Standardized iOS code signing using Fastlane Match with Git-based encrypted certificate storage, eliminating provisioning conflicts across build machines.",
-      "Environment Separation: Integrated react-native-config with build flavor scripts in Xcode (.xcconfig) and Android (build.gradle) to guarantee strict API target separation.",
-      "Feature Flag Control: Integrated remote configuration keys to decouple code deployment from feature exposure, allowing instant kill-switch control over unreleased features.",
-    ],
-    outcome: [
-      "Standardized cross-platform deployment workflows, enabling one-command beta build distribution to TestFlight and Google Play Internal testing.",
-      "Eliminated manual code-signing errors during production release builds.",
-      "Streamlined emergency production hotfix deployment turnaround times.",
-    ],
-    sections: [
-      {
-        id: "overview",
-        title: "DevOps Architecture Overview",
-        content: [
-          "Mobile application release engineering is notoriously fragile. Certificate mismatches, mismatched API environment keys, and manual Xcode exports cause costly release delays.",
-          "This pipeline establishes a reproducible, script-driven build environment using Fastlane, automated iOS certificate syncing (Fastlane Match), and Android keystore automation.",
-        ],
-      },
-      {
-        id: "fastlane-lanes",
-        title: "Fastlane Scripting & Environment Injection",
-        content: [
-          "Configured modular Fastlane lanes for iOS and Android targeting three environments: Development, Staging (QA), and Production.",
-          "Build flavors configured in Xcode schemes (.xcconfig) and Android Gradle build targets inject appropriate API endpoints, bundle identifiers (com.puredrive.app vs com.duracell.energy), and analytics keys at build time.",
-        ],
-      },
-      {
-        id: "feature-flags",
-        title: "Remote Feature Flags & Deployment Decoupling",
-        content: [
-          "To mitigate store submission delays for time-sensitive features, code deployments were decoupled from feature releases using remote feature flag keys.",
-          "Unreleased features are safely submitted to app stores behind remote flags. Once approved by app reviewers, features are enabled remotely without requiring secondary app store reviews.",
         ],
       },
     ],
@@ -235,7 +179,7 @@ end`,
     slug: "sdgme",
     title: "Sustainability Metrics & Action Tracking Mobile Application (SDGme)",
     subtitle: "Enterprise Sustainability Solution for Systems Link 2000 Ltd",
-    category: "Enterprise Mobile Application",
+    category: "Enterprise Mobile Application (iOS & Android)",
     summary: "Enterprise mobile solution built for Systems Link 2000 Ltd tracking user sustainability metrics aligned with UN Sustainable Development Goals, featuring interactive progress charts and push notifications.",
     primaryStack: ["React Native", "JavaScript", "Redux", "REST APIs", "Push Notifications", "Firebase Analytics"],
     fullStack: [

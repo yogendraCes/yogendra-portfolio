@@ -3,9 +3,9 @@ import { Profile } from "@/types";
 export const profileData: Profile = {
   name: "Yogendra Yadav",
   title: "Senior React Native Engineer (iOS & Android)",
-  eyebrow: "SENIOR REACT NATIVE & MOBILE INFRASTRUCTURE ENGINEER",
-  headline: "Building & Shipping Production Mobile Applications for Complex Real-Time Systems",
-  subheadline: "Senior React Native Engineer specializing in cross-platform iOS and Android applications, real-time telemetry, interactive SVG/D3 graphics, state architecture, and automated release pipelines. Over 5 years of verified experience taking mobile products from initial architecture to App Store and Google Play deployment.",
+  eyebrow: "SENIOR REACT NATIVE DEVELOPER // MOBILE ENGINEER (IOS & ANDROID)",
+  headline: "Building & Shipping Production Mobile Applications for iOS & Android",
+  subheadline: "Senior React Native Engineer with over 5 years of verified experience architecting cross-platform iOS and Android applications. Specialized in complex client state management, interactive SVG/D3 data visualizations, UI thread performance optimization, and automated Fastlane release pipelines for high-reliability consumer and enterprise applications.",
   location: "Indore, India (Available for Remote Global Work)",
   email: "yogendra9644@gmail.com",
   github: "https://github.com/yogendra9644",
@@ -25,8 +25,8 @@ export const profileData: Profile = {
     "Android (Android Studio)",
   ],
   overviewParagraphs: [
-    "I am a Senior React Native Engineer based in Indore, India, focused on building, scaling, and maintaining high-reliability mobile applications across iOS and Android. My work centers on full-lifecycle mobile engineering—translating complex product requirements into clean TypeScript architectures, state management systems, and production builds shipped directly to the Apple App Store and Google Play Store.",
-    "My specialized expertise lies in real-time data monitoring and custom mobile visualization. I currently own and maintain a Duracell-licensed consumer energy application at Cloud Energy Software, managing high-frequency API telemetry polling (~10s intervals), interactive power-flow graphics across Solar, Battery, Grid, and EV systems, custom D3 + SVG chart renderers, multi-language localization, and battery-optimized background execution states.",
+    "I am a Senior React Native Developer based in Indore, India, focused on building, scaling, and maintaining high-reliability mobile applications across iOS and Android. My work centers on full-lifecycle mobile engineering—translating complex product requirements into clean TypeScript architectures, state management systems, and production builds shipped directly to the Apple App Store and Google Play Store.",
+    "My experience includes engineering white-label mobile platforms—such as the production Duracell Energy and Puredrive Energy mobile applications—managing high-frequency API telemetry polling (~10s intervals), interactive power-flow graphics across Solar, Battery, Grid, and EV systems, custom D3 + SVG chart renderers, multi-language localization, and battery-optimized background execution states.",
   ],
   technicalFocus: [
     {
@@ -39,7 +39,7 @@ export const profileData: Profile = {
     },
     {
       title: "Release Engineering & Store DevOps",
-      description: "Establishing cross-platform build automation, managing iOS match code-signing certificates, configuring Android keystores, scripting Fastlane build lanes, and orchestrating deployment across Apple TestFlight and Google Play Console Internal tracks.",
+      description: "Establishing cross-platform build automation, managing iOS Match code-signing certificates, configuring Android keystores, scripting Fastlane build lanes, and orchestrating deployment across Apple TestFlight and Google Play Console Internal tracks.",
     },
     {
       title: "Production Resiliency & Real-World Edge Cases",

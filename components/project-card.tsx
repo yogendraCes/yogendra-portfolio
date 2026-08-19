@@ -1,9 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { Project } from "@/types";
-import { ArrowRight, Code2, Cpu } from "lucide-react";
-import { EnergyFlowVisualizer } from "./energy-flow-visualizer";
-import { PipelineVisualizer } from "./pipeline-visualizer";
+import { ArrowRight, Code2, Cpu, ExternalLink } from "lucide-react";
+import { DuracellMediaGallery } from "./duracell-media-gallery";
 
 interface ProjectCardProps {
   project: Project;
@@ -25,33 +24,58 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Main Content Info */}
       <div className="p-6 space-y-4 flex-1">
-        <div>
-          <h3 className="text-xl sm:text-2xl font-bold text-[#F3F4F6] tracking-tight hover:text-[#D97706] transition-colors">
-            <Link href={`/projects/${project.slug}`}>{project.title}</Link>
-          </h3>
-          <p className="font-mono text-xs text-[#9CA3AF] mt-1">{project.subtitle}</p>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+          <div>
+            <h3 className="text-xl sm:text-2xl font-bold text-[#F3F4F6] tracking-tight hover:text-[#D97706] transition-colors">
+              <Link href={`/projects/${project.slug}`}>{project.title}</Link>
+            </h3>
+            <p className="font-mono text-xs text-[#9CA3AF] mt-1">{project.subtitle}</p>
+          </div>
+
+          {/* Store Buttons if available */}
+          {project.slug === "energy-flow" && (
+            <div className="flex items-center gap-2 shrink-0 pt-1 md:pt-0">
+              <a
+                href="https://apps.apple.com/in/app/duracell-energy/id6460931680"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-2.5 py-1 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.12)] text-[#F3F4F6] font-mono text-[11px] transition-colors flex items-center gap-1"
+              >
+                <span>View on App Store</span>
+                <ExternalLink className="w-3 h-3 text-[#D97706]" />
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.duracell"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-2.5 py-1 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.12)] text-[#F3F4F6] font-mono text-[11px] transition-colors flex items-center gap-1"
+              >
+                <span>Get it on Google Play</span>
+                <ExternalLink className="w-3 h-3 text-[#10B981]" />
+              </a>
+            </div>
+          )}
         </div>
 
         <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">{project.summary}</p>
 
-        {/* Dynamic Visual Demo Container */}
+        {/* Dynamic Visual Media Container */}
         <div className="py-2">
-          {project.slug === "energy-flow" && <EnergyFlowVisualizer />}
-          {project.slug === "release-ci-cd" && <PipelineVisualizer />}
+          {project.slug === "energy-flow" && <DuracellMediaGallery />}
           {project.slug === "sdgme" && (
             <div className="w-full bg-[#0B0D10] border border-[rgba(255,255,255,0.08)] rounded-xl p-4 sm:p-5 font-mono text-xs space-y-3">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between text-[#9CA3AF] border-b border-[rgba(255,255,255,0.08)] pb-2 gap-1">
-                <span>SYSTEMS LINK 2000 LTD // ESG METRICS</span>
-                <span className="text-[#10B981] font-semibold">FCM PUSH ACTIVE</span>
+                <span>SYSTEMS LINK 2000 LTD // SUSTAINABILITY METRICS</span>
+                <span className="text-[#10B981] font-semibold">ENTERPRISE RELEASE</span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center pt-1">
                 <div className="bg-[#0F1115] p-2 rounded border border-[rgba(255,255,255,0.06)]">
-                  <div className="text-[9px] sm:text-[10px] text-[#9CA3AF]">DAILY SAVINGS</div>
-                  <div className="text-xs sm:text-sm font-bold text-[#10B981]">14.2 kg CO₂</div>
+                  <div className="text-[9px] sm:text-[10px] text-[#9CA3AF]">TARGET PLATFORMS</div>
+                  <div className="text-xs sm:text-sm font-bold text-[#10B981]">iOS & Android</div>
                 </div>
                 <div className="bg-[#0F1115] p-2 rounded border border-[rgba(255,255,255,0.06)]">
-                  <div className="text-[9px] sm:text-[10px] text-[#9CA3AF]">MONTHLY TREND</div>
-                  <div className="text-xs sm:text-sm font-bold text-[#3B82F6]">+28.5%</div>
+                  <div className="text-[9px] sm:text-[10px] text-[#9CA3AF]">PUSH METRICS</div>
+                  <div className="text-xs sm:text-sm font-bold text-[#3B82F6]">FCM Active</div>
                 </div>
                 <div className="bg-[#0F1115] p-2 rounded border border-[rgba(255,255,255,0.06)]">
                   <div className="text-[9px] sm:text-[10px] text-[#9CA3AF]">UN GOAL ALIGN</div>

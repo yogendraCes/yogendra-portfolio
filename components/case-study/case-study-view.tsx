@@ -1,9 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { Project } from "@/types";
-import { ArrowLeft, Cpu, CheckCircle2, Code2, Terminal } from "lucide-react";
-import { EnergyFlowVisualizer } from "../energy-flow-visualizer";
-import { PipelineVisualizer } from "../pipeline-visualizer";
+import { ArrowLeft, Cpu, CheckCircle2, Code2, Terminal, ExternalLink } from "lucide-react";
+import { DuracellMediaGallery } from "../duracell-media-gallery";
 
 interface CaseStudyViewProps {
   project: Project;
@@ -36,7 +35,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
               {project.category}
             </span>
             <span className="font-mono text-xs text-[#10B981] bg-[#10B981]/10 px-2.5 py-1 rounded border border-[#10B981]/30">
-              ● Production App Store Deployment
+              ● Shipped App Store & Play Store Release
             </span>
           </div>
 
@@ -46,6 +45,39 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
           <p className="text-lg sm:text-xl text-[#9CA3AF] leading-relaxed font-normal">
             {project.subtitle}
           </p>
+
+          {/* Verified Store Links Buttons */}
+          {project.slug === "energy-flow" && (
+            <div className="pt-2 flex flex-wrap gap-3">
+              <a
+                href="https://apps.apple.com/in/app/duracell-energy/id6460931680"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-[#6px] bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+              >
+                <span>View Duracell on App Store</span>
+                <ExternalLink className="w-3.5 h-3.5 text-[#D97706]" />
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.duracell"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-[#6px] bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#10B981]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+              >
+                <span>Get Duracell on Google Play</span>
+                <ExternalLink className="w-3.5 h-3.5 text-[#10B981]" />
+              </a>
+              <a
+                href="https://apps.apple.com/in/app/puredrive/id1536396851"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-[#6px] bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#3B82F6]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+              >
+                <span>View Puredrive on App Store</span>
+                <ExternalLink className="w-3.5 h-3.5 text-[#3B82F6]" />
+              </a>
+            </div>
+          )}
 
           {/* Metadata Grid Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-[rgba(255,255,255,0.08)] font-mono text-xs">
@@ -70,14 +102,13 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
       </header>
 
       {/* Main Editorial Case Study Column */}
-      <main className="max-w-[840px] mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-16">
-        {/* Interactive Visualizer Node */}
+      <main className="max-w-[960px] mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-16">
+        {/* Interactive Production Screenshots Node */}
         <section className="space-y-3">
           <div className="font-mono text-xs text-[#D97706] uppercase tracking-wider font-semibold">
-            SYSTEM ARCHITECTURE & VISUAL SIMULATION
+            PRODUCTION MOBILE APPLICATION MEDIA GALLERY
           </div>
-          {project.slug === "energy-flow" && <EnergyFlowVisualizer />}
-          {project.slug === "release-ci-cd" && <PipelineVisualizer />}
+          {project.slug === "energy-flow" && <DuracellMediaGallery />}
           {project.slug === "sdgme" && (
             <div className="w-full bg-[#0B0D10] border border-[rgba(255,255,255,0.08)] rounded-xl p-6 font-mono text-xs space-y-4">
               <div className="text-[#D97706] font-bold">SDGME SUSTAINABILITY METRIC DASHBOARD</div>
@@ -125,7 +156,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
         <section className="space-y-4 bg-[#0F1115] border border-[rgba(255,255,255,0.08)] rounded-xl p-6">
           <h3 className="text-lg font-bold text-[#F3F4F6] flex items-center gap-2">
             <Cpu className="w-5 h-5 text-[#D97706]" />
-            <span>Key Technical Challenges Overcome</span>
+            <span>Key Technical Challenges & Engineering Solutions</span>
           </h3>
           <ul className="space-y-3 font-sans text-sm text-[#9CA3AF]">
             {project.challenges.map((challenge, i) => (
@@ -143,7 +174,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
         <section className="space-y-4 bg-[#0F1115] border border-[rgba(255,255,255,0.08)] rounded-xl p-6">
           <h3 className="text-lg font-bold text-[#F3F4F6] flex items-center gap-2">
             <CheckCircle2 className="w-5 h-5 text-[#10B981]" />
-            <span>Verified Results & Production Impact</span>
+            <span>Verified Results & Production Status</span>
           </h3>
           <ul className="space-y-2 font-sans text-sm text-[#9CA3AF]">
             {project.outcome.map((res, i) => (
@@ -179,14 +210,14 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
             href="/projects"
             className="w-full sm:w-auto px-6 py-3 rounded bg-[#16181D] border border-[rgba(255,255,255,0.16)] text-[#F3F4F6] font-mono text-xs font-semibold hover:border-[#D97706]/50 transition-colors text-center"
           >
-            ← View All Case Studies
+            ← View All Production Case Studies
           </Link>
-          <Link
-            href="/contact"
+          <a
+            href="mailto:yogendra9644@gmail.com"
             className="w-full sm:w-auto px-6 py-3 rounded bg-[#D97706] text-[#08090A] font-mono text-xs font-bold hover:bg-[#F59E0B] transition-colors text-center shadow-lg shadow-amber-950/20"
           >
-            Schedule Technical Consultation →
-          </Link>
+            Contact Yogendra Directly →
+          </a>
         </div>
       </main>
     </div>
