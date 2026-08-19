@@ -17,10 +17,10 @@ export function CTASection() {
             <span>DIRECT CONTACT</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-            Have a mobile project to build?
+            Have a product to build?
           </h2>
           <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-            Let&apos;s talk about what you&apos;re working on. Whether you need technical leadership for a new mobile product, want to optimize an existing React Native app, or have a open role to discuss.
+            I help teams build, improve, and ship production applications—from new mobile apps and complex interfaces to performance optimization, architecture, and store releases.
           </p>
         </div>
 
@@ -31,12 +31,25 @@ export function CTASection() {
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] uppercase tracking-wider font-semibold">
                 <span className="w-2 h-2 rounded-full bg-[#D97706]" aria-hidden="true" />
-                <span>FOR CLIENTS & PRODUCT TEAMS</span>
+                <span>HOW I HELP TEAMS</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#F3F4F6]">Discuss a Mobile Project</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-[#F3F4F6]">Project & Contract Engineering</h3>
               <p className="text-sm text-[#9CA3AF] leading-relaxed">
-                I assist engineering teams with React Native architecture, real-time data telemetry, performance optimization, and store releases.
+                Available for end-to-end mobile development, feature integration, performance optimization, and store release pipelines.
               </p>
+
+              {/* Engagement Types List */}
+              <div className="pt-2 space-y-2">
+                <div className="font-mono text-[11px] text-[#D97706] uppercase tracking-wider font-semibold">Ways We Can Work Together:</div>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 font-mono text-xs text-[#9CA3AF]">
+                  <li className="flex items-center gap-1.5">• New React Native apps</li>
+                  <li className="flex items-center gap-1.5">• Feature development</li>
+                  <li className="flex items-center gap-1.5">• UI performance & profiling</li>
+                  <li className="flex items-center gap-1.5">• Custom charts & graphics</li>
+                  <li className="flex items-center gap-1.5">• App & Play Store releases</li>
+                  <li className="flex items-center gap-1.5">• Contract RN engineering</li>
+                </ul>
+              </div>
             </div>
 
             <div className="pt-4 border-t border-[rgba(255,255,255,0.06)] space-y-3">
@@ -49,7 +62,7 @@ export function CTASection() {
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>
               <div className="font-mono text-[11px] text-[#9CA3AF] text-center">
-                1-click direct email response within 24h
+                Direct email response
               </div>
             </div>
           </div>
@@ -59,11 +72,11 @@ export function CTASection() {
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 font-mono text-xs text-[#3B82F6] uppercase tracking-wider font-semibold">
                 <span className="w-2 h-2 rounded-full bg-[#3B82F6]" aria-hidden="true" />
-                <span>FOR RECRUITERS & TECH LEADS</span>
+                <span>SENIOR ROLES & CONSULTING</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#F3F4F6]">Direct Recruitment & Verification</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-[#F3F4F6]">Direct Contact & Resume</h3>
               <p className="text-sm text-[#9CA3AF] leading-relaxed">
-                Verify stack compatibility, download my technical resume PDF, or connect via direct email.
+                Download my PDF resume, review my technical experience, or get in touch regarding full-time roles and consultations.
               </p>
             </div>
 

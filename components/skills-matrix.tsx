@@ -10,13 +10,13 @@ export function SkillsMatrix() {
         <div className="max-w-[760px] space-y-3">
           <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] tracking-wider uppercase">
             <Wrench className="w-4 h-4" />
-            <span>TECHNICAL CAPABILITY MATRIX</span>
+            <span>SKILLS & CAPABILITIES</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-            Production Tooling & Engineering Depth
+            Technical Skills & Tools
           </h2>
           <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-            Categorized technical capabilities and hands-on production depth across full-lifecycle React Native mobile application development.
+            Technologies and engineering practices I use to build and ship cross-platform mobile applications.
           </p>
         </div>
 
@@ -48,11 +48,11 @@ export function SkillsMatrix() {
                 </div>
               </div>
 
-              {/* Production Depth Box */}
+              {/* Production Experience Box */}
               <div className="pt-4 border-t border-[rgba(255,255,255,0.06)] text-xs text-[#9CA3AF] space-y-1">
                 <div className="font-mono text-[10px] text-[#D97706] uppercase tracking-wider font-semibold flex items-center gap-1">
                   <CheckCircle2 className="w-3 h-3 text-[#10B981]" />
-                  <span>PRODUCTION OWNERSHIP DEPTH</span>
+                  <span>PRODUCTION EXPERIENCE</span>
                 </div>
                 <p className="leading-relaxed font-sans">{category.productionDepth}</p>
               </div>

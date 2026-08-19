@@ -3,11 +3,11 @@ import { Experience } from "@/types";
 export const experienceData: Experience[] = [
   {
     id: "ces-software-developer",
-    role: "Software Developer",
+    role: "Software Developer / Senior React Native Developer",
     company: "Cloud Energy Software",
     period: "April 2021 – Present",
     location: "Mumbai, India",
-    scope: "End-to-end development, architecture, and production delivery of mobile applications in energy and utility domains.",
+    scope: "End-to-end development, architecture, and production delivery of cross-platform mobile applications.",
     type: "Full-time",
     responsibilities: [
       "Owned end-to-end development of multiple production-grade mobile applications in energy and utility domains.",
@@ -28,9 +28,10 @@ export const experienceData: Experience[] = [
     company: "Forebear Productions",
     period: "March 2020 – February 2023",
     location: "Indore, India",
-    scope: "Cross-platform mobile application development, responsive UI engineering, REST API integration, and production release delivery.",
-    type: "Full-time",
+    scope: "Contract engagement: Worked on Cloud Energy Software projects through Forebear Productions before transitioning to Cloud Energy Software directly.",
+    type: "Contract",
     responsibilities: [
+      "Worked on Cloud Energy Software projects through Forebear Productions on a contract basis before transitioning directly to Cloud Energy Software.",
       "Developed and maintained cross-platform mobile applications from development to production release.",
       "Built responsive and scalable UI components with optimized layouts and animations.",
       "Integrated REST APIs and handled asynchronous data efficiently.",
@@ -39,4 +40,5 @@ export const experienceData: Experience[] = [
     ],
   },
 ];
+
 

@@ -39,9 +39,9 @@
 6. **Complete Skills Matrix:** Added Zustand, Azure DevOps, Jest, and CI/CD pipelines to capability matrix.
 
 ### B. Conflicts & Discrepancies Resolved
-1. **Employment Period Overlap:**
-   - **Resume State:** Cloud Energy Software (April 2021 – Present) and Forebear Productions (March 2020 – February 2023).
-   - **Action Taken:** Displayed exact dates as stated in the resume without modifying, hiding, or fabricating narrative justifications for the overlap.
+1. **Employment Period Overlap (March 2020 – Feb 2023 vs. April 2021 – Present):**
+   - **Context:** During part of the Forebear Productions employment (March 2020 – Feb 2023), Yogendra worked on Cloud Energy Software projects through Forebear Productions on a contract basis. In April 2021, Yogendra transitioned to working directly with Cloud Energy Software (April 2021 – Present). The Forebear engagement ended in February 2023.
+   - **Action Taken:** Dates are presented exactly as stated in the resume (Cloud Energy Software: April 2021 – Present; Forebear Productions: March 2020 – February 2023) with clear, concise scope text explaining the contract-to-direct transition without modifying dates or implying simultaneous unrelated full-time roles.
 2. **Project Portfolio Scope:**
    - **Conflict:** Draft documentation previously included `SDGme / Systems Link 2000 Ltd` and treated Fastlane as a separate project.
    - **Resolution:** Replaced SDGme with **Stain Care Pro** (verified in resume). Fastlane is positioned under release engineering & DevOps responsibilities. Portfolio contains exactly the 3 resume projects: Duracell Energy, Puredrive, Stain Care Pro.

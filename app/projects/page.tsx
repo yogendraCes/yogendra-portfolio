@@ -7,20 +7,20 @@ import { Footer } from "@/components/footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Production Case Studies",
-  description: "Comprehensive list of React Native architectural case studies: Duracell Energy, Puredrive, and Stain Care Pro.",
+  title: "Production Projects & Case Studies",
+  description: "React Native mobile engineering projects: Duracell Energy, Puredrive, and Stain Care Pro.",
   alternates: {
     canonical: "https://yogendrayadav.dev/projects",
   },
   openGraph: {
-    title: "Production Case Studies | Yogendra Yadav",
-    description: "Explore in-depth technical case studies documenting mobile app architecture, live data telemetry, rendering optimizations, and production releases across shipped iOS and Android applications.",
+    title: "Production Projects & Case Studies | Yogendra Yadav",
+    description: "Explore technical case studies documenting mobile app architecture, data visualizations, rendering optimizations, and production releases across shipped iOS and Android applications.",
     url: "https://yogendrayadav.dev/projects",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Production Case Studies | Yogendra Yadav",
-    description: "Explore in-depth technical case studies documenting mobile app architecture, live data telemetry, rendering optimizations, and production releases across shipped iOS and Android applications.",
+    title: "Production Projects & Case Studies | Yogendra Yadav",
+    description: "Explore technical case studies documenting mobile app architecture, data visualizations, rendering optimizations, and production releases across shipped iOS and Android applications.",
   },
 };
 
@@ -32,13 +32,13 @@ export default function ProjectsIndexPage() {
         <div className="bg-grid-pattern py-12 sm:py-16 border-b border-[rgba(255,255,255,0.08)]">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-4">
             <div className="font-mono text-xs text-[#D97706] tracking-wider uppercase font-semibold">
-              CASE STUDIES INDEX // FULL PRODUCTION PORTFOLIO
+              SELECTED PROJECTS // CASE STUDIES INDEX
             </div>
             <h1 className="text-3xl sm:text-5xl font-bold text-[#F3F4F6] tracking-tight">
-              Production Case Studies
+              Production Projects & Case Studies
             </h1>
             <p className="text-base sm:text-lg text-[#9CA3AF] max-w-[760px] leading-relaxed">
-              Explore in-depth technical case studies documenting mobile app architecture, live data streaming, threading optimizations, and release engineering across shipped iOS and Android applications.
+              Technical case studies documenting mobile app architecture, data visualizations, rendering optimizations, and release engineering across shipped iOS and Android applications.
             </p>
           </div>
         </div>

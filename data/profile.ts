@@ -22,7 +22,7 @@ export const profileData: Profile = {
   linkedin: "https://linkedin.com/in/yogendra9644",
   upwork: "https://www.upwork.com/freelancers/~0111ed1b2c3fadb1f8?mp_source=share",
   resumeUrl: "/resume/Yogendra_Yadav_Resume_2026.pdf",
-  statusText: "Available for Senior Roles & Select Technical Consultations",
+  statusText: "Available for Senior Roles & Contract Development",
   coreStack: [
     "React Native",
     "TypeScript",

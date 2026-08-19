@@ -41,11 +41,11 @@ export default function ContactPage() {
             </div>
 
             <h1 className="text-3xl sm:text-5xl font-bold text-[#F3F4F6] tracking-tight">
-              Have a mobile project to build?
+              Have a product to build?
             </h1>
 
             <p className="text-lg sm:text-xl text-[#9CA3AF] max-w-[760px] leading-relaxed">
-              Let&apos;s talk about what you&apos;re working on.
+              Let&apos;s talk.
             </p>
           </div>
         </section>
@@ -59,11 +59,11 @@ export default function ContactPage() {
               <div className="p-8 rounded-xl bg-[#0F1115] border border-[rgba(255,255,255,0.08)] space-y-6 flex flex-col justify-between">
                 <div className="space-y-4">
                   <div className="font-mono text-xs text-[#D97706] uppercase tracking-wider font-semibold">
-                    PRIMARY CONTACT METHOD
+                    DIRECT EMAIL
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-[#F3F4F6]">Direct Email</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold text-[#F3F4F6]">Email Me Directly</h2>
                   <p className="text-sm text-[#9CA3AF] leading-relaxed">
-                    Click to open your email client directly. I respond to all direct inquiries within 24 business hours.
+                    Click to open your email client to discuss mobile development, feature requests, contract roles, or technical inquiries.
                   </p>
 
                   <div className="p-4 rounded-lg bg-[#16181D] border border-[rgba(255,255,255,0.08)] space-y-2">

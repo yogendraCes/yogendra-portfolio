@@ -89,7 +89,7 @@
 - **Decision**: Adopt `/docs/Yogendra_Yadav_Resume_2026.docx` as the sole factual source of truth for all portfolio content.
 - **Primary Positioning Balance**: Calibrated identity to **Senior React Native Developer / Software Engineer**. Communicates broad software engineering capabilities (architecture, APIs, UI, performance, CI/CD, data handling, mentoring) paired with deep React Native specialization. Avoided domain over-specialization ("Energy Systems Specialist", "IoT Specialist") while preserving energy applications as a prime example of production work.
 - **Strict 3-Project Alignment**: Restricted projects to the exact 3 listed in the resume: **Duracell Energy** (flagship case study), **Puredrive**, and **Stain Care Pro**. Removed non-resume projects (SDGme) and avoided treating Fastlane as a standalone project.
-- **Factual Employment Dates & Overlap**: Present exact employment dates as stated in the resume (Cloud Energy Software: April 2021 – Present; Forebear Productions: March 2020 – February 2023) without hiding or inventing explanations for the overlap.
+- **Factual Employment Dates & Overlap**: Present exact employment dates as stated in the resume (Cloud Energy Software: April 2021 – Present; Forebear Productions: March 2020 – February 2023) with clear, concise scope text explaining the contract-to-direct transition (worked on Cloud Energy Software projects through Forebear Productions on a contract basis before transitioning directly to Cloud Energy Software in April 2021; Forebear engagement ended in Feb 2023).
 - **Privacy & Public Exposure Safeguards**: Withheld personal contact phone number (`8120004443`) from public website display to preserve privacy. Direct outreach is channeled via verified public email (`yogendra9644@gmail.com`) and LinkedIn (`https://linkedin.com/in/yogendra9644`).
 
 ---
@@ -103,6 +103,17 @@
   - **Email (`yogendra9644@gmail.com`)**: Positioned as primary direct communication method.
   - **Resume Asset (`/resume/Yogendra_Yadav_Resume_2026.pdf`)**: Verified existing PDF asset and linked across Navigation, Hero, Contact, Footer, and Resume pages.
 - **Security & Accessibility Compliance**: All external links enforce `target="_blank" rel="noopener noreferrer"`, minimum 44px touch targets, and descriptive `aria-label` tags for screen readers.
+
+---
+
+## 14. Copy Refinement, Humanization & Freelance Conversion Strategy
+- **40% Reduction in Corporate/AI Fluff**: Replaced over-polished marketing phrases ("Architectural Case Studies & Production Mobile Infrastructure", "Production Ownership Depth", "Direct Recruitment & Verification", "1-click response within 24h") with direct, human engineering language ("Selected Work", "Production Experience", "Direct Contact & Resume", "Direct email response").
+- **Core Identity & Domain Balance**: Solidified primary positioning as **Senior React Native Developer / Software Engineer**. Preserved technical depth (React Native, TypeScript, Redux, D3.js, SVG, Fastlane, CI/CD, Reanimated, Jest) while positioning energy management as one complex production category rather than an over-specialized domain identity.
+- **Consistent 6+ Years Experience Claim**: Standardized all experience mentions across Hero, Timeline, and Resume to **6+ years** to match the source resume.
+- **Clear Contract-to-Direct Transition Copy**: Clarified Forebear Productions (March 2020 – Feb 2023) and Cloud Energy Software (April 2021 – Present) overlap directly in the timeline as a contract-to-direct transition without altering dates or over-explaining on the homepage.
+- **Freelance Conversion & Service Capabilities**: Broadened call-to-action language ("Have a product to build?") and added explicit engagement types (New React Native apps, feature development, UI performance profiling, custom D3/SVG charts, store releases, contract RN development) without publishing unconfirmed rates or delivery guarantees.
+- **Zero Fabricated Social Proof**: Excluded artificial testimonial sections in favor of verified proof of work (App Store & Play Store live links, production screenshots, resume PDF, GitHub repo, LinkedIn).
+
 
 
 

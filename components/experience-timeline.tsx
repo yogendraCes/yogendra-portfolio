@@ -10,13 +10,13 @@ export function ExperienceTimeline() {
         <div className="max-w-[760px] space-y-3">
           <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] tracking-wider uppercase">
             <Briefcase className="w-4 h-4" />
-            <span>PROVEN TRACK RECORD</span>
+            <span>WORK HISTORY</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-            Professional Work History & Achievements
+            Work History & Experience
           </h2>
           <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-            Over 5 years of verified experience building, shipping, and maintaining production mobile applications across full-time and embedded contract roles.
+            6+ years of experience building, shipping, and maintaining production mobile applications across full-time and contract engagements.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export function ExperienceTimeline() {
                 {/* Scope */}
                 <p className="text-sm sm:text-base text-[#F3F4F6] font-medium leading-relaxed bg-[#16181D] p-4 rounded-lg border border-[rgba(255,255,255,0.06)] max-w-[900px]">
                   <span className="font-mono text-xs text-[#D97706] uppercase tracking-wider block mb-1">
-                    ROLE SCOPE & RESPONSIBILITY:
+                    ROLE SCOPE:
                   </span>
                   {exp.scope}
                 </p>
@@ -57,7 +57,7 @@ export function ExperienceTimeline() {
                 {/* Technical Responsibilities Checklist */}
                 <div className="space-y-3">
                   <div className="font-mono text-xs text-[#6B7280] uppercase tracking-wider">
-                    KEY TECHNICAL ACHIEVEMENTS & DELIVERABLES
+                    KEY RESPONSIBILITIES & DELIVERABLES
                   </div>
                   <ul className="grid grid-cols-1 gap-2.5">
                     {exp.responsibilities.map((resp, i) => (

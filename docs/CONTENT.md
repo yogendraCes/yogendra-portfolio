@@ -35,9 +35,9 @@
 ### Direct Communication Details
 - **Location:** Indore, India *(Available for Remote Global Work)*
 - **Direct Email:** `yogendra9644@gmail.com`
+- **GitHub Profile:** `https://github.com/yogendraCes/yogendra-portfolio`
 - **LinkedIn Profile:** `https://linkedin.com/in/yogendra9644`
-- **GitHub Profile:** `[NEEDS INPUT: GitHub Profile URL]` *(Centralized placeholder)*
-- **Upwork Profile:** `[NEEDS INPUT: Upwork Profile URL]` *(Centralized placeholder)*
+- **Upwork Profile:** `https://www.upwork.com/freelancers/~0111ed1b2c3fadb1f8?mp_source=share`
 
 ---
 
@@ -67,10 +67,10 @@ Proven track record of owning end-to-end application development, optimizing ren
 
 ## 3. Verified Experience & Employment History
 
-### 1. Software Developer — Cloud Energy Software
+### 1. Software Developer / Senior React Native Developer — Cloud Energy Software
 - **Location:** Mumbai, India  
 - **Period:** April 2021 – Present  
-- **Scope:** End-to-end development, architecture, and production delivery of mobile applications in energy and utility domains.  
+- **Scope:** End-to-end development, architecture, and production delivery of cross-platform mobile applications.  
 - **Key Responsibilities:**
   - Owned end-to-end development of multiple production-grade mobile applications in energy and utility domains.
   - Designed scalable architecture and made key technical decisions including library selection and system design.
@@ -86,8 +86,9 @@ Proven track record of owning end-to-end application development, optimizing ren
 ### 2. React Native Developer — Forebear Productions
 - **Location:** Indore, India  
 - **Period:** March 2020 – February 2023  
-- **Scope:** Cross-platform mobile application development, responsive UI engineering, REST API integration, and production release delivery.  
+- **Scope:** Contract engagement: Worked on Cloud Energy Software projects through Forebear Productions before transitioning to Cloud Energy Software directly.  
 - **Key Responsibilities:**
+  - Worked on Cloud Energy Software projects through Forebear Productions on a contract basis before transitioning directly to Cloud Energy Software.
   - Developed and maintained cross-platform mobile applications from development to production release.
   - Built responsive and scalable UI components with optimized layouts and animations.
   - Integrated REST APIs and handled asynchronous data efficiently.

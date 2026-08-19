@@ -36,7 +36,7 @@ export default function ResumePage() {
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] tracking-wider uppercase">
                 <span className="w-2 h-2 rounded-full bg-[#10B981]" aria-hidden="true" />
-                <span>VERIFIED PROFESSIONAL RESUME</span>
+                <span>RESUME & EXPERIENCE</span>
               </div>
               <h1 className="text-3xl font-bold text-[#F3F4F6] tracking-tight">{profileData.name}</h1>
               <p className="font-mono text-sm text-[#9CA3AF]">{profileData.title}</p>

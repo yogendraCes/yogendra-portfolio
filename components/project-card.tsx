@@ -75,7 +75,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               <Code2 className="w-3.5 h-3.5" />
               <span>{project.technicalHighlight.label}</span>
             </span>
-            <span className="text-[10px] text-[#9CA3AF]">ARCHITECTURAL FOCUS</span>
+            <span className="text-[10px] text-[#9CA3AF]">KEY TECHNICAL FOCUS</span>
           </div>
           <p className="text-xs text-[#9CA3AF] leading-normal font-sans">
             {project.technicalHighlight.description}
@@ -95,7 +95,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Stack Badges */}
         <div className="pt-2">
-          <div className="font-mono text-[11px] text-[#9CA3AF] mb-2 uppercase">TECHNOLOGY MATRIX</div>
+          <div className="font-mono text-[11px] text-[#9CA3AF] mb-2 uppercase">TECHNOLOGY STACK</div>
           <div className="flex flex-wrap gap-1.5">
             {project.primaryStack.map((tech) => (
               <span
@@ -114,10 +114,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <span className="font-mono text-xs text-[#9CA3AF]">{project.company}</span>
         <Link
           href={`/projects/${project.slug}`}
-          aria-label={`Read Architectural Case Study for ${project.title}`}
+          aria-label={`Read Case Study for ${project.title}`}
           className="font-mono text-xs font-semibold text-[#D97706] hover:text-[#F59E0B] transition-colors flex items-center gap-1 group py-1 min-h-[44px]"
         >
-          <span>Read Architectural Case Study</span>
+          <span>Read Case Study</span>
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>

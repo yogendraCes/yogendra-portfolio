@@ -11,13 +11,13 @@ export function ProjectShowcase() {
         <div className="max-w-[760px] space-y-3">
           <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] tracking-wider uppercase">
             <Layers className="w-4 h-4" />
-            <span>SELECTED PRODUCTION WORK</span>
+            <span>SELECTED WORK</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-            Architectural Case Studies & Production Mobile Infrastructure
+            Featured Production Projects & Case Studies
           </h2>
           <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-            Detailed technical breakdowns of real-world mobile engineering work—featuring live telemetry graphs, custom SVG path rendering, Reanimated UI-thread execution, and automated Fastlane release pipelines.
+            Real-world mobile engineering work—featuring custom SVG data visualizations, state management architectures, UI thread performance, and automated release pipelines.
           </p>
         </div>
 

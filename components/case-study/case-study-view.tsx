@@ -19,7 +19,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
             className="flex items-center gap-1.5 hover:text-[#D97706] transition-colors"
           >
             <ArrowLeft className="w-4 h-4 text-[#D97706]" />
-            <span>Back to Production Case Studies</span>
+            <span>Back to Projects</span>
           </Link>
           <span className="hidden sm:inline uppercase text-[#9CA3AF]">
             CASE STUDY // {project.slug}
@@ -206,7 +206,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
         <section className="space-y-4 pt-4 border-t border-[rgba(255,255,255,0.06)]">
           <h3 className="text-lg font-bold text-[#F3F4F6] flex items-center gap-2">
             <Terminal className="w-5 h-5 text-[#D97706]" />
-            <span>Full Technology & Dependency Matrix</span>
+            <span>Full Technology Stack</span>
           </h3>
           <div className="flex flex-wrap gap-2">
             {project.fullStack.map((tech) => (
@@ -226,7 +226,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
             href="/projects"
             className="w-full sm:w-auto px-6 py-3 rounded bg-[#16181D] border border-[rgba(255,255,255,0.16)] text-[#F3F4F6] font-mono text-xs font-semibold hover:border-[#D97706]/50 transition-colors text-center"
           >
-            ← View All Production Case Studies
+            ← View All Projects
           </Link>
           <a
             href="mailto:yogendra9644@gmail.com"
