@@ -39,10 +39,15 @@ export interface Project {
   outcome: string[];
   sections: CaseStudySection[];
   links?: {
+    duracellAppStore?: string;
+    duracellPlayStore?: string;
+    puredriveAppStore?: string;
+    puredrivePlayStore?: string;
     appStore?: string;
     playStore?: string;
     github?: string;
     demo?: string;
+    [key: string]: string | undefined;
   };
 }
 

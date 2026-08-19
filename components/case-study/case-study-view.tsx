@@ -46,36 +46,50 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
             {project.subtitle}
           </p>
 
-          {/* Verified Store Links Buttons */}
+          {/* Verified Production Proof & Public Store Links */}
           {project.slug === "energy-flow" && (
-            <div className="pt-2 flex flex-wrap gap-3">
-              <a
-                href="https://apps.apple.com/in/app/duracell-energy/id6460931680"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 rounded-[#6px] bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
-              >
-                <span>View Duracell on App Store</span>
-                <ExternalLink className="w-3.5 h-3.5 text-[#D97706]" />
-              </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.duracell"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 rounded-[#6px] bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#10B981]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
-              >
-                <span>Get Duracell on Google Play</span>
-                <ExternalLink className="w-3.5 h-3.5 text-[#10B981]" />
-              </a>
-              <a
-                href="https://apps.apple.com/in/app/puredrive/id1536396851"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 rounded-[#6px] bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#3B82F6]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
-              >
-                <span>View Puredrive on App Store</span>
-                <ExternalLink className="w-3.5 h-3.5 text-[#3B82F6]" />
-              </a>
+            <div className="pt-2 space-y-3">
+              <div className="font-mono text-xs text-[#9CA3AF] uppercase tracking-wider">
+                Production Applications Available on iOS & Android:
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://apps.apple.com/in/app/duracell-energy/id6460931680"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+                >
+                  <span>Duracell Energy — View on App Store</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-[#D97706]" aria-hidden="true" />
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.duracell"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#10B981]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+                >
+                  <span>Duracell Energy — Get it on Google Play</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-[#10B981]" aria-hidden="true" />
+                </a>
+                <a
+                  href="https://apps.apple.com/in/app/puredrive/id1536396851"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#3B82F6]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+                >
+                  <span>Puredrive — View on App Store</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-[#3B82F6]" aria-hidden="true" />
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.puredrive.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#3B82F6]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+                >
+                  <span>Puredrive — Get it on Google Play</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-[#3B82F6]" aria-hidden="true" />
+                </a>
+              </div>
             </div>
           )}
 
