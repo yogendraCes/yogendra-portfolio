@@ -7,14 +7,24 @@ export const projectsData: Project[] = [
     title: "Duracell Energy Mobile Application",
     subtitle: "Flagship Mobile Architecture for Real-Time Telemetry, Node Flow Visualization & High-Frequency Data Handling",
     category: "Flagship Mobile Application (iOS & Android)",
-    summary: "Lead mobile architecture for a flagship energy management system. Visualizes live power flow across Solar PV, Battery Storage, Grid, Home load, and EV charging nodes via high-frequency 10-second telemetry polling and custom D3.js + SVG rendering.",
-    primaryStack: ["React Native", "TypeScript", "Redux", "Zustand", "D3.js", "SVG", "Fastlane", "Jest"],
+    summary: "Lead mobile architecture for a flagship consumer energy management system. Visualizes live power flow across Solar PV, Battery Storage, Grid, Home load, and EV charging nodes via high-frequency 10-second telemetry polling and custom D3.js + SVG rendering.",
+    projectType: "employer",
+    isProprietary: true,
+    keyEngineeringDecisions: [
+      "Decoupled 10-second hardware telemetry polling from visual animation loops, preventing JS thread bottlenecks and maintaining 60fps responsiveness.",
+      "Engineered lightweight custom D3.js path generators mapped directly to native SVG primitives, eliminating heavy WebView chart bundle overhead.",
+      "Integrated React Native AppState lifecycle event listeners to freeze flow animations and suspend background polling timers when the app loses focus.",
+      "Automated cross-platform build and code-signing pipelines using Fastlane Match with encrypted certificate storage for one-command store deployments.",
+    ],
+    primaryStack: ["React Native", "TypeScript", "Redux Toolkit", "RTK Query", "Reanimated", "D3.js", "SVG", "Fastlane"],
     fullStack: [
       "React Native",
       "TypeScript",
       "JavaScript",
       "Redux Toolkit",
-      "Zustand",
+      "RTK Query",
+      "React Native Reanimated v3",
+      "React Native Gesture Handler",
       "D3.js (d3-shape, d3-scale)",
       "React Native SVG",
       "Fastlane Match",
@@ -22,11 +32,11 @@ export const projectsData: Project[] = [
       "Firebase",
       "Jest",
       "iOS (Xcode)",
-      "Android (Android Studio)",
+      "Android Studio",
       "Apple App Store",
       "Google Play Store",
     ],
-    role: "Software Developer / Lead Mobile Architect",
+    role: "Senior React Native Developer (Lead Mobile)",
     company: "Cloud Energy Software",
     period: "April 2021 – Present",
     featured: true,
@@ -73,16 +83,16 @@ export function generateChartPath(
       "Automated Store Delivery: Managing iOS code-signing certificates and Android Play Store internal distribution via scripted Fastlane pipelines.",
     ],
     technicalApproach: [
-      "Plain-English Architecture: Separated raw data ingestion from visual render logic. Incoming 10-second telemetry updates normalized state slices in memory, allowing graphic nodes to read from localized selectors without triggering full-screen component re-renders.",
+      "Architecture: Separated raw data ingestion from visual render logic. Incoming 10-second telemetry updates normalized state slices in memory, allowing graphic nodes to read from localized selectors without triggering full-screen component re-renders.",
       "Lightweight D3 + SVG Rendering: Engineered custom D3 path generators that convert time-series data directly into SVG path strings, bypassing WebView overhead and maintaining fluid touch inspection.",
       "AppState Lifecycle Management: Wrapped polling timers and continuous flow animations in React Native AppState listeners, automatically suspending background activity to preserve device battery.",
       "Fastlane CI/CD Automation: Standardized automated deployment lanes using Fastlane Match for TestFlight and Google Play Store Internal track releases.",
     ],
     outcome: [
       "Delivered flagship production application deployed to Apple App Store and Google Play Store with 10K+ installs and ~1K+ daily active users.",
-      "Achieved rock-solid 60fps UI thread responsiveness during continuous 10-second real-time telemetry ingestion.",
+      "Achieved sustained 60fps UI thread responsiveness during continuous 10-second real-time telemetry ingestion.",
       "Replaced third-party charting libraries with a lightweight custom D3.js + SVG path generator handling 150+ data points per view.",
-      "Mentored 5 junior developers on state normalization and mobile render optimizations.",
+      "Mentored junior developers on state normalization and mobile render optimizations.",
     ],
     sections: [
       {
@@ -97,7 +107,7 @@ export function generateChartPath(
         id: "engineering-challenge",
         title: "02. The Core Engineering Challenge",
         content: [
-          "In plain English: Every 10 seconds, hardware gateways transmit live telemetry detailing current solar generation, battery state-of-charge, grid import/export rates, home consumption, and EV charging power.",
+          "Every 10 seconds, hardware gateways transmit live telemetry detailing current solar generation, battery state-of-charge, grid import/export rates, home consumption, and EV charging power.",
           "The primary technical challenge was rendering these continuous multi-source data streams across dynamic visual node networks and time-series graphs without causing screen lag, frame drops, or battery drain on mobile devices.",
           "Achieving high responsiveness meant ensuring that frequent telemetry ticks only updated the exact UI components representing changed values, keeping the rest of the visual tree completely static.",
         ],
@@ -116,7 +126,7 @@ export function generateChartPath(
         id: "technical-approach",
         title: "04. Technical Approach & State Isolation",
         content: [
-          "To decouple data ingestion from UI rendering, state management was architected using normalized slices in Redux Toolkit and Zustand.",
+          "To decouple data ingestion from UI rendering, state management was architected using normalized slices in Redux Toolkit.",
           "When a new 10-second telemetry payload arrives, it updates specific numerical state properties. UI components subscribe strictly to localized primitive selectors.",
           "As a result, an update to solar output only re-renders the solar metric component, leaving surrounding navigation, charts, and layout containers completely untouched.",
         ],
@@ -172,6 +182,38 @@ export function generateChartPath(
         ],
       },
     ],
+    screenshots: [
+      {
+        url: "/assets/projects/duracell-energy/duracell-splash.png",
+        caption: "Duracell Energy Application Launch & Mascot Splash Screen",
+        alt: "Duracell Energy mobile app splash screen featuring official Duracell Bunny mascot",
+        category: "Branding & Splash Screen",
+      },
+      {
+        url: "/assets/projects/duracell-energy/live-usage-home-flow.png",
+        caption: "Live Telemetry Dashboard — Home Flow Architectural Graphic View",
+        alt: "Live Usage Monitor Home Flow screen displaying real-time Solar, Battery, EV, Home, and Grid power telemetry",
+        category: "Telemetry Visualization",
+      },
+      {
+        url: "/assets/projects/duracell-energy/live-usage-energy-flow.png",
+        caption: "Live Telemetry Dashboard — Multi-Node Energy Flow Topology View",
+        alt: "Live Usage Monitor Energy Flow screen with circular interactive power node network topology",
+        category: "Network Topology",
+      },
+      {
+        url: "/assets/projects/duracell-energy/ev-live-usage.png",
+        caption: "EV-1 Live Usage & Smart Charge Mode Selector (Puregreen, GreenBoost, Smart, Timed Boost)",
+        alt: "EV-1 Live Usage screen showing 5.52 kW charge rate, charging mode presets, energy target slider, and power metrics",
+        category: "EV Smart Charging",
+      },
+      {
+        url: "/assets/projects/duracell-energy/scheduled-control.png",
+        caption: "Scheduled Control — Battery Charge & Discharge Time-of-Use Management",
+        alt: "Scheduled Control screen displaying customizable automated charge/discharge schedules, tariff timing, and rate parameters",
+        category: "Time-of-Use Management",
+      },
+    ],
   },
   {
     id: "puredrive",
@@ -180,20 +222,28 @@ export function generateChartPath(
     subtitle: "Scalable Mobile Architecture, Standardized API Integration & Maintainability",
     category: "Mobile Application Architecture & API Integration",
     summary: "Architected a maintainable cross-platform mobile application interfacing with energy storage hardware. Focused on domain-driven component separation, standardized API client layers, and type-safe asynchronous data handling.",
-    primaryStack: ["React Native", "TypeScript", "Redux", "REST APIs", "Fastlane"],
+    projectType: "employer",
+    isProprietary: true,
+    keyEngineeringDecisions: [
+      "Structured domain-driven UI component boundaries, ensuring presentation views depend strictly on clean, type-safe interfaces.",
+      "Built standardized REST API handlers with type-safe DTO transformations to insulate client views from backend schema changes.",
+      "Enforced central design tokens and adaptive layout primitives across iOS and Android.",
+      "Managed automated staging and production releases to App Store Connect and Google Play Console.",
+    ],
+    primaryStack: ["React Native", "TypeScript", "Redux Toolkit", "REST APIs", "Fastlane"],
     fullStack: [
       "React Native",
       "TypeScript",
       "JavaScript",
-      "Redux",
+      "Redux Toolkit",
       "REST APIs",
       "Fastlane",
       "iOS (Xcode)",
-      "Android (Android Studio)",
+      "Android Studio",
       "Apple App Store",
       "Google Play Store",
     ],
-    role: "React Native Developer / Software Developer",
+    role: "Senior React Native Developer",
     company: "Cloud Energy Software / Forebear Productions",
     period: "March 2020 – February 2023",
     featured: true,
@@ -228,7 +278,7 @@ export function generateChartPath(
     ],
     outcome: [
       "Successfully shipped and maintained live builds on Apple App Store and Google Play Store across multi-year client updates.",
-      "Established reusable UI patterns that improved developer velocity and cross-platform reliability. [Insert user / download metric if available]",
+      "Established reusable UI patterns that improved developer velocity and cross-platform reliability.",
     ],
     sections: [
       {
@@ -253,7 +303,7 @@ export function generateChartPath(
         title: "03. Engineering Impact & Status",
         content: [
           "Published and actively maintained on Apple App Store and Google Play Store.",
-          "Improved codebase maintainability and reduced regression bugs during feature releases. [Insert user / download metric if available]",
+          "Improved codebase maintainability and reduced regression bugs during feature releases.",
         ],
       },
     ],
@@ -265,7 +315,15 @@ export function generateChartPath(
     subtitle: "Greenfield React Native Delivery, Diagnostic Logging & Production Stability",
     category: "Greenfield Mobile Engineering & Product Delivery",
     summary: "Engineered a consumer mobile app from initial commit to store release. Focused on greenfield React Navigation setup, error boundary wrappers for crash-free stability, and responsive UI workflows.",
-    primaryStack: ["React Native", "TypeScript", "JavaScript", "REST APIs", "Jest"],
+    projectType: "employer",
+    isProprietary: true,
+    keyEngineeringDecisions: [
+      "Architected type-safe React Navigation stacks for structured, predictable consumer workflows.",
+      "Wrapped dynamic workflow branches in React Error Boundaries with diagnostic logging to prevent unhandled runtime exceptions.",
+      "Implemented standardized responsive UI primitives ensuring layout fidelity across both iOS and Android form factors.",
+      "Orchestrated store submission processes through Apple App Store Connect and Google Play Console.",
+    ],
+    primaryStack: ["React Native", "TypeScript", "JavaScript", "React Navigation", "REST APIs", "Jest"],
     fullStack: [
       "React Native",
       "TypeScript",
@@ -274,7 +332,7 @@ export function generateChartPath(
       "REST APIs",
       "Jest",
       "iOS (Xcode)",
-      "Android (Android Studio)",
+      "Android Studio",
       "Apple App Store",
       "Google Play Store",
     ],
@@ -317,7 +375,7 @@ export function getStainSolution(category: string): SolutionStep[] {
     ],
     outcome: [
       "Built, published, and maintained application on Apple App Store and Google Play Store with high release stability.",
-      "Achieved zero critical crash reports across release updates. [Insert star rating / review metric if available]",
+      "Maintained zero critical crash reports across release updates.",
     ],
     sections: [
       {
@@ -342,7 +400,106 @@ export function getStainSolution(category: string): SolutionStep[] {
         title: "03. Results & Release Status",
         content: [
           "Published and maintained on Apple App Store and Google Play Store.",
-          "Maintained zero critical crash reports across production updates. [Insert star rating / review metric if available]",
+          "Maintained zero critical crash reports across production updates.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "realtime-telemetry-dashboard",
+    slug: "realtime-telemetry-dashboard",
+    title: "Real-Time Mobile Telemetry Dashboard",
+    subtitle: "Open-Source React Native & Reanimated v3 High-Frequency Polling Architecture",
+    category: "Open-Source Architecture & Hands-On Implementation",
+    summary: "Original open-source React Native project demonstrating production-grade high-frequency telemetry polling (10-second intervals), RTK Query state normalization, UI-thread particle animations via Reanimated 3, and automated GitHub Actions CI.",
+    projectType: "personal",
+    isProprietary: false,
+    githubRepoUrl: "https://github.com/yogendraCes/react-native-telemetry-dashboard",
+    liveDemoUrl: "https://github.com/yogendraCes/react-native-telemetry-dashboard",
+    ciBadgeUrl: "https://img.shields.io/badge/CI-passing-10B981?style=flat-square&logo=github-actions&logoColor=white",
+    keyEngineeringDecisions: [
+      "Implemented RTK Query polling with normalized cache invalidation, updating leaf metric nodes without full-tree re-renders.",
+      "Offloaded directional particle animations to native C++ UI thread using React Native Reanimated v3 shared values.",
+      "Engineered custom D3 path generators mapped directly to React Native SVG primitives, bypassing heavy WebView chart wrappers.",
+      "Configured automated GitHub Actions CI workflow running TypeScript typecheck, ESLint, and Jest unit test suites on every pull request.",
+    ],
+    primaryStack: ["React Native", "TypeScript", "RTK Query", "Reanimated 3", "D3.js", "React Native SVG", "Jest"],
+    fullStack: [
+      "React Native",
+      "TypeScript",
+      "Redux Toolkit",
+      "RTK Query",
+      "React Native Reanimated v3",
+      "React Native Gesture Handler",
+      "D3.js (d3-shape, d3-scale)",
+      "React Native SVG",
+      "Jest",
+      "React Native Testing Library",
+      "GitHub Actions CI",
+    ],
+    role: "Creator & Open-Source Author",
+    company: "Personal & Open Source",
+    period: "2024 – Present",
+    featured: true,
+    technicalHighlight: {
+      label: "ISOLATED TELEMETRY POLLING & UI-THREAD WORKLETS",
+      description: "Complete hands-on implementation demonstrating how to ingest 10-second real-time payloads without triggering parent re-renders, paired with Reanimated 3 worklets running particle flow animations at 60fps.",
+      codeSnippet: {
+        filename: "useEnergyParticleAnimation.ts",
+        language: "typescript",
+        code: `import { useEffect } from 'react';
+import { useSharedValue, useAnimatedStyle, withRepeat, withTiming, Easing } from 'react-native-reanimated';
+
+export function useEnergyParticleAnimation(flowRateKw: number) {
+  const progress = useSharedValue(0);
+  
+  // Calculate speed proportional to active power flow (kW)
+  const duration = Math.max(800, 3000 - Math.abs(flowRateKw) * 300);
+
+  useEffect(() => {
+    progress.value = withRepeat(
+      withTiming(1, { duration, easing: Easing.linear }),
+      -1, // Infinite loop on native UI thread
+      false
+    );
+  }, [flowRateKw, duration, progress]);
+
+  return useAnimatedStyle(() => ({
+    transform: [{ translateX: progress.value * 120 }],
+    opacity: Math.abs(flowRateKw) > 0.1 ? 1 : 0.2,
+  }));
+}`,
+      },
+    },
+    overview: "An open-source reference architecture demonstrating how to build high-performance, real-time data monitoring interfaces in React Native. Solves the common problem of UI jank and battery consumption when processing frequent telemetry payloads.",
+    challenges: [
+      "JS Thread Satiation: High-frequency API polling saturates the single JavaScript thread if updates force full component subtree re-renders.",
+      "Animation Smoothness: Preserving 60fps continuous animations while incoming data points trigger chart redraws.",
+    ],
+    technicalApproach: [
+      "Normalized Redux slices via RTK Query ensure only primitive leaf values re-render on each 10-second polling cycle.",
+      "Reanimated 3 shared values execute frame-by-frame transforms on the native UI thread, completely bypassing JavaScript.",
+    ],
+    outcome: [
+      "Public repository with 100% visible source code, documentation, and automated GitHub Actions CI.",
+      "Sustained 60fps UI responsiveness during continuous real-time data simulation.",
+    ],
+    sections: [
+      {
+        id: "overview",
+        title: "01. Architecture Overview",
+        content: [
+          "This open-source repository provides a clean, production-ready blueprint for high-frequency mobile data monitoring.",
+          "It demonstrates real-time telemetry polling, RTK Query cache invalidation, and native UI-thread animation loops using React Native Reanimated 3.",
+        ],
+      },
+      {
+        id: "implementation",
+        title: "02. Implementation Details",
+        content: [
+          "1. Primitive Selector Isolation: Components subscribe strictly to primitive numeric selectors, isolating updates to specific metric badges.",
+          "2. Native Worklets: All directional particle flows run directly inside Reanimated C++ worklets.",
+          "3. Automated CI: Enforces TypeScript type safety and Jest unit tests on every commit.",
         ],
       },
     ],

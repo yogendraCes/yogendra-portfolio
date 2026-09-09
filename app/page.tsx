@@ -5,6 +5,7 @@ import { ProjectShowcase } from "@/components/project-showcase";
 import { ArchitecturePhilosophy } from "@/components/architecture-philosophy";
 import { SkillsMatrix } from "@/components/skills-matrix";
 import { ExperienceTimeline } from "@/components/experience-timeline";
+import { TechnicalNotes } from "@/components/technical-notes";
 import { Testimonials } from "@/components/testimonials";
 import { CTASection } from "@/components/cta-section";
 import { Footer } from "@/components/footer";
@@ -19,6 +20,7 @@ export default function Home() {
         <ArchitecturePhilosophy />
         <SkillsMatrix />
         <ExperienceTimeline />
+        <TechnicalNotes />
         <Testimonials />
         <CTASection />
       </main>

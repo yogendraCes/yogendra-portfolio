@@ -1,5 +1,6 @@
 import React from "react";
-import { Cpu, RefreshCw, Smartphone, ShieldCheck, Zap } from "lucide-react";
+import Link from "next/link";
+import { Cpu, RefreshCw, Smartphone, ShieldCheck, Zap, ArrowRight } from "lucide-react";
 import { SpotlightCard } from "./spotlight-card";
 
 export function ArchitecturePhilosophy() {
@@ -9,24 +10,32 @@ export function ArchitecturePhilosophy() {
       title: "UI Threading & Frame-Rate Optimization",
       description:
         "Offloading gesture handlers and frame-critical animations directly to the native UI thread using React Native Reanimated (v3) and Gesture Handler, bypassing JS thread bottlenecks to prevent visual jank.",
+      evidenceNote: "Applied in Duracell Energy (60fps telemetry loops) — discussed in interview & demonstrated in Telemetry Demo.",
+      link: "#work",
     },
     {
       icon: RefreshCw,
       title: "Normalized State & RTK Query Caching",
       description:
         "Replacing unmanaged Redux state with RTK Query normalized API polling and cache invalidation, preventing unnecessary component re-renders during high-frequency telemetry ingestion.",
+      evidenceNote: "Applied in Duracell Energy & Puredrive — prevents full-tree re-renders on 10s polling cycles.",
+      link: "#work",
     },
     {
       icon: Smartphone,
       title: "AppState Lifecycle & Battery Efficiency",
       description:
         "Integrating lifecycle listeners via React Native AppState to automatically freeze active animation loops and cancel network polling when apps enter background or inactive states.",
+      evidenceNote: "Applied in Duracell Energy — auto-suspends polling timers during background transitions.",
+      link: "#work",
     },
     {
       icon: ShieldCheck,
       title: "Fastlane CI/CD & Code-Signing Match",
       description:
         "Standardizing cross-platform deployment pipelines using Fastlane Match with encrypted Git certificate storage, enabling automated TestFlight and Play Console Internal distribution.",
+      evidenceNote: "Applied in Cloud Energy Software — single-command beta deployment to TestFlight and Play Console.",
+      link: "#work",
     },
   ];
 
@@ -53,12 +62,28 @@ export function ArchitecturePhilosophy() {
             const Icon = item.icon;
             return (
               <SpotlightCard key={item.title}>
-                <div className="p-6 space-y-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#D97706]/10 text-[#D97706] flex items-center justify-center border border-[#D97706]/30">
-                    <Icon className="w-5 h-5" />
+                <div className="p-6 space-y-4 flex flex-col justify-between h-full">
+                  <div className="space-y-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#D97706]/10 text-[#D97706] flex items-center justify-center border border-[#D97706]/30">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[#F3F4F6]">{item.title}</h3>
+                    <p className="text-sm text-[#9CA3AF] leading-relaxed">{item.description}</p>
                   </div>
-                  <h3 className="text-lg font-bold text-[#F3F4F6]">{item.title}</h3>
-                  <p className="text-sm text-[#9CA3AF] leading-relaxed">{item.description}</p>
+
+                  {/* Concrete Attribution Callout */}
+                  <div className="pt-4 mt-2 border-t border-[rgba(255,255,255,0.06)] flex flex-col gap-1.5 font-mono text-xs">
+                    <span className="text-[10px] text-[#D97706] uppercase tracking-wider font-semibold">
+                      WHERE IT IS DEMONSTRATED
+                    </span>
+                    <Link
+                      href={item.link}
+                      className="text-xs text-[#F3F4F6] hover:text-[#D97706] transition-colors flex items-center gap-1 group"
+                    >
+                      <span className="font-sans leading-snug">{item.evidenceNote}</span>
+                      <ArrowRight className="w-3 h-3 text-[#D97706] shrink-0 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
               </SpotlightCard>
             );

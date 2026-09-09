@@ -19,9 +19,25 @@ interface ScreenItem {
 export function DuracellMediaGallery() {
   const screens: ScreenItem[] = [
     {
+      id: "duracell-splash",
+      title: "1. Brand Launch & Splash Screen",
+      shortLabel: "1. App Splash",
+      src: "/projects/duracell-energy/duracell-splash.png",
+      alt: "Duracell Energy mobile app splash screen featuring official Duracell Bunny mascot.",
+      icon: Cpu,
+      badge: "BRANDING & ENTRY",
+      engineeringContext:
+        "Official Duracell-licensed application launch screen featuring native splash asset initialization, auth token rehydration, and background config fetch.",
+      technicalDetails: [
+        "Native launch screen configuration via Xcode launch storyboards & Android splash theme",
+        "Fast token rehydration and async storage state restoration on app launch",
+        "Multi-brand white-label asset injection based on build scheme target",
+      ],
+    },
+    {
       id: "energy-flow",
-      title: "1. Live Energy Flow Monitor",
-      shortLabel: "1. Energy Flow",
+      title: "2. Live Energy Flow Monitor",
+      shortLabel: "2. Energy Flow",
       src: "/projects/duracell-energy/energy-flow.png",
       alt: "Duracell Energy Live Usage Monitor showing real-time energy flow across solar, battery, grid, home and EV.",
       icon: Zap,
@@ -35,41 +51,41 @@ export function DuracellMediaGallery() {
       ],
     },
     {
-      id: "energy-summary",
-      title: "2. Aggregated Energy Summary",
-      shortLabel: "2. Energy Summary",
-      src: "/projects/duracell-energy/energy-summary.png",
-      alt: "Duracell Energy Summary screen showing daily energy metrics for solar generation, battery charge, household load, and grid export.",
-      icon: Battery,
-      badge: "DAILY METRICS SUMMARY",
+      id: "home-flow",
+      title: "3. Home Flow Spatial View",
+      shortLabel: "3. Home Flow",
+      src: "/projects/duracell-energy/home-flow.png",
+      alt: "Duracell Energy Home Flow screen showing spatial energy distribution through household circuits.",
+      icon: Home,
+      badge: "SPATIAL VISUALIZATION",
       engineeringContext:
-        "High-density metric summary displaying total daily solar generation, battery charge history, grid import/export tariffs, and home consumption totals.",
+        "Spatial energy visualization mode illustrating directional power flow through household circuits, connected appliances, and storage nodes.",
       technicalDetails: [
-        "Normalized state payload extraction for instant metric rendering",
-        "Component memoization preventing unnecessary re-renders on data ticks",
-        "Clean responsive visual hierarchy optimized for fast scanning",
+        "Custom SVG circuit paths and real-time directional particle loops",
+        "Color-coded node status reflecting net power draw vs generation",
+        "AppState lifecycle suspension to freeze rendering during background states",
       ],
     },
     {
-      id: "energy-insights",
-      title: "3. Time-Series Energy Insights",
-      shortLabel: "3. Energy Insights",
-      src: "/projects/duracell-energy/energy-insights.png",
-      alt: "Duracell Energy Insights screen showing interactive daily time-series energy charts.",
-      icon: BarChart2,
-      badge: "D3 + SVG CHARTING",
+      id: "ev-live-usage",
+      title: "4. EV Smart Charging Control",
+      shortLabel: "4. EV Charging",
+      src: "/projects/duracell-energy/ev-live-usage.png",
+      alt: "Duracell Energy EV-1 Live Usage screen showing charge modes, rates, and slider controls.",
+      icon: Zap,
+      badge: "EV SMART CHARGING",
       engineeringContext:
-        "Interactive time-series charts rendering multi-source generation, storage, and consumption curves across dynamic daily, monthly, and annual ranges.",
+        "EV charging management interface providing charge preset modes (Puregreen, GreenBoost, Smart, Timed Boost), target capacity sliders, and live kW telemetry.",
       technicalDetails: [
-        "Custom D3 path math (d3-shape, d3-scale) mapped to React Native SVG primitives",
-        "Touch inspection tooltips powered by React Native Gesture Handler",
-        "Zero WebView overhead for smooth rendering on budget Android devices",
+        "Interactive target kWh capacity slider with debounced API payload dispatch",
+        "Preset charging mode selectors modifying tariff-aware charge policies",
+        "Real-time grid import vs solar generation surplus allocation math",
       ],
     },
     {
       id: "scheduled-control",
-      title: "4. Scheduled Energy Control",
-      shortLabel: "4. Scheduled Control",
+      title: "5. Scheduled Energy Control",
+      shortLabel: "5. Scheduled Control",
       src: "/projects/duracell-energy/scheduled-control.png",
       alt: "Duracell Energy Scheduled Control screen showing user-configurable charging slots, target battery percentages, and charge rates.",
       icon: Calendar,
@@ -83,19 +99,19 @@ export function DuracellMediaGallery() {
       ],
     },
     {
-      id: "home-flow",
-      title: "5. Home Flow Spatial View",
-      shortLabel: "5. Home Flow",
-      src: "/projects/duracell-energy/home-flow.png",
-      alt: "Duracell Energy Home Flow screen showing spatial energy distribution through household circuits.",
-      icon: Home,
-      badge: "SPATIAL VISUALIZATION",
+      id: "energy-insights",
+      title: "6. Time-Series Energy Insights",
+      shortLabel: "6. Energy Insights",
+      src: "/projects/duracell-energy/energy-insights.png",
+      alt: "Duracell Energy Insights screen showing interactive daily time-series energy charts.",
+      icon: BarChart2,
+      badge: "D3 + SVG CHARTING",
       engineeringContext:
-        "Spatial energy visualization mode illustrating directional power flow through household circuits, connected appliances, and storage nodes.",
+        "Interactive time-series charts rendering multi-source generation, storage, and consumption curves across dynamic daily, monthly, and annual ranges.",
       technicalDetails: [
-        "Custom SVG circuit paths and real-time directional particle loops",
-        "Color-coded node status reflecting net power draw vs generation",
-        "AppState lifecycle suspension to freeze rendering during background states",
+        "Custom D3 path math (d3-shape, d3-scale) mapped to React Native SVG primitives",
+        "Touch inspection tooltips powered by React Native Gesture Handler",
+        "Zero WebView overhead for smooth rendering on budget Android devices",
       ],
     },
   ];
@@ -214,7 +230,7 @@ export function DuracellMediaGallery() {
               {activeScreen.badge}
             </span>
             <span className="font-mono text-xs text-[#9CA3AF]">
-              SCREENSHOT 0{screens.findIndex((s) => s.id === activeScreenId) + 1} / 05
+              SCREENSHOT 0{screens.findIndex((s) => s.id === activeScreenId) + 1} / 0{screens.length}
             </span>
           </div>
 

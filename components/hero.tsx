@@ -12,11 +12,11 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Main Content Column (7 cols desktop) */}
           <div className="lg:col-span-7 space-y-6">
-            {/* Eyebrow / Operational Status Badge */}
-            <div className="inline-flex max-w-full items-center gap-2 px-3 py-1 rounded-full bg-[#16181D] border border-[rgba(255,255,255,0.12)] shadow-inner">
+            {/* Operational Status Beacon */}
+            <div className="inline-flex max-w-full items-center gap-2 px-3 py-1 rounded-full bg-[#16181D] border border-[rgba(255,255,255,0.12)]">
               <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse shrink-0" aria-hidden="true" />
-              <span className="font-mono text-[10px] sm:text-xs text-[#F3F4F6] font-medium tracking-wider uppercase leading-snug break-words">
-                {profileData.eyebrow}
+              <span className="font-mono text-xs text-[#F3F4F6] font-medium tracking-wider uppercase leading-snug break-words">
+                {profileData.statusText}
               </span>
             </div>
 
@@ -54,27 +54,27 @@ export function Hero() {
             <div className="grid grid-cols-3 gap-3 py-2 border-y border-[rgba(255,255,255,0.08)]">
               <div className="font-mono">
                 <div className="text-lg sm:text-2xl font-bold text-[#F3F4F6] flex items-center gap-1">
-                  <AnimatedCounter end={50000} suffix="+" />
+                  <span>3</span>
                 </div>
                 <div className="text-[10px] sm:text-xs text-[#9CA3AF] uppercase flex items-center gap-1 mt-0.5">
                   <Award className="w-3 h-3 text-[#D97706]" />
-                  <span>Store Downloads</span>
+                  <span>Apps Shipped</span>
                 </div>
               </div>
 
               <div className="font-mono">
                 <div className="text-lg sm:text-2xl font-bold text-[#10B981] flex items-center gap-1">
-                  <AnimatedCounter end={60} suffix=" FPS" />
+                  <span>6.5+</span>
                 </div>
                 <div className="text-[10px] sm:text-xs text-[#9CA3AF] uppercase flex items-center gap-1 mt-0.5">
                   <Zap className="w-3 h-3 text-[#10B981]" />
-                  <span>Native Worklets</span>
+                  <span>Yrs Experience</span>
                 </div>
               </div>
 
               <div className="font-mono">
                 <div className="text-lg sm:text-2xl font-bold text-[#3B82F6] flex items-center gap-1">
-                  <AnimatedCounter end={99.9} decimals={1} suffix="%" />
+                  <span>99.8%</span>
                 </div>
                 <div className="text-[10px] sm:text-xs text-[#9CA3AF] uppercase flex items-center gap-1 mt-0.5">
                   <ShieldCheck className="w-3 h-3 text-[#3B82F6]" />

@@ -19,6 +19,13 @@ export interface CaseStudySection {
   };
 }
 
+export interface ProjectScreenshot {
+  url: string;
+  caption: string;
+  alt: string;
+  category?: string;
+}
+
 export interface Project {
   id: string;
   slug: string;
@@ -26,6 +33,12 @@ export interface Project {
   subtitle: string;
   category: string;
   summary: string;
+  projectType: "employer" | "personal";
+  isProprietary?: boolean;
+  keyEngineeringDecisions?: string[];
+  githubRepoUrl?: string;
+  liveDemoUrl?: string;
+  ciBadgeUrl?: string;
   primaryStack: string[];
   fullStack: string[];
   role: string;
@@ -38,6 +51,7 @@ export interface Project {
   technicalApproach: string[];
   outcome: string[];
   sections: CaseStudySection[];
+  screenshots?: ProjectScreenshot[];
   links?: {
     duracellAppStore?: string;
     duracellPlayStore?: string;
