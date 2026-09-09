@@ -44,15 +44,11 @@ export function ArchitecturePhilosophy() {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-12">
         {/* Section Header */}
         <div className="max-w-[760px] space-y-3">
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] tracking-wider uppercase bg-[#D97706]/10 px-3 py-1 rounded-full border border-[#D97706]/30">
-            <Zap className="w-4 h-4" />
-            <span>ENGINEERING STANDARDS</span>
-          </div>
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-            Architectural Philosophy
+            Architectural Philosophy & Standards
           </h2>
           <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-            Core technical practices focused on smooth UI thread performance, clean state management, native battery optimization, and automated release delivery.
+            Core technical practices focused on native UI thread offloading, predictable normalized state synchronization, background battery conservation, and push-button release delivery.
           </p>
         </div>
 

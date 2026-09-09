@@ -16,16 +16,12 @@ export function TechnicalNotes() {
     <section id="notes" className="w-full py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)] bg-[#08090A]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-12">
         {/* Section Header */}
-        <div className="max-w-[760px] space-y-3">
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] tracking-wider uppercase bg-[#D97706]/10 px-3 py-1 rounded-full border border-[#D97706]/30">
-            <BookOpen className="w-4 h-4" />
-            <span>TECHNICAL WRITE-UPS</span>
-          </div>
+        <div className="max-w-[760px] space-y-2.5">
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-            Engineering Notes & System Summaries
+            Technical Notes & Architecture Briefs
           </h2>
           <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-            Code-free deep dives into mobile architectural decisions, telemetry re-render optimization, and real-time state management.
+            Deep-dive briefs detailing high-frequency telemetry re-render optimization, Fastlane continuous delivery, and native gesture thread isolation.
           </p>
         </div>
 

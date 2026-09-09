@@ -20,30 +20,26 @@ export function SkillsMatrix() {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-10">
         {/* Section Header & Filters */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="max-w-[760px] space-y-3">
-            <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] tracking-wider uppercase bg-[#D97706]/10 px-3 py-1 rounded-full border border-[#D97706]/30">
-              <Wrench className="w-4 h-4" />
-              <span>SKILLS & TECHNICAL DEPTH</span>
-            </div>
+          <div className="max-w-[760px] space-y-2.5">
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-              Engineering Capabilities
+              Engineering Capabilities & Stack
             </h2>
             <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-              Core technologies, platform frameworks, native bridge modules, and automated delivery pipelines.
+              Core cross-platform frameworks, native bridge modules, data visualization engines, and automated deployment tooling.
             </p>
           </div>
 
           {/* Interactive Category Filter Pills */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none">
-            <Filter className="w-3.5 h-3.5 text-[#9CA3AF] shrink-0 mr-1" />
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none py-1">
+            <Filter className="w-3.5 h-3.5 text-[#9CA3AF] shrink-0 mr-0.5" />
             {filterOptions.map((option) => (
               <button
                 key={option}
                 onClick={() => setSelectedFilter(option)}
-                className={`px-3 py-1.5 rounded-lg font-mono text-xs font-medium whitespace-nowrap transition-all border cursor-pointer ${
+                className={`px-3.5 py-2 rounded-lg font-mono text-xs font-medium whitespace-nowrap transition-all border cursor-pointer min-h-[40px] flex items-center ${
                   selectedFilter === option
                     ? "bg-[#D97706] text-[#08090A] border-[#D97706] font-bold shadow-md shadow-amber-950/40"
-                    : "bg-[#16181D] text-[#9CA3AF] border-[rgba(255,255,255,0.08)] hover:text-[#F3F4F6] hover:border-zinc-700"
+                    : "bg-[#16181D] text-[#9CA3AF] border-[rgba(255,255,255,0.08)] hover:text-[#F3F4F6] hover:border-zinc-700 hover:bg-[#1C1F26]"
                 }`}
               >
                 {option}

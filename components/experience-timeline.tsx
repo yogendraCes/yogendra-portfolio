@@ -7,16 +7,12 @@ export function ExperienceTimeline() {
     <section id="experience" className="w-full py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)] bg-[#0F1115]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-12">
         {/* Section Header */}
-        <div className="max-w-[760px] space-y-3">
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] tracking-wider uppercase">
-            <Briefcase className="w-4 h-4" />
-            <span>CAREER PROGRESSION</span>
-          </div>
+        <div className="max-w-[760px] space-y-2.5">
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-            Work History & Progression
+            Work History & Career Progression
           </h2>
           <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-            Over 6 years of verified engineering experience, demonstrating progression from initial mobile development at Forebear Productions to client contract staffing and permanent software engineering at Cloud Energy Software.
+            Over 6 years of verified engineering experience, scaling cross-platform React Native systems from initial native modules at Forebear Productions to production telemetry architectures at Cloud Energy Software.
           </p>
         </div>
 
@@ -79,12 +75,14 @@ export function ExperienceTimeline() {
                   </div>
 
                   {/* Scope */}
-                  <p className="text-sm text-[#F3F4F6] font-medium leading-relaxed bg-[#16181D] p-4 rounded-lg border border-[rgba(255,255,255,0.06)] max-w-[900px]">
-                    <span className="font-mono text-xs text-[#D97706] uppercase tracking-wider block mb-1">
-                      ENGAGEMENT SCOPE:
+                  <div className="border-l-2 border-[#D97706]/70 pl-4 py-1 space-y-1">
+                    <span className="font-mono text-[11px] text-[#D97706] uppercase tracking-wider block font-semibold">
+                      ENGAGEMENT SCOPE
                     </span>
-                    {exp.scope}
-                  </p>
+                    <p className="text-sm text-[#F3F4F6] leading-relaxed font-normal">
+                      {exp.scope}
+                    </p>
+                  </div>
 
                   {/* Standard Responsibilities (for Single Role like CES) */}
                   {exp.responsibilities && (
