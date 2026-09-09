@@ -32,15 +32,17 @@ export default function ResumePage() {
       <main id="main-content" className="flex-1 bg-[#08090A] py-12 sm:py-16">
         <div className="max-w-[960px] mx-auto px-4 sm:px-6 space-y-12">
           {/* Header Action Bar */}
-          <div className="p-8 rounded-xl bg-[#0F1115] border border-[rgba(255,255,255,0.08)] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div className="p-8 rounded-xl bg-[#0F1115] border border-[rgba(255,255,255,0.08)] flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-sm">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] tracking-wider uppercase">
-                <span className="w-2 h-2 rounded-full bg-[#10B981]" aria-hidden="true" />
-                <span>RESUME & EXPERIENCE</span>
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
+                <span className="font-mono text-xs text-[#F3F4F6] font-medium tracking-wider uppercase">
+                  {profileData.statusText}
+                </span>
               </div>
-              <h1 className="text-3xl font-bold text-[#F3F4F6] tracking-tight">{profileData.name}</h1>
-              <p className="font-mono text-sm text-[#9CA3AF]">{profileData.title}</p>
-              <p className="text-xs text-[#6B7280]">{profileData.location}</p>
+              <h1 className="text-3xl sm:text-4xl font-bold text-[#F3F4F6] tracking-tight">{profileData.name}</h1>
+              <p className="font-mono text-sm text-[#D97706] font-medium">{profileData.title}</p>
+              <p className="text-xs text-[#9CA3AF]">{profileData.location}</p>
             </div>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
@@ -48,14 +50,14 @@ export default function ResumePage() {
                 href={profileData.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-3 rounded-md bg-[#D97706] text-[#08090A] font-mono text-xs font-bold hover:bg-[#F59E0B] transition-colors flex items-center justify-center gap-2 shadow-lg shadow-amber-950/20"
+                className="px-5 py-3 rounded-lg bg-[#D97706] text-[#08090A] font-mono text-xs font-bold hover:bg-[#F59E0B] transition-all flex items-center justify-center gap-2 shadow-md shadow-amber-950/30 hover:-translate-y-0.5 min-h-[44px]"
               >
                 <Download className="w-4 h-4 shrink-0" aria-hidden="true" />
                 <span>Download PDF Resume</span>
               </a>
               <a
                 href={`mailto:${profileData.email}`}
-                className="px-4 py-3 rounded-md bg-[#16181D] text-[#F3F4F6] font-mono text-xs font-semibold border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 transition-colors flex items-center justify-center gap-2"
+                className="px-4 py-3 rounded-lg bg-[#16181D] text-[#F3F4F6] font-mono text-xs font-semibold border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 hover:bg-[#1C1F26] transition-all flex items-center justify-center gap-2 min-h-[44px] hover:-translate-y-0.5"
               >
                 <Mail className="w-4 h-4 text-[#D97706] shrink-0" aria-hidden="true" />
                 <span>Email Direct</span>

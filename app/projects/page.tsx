@@ -29,10 +29,11 @@ export default function ProjectsIndexPage() {
     <div className="flex flex-col min-h-screen">
       <Navigation />
       <main id="main-content" className="flex-1">
-        <div className="bg-grid-pattern py-12 sm:py-16 border-b border-[rgba(255,255,255,0.08)]">
+        <div className="py-12 sm:py-16 border-b border-[rgba(255,255,255,0.08)] bg-[#0A0D12]">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-4">
-            <div className="font-mono text-xs text-[#D97706] tracking-wider uppercase font-semibold">
-              SELECTED PROJECTS // CASE STUDIES INDEX
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#10B981]/10 border border-[#10B981]/25 text-xs font-mono text-[#10B981]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
+              <span>Architectural Case Studies // Shipped Applications</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-bold text-[#F3F4F6] tracking-tight">
               Production Projects & Case Studies
@@ -42,7 +43,7 @@ export default function ProjectsIndexPage() {
             </p>
           </div>
         </div>
-        <ProjectShowcase />
+        <ProjectShowcase showHeader={false} />
         <CTASection />
       </main>
       <Footer />

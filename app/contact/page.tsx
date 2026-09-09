@@ -35,17 +35,19 @@ export default function ContactPage() {
         {/* Contact Banner Header */}
         <section className="bg-grid-pattern py-12 sm:py-20 border-b border-[rgba(255,255,255,0.08)]">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-6">
-            <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] tracking-wider uppercase font-semibold">
-              <span className="w-2 h-2 rounded-full bg-[#10B981]" aria-hidden="true" />
-              <span>DIRECT OUTREACH & CONTACT</span>
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
+              <span className="font-mono text-xs text-[#F3F4F6] font-medium tracking-wider uppercase">
+                {profileData.statusText}
+              </span>
             </div>
 
             <h1 className="text-3xl sm:text-5xl font-bold text-[#F3F4F6] tracking-tight">
-              Have a product to build?
+              Get in Touch & Start a Conversation
             </h1>
 
-            <p className="text-lg sm:text-xl text-[#9CA3AF] max-w-[760px] leading-relaxed">
-              Let&apos;s talk.
+            <p className="text-base sm:text-lg text-[#9CA3AF] max-w-[760px] leading-relaxed">
+              Open to senior mobile engineering roles, high-impact contract development, and architecture consulting.
             </p>
           </div>
         </section>

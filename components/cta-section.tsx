@@ -54,11 +54,7 @@ export function CTASection() {
     <section id="contact" className="w-full py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)] bg-[#08090A] relative">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-12">
         {/* Section Header */}
-        <div className="max-w-[760px] space-y-3">
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] tracking-wider uppercase bg-[#D97706]/10 px-3 py-1 rounded-full border border-[#D97706]/30">
-            <MessageSquare className="w-4 h-4" aria-hidden="true" />
-            <span>DIRECT OUTREACH & CONTRACT ENGAGEMENT</span>
-          </div>
+        <div className="max-w-[760px] space-y-2.5">
           <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
             Have a mobile app to build, fix, or ship?
           </h2>
@@ -73,15 +69,13 @@ export function CTASection() {
           <SpotlightCard className="lg:col-span-7 h-full">
             <div className="p-6 sm:p-8 space-y-6 flex flex-col justify-between h-full">
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] uppercase tracking-wider font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-[#D97706] animate-pulse" aria-hidden="true" />
-                  <span>ENGINEERING SERVICES & CONTRACTING</span>
-                </div>
-
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#F3F4F6]">How We Can Work Together</h3>
-                  <p className="text-sm text-[#9CA3AF] leading-relaxed mt-1">
-                    Senior React Native engineering solutions tailored for founders, product managers, and engineering teams.
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#D97706] shadow-[0_0_8px_rgba(217,119,6,0.6)]" />
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#F3F4F6] tracking-tight">Contracting & Consulting</h3>
+                  </div>
+                  <p className="text-sm text-[#9CA3AF] leading-relaxed">
+                    Senior React Native engineering solutions tailored for founders, product managers, and active development teams.
                   </p>
                 </div>
 
@@ -151,15 +145,13 @@ export function CTASection() {
           <SpotlightCard className="lg:col-span-5 h-full">
             <div className="p-6 sm:p-8 space-y-6 flex flex-col justify-between h-full">
               <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 font-mono text-xs text-[#3B82F6] uppercase tracking-wider font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-[#3B82F6] animate-pulse" aria-hidden="true" />
-                  <span>FULL-TIME SENIOR ROLES</span>
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#F3F4F6] tracking-tight">Senior Engineering Roles</h3>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-[#F3F4F6]">Senior Hiring & Verification</h3>
-
                 <p className="text-sm text-[#9CA3AF] leading-relaxed">
-                  Available for full-time Senior React Native Developer and Lead Mobile Architect positions.
+                  Available for full-time Senior React Native Developer and Lead Mobile Architect positions worldwide.
                 </p>
 
                 <div className="p-4 rounded-xl bg-[#16181D] border border-[rgba(255,255,255,0.06)] space-y-3">

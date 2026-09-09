@@ -3,7 +3,11 @@ import { projectsData } from "@/data/projects";
 import { ProjectCard } from "./project-card";
 import { Layers, Briefcase, Code } from "lucide-react";
 
-export function ProjectShowcase() {
+interface ProjectShowcaseProps {
+  showHeader?: boolean;
+}
+
+export function ProjectShowcase({ showHeader = true }: ProjectShowcaseProps = {}) {
   const employerProjects = projectsData.filter((p) => p.projectType === "employer");
   const personalProjects = projectsData.filter((p) => p.projectType === "personal");
 
@@ -14,18 +18,20 @@ export function ProjectShowcase() {
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-16 relative z-10">
         {/* Top Section Header */}
-        <div className="max-w-[760px] space-y-3">
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] tracking-wider uppercase bg-[#D97706]/10 px-3 py-1 rounded-full border border-[#D97706]/30">
-            <Layers className="w-4 h-4" />
-            <span>SELECTED WORK</span>
+        {showHeader && (
+          <div className="max-w-[760px] space-y-3">
+            <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D97706] tracking-wider uppercase bg-[#D97706]/10 px-3 py-1 rounded-full border border-[#D97706]/30">
+              <Layers className="w-4 h-4" />
+              <span>SELECTED WORK</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
+              Production Mobile Engineering & Open-Source Implementations
+            </h2>
+            <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
+              A comprehensive look at applications shipped to the Apple App Store and Google Play Store, alongside open-source reference implementations showcasing hands-on React Native architecture.
+            </p>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-            Production Mobile Engineering & Open-Source Implementations
-          </h2>
-          <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-            A comprehensive look at applications shipped to the Apple App Store and Google Play Store, alongside open-source reference implementations showcasing hands-on React Native architecture.
-          </p>
-        </div>
+        )}
 
         {/* Category 1: Production Applications & Scaled Deployments */}
         <div className="space-y-6 pt-4">

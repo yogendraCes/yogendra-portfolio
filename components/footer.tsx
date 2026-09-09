@@ -32,20 +32,26 @@ export function Footer() {
 
         {/* Middle Row: Navigation & Direct Links */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div className="flex flex-wrap gap-6 text-[#9CA3AF]">
-            <Link href="/#work" className="hover:text-[#F3F4F6] transition-colors">
+          <div className="flex flex-wrap gap-5 text-[#9CA3AF]">
+            <Link href="/#work" className="hover:text-[#F3F4F6] transition-colors py-1 min-h-[36px] flex items-center">
               [Work]
             </Link>
-            <Link href="/#architecture" className="hover:text-[#F3F4F6] transition-colors">
+            <Link href="/#architecture" className="hover:text-[#F3F4F6] transition-colors py-1 min-h-[36px] flex items-center">
               [Architecture]
             </Link>
-            <Link href="/#experience" className="hover:text-[#F3F4F6] transition-colors">
+            <Link href="/#capabilities" className="hover:text-[#F3F4F6] transition-colors py-1 min-h-[36px] flex items-center">
+              [Capabilities]
+            </Link>
+            <Link href="/#experience" className="hover:text-[#F3F4F6] transition-colors py-1 min-h-[36px] flex items-center">
               [Experience]
             </Link>
-            <Link href="/resume" className="hover:text-[#F3F4F6] transition-colors">
+            <Link href="/#notes" className="hover:text-[#F3F4F6] transition-colors py-1 min-h-[36px] flex items-center">
+              [Notes]
+            </Link>
+            <Link href="/resume" className="hover:text-[#F3F4F6] transition-colors py-1 min-h-[36px] flex items-center">
               [Resume]
             </Link>
-            <Link href="/contact" className="hover:text-[#F3F4F6] transition-colors">
+            <Link href="/contact" className="hover:text-[#F3F4F6] transition-colors py-1 min-h-[36px] flex items-center">
               [Contact]
             </Link>
           </div>
