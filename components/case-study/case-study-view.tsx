@@ -58,7 +58,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
                     href={project.links.duracellAppStore}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+                    className="px-4 py-2.5 rounded-lg bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2 min-h-[44px] shadow-sm hover:-translate-y-0.5"
                   >
                     <span>Duracell Energy — View on App Store</span>
                     <ExternalLink className="w-3.5 h-3.5 text-[#D97706]" aria-hidden="true" />
@@ -69,7 +69,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
                     href={project.links.duracellPlayStore}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#10B981]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+                    className="px-4 py-2.5 rounded-lg bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#10B981]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2 min-h-[44px] shadow-sm hover:-translate-y-0.5"
                   >
                     <span>Duracell Energy — Get it on Google Play</span>
                     <ExternalLink className="w-3.5 h-3.5 text-[#10B981]" aria-hidden="true" />
@@ -80,7 +80,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
                     href={project.links.appStore}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+                    className="px-4 py-2.5 rounded-lg bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2 min-h-[44px] shadow-sm hover:-translate-y-0.5"
                   >
                     <span>View on App Store</span>
                     <ExternalLink className="w-3.5 h-3.5 text-[#D97706]" aria-hidden="true" />
@@ -91,7 +91,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
                     href={project.links.playStore}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#10B981]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2"
+                    className="px-4 py-2.5 rounded-lg bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.16)] hover:border-[#10B981]/50 text-[#F3F4F6] font-mono text-xs font-semibold transition-all flex items-center gap-2 min-h-[44px] shadow-sm hover:-translate-y-0.5"
                   >
                     <span>Get it on Google Play</span>
                     <ExternalLink className="w-3.5 h-3.5 text-[#10B981]" aria-hidden="true" />
@@ -104,19 +104,19 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
           {/* Metadata Grid Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-[rgba(255,255,255,0.08)] font-mono text-xs">
             <div>
-              <div className="text-[#9CA3AF] uppercase text-[10px]">MY ROLE</div>
+              <div className="text-[#9CA3AF] uppercase text-[11px] font-medium">MY ROLE</div>
               <div className="text-[#F3F4F6] font-semibold mt-0.5">{project.role}</div>
             </div>
             <div>
-              <div className="text-[#9CA3AF] uppercase text-[10px]">ORGANIZATION</div>
+              <div className="text-[#9CA3AF] uppercase text-[11px] font-medium">ORGANIZATION</div>
               <div className="text-[#F3F4F6] font-semibold mt-0.5">{project.company}</div>
             </div>
             <div>
-              <div className="text-[#9CA3AF] uppercase text-[10px]">TIMELINE</div>
+              <div className="text-[#9CA3AF] uppercase text-[11px] font-medium">TIMELINE</div>
               <div className="text-[#F3F4F6] font-semibold mt-0.5">{project.period}</div>
             </div>
             <div>
-              <div className="text-[#9CA3AF] uppercase text-[10px]">TARGET PLATFORMS</div>
+              <div className="text-[#9CA3AF] uppercase text-[11px] font-medium">TARGET PLATFORMS</div>
               <div className="text-[#F3F4F6] font-semibold mt-0.5">iOS & Android Mobile</div>
             </div>
           </div>
