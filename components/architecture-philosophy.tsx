@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Cpu, RefreshCw, Smartphone, ShieldCheck, Zap, ArrowRight } from "lucide-react";
+import { Cpu, RefreshCw, Smartphone, ShieldCheck, ArrowRight } from "lucide-react";
 import { SpotlightCard } from "./spotlight-card";
 
 export function ArchitecturePhilosophy() {
@@ -10,7 +10,7 @@ export function ArchitecturePhilosophy() {
       title: "UI Threading & Frame-Rate Optimization",
       description:
         "Offloading gesture handlers and frame-critical animations directly to the native UI thread using React Native Reanimated (v3) and Gesture Handler, bypassing JS thread bottlenecks to prevent visual jank.",
-      evidenceNote: "Applied in Duracell Energy (60fps telemetry loops) — discussed in interview & demonstrated in Telemetry Demo.",
+      evidenceNote: "Applied in Duracell Energy (60fps telemetry loops) and Telemetry Demo.",
       link: "#work",
     },
     {
@@ -18,7 +18,7 @@ export function ArchitecturePhilosophy() {
       title: "Normalized State & RTK Query Caching",
       description:
         "Replacing unmanaged Redux state with RTK Query normalized API polling and cache invalidation, preventing unnecessary component re-renders during high-frequency telemetry ingestion.",
-      evidenceNote: "Applied in Duracell Energy & Puredrive — prevents full-tree re-renders on 10s polling cycles.",
+      evidenceNote: "Applied in Duracell Energy & Puredrive — eliminates full-tree re-renders on 10s cycles.",
       link: "#work",
     },
     {
@@ -34,21 +34,21 @@ export function ArchitecturePhilosophy() {
       title: "Fastlane CI/CD & Code-Signing Match",
       description:
         "Standardizing cross-platform deployment pipelines using Fastlane Match with encrypted Git certificate storage, enabling automated TestFlight and Play Console Internal distribution.",
-      evidenceNote: "Applied in Cloud Energy Software — single-command beta deployment to TestFlight and Play Console.",
+      evidenceNote: "Applied in Cloud Energy Software — single-command beta deployment to stores.",
       link: "#work",
     },
   ];
 
   return (
-    <section id="architecture" className="w-full py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)] bg-[#0F1115]">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-12">
+    <section id="architecture" className="w-full py-14 sm:py-20 border-b border-[#E4E5E1] bg-[#F3F4F1]">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Section Header */}
-        <div className="max-w-[760px] space-y-3">
-          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-            Architectural Philosophy & Standards
+        <div className="max-w-[680px] space-y-2">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#14161A]">
+            Architectural standards
           </h2>
-          <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-            Core technical practices focused on native UI thread offloading, predictable normalized state synchronization, background battery conservation, and push-button release delivery.
+          <p className="text-sm sm:text-base text-[#5B5F66] leading-relaxed">
+            Core mobile engineering practices focused on native UI thread offloading, predictable normalized state synchronization, background battery conservation, and push-button release delivery.
           </p>
         </div>
 
@@ -59,25 +59,25 @@ export function ArchitecturePhilosophy() {
             return (
               <SpotlightCard key={item.title}>
                 <div className="p-6 space-y-4 flex flex-col justify-between h-full">
-                  <div className="space-y-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#D97706]/10 text-[#D97706] flex items-center justify-center border border-[#D97706]/30">
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#2F6FED]/10 text-[#2F6FED] flex items-center justify-center border border-[#2F6FED]/20">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-lg font-bold text-[#F3F4F6]">{item.title}</h3>
-                    <p className="text-sm text-[#9CA3AF] leading-relaxed">{item.description}</p>
+                    <h3 className="text-base sm:text-lg font-semibold text-[#14161A]">{item.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#5B5F66] leading-relaxed">{item.description}</p>
                   </div>
 
                   {/* Concrete Attribution Callout */}
-                  <div className="pt-4 mt-2 border-t border-[rgba(255,255,255,0.06)] flex flex-col gap-1.5 font-mono text-xs">
-                    <span className="text-[10px] text-[#D97706] uppercase tracking-wider font-semibold">
-                      WHERE IT IS DEMONSTRATED
+                  <div className="pt-4 border-t border-[#E4E5E1] flex flex-col gap-1 text-xs">
+                    <span className="text-xs text-[#7E8490] font-medium">
+                      Demonstrated in
                     </span>
                     <Link
                       href={item.link}
-                      className="text-xs text-[#F3F4F6] hover:text-[#D97706] transition-colors flex items-center gap-1 group"
+                      className="text-xs text-[#14161A] hover:text-[#2F6FED] transition-colors flex items-center gap-1 group font-medium"
                     >
-                      <span className="font-sans leading-snug">{item.evidenceNote}</span>
-                      <ArrowRight className="w-3 h-3 text-[#D97706] shrink-0 group-hover:translate-x-1 transition-transform" />
+                      <span className="leading-snug">{item.evidenceNote}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#2F6FED] shrink-0 group-hover:translate-x-0.5 transition-transform" />
                     </Link>
                   </div>
                 </div>

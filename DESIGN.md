@@ -1,47 +1,40 @@
 ---
 name: Yogendra Yadav Portfolio Design System
-description: Precision technical dark system for senior mobile systems engineer portfolio
+description: Precision On-Device light system for senior mobile systems engineer portfolio
 colors:
-  canvas: "#08090A"
-  surface: "#0F1115"
-  surface-elevated: "#16181D"
-  surface-subtle: "#1C1F26"
-  text-primary: "#F3F4F6"
-  text-secondary: "#9CA3AF"
-  text-tertiary: "#6B7280"
-  text-disabled: "#4B5563"
-  primary: "#D97706"
-  primary-hover: "#F59E0B"
-  primary-muted: "rgba(217, 119, 6, 0.12)"
-  primary-border: "rgba(217, 119, 6, 0.35)"
-  status-success: "#10B981"
-  status-warning: "#F59E0B"
-  status-info: "#3B82F6"
-  border-subtle: "rgba(255, 255, 255, 0.08)"
-  border-strong: "rgba(255, 255, 255, 0.16)"
-  border-accent: "rgba(217, 119, 6, 0.50)"
-  surface-border: "#2D323E"
+  bg-base: "#F3F4F1"
+  ink-primary: "#14161A"
+  ink-secondary: "#5B5F66"
+  surface: "#FFFFFF"
+  border-subtle: "#E4E5E1"
+  accent-interactive: "#2F6FED"
+  accent-live: "#3FAE64"
+  canvas: "#F3F4F1"
+  text-primary: "#14161A"
+  text-secondary: "#5B5F66"
+  primary: "#2F6FED"
+  primary-hover: "#2256BD"
+  status-success: "#3FAE64"
 typography:
   display:
-    fontFamily: "var(--font-geist-sans), -apple-system, sans-serif"
-    fontSize: "clamp(2.25rem, 5vw, 3.75rem)"
+    fontFamily: "'General Sans', -apple-system, sans-serif"
+    fontSize: "clamp(2.25rem, 5vw, 3.5rem)"
     fontWeight: 700
-    lineHeight: 1.1
-    letterSpacing: "-0.03em"
+    lineHeight: 1.15
+    letterSpacing: "-0.02em"
   headline:
-    fontFamily: "var(--font-geist-sans), -apple-system, sans-serif"
+    fontFamily: "'General Sans', -apple-system, sans-serif"
     fontSize: "clamp(1.5rem, 3vw, 2.25rem)"
     fontWeight: 600
     lineHeight: 1.2
-    letterSpacing: "-0.02em"
+    letterSpacing: "-0.01em"
   title:
-    fontFamily: "var(--font-geist-sans), -apple-system, sans-serif"
+    fontFamily: "'General Sans', -apple-system, sans-serif"
     fontSize: "1.25rem"
     fontWeight: 600
     lineHeight: 1.3
-    letterSpacing: "-0.01em"
   body:
-    fontFamily: "var(--font-geist-sans), -apple-system, sans-serif"
+    fontFamily: "var(--font-ibm-plex-sans), -apple-system, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.6

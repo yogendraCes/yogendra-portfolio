@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Zap, BarChart2, Calendar, Home, Battery, ExternalLink, Cpu, Maximize2, X, ChevronRight } from "lucide-react";
+import { Zap, BarChart2, Calendar, Home, ExternalLink, Cpu, Maximize2, X, ChevronRight } from "lucide-react";
 
 interface ScreenItem {
   id: string;
@@ -20,12 +20,12 @@ export function DuracellMediaGallery() {
   const screens: ScreenItem[] = [
     {
       id: "duracell-splash",
-      title: "1. Brand Launch & Splash Screen",
+      title: "1. Brand launch & splash screen",
       shortLabel: "1. App Splash",
       src: "/projects/duracell-energy/duracell-splash.png",
       alt: "Duracell Energy mobile app splash screen featuring official Duracell Bunny mascot.",
       icon: Cpu,
-      badge: "BRANDING & ENTRY",
+      badge: "Branding & Entry",
       engineeringContext:
         "Official Duracell-licensed application launch screen featuring native splash asset initialization, auth token rehydration, and background config fetch.",
       technicalDetails: [
@@ -36,12 +36,12 @@ export function DuracellMediaGallery() {
     },
     {
       id: "energy-flow",
-      title: "2. Live Energy Flow Monitor",
+      title: "2. Live energy flow monitor",
       shortLabel: "2. Energy Flow",
       src: "/projects/duracell-energy/energy-flow.png",
       alt: "Duracell Energy Live Usage Monitor showing real-time energy flow across solar, battery, grid, home and EV.",
       icon: Zap,
-      badge: "PRIMARY MONITORING",
+      badge: "Telemetry Monitor",
       engineeringContext:
         "Primary real-time telemetry dashboard displaying dynamic energy movement between Solar PV, Home Load, Battery Storage, Power Grid, and EV Charger.",
       technicalDetails: [
@@ -52,12 +52,12 @@ export function DuracellMediaGallery() {
     },
     {
       id: "home-flow",
-      title: "3. Home Flow Spatial View",
+      title: "3. Home flow spatial view",
       shortLabel: "3. Home Flow",
       src: "/projects/duracell-energy/home-flow.png",
       alt: "Duracell Energy Home Flow screen showing spatial energy distribution through household circuits.",
       icon: Home,
-      badge: "SPATIAL VISUALIZATION",
+      badge: "Spatial View",
       engineeringContext:
         "Spatial energy visualization mode illustrating directional power flow through household circuits, connected appliances, and storage nodes.",
       technicalDetails: [
@@ -68,12 +68,12 @@ export function DuracellMediaGallery() {
     },
     {
       id: "ev-live-usage",
-      title: "4. EV Smart Charging Control",
+      title: "4. EV smart charging control",
       shortLabel: "4. EV Charging",
       src: "/projects/duracell-energy/ev-live-usage.png",
       alt: "Duracell Energy EV-1 Live Usage screen showing charge modes, rates, and slider controls.",
       icon: Zap,
-      badge: "EV SMART CHARGING",
+      badge: "EV Charging",
       engineeringContext:
         "EV charging management interface providing charge preset modes (Puregreen, GreenBoost, Smart, Timed Boost), target capacity sliders, and live kW telemetry.",
       technicalDetails: [
@@ -84,12 +84,12 @@ export function DuracellMediaGallery() {
     },
     {
       id: "scheduled-control",
-      title: "5. Scheduled Energy Control",
+      title: "5. Scheduled energy control",
       shortLabel: "5. Scheduled Control",
       src: "/projects/duracell-energy/scheduled-control.png",
       alt: "Duracell Energy Scheduled Control screen showing user-configurable charging slots, target battery percentages, and charge rates.",
       icon: Calendar,
-      badge: "STATE & TARIFF CONTROL",
+      badge: "Tariff Control",
       engineeringContext:
         "User-configurable charging and discharging schedules, target battery State of Charge (SoC) percentages, and off-peak grid tariff controls.",
       technicalDetails: [
@@ -100,12 +100,12 @@ export function DuracellMediaGallery() {
     },
     {
       id: "energy-insights",
-      title: "6. Time-Series Energy Insights",
+      title: "6. Time-series energy insights",
       shortLabel: "6. Energy Insights",
       src: "/projects/duracell-energy/energy-insights.png",
       alt: "Duracell Energy Insights screen showing interactive daily time-series energy charts.",
       icon: BarChart2,
-      badge: "D3 + SVG CHARTING",
+      badge: "D3 + SVG Charts",
       engineeringContext:
         "Interactive time-series charts rendering multi-source generation, storage, and consumption curves across dynamic daily, monthly, and annual ranges.",
       technicalDetails: [
@@ -121,18 +121,18 @@ export function DuracellMediaGallery() {
   const activeScreen = screens.find((s) => s.id === activeScreenId) || screens[0];
 
   return (
-    <div className="w-full bg-[#0B0D10] border border-[rgba(255,255,255,0.08)] rounded-xl p-4 sm:p-6 overflow-hidden space-y-6">
+    <div className="w-full bg-[#F3F4F1] border border-[#E4E5E1] rounded-2xl p-4 sm:p-6 overflow-hidden space-y-6">
       {/* Component Header & Store Quick Links */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[rgba(255,255,255,0.08)]">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#E4E5E1]">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" aria-hidden="true" />
-            <span className="font-mono text-[10px] sm:text-xs text-[#9CA3AF] tracking-wider uppercase">
-              PRODUCTION MOBILE APPLICATION // SHIPPED PRODUCT MEDIA
+            <span className="w-2 h-2 rounded-full bg-[#3FAE64]" aria-hidden="true" />
+            <span className="text-xs text-[#5B5F66] font-medium">
+              Shipped product screens
             </span>
           </div>
-          <h4 className="text-base sm:text-lg font-bold text-[#F3F4F6] tracking-tight">
-            Duracell Energy Mobile Application Screenshots
+          <h4 className="text-base sm:text-lg font-semibold text-[#14161A] tracking-tight">
+            Duracell Energy mobile app interface
           </h4>
         </div>
 
@@ -142,25 +142,25 @@ export function DuracellMediaGallery() {
             href="https://apps.apple.com/in/app/duracell-energy/id6460931680"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-1.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.12)] hover:border-[#D97706]/40 text-[#F3F4F6] font-mono text-xs font-medium transition-colors flex items-center gap-1.5"
+            className="px-3 py-1.5 rounded-lg bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-colors flex items-center gap-1.5 shadow-2xs"
           >
-            <span>View on App Store</span>
-            <ExternalLink className="w-3.5 h-3.5 text-[#D97706]" />
+            <span>App Store</span>
+            <ExternalLink className="w-3.5 h-3.5 text-[#2F6FED]" />
           </a>
           <a
             href="https://play.google.com/store/apps/details?id=com.duracell"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-1.5 rounded bg-[#16181D] hover:bg-[#1C1F26] border border-[rgba(255,255,255,0.12)] hover:border-[#10B981]/40 text-[#F3F4F6] font-mono text-xs font-medium transition-colors flex items-center gap-1.5"
+            className="px-3 py-1.5 rounded-lg bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-colors flex items-center gap-1.5 shadow-2xs"
           >
-            <span>Get it on Google Play</span>
-            <ExternalLink className="w-3.5 h-3.5 text-[#10B981]" />
+            <span>Google Play</span>
+            <ExternalLink className="w-3.5 h-3.5 text-[#3FAE64]" />
           </a>
         </div>
       </div>
 
       {/* Screen Selector Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-zinc-800">
+      <div className="flex items-center gap-2 overflow-x-auto pb-2">
         {screens.map((screen) => {
           const Icon = screen.icon;
           const isActive = screen.id === activeScreenId;
@@ -168,13 +168,13 @@ export function DuracellMediaGallery() {
             <button
               key={screen.id}
               onClick={() => setActiveScreenId(screen.id)}
-              className={`px-3 py-2 rounded-lg font-mono text-xs font-medium whitespace-nowrap transition-all flex items-center gap-2 border shrink-0 cursor-pointer ${
+              className={`px-3 py-2 rounded-lg text-xs font-medium whitespace-nowrap transition-all flex items-center gap-2 border shrink-0 cursor-pointer ${
                 isActive
-                  ? "bg-[#16181D] text-[#F3F4F6] border-[#D97706] shadow-md shadow-amber-950/40"
-                  : "bg-[#0F1115] text-[#9CA3AF] border-[rgba(255,255,255,0.06)] hover:text-[#F3F4F6] hover:border-zinc-700"
+                  ? "bg-[#2F6FED] text-white border-[#2F6FED] shadow-xs"
+                  : "bg-white text-[#5B5F66] border-[#E4E5E1] hover:text-[#14161A] hover:bg-[#F3F4F1]"
               }`}
             >
-              <Icon className={`w-3.5 h-3.5 ${isActive ? "text-[#D97706]" : "text-[#9CA3AF]"}`} />
+              <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-[#5B5F66]"}`} />
               <span>{screen.shortLabel}</span>
             </button>
           );
@@ -183,40 +183,34 @@ export function DuracellMediaGallery() {
 
       {/* Feature Display Grid */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-2">
-        {/* Left Column: Hyper-Realistic iPhone Hardware Mockup */}
+        {/* Left Column: Realistic iPhone Hardware Mockup */}
         <div className="md:col-span-5 flex justify-center">
-          <div className="relative group cursor-pointer" onClick={() => setIsLightboxOpen(true)}>
-            {/* Ambient Backlight Glow Effect */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-[#D97706]/20 via-[#10B981]/20 to-[#3B82F6]/20 rounded-[40px] blur-xl opacity-60 group-hover:opacity-100 transition-opacity" />
-
+          <div className="relative group cursor-pointer select-none" onClick={() => setIsLightboxOpen(true)}>
             {/* Phone Chassis Frame */}
-            <div className="relative w-[240px] sm:w-[260px] rounded-[44px] bg-gradient-to-b from-[#2D323E] via-[#16181D] to-[#0B0D10] p-3 border-2 border-zinc-700/80 shadow-2xl shadow-black">
-              {/* Top Notch Dynamic Island */}
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-4 bg-black rounded-full z-30 flex items-center justify-between px-2">
-                <span className="w-2 h-2 rounded-full bg-[#10B981]/80" />
-                <span className="w-1.5 h-1.5 rounded-full bg-zinc-800" />
+            <div className="relative w-[230px] sm:w-[250px] rounded-[40px] bg-[#1C1E22] p-3 border border-[#3A3F47] shadow-xl">
+              {/* Top Dynamic Island */}
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-4 bg-black rounded-full z-30 flex items-center justify-between px-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#3FAE64]" />
+                <span className="w-1 h-1 rounded-full bg-zinc-800" />
               </div>
 
-              {/* Glass Reflection Sheen */}
-              <div className="absolute inset-0 rounded-[44px] bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none z-20" />
-
               {/* Hover Zoom Overlay Badge */}
-              <div className="absolute inset-0 rounded-[40px] bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity z-30 flex items-center justify-center">
-                <span className="px-3 py-1.5 rounded-full bg-[#0F1115]/90 border border-[#D97706]/50 font-mono text-xs text-[#F3F4F6] font-bold flex items-center gap-1.5 shadow-xl">
-                  <Maximize2 className="w-3.5 h-3.5 text-[#D97706]" />
-                  <span>Click to Zoom</span>
+              <div className="absolute inset-0 rounded-[38px] bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity z-30 flex items-center justify-center">
+                <span className="px-3 py-1.5 rounded-full bg-white text-[#14161A] text-xs font-semibold flex items-center gap-1.5 shadow-lg">
+                  <Maximize2 className="w-3.5 h-3.5 text-[#2F6FED]" />
+                  <span>Click to zoom</span>
                 </span>
               </div>
 
               {/* Screen Display Box */}
-              <div className="relative w-full aspect-[9/19.5] rounded-[34px] overflow-hidden bg-[#08090A] border border-black/80">
+              <div className="relative w-full aspect-[9/19.5] rounded-[30px] overflow-hidden bg-black">
                 <Image
                   src={activeScreen.src}
                   alt={activeScreen.alt}
                   fill
                   priority={activeScreen.id === "energy-flow"}
-                  sizes="(max-width: 640px) 240px, 260px"
-                  className="object-contain object-center"
+                  sizes="(max-width: 640px) 230px, 250px"
+                  className="object-cover object-top"
                 />
               </div>
             </div>
@@ -226,33 +220,33 @@ export function DuracellMediaGallery() {
         {/* Right Column: Engineering Context */}
         <div className="md:col-span-7 space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="font-mono text-[10px] sm:text-xs text-[#D97706] font-semibold uppercase bg-[#D97706]/10 px-2.5 py-1 rounded border border-[#D97706]/30">
+            <span className="text-xs text-[#2F6FED] font-medium bg-[#2F6FED]/10 px-2.5 py-0.5 rounded-full border border-[#2F6FED]/20">
               {activeScreen.badge}
             </span>
-            <span className="font-mono text-xs text-[#9CA3AF]">
-              SCREENSHOT 0{screens.findIndex((s) => s.id === activeScreenId) + 1} / 0{screens.length}
+            <span className="text-xs text-[#7E8490]">
+              Screen {screens.findIndex((s) => s.id === activeScreenId) + 1} of {screens.length}
             </span>
           </div>
 
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-[#F3F4F6] tracking-tight">
+            <h3 className="text-lg sm:text-xl font-semibold text-[#14161A] tracking-tight">
               {activeScreen.title}
             </h3>
-            <p className="text-sm text-[#9CA3AF] leading-relaxed mt-2">
+            <p className="text-sm text-[#5B5F66] leading-relaxed mt-1">
               {activeScreen.engineeringContext}
             </p>
           </div>
 
           {/* Technical Implementation Callout */}
-          <div className="bg-[#0F1115] border border-[rgba(255,255,255,0.08)] rounded-lg p-4 space-y-2">
-            <div className="font-mono text-xs text-[#D97706] font-semibold uppercase flex items-center gap-1.5">
-              <Cpu className="w-4 h-4 text-[#10B981]" />
-              <span>ENGINEERING IMPLEMENTATION</span>
+          <div className="bg-white border border-[#E4E5E1] rounded-xl p-4 space-y-2 shadow-xs">
+            <div className="text-xs text-[#14161A] font-semibold flex items-center gap-1.5">
+              <Cpu className="w-4 h-4 text-[#2F6FED]" />
+              <span>Engineering implementation</span>
             </div>
-            <ul className="space-y-1.5 text-xs text-[#9CA3AF] font-sans">
+            <ul className="space-y-1.5 text-xs text-[#5B5F66]">
               {activeScreen.technicalDetails.map((detail, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <ChevronRight className="w-3.5 h-3.5 text-[#D97706] shrink-0 mt-0.5" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#2F6FED] shrink-0 mt-0.5" />
                   <span>{detail}</span>
                 </li>
               ))}
@@ -263,17 +257,24 @@ export function DuracellMediaGallery() {
 
       {/* Lightbox Modal for High-Resolution Inspection */}
       {isLightboxOpen && (
-        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6" onClick={() => setIsLightboxOpen(false)}>
-          <div className="relative max-w-4xl w-full bg-[#0F1115] border border-zinc-700 rounded-2xl overflow-hidden p-6 space-y-4" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+          onClick={() => setIsLightboxOpen(false)}
+        >
+          <div
+            className="relative max-w-3xl w-full bg-white border border-[#E4E5E1] rounded-2xl overflow-hidden p-6 space-y-4 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Modal Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
+            <div className="flex items-center justify-between pb-3 border-b border-[#E4E5E1]">
               <div>
-                <h3 className="font-bold text-lg text-[#F3F4F6]">{activeScreen.title}</h3>
-                <span className="font-mono text-xs text-[#D97706]">{activeScreen.badge}</span>
+                <h3 className="font-semibold text-base text-[#14161A]">{activeScreen.title}</h3>
+                <span className="text-xs text-[#2F6FED]">{activeScreen.badge}</span>
               </div>
               <button
                 onClick={() => setIsLightboxOpen(false)}
-                className="p-2 rounded-lg bg-[#16181D] hover:bg-zinc-800 text-[#9CA3AF] hover:text-white transition-colors cursor-pointer"
+                className="p-1.5 rounded-lg bg-[#F3F4F1] hover:bg-[#E4E5E1] text-[#14161A] transition-colors cursor-pointer"
+                aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>

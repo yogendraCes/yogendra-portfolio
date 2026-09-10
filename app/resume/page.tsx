@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { profileData } from "@/data/profile";
 import { experienceData } from "@/data/experience";
 import { skillsData } from "@/data/skills";
-import { Navigation } from "@/components/navigation";
+import { NavRail } from "@/components/nav-rail";
 import { Footer } from "@/components/footer";
 import { Download, Mail, Briefcase, Wrench, CheckCircle2 } from "lucide-react";
 
@@ -27,136 +27,136 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navigation />
-      <main id="main-content" className="flex-1 bg-[#08090A] py-12 sm:py-16">
-        <div className="max-w-[960px] mx-auto px-4 sm:px-6 space-y-12">
-          {/* Header Action Bar */}
-          <div className="p-8 rounded-xl bg-[#0F1115] border border-[rgba(255,255,255,0.08)] flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-sm">
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
-                <span className="font-mono text-xs text-[#F3F4F6] font-medium tracking-wider uppercase">
-                  {profileData.statusText}
-                </span>
+    <div className="min-h-screen bg-[#F3F4F1] text-[#14161A]">
+      <NavRail />
+      <div className="lg:pl-64 flex flex-col min-h-screen">
+        <main id="main-content" className="flex-1 py-12 sm:py-16 pb-16 lg:pb-16">
+          <div className="max-w-[960px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            {/* Header Action Bar */}
+            <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E4E5E1] flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xs">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F3F4F1] border border-[#E4E5E1] text-xs text-[#5B5F66]">
+                  <span className="w-2 h-2 rounded-full bg-[#3FAE64]" />
+                  <span>{profileData.statusText}</span>
+                </div>
+                <h1 className="text-3xl sm:text-4xl font-semibold text-[#14161A] tracking-tight">{profileData.name}</h1>
+                <p className="text-sm text-[#2F6FED] font-medium">{profileData.title}</p>
+                <p className="text-xs text-[#7E8490]">{profileData.location}</p>
               </div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-[#F3F4F6] tracking-tight">{profileData.name}</h1>
-              <p className="font-mono text-sm text-[#D97706] font-medium">{profileData.title}</p>
-              <p className="text-xs text-[#9CA3AF]">{profileData.location}</p>
+
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <a
+                  href={profileData.resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 rounded-xl bg-[#2F6FED] text-white text-xs font-medium hover:bg-[#2256BD] transition-all flex items-center justify-center gap-2 shadow-xs min-h-[44px]"
+                >
+                  <Download className="w-4 h-4 shrink-0" aria-hidden="true" />
+                  <span>Download PDF resume</span>
+                </a>
+                <a
+                  href={`mailto:${profileData.email}`}
+                  className="px-4 py-2.5 rounded-xl bg-white text-[#14161A] text-xs font-medium border border-[#E4E5E1] hover:bg-[#F3F4F1] transition-all flex items-center justify-center gap-2 min-h-[44px]"
+                >
+                  <Mail className="w-4 h-4 text-[#2F6FED] shrink-0" aria-hidden="true" />
+                  <span>Email direct</span>
+                </a>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <a
-                href={profileData.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-3 rounded-lg bg-[#D97706] text-[#08090A] font-mono text-xs font-bold hover:bg-[#F59E0B] transition-all flex items-center justify-center gap-2 shadow-md shadow-amber-950/30 hover:-translate-y-0.5 min-h-[44px]"
-              >
-                <Download className="w-4 h-4 shrink-0" aria-hidden="true" />
-                <span>Download PDF Resume</span>
-              </a>
-              <a
-                href={`mailto:${profileData.email}`}
-                className="px-4 py-3 rounded-lg bg-[#16181D] text-[#F3F4F6] font-mono text-xs font-semibold border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 hover:bg-[#1C1F26] transition-all flex items-center justify-center gap-2 min-h-[44px] hover:-translate-y-0.5"
-              >
-                <Mail className="w-4 h-4 text-[#D97706] shrink-0" aria-hidden="true" />
-                <span>Email Direct</span>
-              </a>
-            </div>
-          </div>
+            {/* Core Summary */}
+            <section className="space-y-4">
+              <h2 className="text-lg font-semibold text-[#14161A] border-b border-[#E4E5E1] pb-2 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#2F6FED]" aria-hidden="true" />
+                <span>Professional summary</span>
+              </h2>
+              <div className="space-y-3 text-sm text-[#5B5F66] leading-relaxed">
+                {profileData.overviewParagraphs.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </section>
 
-          {/* Core Summary */}
-          <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#F3F4F6] border-b border-[rgba(255,255,255,0.08)] pb-2 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#D97706]" aria-hidden="true" />
-              <span>Professional Summary</span>
-            </h2>
-            <div className="space-y-3 text-sm text-[#9CA3AF] leading-relaxed">
-              {profileData.overviewParagraphs.map((para, i) => (
-                <p key={i}>{para}</p>
-              ))}
-            </div>
-          </section>
-
-          {/* Work Experience */}
-          <section className="space-y-6">
-            <h2 className="text-xl font-bold text-[#F3F4F6] border-b border-[rgba(255,255,255,0.08)] pb-2 flex items-center gap-2">
-              <Briefcase className="w-5 h-5 text-[#D97706]" aria-hidden="true" />
-              <span>Work History & Accomplishments</span>
-            </h2>
-            <div className="space-y-6">
-              {experienceData.map((exp) => (
-                <div key={exp.id} className="p-6 rounded-xl bg-[#0F1115] border border-[rgba(255,255,255,0.08)] space-y-4">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-3 border-b border-[rgba(255,255,255,0.06)]">
-                    <div>
-                      <h3 className="text-lg font-bold text-[#F3F4F6]">{exp.role}</h3>
-                      <div className="flex flex-wrap items-center gap-2 mt-0.5">
-                        <span className="font-mono text-xs text-[#D97706] font-semibold">{exp.company}</span>
-                        {exp.subLabel && (
-                          <span className="font-mono text-[10px] px-1.5 py-0.5 rounded bg-[#16181D] text-[#10B981] border border-[rgba(16,185,129,0.2)] font-medium">
-                            {exp.subLabel}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    <div className="font-mono text-xs text-[#9CA3AF]">{exp.period} | {exp.location}</div>
-                  </div>
-                  <p className="text-xs text-[#F3F4F6] font-medium bg-[#16181D] p-3 rounded border border-[rgba(255,255,255,0.06)]">
-                    {exp.scope}
-                  </p>
-                  {exp.responsibilities && (
-                    <ul className="space-y-2 text-xs text-[#9CA3AF]">
-                      {exp.responsibilities.map((r, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0 mt-0.5" aria-hidden="true" />
-                          <span>{r}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {exp.phases && (
-                    <div className="space-y-3 pt-2">
-                      {exp.phases.map((phase) => (
-                        <div key={phase.id} className="p-3 rounded bg-[#16181D] border border-[rgba(255,255,255,0.06)] space-y-2">
-                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                            <div className="font-bold text-xs text-[#F3F4F6]">{phase.title} ({phase.badge})</div>
-                            <div className="font-mono text-[10px] text-[#D97706]">{phase.period}</div>
-                          </div>
-                          <ul className="space-y-1 text-xs text-[#9CA3AF]">
-                            {phase.responsibilities.map((r, i) => (
-                              <li key={i} className="flex items-start gap-2">
-                                <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981] shrink-0 mt-0.5" aria-hidden="true" />
-                                <span>{r}</span>
-                              </li>
-                            ))}
-                          </ul>
+            {/* Work Experience */}
+            <section className="space-y-6">
+              <h2 className="text-lg font-semibold text-[#14161A] border-b border-[#E4E5E1] pb-2 flex items-center gap-2">
+                <Briefcase className="w-4 h-4 text-[#2F6FED]" aria-hidden="true" />
+                <span>Work history & accomplishments</span>
+              </h2>
+              <div className="space-y-6">
+                {experienceData.map((exp) => (
+                  <div key={exp.id} className="p-6 rounded-2xl bg-white border border-[#E4E5E1] space-y-4 shadow-xs">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-3 border-b border-[#E4E5E1]">
+                      <div>
+                        <h3 className="text-base sm:text-lg font-semibold text-[#14161A]">{exp.role}</h3>
+                        <div className="flex flex-wrap items-center gap-2 mt-0.5">
+                          <span className="text-xs text-[#2F6FED] font-medium">{exp.company}</span>
+                          {exp.subLabel && (
+                            <span className="text-xs px-2 py-0.5 rounded-md bg-[#F3F4F1] text-[#3FAE64] border border-[#3FAE64]/20 font-medium">
+                              {exp.subLabel}
+                            </span>
+                          )}
                         </div>
-                      ))}
+                      </div>
+                      <div className="text-xs text-[#7E8490]">{exp.period} • {exp.location}</div>
                     </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </section>
+                    <p className="text-xs text-[#14161A] font-medium bg-[#F3F4F1] p-3 rounded-xl border border-[#E4E5E1]">
+                      {exp.scope}
+                    </p>
+                    {exp.responsibilities && (
+                      <ul className="space-y-2 text-xs text-[#5B5F66]">
+                        {exp.responsibilities.map((r, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#3FAE64] shrink-0 mt-0.5" aria-hidden="true" />
+                            <span>{r}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {exp.phases && (
+                      <div className="space-y-3 pt-2">
+                        {exp.phases.map((phase) => (
+                          <div key={phase.id} className="p-3.5 rounded-xl bg-[#F3F4F1] border border-[#E4E5E1] space-y-2">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                              <div className="font-semibold text-xs text-[#14161A]">{phase.title} ({phase.badge})</div>
+                              <div className="text-xs text-[#2F6FED] font-medium">{phase.period}</div>
+                            </div>
+                            <ul className="space-y-1 text-xs text-[#5B5F66]">
+                              {phase.responsibilities.map((r, i) => (
+                                <li key={i} className="flex items-start gap-2">
+                                  <CheckCircle2 className="w-3.5 h-3.5 text-[#3FAE64] shrink-0 mt-0.5" aria-hidden="true" />
+                                  <span>{r}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
 
-          {/* Skills Matrix Summary */}
-          <section className="space-y-4">
-            <h2 className="text-xl font-bold text-[#F3F4F6] border-b border-[rgba(255,255,255,0.08)] pb-2 flex items-center gap-2">
-              <Wrench className="w-5 h-5 text-[#D97706]" aria-hidden="true" />
-              <span>Skills & Tools</span>
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs">
-              {skillsData.map((cat) => (
-                <div key={cat.category} className="p-4 rounded-lg bg-[#0F1115] border border-[rgba(255,255,255,0.08)] space-y-2">
-                  <div className="text-[#D97706] font-bold uppercase">{cat.category}</div>
-                  <div className="text-[#F3F4F6]">{cat.technologies.join(" • ")}</div>
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
-      </main>
-      <Footer />
+            {/* Skills Matrix Summary */}
+            <section className="space-y-4">
+              <h2 className="text-lg font-semibold text-[#14161A] border-b border-[#E4E5E1] pb-2 flex items-center gap-2">
+                <Wrench className="w-4 h-4 text-[#2F6FED]" aria-hidden="true" />
+                <span>Skills & tools</span>
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                {skillsData.map((cat) => (
+                  <div key={cat.category} className="p-4 rounded-xl bg-white border border-[#E4E5E1] space-y-1.5 shadow-xs">
+                    <div className="text-[#2F6FED] font-medium">{cat.category}</div>
+                    <div className="text-[#14161A]">{cat.technologies.join(" • ")}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

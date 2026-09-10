@@ -1,7 +1,7 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import { projectsData } from "@/data/projects";
-import { Navigation } from "@/components/navigation";
+import { NavRail } from "@/components/nav-rail";
 import { CaseStudyView } from "@/components/case-study/case-study-view";
 import { Footer } from "@/components/footer";
 
@@ -76,18 +76,20 @@ export default async function CaseStudyPage({ params }: PageProps) {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen bg-[#F3F4F1] text-[#14161A]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLdArticle).replace(/</g, "\\u003c"),
         }}
       />
-      <Navigation />
-      <main id="main-content" className="flex-1">
-        <CaseStudyView project={project} />
-      </main>
-      <Footer />
+      <NavRail />
+      <div className="lg:pl-64 flex flex-col min-h-screen">
+        <main id="main-content" className="flex-1 pb-16 lg:pb-0">
+          <CaseStudyView project={project} />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

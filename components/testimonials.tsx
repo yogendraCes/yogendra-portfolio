@@ -1,6 +1,6 @@
 import React from "react";
 import { testimonialsData } from "@/data/testimonials";
-import { MessageSquareQuote, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 
 export function Testimonials() {
   const validTestimonials = testimonialsData.filter(
@@ -18,15 +18,15 @@ export function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="w-full py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)] bg-[#08090A]">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-12">
+    <section id="testimonials" className="w-full py-14 sm:py-20 border-b border-[#E4E5E1] bg-[#F3F4F1]">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Section Header */}
-        <div className="max-w-[760px] space-y-2.5">
-          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-            Trusted by Teams & Clients
+        <div className="max-w-[680px] space-y-2">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#14161A]">
+            Engineering recommendations
           </h2>
-          <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-            Recommendations and engineering feedback from project managers, cross-functional leads, and technical clients.
+          <p className="text-sm sm:text-base text-[#5B5F66] leading-relaxed">
+            Direct feedback from project managers, cross-functional leads, and engineering directors.
           </p>
         </div>
 
@@ -35,25 +35,25 @@ export function Testimonials() {
           {validTestimonials.map((item) => (
             <div
               key={item.id}
-              className="bg-[#0F1115] border border-[rgba(255,255,255,0.08)] hover:border-[#D97706]/30 rounded-xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-sm hover:shadow-lg hover:shadow-black/40 hover:-translate-y-0.5 transition-all group"
+              className="bg-white border border-[#E4E5E1] hover:border-[#D1D3CD] rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xs hover:shadow-md transition-all group"
             >
               <div className="space-y-4">
-                <Quote className="w-6 h-6 text-[#D97706]/70 group-hover:text-[#D97706] transition-colors" />
-                <p className="text-sm sm:text-base text-[#F3F4F6] italic leading-relaxed font-normal">
+                <Quote className="w-6 h-6 text-[#2F6FED] group-hover:scale-105 transition-transform" />
+                <p className="text-sm sm:text-base text-[#14161A] italic leading-relaxed">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[rgba(255,255,255,0.06)] flex items-end justify-between gap-3">
+              <div className="pt-4 border-t border-[#E4E5E1] flex items-end justify-between gap-3">
                 <div className="space-y-0.5">
-                  <div className="font-bold text-sm text-[#F3F4F6]">{item.name}</div>
-                  <div className="font-mono text-xs text-[#9CA3AF]">
-                    {item.role} at <span className="text-[#D97706] font-medium">{item.company}</span>
+                  <div className="font-semibold text-sm text-[#14161A]">{item.name}</div>
+                  <div className="text-xs text-[#5B5F66]">
+                    {item.role} at <span className="text-[#2F6FED] font-medium">{item.company}</span>
                   </div>
                 </div>
 
                 {item.relationshipTag && (
-                  <span className="font-mono text-xs px-2.5 py-1 rounded bg-[#16181D] text-[#10B981] border border-[rgba(16,185,129,0.25)] font-semibold shrink-0">
+                  <span className="text-xs px-2.5 py-0.5 rounded-md bg-[#F3F4F1] text-[#3FAE64] border border-[#3FAE64]/20 font-medium shrink-0">
                     {item.relationshipTag}
                   </span>
                 )}

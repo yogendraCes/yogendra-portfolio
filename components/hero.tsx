@@ -1,48 +1,46 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { profileData } from "@/data/profile";
-import { ArrowDown, MessageSquare, Terminal, Layers, Download, Award, ShieldCheck, Zap } from "lucide-react";
-import { HeroArchitectureVisual } from "./hero-architecture-visual";
-import { AnimatedCounter } from "./animated-counter";
+import { ArrowDown, Layers, FileText, ArrowUpRight } from "lucide-react";
+import { HeroDevice3D } from "./hero-device-3d";
 
 export function Hero() {
   return (
-    <section className="relative w-full pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-[rgba(255,255,255,0.08)] bg-grid-pattern hero-glow">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Main Content Column (7 cols desktop) */}
+    <section className="relative w-full pt-8 sm:pt-14 pb-16 sm:pb-20 border-b border-[#E4E5E1] bg-[#F3F4F1]">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          {/* Main Copy Column (7 cols desktop) */}
           <div className="lg:col-span-7 space-y-6">
-            {/* Operational Status Beacon */}
-            <div className="inline-flex max-w-full items-center gap-2 px-3 py-1 rounded-full bg-[#16181D] border border-[rgba(255,255,255,0.12)]">
-              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse shrink-0" aria-hidden="true" />
-              <span className="font-mono text-xs text-[#F3F4F6] font-medium tracking-wider uppercase leading-snug break-words">
+            {/* Operational Status Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E4E5E1] shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-[#3FAE64]" aria-hidden="true" />
+              <span className="text-xs text-[#5B5F66] font-medium">
                 {profileData.statusText}
               </span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#F3F4F6] leading-[1.18]">
+            {/* Main Headline (Sentence Case, Confident Display Font) */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#14161A] leading-[1.15]">
               {profileData.headline}
             </h1>
 
             {/* Subheadline */}
-            <p className="text-sm sm:text-lg text-[#9CA3AF] leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-[#5B5F66] leading-relaxed max-w-[560px]">
               {profileData.subheadline}
             </p>
 
-            {/* Primary Technology Stack Bar */}
-            <div className="pt-1 pb-1">
-              <div className="flex items-center gap-2 mb-2.5">
-                <Terminal className="w-4 h-4 text-[#D97706]" aria-hidden="true" />
-                <span className="font-mono text-xs text-[#9CA3AF] uppercase tracking-wider">
-                  CORE TECHNICAL STACK
-                </span>
-              </div>
+            {/* Core Technical Capabilities (Sentence Case Pills) */}
+            <div className="pt-1">
+              <p className="text-xs font-medium text-[#5B5F66] mb-2.5">
+                Core technologies
+              </p>
               <div className="flex flex-wrap gap-2">
                 {profileData.coreStack.map((tech) => (
                   <span
                     key={tech}
-                    className="font-mono text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-[#16181D] text-[#9CA3AF] border border-[rgba(255,255,255,0.08)] hover:border-[#D97706]/40 hover:text-[#F3F4F6] transition-colors"
+                    className="text-xs px-2.5 py-1 rounded-md bg-white text-[#14161A] border border-[#E4E5E1] shadow-xs"
                   >
                     {tech}
                   </span>
@@ -50,73 +48,61 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Impact Metric Counters Grid */}
-            <div className="grid grid-cols-3 gap-3 py-2 border-y border-[rgba(255,255,255,0.08)]">
-              <div className="font-mono">
-                <div className="text-lg sm:text-2xl font-bold text-[#F3F4F6] flex items-center gap-1">
-                  <span>3</span>
+            {/* Shipped Impact Numbers (Tabular Figures) */}
+            <div className="grid grid-cols-3 gap-4 pt-4 pb-2 border-y border-[#E4E5E1]">
+              <div>
+                <div className="text-2xl sm:text-3xl font-semibold text-[#14161A] tabular-nums">
+                  3
                 </div>
-                <div className="text-[10px] sm:text-xs text-[#9CA3AF] uppercase flex items-center gap-1 mt-0.5">
-                  <Award className="w-3 h-3 text-[#D97706]" />
-                  <span>Apps Shipped</span>
-                </div>
-              </div>
-
-              <div className="font-mono">
-                <div className="text-lg sm:text-2xl font-bold text-[#10B981] flex items-center gap-1">
-                  <span>6.5+</span>
-                </div>
-                <div className="text-[10px] sm:text-xs text-[#9CA3AF] uppercase flex items-center gap-1 mt-0.5">
-                  <Zap className="w-3 h-3 text-[#10B981]" />
-                  <span>Yrs Experience</span>
+                <div className="text-xs text-[#5B5F66] mt-0.5">
+                  Production apps
                 </div>
               </div>
 
-              <div className="font-mono">
-                <div className="text-lg sm:text-2xl font-bold text-[#3B82F6] flex items-center gap-1">
-                  <span>99.8%</span>
+              <div>
+                <div className="text-2xl sm:text-3xl font-semibold text-[#14161A] tabular-nums">
+                  6.5+
                 </div>
-                <div className="text-[10px] sm:text-xs text-[#9CA3AF] uppercase flex items-center gap-1 mt-0.5">
-                  <ShieldCheck className="w-3 h-3 text-[#3B82F6]" />
-                  <span>Crash-Free Rate</span>
+                <div className="text-xs text-[#5B5F66] mt-0.5">
+                  Years experience
+                </div>
+              </div>
+
+              <div>
+                <div className="text-2xl sm:text-3xl font-semibold text-[#14161A] tabular-nums">
+                  99.8%
+                </div>
+                <div className="text-xs text-[#5B5F66] mt-0.5">
+                  Crash-free rate
                 </div>
               </div>
             </div>
 
             {/* Action Triggers (CTAs) */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <Link
                 href="#work"
-                className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-lg bg-[#D97706] text-[#08090A] font-mono text-xs sm:text-sm font-bold hover:bg-[#F59E0B] transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-950/40 min-h-[44px]"
+                className="px-5 py-2.5 rounded-lg bg-[#2F6FED] text-white text-sm font-medium hover:bg-[#2256BD] transition-all flex items-center justify-center gap-2 shadow-xs min-h-[44px]"
               >
-                <Layers className="w-4 h-4 shrink-0" aria-hidden="true" />
-                <span>View My Work</span>
-                <ArrowDown className="w-4 h-4 shrink-0" aria-hidden="true" />
+                <Layers className="w-4 h-4" aria-hidden="true" />
+                <span>View selected work</span>
+                <ArrowDown className="w-4 h-4" aria-hidden="true" />
               </Link>
 
               <Link
-                href="/contact"
-                className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-lg bg-[#16181D] text-[#F3F4F6] font-mono text-xs sm:text-sm font-semibold border border-[rgba(255,255,255,0.16)] hover:border-[#D97706]/50 hover:bg-[#1C1F26] transition-all flex items-center justify-center gap-2 min-h-[44px]"
+                href="/resume"
+                className="px-5 py-2.5 rounded-lg bg-white text-[#14161A] text-sm font-medium border border-[#E4E5E1] hover:bg-[#F3F4F1] hover:border-[#D1D3CD] transition-all flex items-center justify-center gap-2 min-h-[44px]"
               >
-                <MessageSquare className="w-4 h-4 text-[#D97706] shrink-0" aria-hidden="true" />
-                <span>Get in Touch</span>
+                <FileText className="w-4 h-4 text-[#5B5F66]" aria-hidden="true" />
+                <span>Read resume</span>
+                <ArrowUpRight className="w-4 h-4 text-[#7E8490]" aria-hidden="true" />
               </Link>
-
-              <a
-                href={profileData.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 sm:px-5 py-3 sm:py-3.5 rounded-lg bg-[#16181D] text-[#9CA3AF] hover:text-[#F3F4F6] font-mono text-xs sm:text-sm font-medium border border-[rgba(255,255,255,0.08)] hover:border-[#D97706]/50 hover:bg-[#1C1F26] transition-all flex items-center justify-center gap-2 min-h-[44px]"
-              >
-                <Download className="w-4 h-4 text-[#D97706] shrink-0" aria-hidden="true" />
-                <span>Download Resume</span>
-              </a>
             </div>
           </div>
 
-          {/* Right Engineering System Architecture Visual (5 cols desktop) */}
-          <div className="lg:col-span-5 pt-4 lg:pt-0">
-            <HeroArchitectureVisual />
+          {/* Interactive 3D Device Showcase (5 cols desktop) */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <HeroDevice3D />
           </div>
         </div>
       </div>

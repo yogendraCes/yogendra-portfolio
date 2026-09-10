@@ -1,192 +1,152 @@
 @import "tailwindcss";
 
 :root {
-  /* Canvas & Background Surfaces */
-  --bg-canvas: #08090A;
-  --bg-surface: #0F1115;
-  --bg-surface-elevated: #16181D;
-  --bg-surface-subtle: #1C1F26;
+  /* "On-Device" Design Tokens */
+  --bg-base: #F3F4F1;
+  --ink-primary: #14161A;
+  --ink-secondary: #5B5F66;
+  --ink-tertiary: #7E8490;
+  --surface: #FFFFFF;
+  --surface-raised: #FFFFFF;
+  --surface-subtle: #E9EAE5;
+  --border-subtle: #E4E5E1;
+  --border-strong: #D1D3CD;
 
-  /* Primary Typography Colors */
-  --text-primary: #F3F4F6;
-  --text-secondary: #9CA3AF;
-  --text-tertiary: #6B7280;
-  --text-disabled: #4B5563;
+  /* Semantic Accents (Mirrors iOS/Android System Roles) */
+  --accent-interactive: #2F6FED;
+  --accent-interactive-hover: #2256BD;
+  --accent-interactive-subtle: rgba(47, 111, 237, 0.08);
+  --accent-live: #3FAE64;
+  --accent-live-subtle: rgba(63, 174, 100, 0.12);
 
-  /* Brand & Accent Palette (Restrained Copper / Amber) */
-  --accent-copper: #D97706;
-  --accent-copper-hover: #F59E0B;
-  --accent-copper-muted: rgba(217, 119, 6, 0.12);
-  --accent-copper-border: rgba(217, 119, 6, 0.35);
-
-  /* Functional Status Colors */
-  --status-success: #10B981;
+  /* Legacy variable mappings for clean backwards compatibility during migration */
+  --bg-canvas: var(--bg-base);
+  --bg-surface: var(--surface);
+  --bg-surface-elevated: var(--surface);
+  --bg-surface-subtle: var(--surface-subtle);
+  --text-primary: var(--ink-primary);
+  --text-secondary: var(--ink-secondary);
+  --text-tertiary: var(--ink-tertiary);
+  --text-disabled: #A1A5AD;
+  --accent-copper: var(--accent-interactive);
+  --accent-copper-hover: var(--accent-interactive-hover);
+  --accent-copper-muted: var(--accent-interactive-subtle);
+  --accent-copper-border: rgba(47, 111, 237, 0.25);
+  --status-success: var(--accent-live);
   --status-warning: #F59E0B;
-  --status-info: #3B82F6;
+  --status-info: #2F6FED;
 
-  /* Structural Borders & Separators */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.16);
-  --border-accent: rgba(217, 119, 6, 0.50);
+  /* Elevation Shadows (Soft & Natural) */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --shadow-floating: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
 
-  /* Overlays & Shadows */
-  --overlay-backdrop: rgba(8, 9, 10, 0.85);
-  --shadow-elevation-1: 0 4px 20px rgba(0, 0, 0, 0.50);
-  --shadow-elevation-2: 0 12px 36px rgba(0, 0, 0, 0.75);
+@theme {
+  --color-bg-base: #F3F4F1;
+  --color-ink-primary: #14161A;
+  --color-ink-secondary: #5B5F66;
+  --color-ink-tertiary: #7E8490;
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #E9EAE5;
+  --color-border-subtle: #E4E5E1;
+  --color-border-strong: #D1D3CD;
+
+  --color-accent-interactive: #2F6FED;
+  --color-accent-interactive-hover: #2256BD;
+  --color-accent-live: #3FAE64;
+
+  --font-display: "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: var(--font-ibm-plex-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), SFMono-Regular, Consolas, Menlo, monospace;
 }
 
 @theme inline {
   --color-canvas: var(--bg-canvas);
-  --color-surface: var(--bg-surface);
-  --color-surface-elevated: var(--bg-surface-elevated);
-  --color-surface-subtle: var(--bg-surface-subtle);
-
   --color-txt-primary: var(--text-primary);
   --color-txt-secondary: var(--text-secondary);
   --color-txt-tertiary: var(--text-tertiary);
-  --color-txt-disabled: var(--text-disabled);
-
-  --color-copper: var(--accent-copper);
-  --color-copper-hover: var(--accent-copper-hover);
-  --color-copper-muted: var(--accent-copper-muted);
-  --color-copper-border: var(--accent-copper-border);
-
   --color-bdr-subtle: var(--border-subtle);
   --color-bdr-strong: var(--border-strong);
-  --color-bdr-accent: var(--border-accent);
-
-  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: var(--font-geist-mono), SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  --color-copper: var(--accent-interactive);
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
   scroll-behavior: smooth;
+  background-color: var(--bg-base);
 }
 
 body {
-  background-color: var(--bg-canvas);
-  color: var(--text-primary);
-  font-family: var(--font-sans), sans-serif;
+  background-color: var(--bg-base);
+  color: var(--ink-primary);
+  font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
-  caret-color: var(--accent-copper);
+  caret-color: var(--accent-interactive);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Themed Browser Selection Surface */
+/* System Native Text Selection */
 ::selection {
-  background-color: rgba(217, 119, 6, 0.35);
-  color: #FFFFFF;
+  background-color: rgba(47, 111, 237, 0.18);
+  color: #14161A;
 }
 
-/* Refined Subtle Surface Texture (Technical Blueprint Floor) */
+/* Subtle Technical Paper Texture */
 .bg-grid-pattern {
-  background-size: 40px 40px;
+  background-size: 32px 32px;
   background-image: 
-    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    radial-gradient(circle at 1px 1px, rgba(20, 22, 26, 0.05) 1px, transparent 0);
 }
 
-/* Subtle Gradient Overlays */
-.hero-glow {
-  background: 
-    radial-gradient(circle at 50% 0%, rgba(217, 119, 6, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 85% 25%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 15% 75%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
-}
-
-.ambient-section-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.05) 0%, transparent 70%);
-}
-
-/* Glassmorphic Surfaces */
+/* Glassmorphic Surfaces for Floating Nav & Overlays */
 .glass-panel {
-  background: rgba(15, 17, 21, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid var(--border-subtle);
 }
 
 .glass-panel-elevated {
-  background: rgba(22, 24, 29, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-floating);
 }
 
-/* Technical Architecture Block Code Box */
+/* Code & Spec Box */
 .arch-block {
-  background-color: #0B0D10;
+  background-color: #FFFFFF;
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
   font-family: var(--font-mono), monospace;
 }
 
-/* Subtle SVG Path Dash & Particle Keyframes */
-@keyframes dash-flow {
-  from {
-    stroke-dashoffset: 24;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-.animate-dash-flow {
-  stroke-dasharray: 6 6;
-  animation: dash-flow 3s linear infinite;
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2.5s ease-in-out infinite;
-}
-
-@keyframes flow-particle {
-  0% {
-    offset-distance: 0%;
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    offset-distance: 100%;
-    opacity: 0.2;
-  }
-}
-
 /* Focus Ring Accessibility */
 :focus-visible {
-  outline: 2px solid var(--accent-copper);
+  outline: 2px solid var(--accent-interactive);
   outline-offset: 2px;
 }
 
-/* Custom Dark Scrollbar */
+/* Custom Light Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #08090A;
+  background: var(--bg-base);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1C1F26;
+  background: var(--border-strong);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2D323E;
+  background: var(--ink-secondary);
 }
 
 /* Reduced Motion Fallbacks */
@@ -200,17 +160,8 @@ body {
     scroll-behavior: auto !important;
   }
   
-  animate {
-    display: none !important;
-  }
-
   .animate-pulse,
-  .pulse-dot,
-  .animate-pulse-glow,
-  .animate-dash-flow {
+  .pulse-dot {
     animation: none !important;
   }
 }
-
-
-

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { skillsData } from "@/data/skills";
-import { Wrench, CheckCircle2, Filter } from "lucide-react";
+import { CheckCircle2, Filter } from "lucide-react";
 import { SpotlightCard } from "./spotlight-card";
 
 export function SkillsMatrix() {
@@ -16,30 +16,30 @@ export function SkillsMatrix() {
       : skillsData.filter((s) => s.category === selectedFilter);
 
   return (
-    <section id="capabilities" className="w-full py-16 sm:py-24 border-b border-[rgba(255,255,255,0.08)] bg-[#08090A]">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 space-y-10">
+    <section id="skills" className="w-full py-14 sm:py-20 border-b border-[#E4E5E1] bg-[#F3F4F1]">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Section Header & Filters */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="max-w-[760px] space-y-2.5">
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#F3F4F6]">
-              Engineering Capabilities & Stack
+          <div className="max-w-[680px] space-y-2">
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#14161A]">
+              Skills & technical depth
             </h2>
-            <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-              Core cross-platform frameworks, native bridge modules, data visualization engines, and automated deployment tooling.
+            <p className="text-sm sm:text-base text-[#5B5F66] leading-relaxed">
+              Core cross-platform frameworks, native bridge modules, telemetry charting engines, and automated deployment tooling.
             </p>
           </div>
 
           {/* Interactive Category Filter Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none py-1">
-            <Filter className="w-3.5 h-3.5 text-[#9CA3AF] shrink-0 mr-0.5" />
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 py-1">
+            <Filter className="w-3.5 h-3.5 text-[#7E8490] shrink-0 mr-0.5" />
             {filterOptions.map((option) => (
               <button
                 key={option}
                 onClick={() => setSelectedFilter(option)}
-                className={`px-3.5 py-2 rounded-lg font-mono text-xs font-medium whitespace-nowrap transition-all border cursor-pointer min-h-[40px] flex items-center ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all border cursor-pointer min-h-[38px] flex items-center shadow-2xs ${
                   selectedFilter === option
-                    ? "bg-[#D97706] text-[#08090A] border-[#D97706] font-bold shadow-md shadow-amber-950/40"
-                    : "bg-[#16181D] text-[#9CA3AF] border-[rgba(255,255,255,0.08)] hover:text-[#F3F4F6] hover:border-zinc-700 hover:bg-[#1C1F26]"
+                    ? "bg-[#2F6FED] text-white border-[#2F6FED] font-semibold"
+                    : "bg-white text-[#5B5F66] border-[#E4E5E1] hover:text-[#14161A] hover:bg-[#F3F4F1]"
                 }`}
               >
                 {option}
@@ -54,11 +54,11 @@ export function SkillsMatrix() {
             <SpotlightCard key={category.category} className="h-full">
               <div className="p-6 space-y-4 flex flex-col justify-between h-full">
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between pb-2 border-b border-[rgba(255,255,255,0.06)]">
-                    <h3 className="font-mono text-sm font-bold text-[#F3F4F6] uppercase tracking-wider">
+                  <div className="flex items-center justify-between pb-2 border-b border-[#E4E5E1]">
+                    <h3 className="text-sm font-semibold text-[#14161A]">
                       {category.category}
                     </h3>
-                    <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-[#3FAE64]" />
                   </div>
 
                   {/* Technologies List */}
@@ -66,7 +66,7 @@ export function SkillsMatrix() {
                     {category.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="font-mono text-xs px-2.5 py-1 rounded-md bg-[#16181D] text-[#F3F4F6] border border-[rgba(255,255,255,0.08)] hover:border-[#D97706]/40 transition-colors"
+                        className="text-xs px-2.5 py-1 rounded-md bg-[#F3F4F1] text-[#14161A] border border-[#E4E5E1]"
                       >
                         {tech}
                       </span>
@@ -75,12 +75,12 @@ export function SkillsMatrix() {
                 </div>
 
                 {/* Ownership Experience Box */}
-                <div className="pt-4 border-t border-[rgba(255,255,255,0.06)] text-xs text-[#9CA3AF] space-y-1">
-                  <div className="font-mono text-[10px] text-[#D97706] uppercase tracking-wider font-semibold flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981]" />
-                    <span>PRODUCTION OWNERSHIP</span>
+                <div className="pt-4 border-t border-[#E4E5E1] text-xs text-[#5B5F66] space-y-1">
+                  <div className="text-xs text-[#14161A] font-medium flex items-center gap-1">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#3FAE64]" />
+                    <span>Production ownership</span>
                   </div>
-                  <p className="leading-relaxed font-sans">{category.productionDepth}</p>
+                  <p className="leading-relaxed">{category.productionDepth}</p>
                 </div>
               </div>
             </SpotlightCard>
