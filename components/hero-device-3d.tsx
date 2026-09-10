@@ -144,11 +144,11 @@ export function HeroDevice3D() {
                 </div>
               </div>
 
-              {/* Real Shipped App Screen (Duracell Energy Live Telemetry) */}
+              {/* Real Shipped App Screen (Duracell Energy Home Flow) */}
               <div className="relative flex-1 w-full overflow-hidden">
                 <Image
-                  src="/projects/duracell-energy/energy-flow.png"
-                  alt="Duracell Energy Live Telemetry interface showing solar, battery, and home power distribution"
+                  src="/projects/duracell-energy/home-flow.png"
+                  alt="Duracell Energy Home Flow spatial view showing household circuits and power distribution"
                   fill
                   sizes="(max-width: 640px) 280px, 300px"
                   className="object-cover object-top pointer-events-none"

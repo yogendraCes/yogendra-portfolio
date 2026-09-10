@@ -35,25 +35,9 @@ export function DuracellMediaGallery() {
       ],
     },
     {
-      id: "energy-flow",
-      title: "2. Live energy flow monitor",
-      shortLabel: "2. Energy Flow",
-      src: "/projects/duracell-energy/energy-flow.png",
-      alt: "Duracell Energy Live Usage Monitor showing real-time energy flow across solar, battery, grid, home and EV.",
-      icon: Zap,
-      badge: "Telemetry Monitor",
-      engineeringContext:
-        "Primary real-time telemetry dashboard displaying dynamic energy movement between Solar PV, Home Load, Battery Storage, Power Grid, and EV Charger.",
-      technicalDetails: [
-        "Ingests 10-second API telemetry updates without JS thread congestion",
-        "Offloads particle flow animations to native UI thread via Reanimated v3",
-        "Supports dynamic multi-state node rendering based on active power tariffs",
-      ],
-    },
-    {
       id: "home-flow",
-      title: "3. Home flow spatial view",
-      shortLabel: "3. Home Flow",
+      title: "2. Home flow spatial view",
+      shortLabel: "2. Home Flow",
       src: "/projects/duracell-energy/home-flow.png",
       alt: "Duracell Energy Home Flow screen showing spatial energy distribution through household circuits.",
       icon: Home,
@@ -64,6 +48,22 @@ export function DuracellMediaGallery() {
         "Custom SVG circuit paths and real-time directional particle loops",
         "Color-coded node status reflecting net power draw vs generation",
         "AppState lifecycle suspension to freeze rendering during background states",
+      ],
+    },
+    {
+      id: "energy-flow",
+      title: "3. Live energy flow monitor",
+      shortLabel: "3. Energy Flow",
+      src: "/projects/duracell-energy/energy-flow.png",
+      alt: "Duracell Energy Live Usage Monitor showing real-time energy flow across solar, battery, grid, home and EV.",
+      icon: Zap,
+      badge: "Telemetry Monitor",
+      engineeringContext:
+        "Primary real-time telemetry dashboard displaying dynamic energy movement between Solar PV, Home Load, Battery Storage, Power Grid, and EV Charger.",
+      technicalDetails: [
+        "Ingests 10-second API telemetry updates without JS thread congestion",
+        "Offloads particle flow animations to native UI thread via Reanimated v3",
+        "Supports dynamic multi-state node rendering based on active power tariffs",
       ],
     },
     {
@@ -116,7 +116,7 @@ export function DuracellMediaGallery() {
     },
   ];
 
-  const [activeScreenId, setActiveScreenId] = useState<string>("energy-flow");
+  const [activeScreenId, setActiveScreenId] = useState<string>("home-flow");
   const [isLightboxOpen, setIsLightboxOpen] = useState<boolean>(false);
   const activeScreen = screens.find((s) => s.id === activeScreenId) || screens[0];
 
@@ -208,7 +208,7 @@ export function DuracellMediaGallery() {
                   src={activeScreen.src}
                   alt={activeScreen.alt}
                   fill
-                  priority={activeScreen.id === "energy-flow"}
+                  priority={activeScreen.id === "home-flow"}
                   sizes="(max-width: 640px) 230px, 250px"
                   className="object-cover object-top"
                 />
