@@ -4,13 +4,48 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { Wifi, Battery, MoveHorizontal } from "lucide-react";
 
+const heroScreens = [
+  {
+    id: "duracell",
+    title: "Duracell Energy",
+    label: "Duracell Energy",
+    src: "/projects/duracell-energy/home-flow.png",
+    alt: "Duracell Energy Home Flow spatial view showing household circuits and power distribution",
+  },
+  {
+    id: "puredrive",
+    title: "Puredrive",
+    label: "Puredrive",
+    src: "/assets/projects/puredrive-energy/0x0ss (1).png",
+    alt: "Puredrive Live Usage Monitor circular energy flow topology",
+  },
+  {
+    id: "stain-care",
+    title: "Stain Care Pro",
+    label: "Stain Care Pro",
+    src: "/assets/projects/stain-care-pro/1.webp",
+    alt: "Stain Care Pro stone and surface care diagnostic navigation guide",
+  },
+  {
+    id: "sdgme",
+    title: "SDGme",
+    label: "SDGme",
+    src: "/assets/projects/sdgme/0x0ss.png",
+    alt: "SDGme personal lifestyle sustainability action tracker",
+  },
+];
+
 export function HeroDevice3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [rotation, setRotation] = useState({ x: 3, y: -6 });
+  const [selectedScreenId, setSelectedScreenId] = useState<string>("duracell");
   const [isDragging, setIsDragging] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const dragStart = useRef({ x: 0, y: 0, initialRotX: 3, initialRotY: -6 });
   const animationFrameRef = useRef<number | null>(null);
+
+  const activeHeroScreen =
+    heroScreens.find((s) => s.id === selectedScreenId) || heroScreens[0];
 
   // Detect prefers-reduced-motion
   useEffect(() => {
@@ -157,14 +192,15 @@ export function HeroDevice3D() {
                 </div>
               </div>
 
-              {/* Real Shipped App Screen (Duracell Energy Home Flow) */}
+              {/* Real Shipped App Screen */}
               <div className="relative flex-1 w-full overflow-hidden">
                 <Image
-                  src="/projects/duracell-energy/home-flow.png"
-                  alt="Duracell Energy Home Flow spatial view showing household circuits and power distribution"
+                  key={activeHeroScreen.id}
+                  src={activeHeroScreen.src}
+                  alt={activeHeroScreen.alt}
                   fill
                   sizes="(max-width: 640px) 280px, 300px"
-                  className="object-cover object-top pointer-events-none"
+                  className="object-cover object-top pointer-events-none transition-opacity duration-300"
                   priority
                 />
               </div>
@@ -179,11 +215,32 @@ export function HeroDevice3D() {
         </div>
       </div>
 
+      {/* App Switcher Controls */}
+      <div className="flex flex-wrap items-center justify-center gap-1.5 mt-4 max-w-[340px]">
+        {heroScreens.map((screen) => {
+          const isActive = screen.id === selectedScreenId;
+          return (
+            <button
+              key={screen.id}
+              type="button"
+              onClick={() => setSelectedScreenId(screen.id)}
+              className={`px-2.5 py-1 rounded-full text-xs font-medium transition-all border cursor-pointer ${
+                isActive
+                  ? "bg-[#2F6FED] text-white border-[#2F6FED] shadow-2xs"
+                  : "bg-white text-[#5B5F66] border-[#E4E5E1] hover:text-[#14161A] hover:bg-[#F3F4F1]"
+              }`}
+            >
+              {screen.label}
+            </button>
+          );
+        })}
+      </div>
+
       {/* Tactile Interaction Hint */}
       {!prefersReducedMotion && (
-        <div className="flex items-center gap-1.5 text-xs text-[#5B5F66] mt-4 font-normal">
+        <div className="flex items-center gap-1.5 text-xs text-[#7E8490] mt-2 font-normal">
           <MoveHorizontal className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
-          <span>Drag to inspect device</span>
+          <span>Drag to inspect 3D device</span>
         </div>
       )}
     </div>

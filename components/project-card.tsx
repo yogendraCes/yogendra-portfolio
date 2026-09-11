@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Project } from "@/types";
 import { Code2, Cpu, ExternalLink, Lock, CheckCircle2, Sparkles } from "lucide-react";
 import { DuracellMediaGallery } from "./duracell-media-gallery";
+import { ProjectScreenshotsGallery } from "./case-study/project-screenshots-gallery";
 import { SpotlightCard } from "./spotlight-card";
 
 interface ProjectCardProps {
@@ -139,34 +140,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
           )}
 
-          {/* Shipped Screen Previews for Puredrive, Stain Care Pro, SDGme */}
+          {/* Interactive Production Screenshots Showcase (Puredrive, Stain Care Pro, SDGme) */}
           {project.slug !== "duracell-energy" && project.screenshots && project.screenshots.length > 0 && (
-            <div className="py-2 space-y-2">
-              <div className="text-xs font-medium text-[#7E8490] flex items-center gap-1.5">
-                <span>Verified production screens:</span>
-              </div>
-              <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-thin">
-                {project.screenshots.slice(0, 4).map((shot, idx) => (
-                  <Link
-                    key={shot.url}
-                    href={`/projects/${project.slug}`}
-                    className="group relative shrink-0 w-28 sm:w-32 rounded-xl overflow-hidden border border-[#E4E5E1] bg-black/5 hover:border-[#2F6FED] transition-all shadow-2xs hover:-translate-y-0.5"
-                  >
-                    <div className="relative w-full aspect-[9/16] bg-black">
-                      <Image
-                        src={shot.url}
-                        alt={shot.alt}
-                        fill
-                        sizes="128px"
-                        className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="p-1.5 bg-white border-t border-[#E4E5E1] text-[10px] text-[#5B5F66] truncate font-medium">
-                      {shot.category || `Screen ${idx + 1}`}
-                    </div>
-                  </Link>
-                ))}
-              </div>
+            <div className="py-2">
+              <ProjectScreenshotsGallery project={project} />
             </div>
           )}
 

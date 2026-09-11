@@ -24,6 +24,9 @@ export interface ProjectScreenshot {
   caption: string;
   alt: string;
   category?: string;
+  shortLabel?: string;
+  engineeringContext?: string;
+  technicalDetails?: string[];
 }
 
 export interface Project {

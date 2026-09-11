@@ -12,6 +12,7 @@ import {
   Layers,
   Smartphone,
   Tablet,
+  Cpu,
 } from "lucide-react";
 
 interface ProjectScreenshotsGalleryProps {
@@ -123,7 +124,7 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
       <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin">
         {screenshots.map((screen, idx) => {
           const isActive = idx === activeIndex;
-          const label = screen.category || `Screen ${idx + 1}`;
+          const label = screen.shortLabel || screen.category || `Screen ${idx + 1}`;
           return (
             <button
               key={screen.url}
@@ -255,20 +256,31 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
               {active.caption}
             </h4>
             <p className="text-sm text-[#5B5F66] leading-relaxed mt-2">
-              {active.alt}
+              {active.engineeringContext || active.alt}
             </p>
           </div>
 
-          {/* Technical Context Callout */}
-          <div className="bg-white border border-[#E4E5E1] rounded-xl p-4 space-y-2 shadow-2xs">
+          {/* Technical Implementation Callout */}
+          <div className="bg-white border border-[#E4E5E1] rounded-xl p-4 space-y-2.5 shadow-xs">
             <div className="text-xs text-[#14161A] font-semibold flex items-center gap-1.5">
-              <Layers className="w-4 h-4 text-[#2F6FED]" aria-hidden="true" />
-              <span>Implementation context</span>
+              <Cpu className="w-4 h-4 text-[#2F6FED]" aria-hidden="true" />
+              <span>Engineering implementation</span>
             </div>
-            <p className="text-xs text-[#5B5F66] leading-relaxed">
-              Real screen capture from the production application as deployed on user devices.
-              Demonstrates component architecture, responsive design adaptation, and client data flows.
-            </p>
+            {active.technicalDetails && active.technicalDetails.length > 0 ? (
+              <ul className="space-y-1.5 text-xs text-[#5B5F66]">
+                {active.technicalDetails.map((detail, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <ChevronRight className="w-3.5 h-3.5 text-[#2F6FED] shrink-0 mt-0.5" aria-hidden="true" />
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-xs text-[#5B5F66] leading-relaxed">
+                Real screen capture from the production application as deployed on user devices.
+                Demonstrates component architecture, responsive design adaptation, and client data flows.
+              </p>
+            )}
           </div>
 
           {/* Navigation Controls */}
