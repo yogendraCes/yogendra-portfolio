@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect, useCallback, useSyncExternalStore } from "react";
 import Image from "next/image";
 import { Wifi, Battery, MoveHorizontal } from "lucide-react";
 
@@ -35,27 +35,28 @@ const heroScreens = [
   },
 ];
 
+const subscribeMotion = (callback: () => void) => {
+  if (typeof window === "undefined") return () => {};
+  const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mediaQuery.addEventListener("change", callback);
+  return () => mediaQuery.removeEventListener("change", callback);
+};
+
 export function HeroDevice3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [rotation, setRotation] = useState({ x: 3, y: -6 });
   const [selectedScreenId, setSelectedScreenId] = useState<string>("duracell");
   const [isDragging, setIsDragging] = useState(false);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const prefersReducedMotion = useSyncExternalStore(
+    subscribeMotion,
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    () => false
+  );
   const dragStart = useRef({ x: 0, y: 0, initialRotX: 3, initialRotY: -6 });
   const animationFrameRef = useRef<number | null>(null);
 
   const activeHeroScreen =
     heroScreens.find((s) => s.id === selectedScreenId) || heroScreens[0];
-
-  // Detect prefers-reduced-motion
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReducedMotion(mediaQuery.matches);
-
-    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
-    mediaQuery.addEventListener("change", handler);
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
 
   // Return to resting angle smoothly when drag ends
   const springBack = useCallback(() => {

@@ -9,7 +9,6 @@ import {
   ChevronLeft,
   ChevronRight,
   ExternalLink,
-  Layers,
   Smartphone,
   Tablet,
   Monitor,
@@ -36,7 +35,29 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
     active?.category?.toLowerCase().includes("desktop") ||
     active?.category?.toLowerCase().includes("admin") ||
     active?.category?.toLowerCase().includes("storefront") ||
-    active?.url.includes("zenyme");
+    active?.category?.toLowerCase().includes("industrial") ||
+    active?.category?.toLowerCase().includes("matrix") ||
+    active?.category?.toLowerCase().includes("actuator") ||
+    active?.category?.toLowerCase().includes("distributor") ||
+    active?.category?.toLowerCase().includes("transmission") ||
+    active?.url.includes("zenyme") ||
+    active?.url.includes("vhp") ||
+    project.slug === "vhp-linear-motions";
+
+  const browserDisplayHost = (() => {
+    const targetUrl = project.liveDemoUrl || project.links?.demo;
+    if (targetUrl) {
+      try {
+        return new URL(targetUrl).hostname;
+      } catch {
+        return targetUrl.replace(/^https?:\/\//, "").split("/")[0];
+      }
+    }
+    if (project.slug === "vhp-linear-motions") {
+      return "saloon-app-wxmd.vercel.app";
+    }
+    return "saloon-app-teal.vercel.app";
+  })();
 
   const handlePrev = useCallback(() => {
     setActiveIndex((prev) => (prev === 0 ? screenshots.length - 1 : prev - 1));
@@ -181,7 +202,7 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
                     <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
                   </div>
                   <div className="flex-1 max-w-[220px] mx-auto h-5 bg-[#121417] rounded-md text-[10px] text-zinc-400 flex items-center justify-center font-mono px-2 truncate border border-[#2D3139]">
-                    saloon-app-teal.vercel.app
+                    {browserDisplayHost}
                   </div>
                 </div>
 

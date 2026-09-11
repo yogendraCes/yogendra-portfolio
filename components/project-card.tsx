@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Project } from "@/types";
 import { Code2, Cpu, ExternalLink, Lock, CheckCircle2, Sparkles } from "lucide-react";
 import { DuracellMediaGallery } from "./duracell-media-gallery";
