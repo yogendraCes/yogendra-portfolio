@@ -34,6 +34,6 @@ export const skillsData: SkillCategory[] = [
   {
     category: "Web & Frontend",
     technologies: ["React", "Next.js", "Zustand", "Tailwind CSS", "TypeScript", "REST APIs"],
-    productionDepth: "Engineered responsive web applications including client coaching and service management platforms (Acuity Coaching, SaloonApp), structuring domain-driven component hierarchies, custom UI hooks, and reliable API client integrations.",
+    productionDepth: "Engineered responsive web applications including client coaching and service management platforms (Acuity Coaching, Zenyme Salon Platform), structuring domain-driven component hierarchies, custom UI hooks, and reliable API client integrations.",
   },
 ];

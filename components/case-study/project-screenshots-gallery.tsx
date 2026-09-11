@@ -12,6 +12,7 @@ import {
   Layers,
   Smartphone,
   Tablet,
+  Monitor,
   Cpu,
 } from "lucide-react";
 
@@ -29,6 +30,13 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
     active?.url.includes("4.webp") ||
     active?.category?.toLowerCase().includes("tablet") ||
     active?.category?.toLowerCase().includes("ipad");
+  const isBrowser =
+    active?.category?.toLowerCase().includes("web") ||
+    active?.category?.toLowerCase().includes("browser") ||
+    active?.category?.toLowerCase().includes("desktop") ||
+    active?.category?.toLowerCase().includes("admin") ||
+    active?.category?.toLowerCase().includes("storefront") ||
+    active?.url.includes("zenyme");
 
   const handlePrev = useCallback(() => {
     setActiveIndex((prev) => (prev === 0 ? screenshots.length - 1 : prev - 1));
@@ -146,11 +154,11 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
       </div>
 
       {/* Feature Display Area */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-2">
-        {/* Hardware Mockup Display */}
-        <div className="md:col-span-5 flex justify-center">
+      <div className={`grid grid-cols-1 ${isBrowser ? "md:grid-cols-12" : "md:grid-cols-12"} gap-6 items-center pt-2`}>
+        {/* Hardware / Browser Mockup Display */}
+        <div className={`${isBrowser ? "md:col-span-6" : "md:col-span-5"} flex justify-center`}>
           <div
-            className="relative group cursor-pointer select-none"
+            className="relative group cursor-pointer select-none w-full flex justify-center"
             onClick={() => setIsLightboxOpen(true)}
             role="button"
             tabIndex={0}
@@ -162,7 +170,42 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
             aria-label={`View full size image for ${active.caption}`}
           >
             {/* Chassis Frame Container */}
-            {isTablet ? (
+            {isBrowser ? (
+              // Desktop Browser Chassis Frame
+              <div className="relative w-full max-w-[460px] rounded-2xl bg-[#1C1E22] p-2.5 sm:p-3 border border-[#3A3F47] shadow-xl">
+                {/* Browser Top Window Bar */}
+                <div className="flex items-center gap-2 pb-2.5 px-1 border-b border-[#2D3139]">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#EF4444]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
+                  </div>
+                  <div className="flex-1 max-w-[220px] mx-auto h-5 bg-[#121417] rounded-md text-[10px] text-zinc-400 flex items-center justify-center font-mono px-2 truncate border border-[#2D3139]">
+                    saloon-app-teal.vercel.app
+                  </div>
+                </div>
+
+                {/* Hover Zoom Overlay Badge */}
+                <div className="absolute inset-0 rounded-2xl bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity z-30 flex items-center justify-center">
+                  <span className="px-3 py-1.5 rounded-full bg-white text-[#14161A] text-xs font-semibold flex items-center gap-1.5 shadow-lg">
+                    <Maximize2 className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+                    <span>Click to zoom</span>
+                  </span>
+                </div>
+
+                {/* Screen Display Area */}
+                <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden bg-black mt-2">
+                  <Image
+                    src={active.url}
+                    alt={active.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 460px"
+                    className="object-cover object-top"
+                    priority={activeIndex === 0}
+                  />
+                </div>
+              </div>
+            ) : isTablet ? (
               // Tablet / iPad Chassis Frame
               <div className="relative w-[280px] sm:w-[320px] rounded-[28px] bg-[#1C1E22] p-3 border border-[#3A3F47] shadow-xl">
                 {/* Tablet Camera Dot */}
@@ -222,7 +265,7 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
         </div>
 
         {/* Right Column: Context & Metadata */}
-        <div className="md:col-span-7 space-y-4">
+        <div className={`${isBrowser ? "md:col-span-6" : "md:col-span-7"} space-y-4`}>
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2">
               {active.category && (
@@ -237,7 +280,12 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
 
             {/* Device form factor indicator */}
             <div className="inline-flex items-center gap-1.5 text-xs text-[#7E8490]">
-              {isTablet ? (
+              {isBrowser ? (
+                <>
+                  <Monitor className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+                  <span>Web application</span>
+                </>
+              ) : isTablet ? (
                 <>
                   <Tablet className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
                   <span>Tablet layout</span>

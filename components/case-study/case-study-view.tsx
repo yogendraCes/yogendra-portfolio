@@ -109,15 +109,15 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
                     <ExternalLink className="w-3.5 h-3.5 text-[#3FAE64]" aria-hidden="true" />
                   </a>
                 )}
-                {project.links?.demo && (
+                {(project.links?.demo || project.liveDemoUrl) && (
                   <a
-                    href={project.links.demo}
+                    href={project.links?.demo || project.liveDemoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2.5 rounded-xl bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-all flex items-center gap-2 min-h-[44px] shadow-2xs hover:-translate-y-0.5"
+                    className="px-4 py-2.5 rounded-xl bg-[#2F6FED] hover:bg-[#2557BC] text-white text-xs font-medium transition-all flex items-center gap-2 min-h-[44px] shadow-sm hover:-translate-y-0.5"
                   >
                     <span>Visit live platform</span>
-                    <ExternalLink className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+                    <ExternalLink className="w-3.5 h-3.5 text-white" aria-hidden="true" />
                   </a>
                 )}
                 {(project.githubRepoUrl || project.links?.github) && (

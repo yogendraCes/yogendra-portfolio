@@ -54,7 +54,7 @@ export function ProjectShowcase({ showHeader = true }: ProjectShowcaseProps = {}
                 <span>Open-source implementations & prototypes</span>
               </h3>
               <p className="text-xs sm:text-sm text-[#5B5F66] leading-relaxed">
-                Public implementations showcasing React Native thread isolation, custom D3 graphics math, and real-time state synchronization.
+                Public web applications and open-source implementations showcasing Next.js 15 App Router conventions, Zustand state stores, and full-stack scheduling workflows.
               </p>
             </div>
 

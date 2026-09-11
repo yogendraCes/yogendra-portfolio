@@ -94,6 +94,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
               {!isEmployer && (
                 <>
+                  {(project.liveDemoUrl || project.links?.demo) && (
+                    <a
+                      href={project.liveDemoUrl || project.links?.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 rounded-lg bg-[#2F6FED]/10 hover:bg-[#2F6FED]/20 border border-[#2F6FED]/30 text-[#2F6FED] text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-2xs"
+                    >
+                      <span>Live platform</span>
+                      <ExternalLink className="w-3 h-3 text-[#2F6FED]" />
+                    </a>
+                  )}
                   {project.githubRepoUrl && (
                     <a
                       href={project.githubRepoUrl}
