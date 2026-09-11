@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Production Projects & Case Studies",
-  description: "React Native mobile engineering projects: Duracell Energy, Puredrive, and Stain Care Pro.",
+  description: "React Native mobile engineering projects: Duracell Energy, Puredrive, Stain Care Pro, and SDGme.",
   alternates: {
     canonical: "https://yogendra-portfolio-puce.vercel.app/projects",
   },

@@ -307,6 +307,44 @@ export function generateChartPath(
         ],
       },
     ],
+    screenshots: [
+      {
+        url: "/assets/projects/puredrive-energy/0x0ss.png",
+        caption: "Application Launch and Dynamic Wave Splash Screen",
+        alt: "Puredrive application launch screen featuring native wave mesh brand styling and initialization loader",
+        category: "Branding & Entry",
+      },
+      {
+        url: "/assets/projects/puredrive-energy/0x0ss (1).png",
+        caption: "Live Usage Monitor: Multi-Node Energy Flow Topology View",
+        alt: "Puredrive Live Usage Monitor screen displaying circular interactive energy flow topology connecting Solar, Battery, Home, Grid, and EV nodes",
+        category: "Telemetry Visualization",
+      },
+      {
+        url: "/assets/projects/puredrive-energy/0x0ss (2).png",
+        caption: "EV-1 Live Usage: Smart Charging Mode Selector and Capacity Slider",
+        alt: "Puredrive EV-1 charging interface showing 1.68 kW live charge rate, PureGreen and GreenBoost mode selectors, and energy target slider",
+        category: "EV Smart Charging",
+      },
+      {
+        url: "/assets/projects/puredrive-energy/0x0ss (3).png",
+        caption: "Energy Summary: Daily Time-Series Generation and Import Charts",
+        alt: "Puredrive Energy Summary screen with stacked D3 bar chart displaying solar generation surplus and grid import metrics across 24 hours",
+        category: "D3 + SVG Charts",
+      },
+      {
+        url: "/assets/projects/puredrive-energy/0x0ss (4).png",
+        caption: "System Overview: Dual-Axis Power Draw and Battery State of Charge (SoC)",
+        alt: "Puredrive System Overview chart displaying dual-axis power consumption bars synchronized with battery state of charge percentage curve",
+        category: "Analytics & Telemetry",
+      },
+      {
+        url: "/assets/projects/puredrive-energy/0x0ss (5).png",
+        caption: "Scheduled Charge: Automated Time-of-Use Tariff Configuration",
+        alt: "Puredrive Scheduled Charge screen with configurable charging time windows, toggle switches, and tariff automation parameters",
+        category: "Tariff Automation",
+      },
+    ],
   },
   {
     id: "stain-care-pro",
@@ -314,13 +352,13 @@ export function generateChartPath(
     title: "Stain Care Pro Mobile Application",
     subtitle: "Greenfield React Native Delivery, Diagnostic Logging & Production Stability",
     category: "Greenfield Mobile Engineering & Product Delivery",
-    summary: "Engineered a consumer mobile app from initial commit to store release. Focused on greenfield React Navigation setup, error boundary wrappers for crash-free stability, and responsive UI workflows.",
+    summary: "Engineered a professional stone and surface restoration mobile application developed by SurpHaces in collaboration with Chief Technical Director Fred Hueston. Features comprehensive stain charts, poultice instructional videos, real-world case studies, and responsive phone and tablet layouts.",
     projectType: "employer",
     isProprietary: true,
     keyEngineeringDecisions: [
       "Architected type-safe React Navigation stacks for structured, predictable consumer workflows.",
       "Wrapped dynamic workflow branches in React Error Boundaries with diagnostic logging to prevent unhandled runtime exceptions.",
-      "Implemented standardized responsive UI primitives ensuring layout fidelity across both iOS and Android form factors.",
+      "Implemented standardized responsive UI primitives ensuring layout fidelity across both iOS and Android form factors, including tablet/iPad viewports.",
       "Orchestrated store submission processes through Apple App Store Connect and Google Play Console.",
     ],
     primaryStack: ["React Native", "TypeScript", "JavaScript", "React Navigation", "REST APIs", "Jest"],
@@ -337,7 +375,7 @@ export function generateChartPath(
       "Google Play Store",
     ],
     role: "React Native Developer",
-    company: "Forebear Productions",
+    company: "Forebear Productions / SurpHaces",
     period: "March 2020 – February 2023",
     featured: true,
     links: {
@@ -364,35 +402,35 @@ export function getStainSolution(category: string): SolutionStep[] {
 }`,
       },
     },
-    overview: "Stain Care Pro is a consumer mobile application built from scratch using React Native, providing users with interactive guidance, step-by-step resolution workflows, and clean mobile interfaces.",
+    overview: "SurpHaces, the experts in surface care, in collaboration with internationally renowned natural stone restoration expert Fred Hueston, developed Stain Care Pro as a comprehensive, simple-to-use stain management mobile application. The app provides trade professionals and consumers with an extensive chart covering virtually every stain type found on natural stone, concrete, and porous surfaces, complete with step-by-step poultice guides and real-world video case studies.",
     challenges: [
-      "Greenfield Initialization: Setting up core app architecture, navigation trees, and state structures from scratch.",
-      "Zero-Crash Release Goal: Preventing unexpected runtime exceptions from crashing the app during user interaction workflows.",
+      "Extensive Data Classification: Structuring large hierarchical stain catalogs, poultice chemical reagents, and instructional video streams into fast, offline-friendly mobile screens.",
+      "Multi-Form-Factor UI Scaling: Ensuring seamless navigation and touch usability across varying Android phone screens and large iPad/tablet viewports.",
     ],
     technicalApproach: [
-      "Structured Greenfield Setup: Configured React Navigation stacks and lightweight state containers for fast launch times.",
-      "Error Boundary Wrappers: Integrated error boundaries around dynamic workflow views to trap exceptions gracefully.",
+      "Structured Greenfield Setup: Configured React Navigation stacks and lightweight state containers for fast launch times and zero-latency index searching.",
+      "Adaptive Tablet Breakpoints: Implemented responsive style hooks to scale layout primitives elegantly between handheld smartphones and full-sized tablets.",
     ],
     outcome: [
       "Built, published, and maintained application on Apple App Store and Google Play Store with high release stability.",
-      "Maintained zero critical crash reports across release updates.",
+      "Maintained zero critical crash reports across production release updates.",
     ],
     sections: [
       {
         id: "product-scope",
-        title: "01. Product Scope & Greenfield Delivery",
+        title: "01. Product Scope & Professional Surface Care",
         content: [
-          "Stain Care Pro represents end-to-end greenfield mobile engineering—taking a consumer application from initial commit to live App Store and Google Play releases.",
-          "I owned project initialization, React Navigation setup, responsive UI implementation, error handling, and store publishing.",
+          "Developed in partnership with SurpHaces and Chief Technical Director Fred Hueston, Stain Care Pro serves as the definitive reference tool for stone restoration specialists.",
+          "I owned full-lifecycle mobile engineering from greenfield setup to production store distribution, delivering responsive guide trees, video players, and technical chemical databases.",
         ],
       },
       {
         id: "engineering-decisions",
         title: "02. Key Engineering Decisions",
         content: [
-          "1. Navigation & State Setup: Architected explicit type-safe React Navigation stacks for intuitive user workflows.",
-          "2. Error Trapping & Logging: Wrapped workflow branches in React Error Boundaries to prevent unexpected exceptions from crashing the application.",
-          "3. Layout Precision: Enforced responsive design system primitives across diverse iOS and Android device viewports.",
+          "1. Navigation & State Architecture: Architected explicit type-safe React Navigation stacks for intuitive user workflows across stain classifications.",
+          "2. Error Trapping & Resilience: Wrapped dynamic workflow branches in React Error Boundaries to prevent runtime video decoding and memory exceptions from impacting stability.",
+          "3. Tablet Adaptation: Enforced responsive layout primitives ensuring optimal presentation on both mobile phones and tablets (iPad).",
         ],
       },
       {
@@ -402,6 +440,157 @@ export function getStainSolution(category: string): SolutionStep[] {
           "Published and maintained on Apple App Store and Google Play Store.",
           "Maintained zero critical crash reports across production updates.",
         ],
+      },
+    ],
+    screenshots: [
+      {
+        url: "/assets/projects/stain-care-pro/1.webp",
+        caption: "Stain Care Pro Home Interface and Core Guide Navigation",
+        alt: "Stain Care Pro home screen on phone showing navigation options: The Guide, Stain Chart, How-To Video, Reagents and Supplies, Case Studies, and Resources",
+        category: "Navigation & Guide",
+      },
+      {
+        url: "/assets/projects/stain-care-pro/2.webp",
+        caption: "Real-World Case Studies and Stone Restoration Video Library",
+        alt: "Stain Care Pro case studies screen displaying video case studies of mastic stains on travertine and excess sealer problems",
+        category: "Case Studies & Video",
+      },
+      {
+        url: "/assets/projects/stain-care-pro/3.webp",
+        caption: "Professional Resources, eLearning, and Technical Supply Directory",
+        alt: "Stain Care Pro resources screen listing SurpHaces Learning Institute eLearning courses, Stone and Tile School training, and professional support",
+        category: "Resources & Directory",
+      },
+      {
+        url: "/assets/projects/stain-care-pro/4.webp",
+        caption: "Responsive Tablet Layout: Full-Screen iPad User Interface",
+        alt: "Stain Care Pro app displayed on an iPad tablet demonstrating responsive adaptive layout scaling across large screen form factors",
+        category: "Tablet & iPad Adaptation",
+      },
+    ],
+  },
+  {
+    id: "sdgme",
+    slug: "sdgme",
+    title: "SDGme Personal Action Tracker",
+    subtitle: "UN Sustainable Development Goals Action Tracker, Carbon Savings (CO2e) & ESG Disclosures",
+    category: "Mobile Systems & ESG Analytics",
+    summary: "Engineered a cross-platform mobile application allowing users to track and reflect on personal actions contributing to the 17 UN Sustainable Development Goals (SDGs), calculate estimated carbon savings (CO2e), benchmark progress against group averages, and sync data to a centralized enterprise ESG dashboard.",
+    projectType: "employer",
+    isProprietary: true,
+    keyEngineeringDecisions: [
+      "Architected dynamic action logging workflows across Work, Play, and Home categories with client-side carbon savings estimation math.",
+      "Integrated 17 UN Sustainable Development Goal data matrices with interactive touch navigation and category filtering.",
+      "Engineered comparative analytics charting comparing individual action counts and CO2e savings against organizational averages.",
+      "Built programmatic social sharing card generation enabling users to export weekly verified impact summaries to social media.",
+    ],
+    primaryStack: ["React Native", "TypeScript", "JavaScript", "REST APIs", "Analytics"],
+    fullStack: [
+      "React Native",
+      "TypeScript",
+      "JavaScript",
+      "Redux Toolkit",
+      "REST APIs",
+      "Custom Charting",
+      "Social Sharing APIs",
+      "iOS (Xcode)",
+      "Android Studio",
+    ],
+    role: "React Native Developer",
+    company: "Forebear Productions / Unify",
+    period: "2021 – 2022",
+    featured: true,
+    links: {
+      demo: "https://sdgme.com/",
+    },
+    technicalHighlight: {
+      label: "CARBON METRIC COMPUTATION & SOCIAL SHARE CARDS",
+      description: "Developed localized carbon estimation logic calculating CO2e savings per recorded activity, paired with native view snapshotting to generate branded weekly achievement cards for social distribution.",
+      codeSnippet: {
+        filename: "carbonCalculator.ts",
+        language: "typescript",
+        code: `export interface SdgAction {
+  id: string;
+  title: string;
+  category: 'work' | 'play' | 'home';
+  carbonGramsSaved: number;
+  sdgGoalIds: number[];
+}
+
+export function calculateTotalCarbonSaved(actions: { action: SdgAction; count: number }[]): { kg: number; grams: number } {
+  const totalGrams = actions.reduce((acc, curr) => acc + curr.action.carbonGramsSaved * curr.count, 0);
+  return {
+    grams: totalGrams,
+    kg: Number((totalGrams / 1000).toFixed(2)),
+  };
+}`,
+      },
+    },
+    overview: "SDGme is an enterprise-backed personal action tracking mobile app designed to mobilize organizations towards the UN Sustainable Development Goals. It provides individuals with an intuitive mobile logging interface while powering centralized ESG (Environmental, Social, and Governance) disclosure dashboards for Unify licensees.",
+    challenges: [
+      "Multi-Category Action Tracking: Managing hierarchical logging workflows across lifestyle dimensions (Work, Play, Home) while maintaining fast offline-first entry.",
+      "Organizational Benchmarking: Aggregating and visualizing individual carbon contribution scores against group and company averages without latency.",
+    ],
+    technicalApproach: [
+      "Normalized Action Logging: Built modular state slices to record actions, compute immediate localized carbon reductions, and cache entries for asynchronous server synchronization.",
+      "Comparative Visual Analytics: Created lightweight graphical comparison meters and line graphs illustrating weekly, monthly, and annual progress.",
+    ],
+    outcome: [
+      "Shipped cross-platform mobile client for Unify licensee networks globally, driving measurable personal engagement with UN Sustainable Development Goals.",
+      "Integrated with centralized ESG disclosure reporting dashboards, enabling automated organizational carbon collation.",
+    ],
+    sections: [
+      {
+        id: "product-overview",
+        title: "01. Product Overview & ESG Mission",
+        content: [
+          "The United Nations Sustainable Development Goals (SDGs) represent a global roadmap for positive environmental and social progress by 2030.",
+          "SDGme bridges individual daily choices with organizational sustainability disclosures, giving employees and community members an intuitive mobile tool to log actions, calculate carbon savings, and benchmark results.",
+        ],
+      },
+      {
+        id: "technical-architecture",
+        title: "02. Mobile Architecture & Analytics",
+        content: [
+          "1. Dynamic Action System: Built interactive action catalogs categorized by Work, Play, and Home, each tied directly to relevant UN SDG targets.",
+          "2. Carbon Impact Engine: Integrated real-time carbon estimation algorithms calculating CO2e metrics per activity (e.g. video conferencing vs traveling, reducing paper use).",
+          "3. Comparative Group Benchmarking: Implemented visual metrics contrasting individual totals against organization-wide saver averages.",
+          "4. Viral Sharing Loop: Built native sharing utilities generating branded weekly summary graphics for LinkedIn, Twitter, and internal company channels.",
+        ],
+      },
+      {
+        id: "enterprise-integration",
+        title: "03. Enterprise Integration & Delivery",
+        content: [
+          "SDGme feeds directly into Unify Licensee centralized dashboards for Environment, Social, and Governance (ESG) compliance, automatic collation, and divisional moderation.",
+          "Deployed across iOS and Android for corporate licensee networks.",
+        ],
+      },
+    ],
+    screenshots: [
+      {
+        url: "/assets/projects/sdgme/0x0ss.png",
+        caption: "Personal Action Tracker: Lifestyle Activity Logging across Work, Play, and Home",
+        alt: "SDGme action tracking screen displaying quick-add buttons for Work, Play, and Home sustainability activities",
+        category: "Action Tracking",
+      },
+      {
+        url: "/assets/projects/sdgme/0x0ss (1).png",
+        caption: "UN Sustainable Development Goals: Interactive 17-Goal Matrix",
+        alt: "SDGme UN 17 Goals matrix displaying colorful official UN SDG icons for No Poverty, Climate Action, Affordable Energy, and Sustainable Cities",
+        category: "UN SDG Matrix",
+      },
+      {
+        url: "/assets/projects/sdgme/0x0ss (2).png",
+        caption: "Activity Analytics: Carbon Savings Benchmarking against Group Averages",
+        alt: "SDGme analytics screen with weekly activity comparison chart showing You vs Average Saver and CO2e kilograms saved",
+        category: "Carbon Analytics",
+      },
+      {
+        url: "/assets/projects/sdgme/0x0ss (3).png",
+        caption: "Verified Impact Summary: Social Achievement and Carbon Scorecard",
+        alt: "SDGme weekly score card displaying actions taken, saved carbon in grams, and branded social share graphic",
+        category: "Social Sharing",
       },
     ],
   },

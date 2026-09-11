@@ -3,12 +3,17 @@ import Link from "next/link";
 import { Project } from "@/types";
 import { ArrowLeft, Cpu, CheckCircle2, Code2, Terminal, ExternalLink } from "lucide-react";
 import { DuracellMediaGallery } from "../duracell-media-gallery";
+import { ProjectScreenshotsGallery } from "./project-screenshots-gallery";
 
 interface CaseStudyViewProps {
   project: Project;
 }
 
 export function CaseStudyView({ project }: CaseStudyViewProps) {
+  const isWebProject =
+    project.category.toLowerCase().includes("web") ||
+    project.slug === "acuity-coaching";
+
   return (
     <div className="w-full bg-[#F3F4F1] min-h-screen text-[#14161A]">
       {/* Top Header Breadcrumb */}
@@ -36,7 +41,11 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
             </span>
             <span className="text-xs text-[#3FAE64] bg-[#3FAE64]/10 px-2.5 py-0.5 rounded-full border border-[#3FAE64]/25 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#3FAE64]" />
-              <span>Shipped App Store & Play Store release</span>
+              <span>
+                {isWebProject
+                  ? "Production web architecture release"
+                  : "Shipped App Store & Play Store release"}
+              </span>
             </span>
           </div>
 
@@ -51,7 +60,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
           {project.links && (
             <div className="pt-2 space-y-3">
               <div className="text-xs font-medium text-[#7E8490]">
-                Production application links (iOS & Android):
+                Production application links:
               </div>
               <div className="flex flex-wrap gap-3">
                 {project.links.duracellAppStore && (
@@ -98,6 +107,17 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
                     <ExternalLink className="w-3.5 h-3.5 text-[#3FAE64]" aria-hidden="true" />
                   </a>
                 )}
+                {project.links.demo && (
+                  <a
+                    href={project.links.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded-xl bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-all flex items-center gap-2 min-h-[44px] shadow-2xs hover:-translate-y-0.5"
+                  >
+                    <span>Visit live platform</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+                  </a>
+                )}
               </div>
             </div>
           )}
@@ -118,7 +138,9 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
             </div>
             <div>
               <div className="text-[#7E8490] font-medium text-xs">Target platforms</div>
-              <div className="text-[#14161A] font-semibold mt-0.5">iOS & Android</div>
+              <div className="text-[#14161A] font-semibold mt-0.5">
+                {isWebProject ? "Web (Modern Browsers)" : "iOS & Android"}
+              </div>
             </div>
           </div>
         </div>
@@ -126,12 +148,22 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
 
       {/* Main Editorial Case Study Column */}
       <main className="max-w-[960px] mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-16">
-        {/* Interactive Production Screenshots Node */}
+        {/* Interactive Production Screenshots Node for Duracell */}
         {(project.slug === "duracell-energy" || project.slug === "energy-flow") && (
           <section className="space-y-3">
             <DuracellMediaGallery />
           </section>
         )}
+
+        {/* Verified Production Screenshots Gallery for Puredrive, Stain Care Pro, SDGme, etc. */}
+        {project.slug !== "duracell-energy" &&
+          project.slug !== "energy-flow" &&
+          project.screenshots &&
+          project.screenshots.length > 0 && (
+            <section className="space-y-3">
+              <ProjectScreenshotsGallery project={project} />
+            </section>
+          )}
 
         {/* Modular Case Study Sections */}
         {project.sections.map((section) => (

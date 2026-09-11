@@ -85,7 +85,7 @@ export function Hero() {
             <div className="grid grid-cols-3 gap-4 pt-4 pb-2 border-y border-[#E4E5E1]">
               <div>
                 <div className="text-2xl sm:text-3xl font-semibold text-[#14161A] tabular-nums">
-                  3
+                  4
                 </div>
                 <div className="text-xs text-[#5B5F66] mt-0.5">
                   Production apps

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Project } from "@/types";
 import { Code2, Cpu, ExternalLink, Lock, CheckCircle2, Sparkles } from "lucide-react";
 import { DuracellMediaGallery } from "./duracell-media-gallery";
@@ -76,6 +77,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
                       <ExternalLink className="w-3 h-3 text-[#3FAE64]" />
                     </a>
                   )}
+                  {project.links.demo && (
+                    <a
+                      href={project.links.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 rounded-lg bg-[#F3F4F1] hover:bg-white border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-colors flex items-center gap-1 shadow-2xs"
+                    >
+                      <span>Live platform</span>
+                      <ExternalLink className="w-3 h-3 text-[#2F6FED]" />
+                    </a>
+                  )}
                 </>
               )}
 
@@ -124,6 +136,37 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.slug === "duracell-energy" && (
             <div className="py-2">
               <DuracellMediaGallery />
+            </div>
+          )}
+
+          {/* Shipped Screen Previews for Puredrive, Stain Care Pro, SDGme */}
+          {project.slug !== "duracell-energy" && project.screenshots && project.screenshots.length > 0 && (
+            <div className="py-2 space-y-2">
+              <div className="text-xs font-medium text-[#7E8490] flex items-center gap-1.5">
+                <span>Verified production screens:</span>
+              </div>
+              <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-thin">
+                {project.screenshots.slice(0, 4).map((shot, idx) => (
+                  <Link
+                    key={shot.url}
+                    href={`/projects/${project.slug}`}
+                    className="group relative shrink-0 w-28 sm:w-32 rounded-xl overflow-hidden border border-[#E4E5E1] bg-black/5 hover:border-[#2F6FED] transition-all shadow-2xs hover:-translate-y-0.5"
+                  >
+                    <div className="relative w-full aspect-[9/16] bg-black">
+                      <Image
+                        src={shot.url}
+                        alt={shot.alt}
+                        fill
+                        sizes="128px"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-1.5 bg-white border-t border-[#E4E5E1] text-[10px] text-[#5B5F66] truncate font-medium">
+                      {shot.category || `Screen ${idx + 1}`}
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           )}
 
