@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { profileData } from "@/data/profile";
-import { ArrowDown, Layers, FileText, ArrowUpRight } from "lucide-react";
+import { Layers, FileText } from "lucide-react";
 import { HeroDevice3D } from "./hero-device-3d";
 
 export function Hero() {
@@ -86,7 +86,6 @@ export function Hero() {
               >
                 <Layers className="w-4 h-4" aria-hidden="true" />
                 <span>View selected work</span>
-                <ArrowDown className="w-4 h-4" aria-hidden="true" />
               </Link>
 
               <Link
@@ -95,7 +94,6 @@ export function Hero() {
               >
                 <FileText className="w-4 h-4 text-[#5B5F66]" aria-hidden="true" />
                 <span>Read resume</span>
-                <ArrowUpRight className="w-4 h-4 text-[#7E8490]" aria-hidden="true" />
               </Link>
             </div>
           </div>

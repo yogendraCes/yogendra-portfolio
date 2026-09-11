@@ -98,7 +98,7 @@ export default function ResumePage() {
                           )}
                         </div>
                       </div>
-                      <div className="text-xs text-[#7E8490]">{exp.period} • {exp.location}</div>
+                      <div className="text-xs text-[#7E8490]">{exp.period}, {exp.location}</div>
                     </div>
                     <p className="text-xs text-[#14161A] font-medium bg-[#F3F4F1] p-3 rounded-xl border border-[#E4E5E1]">
                       {exp.scope}
@@ -148,7 +148,7 @@ export default function ResumePage() {
                 {skillsData.map((cat) => (
                   <div key={cat.category} className="p-4 rounded-xl bg-white border border-[#E4E5E1] space-y-1.5 shadow-xs">
                     <div className="text-[#2F6FED] font-medium">{cat.category}</div>
-                    <div className="text-[#14161A]">{cat.technologies.join(" • ")}</div>
+                    <div className="text-[#14161A]">{cat.technologies.join(", ")}</div>
                   </div>
                 ))}
               </div>

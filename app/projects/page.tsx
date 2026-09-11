@@ -32,10 +32,6 @@ export default function ProjectsIndexPage() {
         <main id="main-content" className="flex-1 pb-16 lg:pb-0">
           <div className="py-12 sm:py-16 border-b border-[#E4E5E1] bg-[#F3F4F1]">
             <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E4E5E1] text-xs text-[#5B5F66]">
-                <span className="w-2 h-2 rounded-full bg-[#3FAE64]" />
-                <span>Architectural Case Studies</span>
-              </div>
               <h1 className="text-3xl sm:text-4xl font-semibold text-[#14161A] tracking-tight">
                 Production projects & case studies
               </h1>

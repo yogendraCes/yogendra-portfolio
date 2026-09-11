@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Project } from "@/types";
-import { ArrowRight, Code2, Cpu, ExternalLink, Lock, CheckCircle2, Sparkles } from "lucide-react";
+import { Code2, Cpu, ExternalLink, Lock, CheckCircle2, Sparkles } from "lucide-react";
 import { DuracellMediaGallery } from "./duracell-media-gallery";
 import { SpotlightCard } from "./spotlight-card";
 
@@ -113,7 +113,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#F3F4F1] border border-[#E4E5E1] text-xs text-[#5B5F66]">
               <Lock className="w-3.5 h-3.5 text-[#7E8490] shrink-0" />
               <span>
-                <strong className="text-[#14161A] font-medium">Proprietary codebase</strong> — architecture discussed in technical interview.
+                <strong className="text-[#14161A] font-medium">Proprietary codebase.</strong> Architecture discussed in technical interview.
               </span>
             </div>
           )}
@@ -197,10 +197,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <Link
             href={`/projects/${project.slug}`}
             aria-label={`Read Case Study for ${project.title}`}
-            className="text-xs font-medium text-[#2F6FED] hover:text-[#2256BD] transition-colors flex items-center gap-1 group py-1 min-h-[44px]"
+            className="text-xs font-medium text-[#2F6FED] hover:text-[#2256BD] transition-colors flex items-center py-1 min-h-[44px]"
           >
             <span>Read architecture case study</span>
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </div>
       </article>

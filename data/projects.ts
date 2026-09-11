@@ -191,13 +191,13 @@ export function generateChartPath(
       },
       {
         url: "/assets/projects/duracell-energy/live-usage-home-flow.png",
-        caption: "Live Telemetry Dashboard — Home Flow Architectural Graphic View",
+        caption: "Live Telemetry Dashboard: Home Flow Architectural Graphic View",
         alt: "Live Usage Monitor Home Flow screen displaying real-time Solar, Battery, EV, Home, and Grid power telemetry",
         category: "Telemetry Visualization",
       },
       {
         url: "/assets/projects/duracell-energy/live-usage-energy-flow.png",
-        caption: "Live Telemetry Dashboard — Multi-Node Energy Flow Topology View",
+        caption: "Live Telemetry Dashboard: Multi-Node Energy Flow Topology View",
         alt: "Live Usage Monitor Energy Flow screen with circular interactive power node network topology",
         category: "Network Topology",
       },
@@ -209,7 +209,7 @@ export function generateChartPath(
       },
       {
         url: "/assets/projects/duracell-energy/scheduled-control.png",
-        caption: "Scheduled Control — Battery Charge & Discharge Time-of-Use Management",
+        caption: "Scheduled Control: Battery Charge & Discharge Time-of-Use Management",
         alt: "Scheduled Control screen displaying customizable automated charge/discharge schedules, tariff timing, and rate parameters",
         category: "Time-of-Use Management",
       },

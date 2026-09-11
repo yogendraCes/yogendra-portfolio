@@ -8,11 +8,23 @@ export function HeroDevice3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [rotation, setRotation] = useState({ x: 3, y: -6 });
   const [isDragging, setIsDragging] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const dragStart = useRef({ x: 0, y: 0, initialRotX: 3, initialRotY: -6 });
   const animationFrameRef = useRef<number | null>(null);
 
+  // Detect prefers-reduced-motion
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
+
   // Return to resting angle smoothly when drag ends
   const springBack = useCallback(() => {
+    if (prefersReducedMotion) return;
     const targetX = 3;
     const targetY = -6;
 
@@ -40,7 +52,7 @@ export function HeroDevice3D() {
       cancelAnimationFrame(animationFrameRef.current);
     }
     animationFrameRef.current = requestAnimationFrame(animate);
-  }, []);
+  }, [prefersReducedMotion]);
 
   // Cleanup RAF
   useEffect(() => {
@@ -52,6 +64,7 @@ export function HeroDevice3D() {
   }, []);
 
   const handlePointerDown = (e: React.PointerEvent) => {
+    if (prefersReducedMotion) return;
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
     }
@@ -95,7 +108,7 @@ export function HeroDevice3D() {
       {/* 3D Perspective Stage */}
       <div
         ref={containerRef}
-        className="relative perspective-[1000px] cursor-grab active:cursor-grabbing touch-pan-y"
+        className={`relative perspective-[1000px] ${prefersReducedMotion ? "" : "cursor-grab active:cursor-grabbing touch-pan-y"}`}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -106,7 +119,7 @@ export function HeroDevice3D() {
         <div
           className="relative transition-transform duration-75 ease-out"
           style={{
-            transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
+            transform: prefersReducedMotion ? "none" : `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
             transformStyle: "preserve-3d",
             willChange: "transform",
           }}
@@ -167,10 +180,12 @@ export function HeroDevice3D() {
       </div>
 
       {/* Tactile Interaction Hint */}
-      <div className="flex items-center gap-1.5 text-xs text-[#5B5F66] mt-4 font-normal">
-        <MoveHorizontal className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
-        <span>Drag to inspect device</span>
-      </div>
+      {!prefersReducedMotion && (
+        <div className="flex items-center gap-1.5 text-xs text-[#5B5F66] mt-4 font-normal">
+          <MoveHorizontal className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+          <span>Drag to inspect device</span>
+        </div>
+      )}
     </div>
   );
 }

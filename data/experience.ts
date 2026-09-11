@@ -32,7 +32,7 @@ export const experienceData: Experience[] = [
     phases: [
       {
         id: "forebear-ces-contract-phase",
-        title: "Contract Staffing — Cloud Energy Software (CES)",
+        title: "Contract Staffing at Cloud Energy Software (CES)",
         period: "April 2021 – February 18, 2023",
         badge: "Contracted to Cloud Energy Software",
         scope: "Staffed full-time on contract to Cloud Energy Software as primary mobile developer working directly on client energy products.",
@@ -45,7 +45,7 @@ export const experienceData: Experience[] = [
       },
       {
         id: "forebear-direct-phase",
-        title: "Initial Development — Direct Employee",
+        title: "Initial Development as Direct Employee",
         period: "March 2020 – April 2021",
         badge: "Direct Employee",
         scope: "Direct employee role building foundational cross-platform mobile application features.",

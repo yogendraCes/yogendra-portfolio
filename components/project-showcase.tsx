@@ -29,12 +29,9 @@ export function ProjectShowcase({ showHeader = true }: ProjectShowcaseProps = {}
         {/* Category 1: Production Applications & Scaled Deployments */}
         <div className="space-y-6">
           <div className="border-b border-[#E4E5E1] pb-3 space-y-1">
-            <div className="flex items-center gap-1.5 text-xs text-[#2F6FED] font-medium">
-              <Briefcase className="w-3.5 h-3.5" />
-              <span>Production Systems</span>
-            </div>
-            <h3 className="text-lg sm:text-xl font-semibold text-[#14161A] tracking-tight">
-              Shipped applications & scaled deployments
+            <h3 className="text-lg sm:text-xl font-semibold text-[#14161A] tracking-tight flex items-center gap-2">
+              <Briefcase className="w-4 h-4 text-[#2F6FED]" aria-hidden="true" />
+              <span>Shipped applications & scaled deployments</span>
             </h3>
             <p className="text-xs sm:text-sm text-[#5B5F66] leading-relaxed">
               Engineered and maintained across live releases with active telemetry, IoT hardware synchronization, and CI/CD pipelines.
@@ -51,12 +48,9 @@ export function ProjectShowcase({ showHeader = true }: ProjectShowcaseProps = {}
         {/* Category 2: Open Source & Reference Architecture */}
         <div className="space-y-6 pt-4">
           <div className="border-b border-[#E4E5E1] pb-3 space-y-1">
-            <div className="flex items-center gap-1.5 text-xs text-[#3FAE64] font-medium">
-              <Code className="w-3.5 h-3.5" />
-              <span>Reference Architecture</span>
-            </div>
-            <h3 className="text-lg sm:text-xl font-semibold text-[#14161A] tracking-tight">
-              Open-source implementations & prototypes
+            <h3 className="text-lg sm:text-xl font-semibold text-[#14161A] tracking-tight flex items-center gap-2">
+              <Code className="w-4 h-4 text-[#3FAE64]" aria-hidden="true" />
+              <span>Open-source implementations & prototypes</span>
             </h3>
             <p className="text-xs sm:text-sm text-[#5B5F66] leading-relaxed">
               Public implementations showcasing React Native thread isolation, custom D3 graphics math, and real-time state synchronization.

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { profileData, isValidSocialUrl } from "@/data/profile";
-import { Mail, Download, ArrowRight, CheckCircle2, Layers, Cpu, Wrench, ShieldCheck, Rocket, Copy, Check } from "lucide-react";
+import { Mail, Download, CheckCircle2, Layers, Cpu, Wrench, ShieldCheck, Rocket, Copy, Check } from "lucide-react";
 import { SpotlightCard } from "./spotlight-card";
 
 export function CTASection() {
@@ -21,7 +21,7 @@ export function CTASection() {
     {
       action: "Build",
       label: "Greenfield applications",
-      description: "Initialize scalable React Native apps from initial architecture to App Store launch.",
+      description: "Build React Native apps from initial architecture to App Store launch.",
       icon: Layers,
     },
     {
@@ -114,7 +114,6 @@ export function CTASection() {
                   >
                     <Mail className="w-4 h-4" aria-hidden="true" />
                     <span>Start a project discussion</span>
-                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </a>
 
                   <button
@@ -135,7 +134,7 @@ export function CTASection() {
                   </button>
                 </div>
                 <div className="text-xs text-[#7E8490] text-center">
-                  Direct email response • Flexible contract & project pricing
+                  Direct email response. Flexible contract and project pricing.
                 </div>
               </div>
             </div>

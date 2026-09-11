@@ -61,7 +61,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
                     rel="noopener noreferrer"
                     className="px-4 py-2.5 rounded-xl bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-all flex items-center gap-2 min-h-[44px] shadow-2xs hover:-translate-y-0.5"
                   >
-                    <span>Duracell Energy — App Store</span>
+                    <span>Duracell Energy on App Store</span>
                     <ExternalLink className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
                   </a>
                 )}
@@ -72,7 +72,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
                     rel="noopener noreferrer"
                     className="px-4 py-2.5 rounded-xl bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-all flex items-center gap-2 min-h-[44px] shadow-2xs hover:-translate-y-0.5"
                   >
-                    <span>Duracell Energy — Google Play</span>
+                    <span>Duracell Energy on Google Play</span>
                     <ExternalLink className="w-3.5 h-3.5 text-[#3FAE64]" aria-hidden="true" />
                   </a>
                 )}
@@ -224,13 +224,13 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
             href="/projects"
             className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-white border border-[#E4E5E1] text-[#14161A] text-xs font-medium hover:bg-[#F3F4F1] transition-colors text-center"
           >
-            ← View all projects
+            View all projects
           </Link>
           <a
             href="mailto:yogendra9644@gmail.com"
             className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#2F6FED] text-white text-xs font-medium hover:bg-[#2256BD] transition-colors text-center shadow-xs"
           >
-            Contact Yogendra directly →
+            Contact Yogendra directly
           </a>
         </div>
       </main>

@@ -15,7 +15,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#E4E5E1]">
           <div>
             <div className="text-sm font-semibold text-[#14161A]">
-              {profileData.name} — {profileData.role}
+              {profileData.name}, {profileData.role}
             </div>
             <div className="text-[#5B5F66] text-xs mt-0.5">
               Production mobile engineering across iOS and Android

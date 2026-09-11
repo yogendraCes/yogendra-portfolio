@@ -20,8 +20,8 @@ export function DuracellMediaGallery() {
   const screens: ScreenItem[] = [
     {
       id: "duracell-splash",
-      title: "1. Brand launch & splash screen",
-      shortLabel: "1. App Splash",
+      title: "Brand launch & splash screen",
+      shortLabel: "App Splash",
       src: "/projects/duracell-energy/duracell-splash.png",
       alt: "Duracell Energy mobile app splash screen featuring official Duracell Bunny mascot.",
       icon: Cpu,
@@ -36,8 +36,8 @@ export function DuracellMediaGallery() {
     },
     {
       id: "home-flow",
-      title: "2. Home flow spatial view",
-      shortLabel: "2. Home Flow",
+      title: "Home flow spatial view",
+      shortLabel: "Home Flow",
       src: "/projects/duracell-energy/home-flow.png",
       alt: "Duracell Energy Home Flow screen showing spatial energy distribution through household circuits.",
       icon: Home,
@@ -52,8 +52,8 @@ export function DuracellMediaGallery() {
     },
     {
       id: "energy-flow",
-      title: "3. Live energy flow monitor",
-      shortLabel: "3. Energy Flow",
+      title: "Live energy flow monitor",
+      shortLabel: "Energy Flow",
       src: "/projects/duracell-energy/energy-flow.png",
       alt: "Duracell Energy Live Usage Monitor showing real-time energy flow across solar, battery, grid, home and EV.",
       icon: Zap,
@@ -68,8 +68,8 @@ export function DuracellMediaGallery() {
     },
     {
       id: "ev-live-usage",
-      title: "4. EV smart charging control",
-      shortLabel: "4. EV Charging",
+      title: "EV smart charging control",
+      shortLabel: "EV Charging",
       src: "/projects/duracell-energy/ev-live-usage.png",
       alt: "Duracell Energy EV-1 Live Usage screen showing charge modes, rates, and slider controls.",
       icon: Zap,
@@ -84,8 +84,8 @@ export function DuracellMediaGallery() {
     },
     {
       id: "scheduled-control",
-      title: "5. Scheduled energy control",
-      shortLabel: "5. Scheduled Control",
+      title: "Scheduled energy control",
+      shortLabel: "Scheduled Control",
       src: "/projects/duracell-energy/scheduled-control.png",
       alt: "Duracell Energy Scheduled Control screen showing user-configurable charging slots, target battery percentages, and charge rates.",
       icon: Calendar,
@@ -100,8 +100,8 @@ export function DuracellMediaGallery() {
     },
     {
       id: "energy-insights",
-      title: "6. Time-series energy insights",
-      shortLabel: "6. Energy Insights",
+      title: "Time-series energy insights",
+      shortLabel: "Energy Insights",
       src: "/projects/duracell-energy/energy-insights.png",
       alt: "Duracell Energy Insights screen showing interactive daily time-series energy charts.",
       icon: BarChart2,

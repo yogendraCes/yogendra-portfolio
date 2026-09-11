@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Cpu, RefreshCw, Smartphone, ShieldCheck, ArrowRight } from "lucide-react";
+import { Cpu, RefreshCw, Smartphone, ShieldCheck } from "lucide-react";
 import { SpotlightCard } from "./spotlight-card";
 
 export function ArchitecturePhilosophy() {
@@ -18,7 +18,7 @@ export function ArchitecturePhilosophy() {
       title: "Normalized State & RTK Query Caching",
       description:
         "Replacing unmanaged Redux state with RTK Query normalized API polling and cache invalidation, preventing unnecessary component re-renders during high-frequency telemetry ingestion.",
-      evidenceNote: "Applied in Duracell Energy & Puredrive — eliminates full-tree re-renders on 10s cycles.",
+      evidenceNote: "Applied in Duracell Energy and Puredrive to eliminate full-tree re-renders on 10s cycles.",
       link: "#work",
     },
     {
@@ -26,7 +26,7 @@ export function ArchitecturePhilosophy() {
       title: "AppState Lifecycle & Battery Efficiency",
       description:
         "Integrating lifecycle listeners via React Native AppState to automatically freeze active animation loops and cancel network polling when apps enter background or inactive states.",
-      evidenceNote: "Applied in Duracell Energy — auto-suspends polling timers during background transitions.",
+      evidenceNote: "Applied in Duracell Energy to auto-suspend polling timers during background transitions.",
       link: "#work",
     },
     {
@@ -34,7 +34,7 @@ export function ArchitecturePhilosophy() {
       title: "Fastlane CI/CD & Code-Signing Match",
       description:
         "Standardizing cross-platform deployment pipelines using Fastlane Match with encrypted Git certificate storage, enabling automated TestFlight and Play Console Internal distribution.",
-      evidenceNote: "Applied in Cloud Energy Software — single-command beta deployment to stores.",
+      evidenceNote: "Applied in Cloud Energy Software for single-command beta deployment to stores.",
       link: "#work",
     },
   ];
@@ -74,10 +74,9 @@ export function ArchitecturePhilosophy() {
                     </span>
                     <Link
                       href={item.link}
-                      className="text-xs text-[#14161A] hover:text-[#2F6FED] transition-colors flex items-center gap-1 group font-medium"
+                      className="text-xs text-[#14161A] hover:text-[#2F6FED] transition-colors flex items-center font-medium"
                     >
                       <span className="leading-snug">{item.evidenceNote}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-[#2F6FED] shrink-0 group-hover:translate-x-0.5 transition-transform" />
                     </Link>
                   </div>
                 </div>

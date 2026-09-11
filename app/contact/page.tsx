@@ -3,22 +3,22 @@ import type { Metadata } from "next";
 import { profileData, isValidSocialUrl } from "@/data/profile";
 import { NavRail } from "@/components/nav-rail";
 import { Footer } from "@/components/footer";
-import { Mail, Download, ArrowUpRight } from "lucide-react";
+import { Mail, Download } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Yogendra Yadav — React Native Developer",
+  title: "Contact Yogendra Yadav, React Native Developer",
   description: "Get in touch with Senior React Native Engineer Yogendra Yadav directly via email or view downloadable technical resume for mobile engineering projects.",
   alternates: {
     canonical: "https://yogendrayadav.dev/contact",
   },
   openGraph: {
-    title: "Contact Yogendra Yadav — React Native Developer",
+    title: "Contact Yogendra Yadav, React Native Developer",
     description: "Get in touch with Senior React Native Engineer Yogendra Yadav directly via email or view downloadable technical resume for mobile engineering projects.",
     url: "https://yogendrayadav.dev/contact",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Yogendra Yadav — React Native Developer",
+    title: "Contact Yogendra Yadav, React Native Developer",
     description: "Get in touch with Senior React Native Engineer Yogendra Yadav directly via email or view downloadable technical resume for mobile engineering projects.",
   },
 };
@@ -59,9 +59,6 @@ export default function ContactPage() {
                 {/* Primary Contact Method: Direct Email */}
                 <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E4E5E1] space-y-6 flex flex-col justify-between shadow-xs">
                   <div className="space-y-4">
-                    <div className="text-xs text-[#2F6FED] font-semibold uppercase tracking-wider">
-                      Direct email
-                    </div>
                     <h2 className="text-xl sm:text-2xl font-semibold text-[#14161A]">Email me directly</h2>
                     <p className="text-sm text-[#5B5F66] leading-relaxed">
                       Discuss mobile engineering, feature requests, contract roles, or technical architecture questions.
@@ -93,10 +90,7 @@ export default function ContactPage() {
                 <div className="p-6 sm:p-8 rounded-2xl bg-white border border-[#E4E5E1] space-y-6 flex flex-col justify-between shadow-xs">
                   <div className="space-y-6">
                     <div>
-                      <div className="text-xs text-[#2F6FED] font-semibold uppercase tracking-wider">
-                        Resume & profiles
-                      </div>
-                      <h2 className="text-xl sm:text-2xl font-semibold text-[#14161A] mt-1">Professional resources</h2>
+                      <h2 className="text-xl sm:text-2xl font-semibold text-[#14161A]">Professional resources</h2>
                     </div>
 
                     {/* Resume Download Action */}
@@ -131,7 +125,6 @@ export default function ContactPage() {
                               aria-label="LinkedIn Profile"
                             >
                               <span>LinkedIn profile</span>
-                              <ArrowUpRight className="w-4 h-4 text-[#7E8490]" aria-hidden="true" />
                             </a>
                           )}
                           {hasGitHub && (
@@ -143,7 +136,6 @@ export default function ContactPage() {
                               aria-label="GitHub Repository"
                             >
                               <span>GitHub repository</span>
-                              <ArrowUpRight className="w-4 h-4 text-[#7E8490]" aria-hidden="true" />
                             </a>
                           )}
                           {hasUpwork && (
@@ -155,7 +147,6 @@ export default function ContactPage() {
                               aria-label="Hire me on Upwork"
                             >
                               <span>Upwork profile</span>
-                              <ArrowUpRight className="w-4 h-4 text-[#7E8490]" aria-hidden="true" />
                             </a>
                           )}
                         </div>

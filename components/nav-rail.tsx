@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { profileData } from "@/data/profile";
-import { ArrowUpRight, FileText, Mail } from "lucide-react";
+import { FileText, Mail } from "lucide-react";
 
 interface NavItem {
   label: string;
@@ -111,7 +111,6 @@ export function NavRail() {
               <FileText className="w-3.5 h-3.5" aria-hidden="true" />
               <span>Resume</span>
             </span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-[#7E8490]" aria-hidden="true" />
           </Link>
 
           <Link
@@ -122,7 +121,6 @@ export function NavRail() {
               <Mail className="w-3.5 h-3.5" aria-hidden="true" />
               <span>Contact</span>
             </span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-[#7E8490]" aria-hidden="true" />
           </Link>
         </div>
       </aside>
