@@ -10,7 +10,7 @@ export function ArchitecturePhilosophy() {
       title: "UI Threading & Frame-Rate Optimization",
       description:
         "Offloading gesture handlers and frame-critical animations directly to the native UI thread using React Native Reanimated (v3) and Gesture Handler, bypassing JS thread bottlenecks to prevent visual jank.",
-      evidenceNote: "Applied in Duracell Energy (60fps telemetry loops) and Telemetry Demo.",
+      evidenceNote: "Applied in Duracell Energy (60fps telemetry loops) and Puredrive.",
       link: "#work",
     },
     {

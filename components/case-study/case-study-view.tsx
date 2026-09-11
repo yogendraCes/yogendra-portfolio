@@ -42,7 +42,9 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
             <span className="text-xs text-[#3FAE64] bg-[#3FAE64]/10 px-2.5 py-0.5 rounded-full border border-[#3FAE64]/25 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#3FAE64]" />
               <span>
-                {isWebProject
+                {project.projectType === "personal"
+                  ? "Public open-source repository release"
+                  : isWebProject
                   ? "Production web architecture release"
                   : "Shipped App Store & Play Store release"}
               </span>
@@ -57,13 +59,13 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
           </p>
 
           {/* Verified Production Proof & Public Store Links */}
-          {project.links && (
+          {(project.links || project.githubRepoUrl) && (
             <div className="pt-2 space-y-3">
               <div className="text-xs font-medium text-[#7E8490]">
-                Production application links:
+                {project.projectType === "personal" ? "Repository & source links:" : "Production application links:"}
               </div>
               <div className="flex flex-wrap gap-3">
-                {project.links.duracellAppStore && (
+                {project.links?.duracellAppStore && (
                   <a
                     href={project.links.duracellAppStore}
                     target="_blank"
@@ -74,7 +76,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
                     <ExternalLink className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
                   </a>
                 )}
-                {project.links.duracellPlayStore && (
+                {project.links?.duracellPlayStore && (
                   <a
                     href={project.links.duracellPlayStore}
                     target="_blank"
@@ -85,7 +87,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
                     <ExternalLink className="w-3.5 h-3.5 text-[#3FAE64]" aria-hidden="true" />
                   </a>
                 )}
-                {project.links.appStore && (project.slug !== "duracell-energy" && project.slug !== "energy-flow") && (
+                {project.links?.appStore && (project.slug !== "duracell-energy" && project.slug !== "energy-flow") && (
                   <a
                     href={project.links.appStore}
                     target="_blank"
@@ -96,7 +98,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
                     <ExternalLink className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
                   </a>
                 )}
-                {project.links.playStore && (project.slug !== "duracell-energy" && project.slug !== "energy-flow") && (
+                {project.links?.playStore && (project.slug !== "duracell-energy" && project.slug !== "energy-flow") && (
                   <a
                     href={project.links.playStore}
                     target="_blank"
@@ -107,7 +109,7 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
                     <ExternalLink className="w-3.5 h-3.5 text-[#3FAE64]" aria-hidden="true" />
                   </a>
                 )}
-                {project.links.demo && (
+                {project.links?.demo && (
                   <a
                     href={project.links.demo}
                     target="_blank"
@@ -115,6 +117,17 @@ export function CaseStudyView({ project }: CaseStudyViewProps) {
                     className="px-4 py-2.5 rounded-xl bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-all flex items-center gap-2 min-h-[44px] shadow-2xs hover:-translate-y-0.5"
                   >
                     <span>Visit live platform</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+                  </a>
+                )}
+                {(project.githubRepoUrl || project.links?.github) && (
+                  <a
+                    href={project.githubRepoUrl || project.links?.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded-xl bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-all flex items-center gap-2 min-h-[44px] shadow-2xs hover:-translate-y-0.5"
+                  >
+                    <span>View GitHub repository</span>
                     <ExternalLink className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
                   </a>
                 )}

@@ -51,4 +51,23 @@ export const technicalNotesData: TechnicalNote[] = [
       "Battery-Aware Lifecycle Binding: When the mobile app transitions to background or inactive states, active polling is suspended immediately, adhering to Apple and Google battery efficiency guidelines.",
     ],
   },
+  {
+    id: "tablet-ipad-responsive-react-native",
+    slug: "tablet-ipad-responsive-react-native",
+    title: "Architecting Dual-Pane Tablet and iPad Layouts in a Single React Native Codebase",
+    subtitle: "How responsive styling hooks and viewport-aware split panes eliminate separate tablet builds while preserving 48px touch targets.",
+    date: "November 2024",
+    readTime: "4 min read",
+    tags: ["React Native", "Tablet & iPad", "Responsive Design", "Architecture"],
+    takeaway: "Dynamic window dimension hooks paired with compound master-detail layout components share 95%+ of code between phone and tablet without runtime styling recalculations.",
+    paragraphs: [
+      "Field trade applications like Stain Care Pro require seamless operation across contractor handheld phones and 11-to-12.9-inch iPad tablets on job sites. Many engineering teams attempt to handle tablets by creating duplicate screen components or entirely separate application targets. This doubles maintenance overhead and introduces behavioral drift between platforms.",
+      "To solve this efficiently, I designed a unified responsive primitive system based on three core architectural rules:",
+    ],
+    bulletPoints: [
+      "Dynamic Breakpoint Hooks: A custom useResponsiveLayout hook monitors window metrics and orientation changes, emitting semantic breakpoint tokens (compact, medium, expanded) rather than hardcoded pixel queries.",
+      "Master-Detail Compound Viewports: On expanded tablet viewports, the diagnostic guide and chemical solution views render side-by-side as a continuous dual-pane workspace, while automatically collapsing to a standard stack navigator on phones.",
+      "Adaptive Touch Ergonomics: Tablet interactive surfaces maintain strict 48x48px minimum touch boundaries with scaled typography scales (modular 1.25 ratio), preventing awkward stretched interfaces on large screens.",
+    ],
+  },
 ];

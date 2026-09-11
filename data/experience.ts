@@ -38,7 +38,7 @@ export const experienceData: Experience[] = [
         badge: "Contracted to Cloud Energy Software",
         scope: "Staffed full-time on contract to Cloud Energy Software as primary mobile developer working directly on client energy products.",
         responsibilities: [
-          "Staffed full-time on contract to Cloud Energy Software, leading mobile development for client energy management applications (Puredrive, Stain Care Pro).",
+          "Staffed full-time on contract to Cloud Energy Software, leading cross-platform mobile development for energy storage hardware systems (Puredrive), stone and tile restoration diagnostics (Stain Care Pro for SurpHaces), and UN SDG sustainability tracking (SDGme for Unify).",
           "Optimized real-time dashboards handling high-frequency telemetry updates (10-second polling intervals) by isolating primitive state selectors to eliminate parent component re-renders.",
           "Improved rendering performance by reducing unnecessary component re-renders through strict memoization and component tree optimizations.",
           "Integrated complex REST APIs and handled asynchronous multi-source data streams efficiently across iOS and Android builds.",

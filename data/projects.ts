@@ -783,4 +783,132 @@ export function formatSessionSummary(session: CoachingSession): string {
       },
     ],
   },
+  {
+    id: "saloon-app",
+    slug: "saloon-app",
+    title: "SaloonApp: Multi-Role Booking Platform",
+    subtitle: "Next.js 15, TypeScript, Zustand Persistent Store & Role-Based Workflows",
+    category: "Full-Stack Web & Scheduling Architecture",
+    summary: "A modern salon and appointment management web application built with Next.js 15 and TypeScript. Features multi-role access control (Admin, Freelancer, Client), staff commission and booth rent calculations, dynamic booking workflows, and offline-persistent state management using Zustand.",
+    projectType: "personal",
+    isProprietary: false,
+    githubRepoUrl: "https://github.com/yogendraCes/SaloonApp",
+    liveDemoUrl: "https://github.com/yogendraCes/SaloonApp",
+    ciBadgeUrl: "https://github.com/yogendraCes/SaloonApp/actions",
+    keyEngineeringDecisions: [
+      "Engineered multi-role state segregation using Zustand with local storage persistence, managing distinct administrative, stylist, and client views.",
+      "Designed dynamic multi-step booking workflow with date-fns time-slot calculation and service duration validation.",
+      "Implemented automated financial calculation engine tracking staff commissions and daily booth rent deductions.",
+      "Built typed component architecture using Next.js 15 App Router, React Hook Form, and Tailwind CSS.",
+    ],
+    primaryStack: ["Next.js 15", "TypeScript", "React 19", "Zustand", "Tailwind CSS"],
+    fullStack: [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Zustand",
+      "Tailwind CSS",
+      "React Hook Form",
+      "date-fns",
+      "Lucide React",
+      "ESLint",
+      "Git / GitHub",
+    ],
+    role: "Full-Stack Engineer & Creator",
+    company: "Open Source / Personal Project",
+    period: "August 2024 – Present",
+    featured: true,
+    technicalHighlight: {
+      label: "ZUSTAND PERSISTENT MULTI-ROLE STORE",
+      description: "Structured typed state container managing staff commissions, services catalog, and customer appointments with automatic browser storage synchronization.",
+      codeSnippet: {
+        filename: "useStore.ts",
+        language: "typescript",
+        code: `import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+
+export type UserRole = 'admin' | 'freelancer' | 'client';
+
+export type Staff = {
+  id: string;
+  name: string;
+  role: string;
+  commissionRate: number;
+  boothRent: number;
+};
+
+export type Appointment = {
+  id: string;
+  customerId: string;
+  staffId: string;
+  serviceId: string;
+  date: string;
+  startTime: string;
+  status: 'scheduled' | 'completed' | 'cancelled';
+};`,
+      },
+    },
+    overview: "SaloonApp is a full-stack scheduling and operational management web application designed for beauty salons, barbershops, and freelance stylists. It demonstrates modern frontend engineering using Next.js 15, TypeScript, and client-side state persistence.",
+    challenges: [
+      "Multi-Role Interface Partitioning: Handling separate administrative, booth-renter, and consumer booking views from a unified state store without leaking role permissions.",
+      "Scheduling Conflict Mitigation: Calculating real-time stylist availability, service duration offsets, and overlapping booking prevention.",
+    ],
+    technicalApproach: [
+      "Zustand Persistent Store: Implemented modular state slices with selective persistence to ensure offline appointment resilience and zero-latency role toggling.",
+      "Modular Component Hierarchy: Separated booking workflows into decoupled stages (service pick, stylist selection, time-slot reservation, customer confirmation).",
+    ],
+    outcome: [
+      "Publicly available open-source codebase on GitHub showcasing clean Next.js 15 App Router structure and TypeScript discipline.",
+      "Delivered end-to-end appointment scheduling, commission tracking, and responsive layout scaling across mobile and desktop.",
+    ],
+    sections: [
+      {
+        id: "product-scope",
+        title: "01. Product Scope & Open-Source Architecture",
+        content: [
+          "SaloonApp was created as a modern web solution for independent salon owners and freelance stylists to streamline appointment scheduling, service pricing, and booth rent tracking.",
+          "The codebase is fully public on GitHub, serving as a clean reference architecture for Next.js 15 App Router, TypeScript, and Zustand state modeling.",
+        ],
+      },
+      {
+        id: "architectural-decisions",
+        title: "02. Key Architectural Decisions",
+        content: [
+          "1. Role-Based State Modeling: Segregated permissions across Admin, Freelancer, and Client roles within a unified store, allowing instantaneous role switching for testing and previewing.",
+          "2. Financial Commission Engine: Built deterministic calculation helpers computing stylist net earnings based on variable commission tiers and fixed daily chair rental fees.",
+          "3. Modular Booking Funnel: Deconstructed appointment flows into isolated step components, maintaining clean form state and validation via React Hook Form and Zod.",
+        ],
+        codeSnippet: {
+          filename: "useStore.ts",
+          language: "typescript",
+          code: `export const useStore = create<State>()(
+  persist(
+    (set, get) => ({
+      activeRole: 'admin',
+      activeStaffId: 'staff-1',
+      staff: initialStaff,
+      services: initialServices,
+      appointments: initialAppointments,
+      setActiveRole: (role) => set({ activeRole: role }),
+      addAppointment: (appointment) =>
+        set((state) => ({ appointments: [...state.appointments, appointment] })),
+    }),
+    { name: 'saloon-storage' }
+  )
+);`,
+        },
+      },
+      {
+        id: "public-code",
+        title: "03. Public Code & Inspection",
+        content: [
+          "The complete application source code is available on GitHub under yogendraCes/SaloonApp.",
+          "Demonstrates modern React 19 / Next.js 15 project conventions, strict TypeScript interfaces, and zero-runtime-error state flow.",
+        ],
+      },
+    ],
+    links: {
+      github: "https://github.com/yogendraCes/SaloonApp",
+    },
+  },
 ];

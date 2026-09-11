@@ -4,7 +4,7 @@ export const skillsData: SkillCategory[] = [
   {
     category: "Core Engineering",
     technologies: ["JavaScript", "TypeScript", "React Native"],
-    productionDepth: "Architected 3 production mobile applications from initial commit to store release, establishing strict TypeScript boundaries that eliminated runtime type errors.",
+    productionDepth: "Architected 4 production mobile applications from initial commit to store release, establishing strict TypeScript boundaries that eliminated runtime type errors.",
   },
   {
     category: "State & Data",
@@ -33,7 +33,7 @@ export const skillsData: SkillCategory[] = [
   },
   {
     category: "Web & Frontend",
-    technologies: ["React", "Next.js", "Tailwind CSS", "TypeScript", "REST APIs"],
+    technologies: ["React", "Next.js", "Zustand", "Tailwind CSS", "TypeScript", "REST APIs"],
     productionDepth: "Engineered responsive web applications including client coaching and service management platforms (Acuity Coaching, SaloonApp), structuring domain-driven component hierarchies, custom UI hooks, and reliable API client integrations.",
   },
 ];
