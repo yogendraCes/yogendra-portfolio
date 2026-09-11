@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { projectsData } from "@/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://yogendrayadav.dev"; // Default production canonical domain
+  const baseUrl = "https://yogendra-portfolio-puce.vercel.app"; // Active Vercel deployment URL
 
   const staticRoutes = ["", "/projects", "/resume", "/contact"].map((route) => ({
     url: `${baseUrl}${route}`,

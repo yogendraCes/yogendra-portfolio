@@ -117,6 +117,8 @@ export interface Profile {
   upwork?: string;
   resumeUrl: string;
   statusText: string;
+  avatarUrl?: string;
+  secondaryPositioning?: string;
   coreStack: string[];
   overviewParagraphs: string[];
   technicalFocus: {

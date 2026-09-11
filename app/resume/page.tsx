@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: "Professional Web Resume",
   description: "Senior React Native Engineer professional web resume, work history at Cloud Energy Software and Forebear Productions, technical skills matrix, and PDF download.",
   alternates: {
-    canonical: "https://yogendrayadav.dev/resume",
+    canonical: "https://yogendra-portfolio-puce.vercel.app/resume",
   },
   openGraph: {
     title: "Professional Resume | Yogendra Yadav",
     description: "Senior React Native Engineer professional web resume, work history at Cloud Energy Software and Forebear Productions, technical skills matrix, and PDF download.",
-    url: "https://yogendrayadav.dev/resume",
+    url: "https://yogendra-portfolio-puce.vercel.app/resume",
   },
   twitter: {
     card: "summary_large_image",

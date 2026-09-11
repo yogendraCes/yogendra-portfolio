@@ -16,6 +16,7 @@ export const experienceData: Experience[] = [
       "Built custom D3.js + SVG-based charting system, replacing third-party libraries to eliminate heavy canvas redraw overhead and achieve smooth time-series rendering.",
       "Mentored 5 junior developers, establishing code quality standards and enabling full production readiness within ~6 months.",
       "Conducted technical code reviews and led CI/CD build automation with Fastlane across iOS and Android release channels.",
+      "Engineered responsive React web interfaces and dashboard modules for client platforms (Acuity Coaching), applying shared TypeScript domain models and REST API integrations.",
       "Solved complex data synchronization issues across real-time state updates, telemetry feeds, and interactive node network diagrams.",
     ],
   },

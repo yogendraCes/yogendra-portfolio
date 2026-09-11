@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: "Contact Yogendra Yadav, React Native Developer",
   description: "Get in touch with Senior React Native Engineer Yogendra Yadav directly via email or view downloadable technical resume for mobile engineering projects.",
   alternates: {
-    canonical: "https://yogendrayadav.dev/contact",
+    canonical: "https://yogendra-portfolio-puce.vercel.app/contact",
   },
   openGraph: {
     title: "Contact Yogendra Yadav, React Native Developer",
     description: "Get in touch with Senior React Native Engineer Yogendra Yadav directly via email or view downloadable technical resume for mobile engineering projects.",
-    url: "https://yogendrayadav.dev/contact",
+    url: "https://yogendra-portfolio-puce.vercel.app/contact",
   },
   twitter: {
     card: "summary_large_image",

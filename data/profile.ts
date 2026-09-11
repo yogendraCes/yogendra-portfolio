@@ -23,6 +23,8 @@ export const profileData: Profile = {
   upwork: "https://www.upwork.com/freelancers/~0111ed1b2c3fadb1f8?mp_source=share",
   resumeUrl: "/resume/Yogendra_Yadav_Resume_2026.pdf",
   statusText: "Available for Senior Roles & Contract Development",
+  avatarUrl: "/assets/my/my.png",
+  secondaryPositioning: "Also available for React / Next.js frontend projects.",
   coreStack: [
     "React Native",
     "TypeScript",
@@ -35,6 +37,9 @@ export const profileData: Profile = {
     "Fastlane",
     "iOS (Xcode)",
     "Android Studio",
+    "React",
+    "Next.js",
+    "Tailwind CSS",
   ],
   overviewParagraphs: [
     "Senior React Native Developer with 6+ years of experience building real-time mobile applications for Android and iOS. Specialized in developing data-intensive systems with complex UI architectures, including custom data visualizations using D3.js and real-time dashboards.",

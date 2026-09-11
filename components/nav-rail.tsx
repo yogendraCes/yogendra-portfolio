@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { profileData } from "@/data/profile";
 import { FileText, Mail } from "lucide-react";
@@ -61,14 +62,26 @@ export function NavRail() {
       >
         {/* Top: Identity & Status */}
         <div className="space-y-6">
-          <div>
-            <Link
-              href="/"
-              className="text-base font-semibold text-[#14161A] tracking-tight hover:text-[#2F6FED] transition-colors inline-block"
-            >
-              Yogendra Yadav
-            </Link>
-            <p className="text-xs text-[#5B5F66] mt-0.5">Senior Mobile Systems Engineer</p>
+          <div className="flex items-center gap-3">
+            <div className="relative w-11 h-11 rounded-full overflow-hidden border border-[#D1D3CD] shadow-2xs shrink-0 bg-white">
+              <Image
+                src={profileData.avatarUrl || "/assets/my/my.png"}
+                alt={profileData.name}
+                fill
+                sizes="44px"
+                className="object-cover object-top"
+                priority
+              />
+            </div>
+            <div>
+              <Link
+                href="/"
+                className="text-base font-semibold text-[#14161A] tracking-tight hover:text-[#2F6FED] transition-colors inline-block"
+              >
+                {profileData.name}
+              </Link>
+              <p className="text-xs text-[#5B5F66] mt-0.5">Senior Mobile Systems Engineer</p>
+            </div>
           </div>
 
           {/* Live Operational Beacon (Truth, never decorative) */}
@@ -128,9 +141,18 @@ export function NavRail() {
       {/* ============================================================ */}
       {/* MOBILE TOP BAR (< 1024px)                                    */}
       {/* ============================================================ */}
-      <header className="lg:hidden sticky top-0 z-30 w-full bg-[#F3F4F1]/90 backdrop-blur-md border-b border-[#E4E5E1] px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="text-sm font-semibold text-[#14161A]">
-          Yogendra Yadav
+      <header className="lg:hidden sticky top-0 z-30 w-full bg-[#F3F4F1]/90 backdrop-blur-md border-b border-[#E4E5E1] px-4 py-2.5 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#D1D3CD] shrink-0 bg-white">
+            <Image
+              src={profileData.avatarUrl || "/assets/my/my.png"}
+              alt={profileData.name}
+              fill
+              sizes="32px"
+              className="object-cover object-top"
+            />
+          </div>
+          <span className="text-sm font-semibold text-[#14161A]">{profileData.name}</span>
         </Link>
         <div className="flex items-center gap-2 text-xs text-[#5B5F66]">
           <span className="w-2 h-2 rounded-full bg-[#3FAE64]" aria-hidden="true" />

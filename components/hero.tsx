@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { profileData } from "@/data/profile";
 import { Layers, FileText } from "lucide-react";
 import { HeroDevice3D } from "./hero-device-3d";
@@ -13,12 +14,24 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Main Copy Column (7 cols desktop) */}
           <div className="lg:col-span-7 space-y-6">
-            {/* Operational Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E4E5E1] shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#3FAE64]" aria-hidden="true" />
-              <span className="text-xs text-[#5B5F66] font-medium">
-                {profileData.statusText}
-              </span>
+            {/* Operational Status & Identity Trust Signal */}
+            <div className="flex items-center gap-3">
+              <div className="relative w-10 h-10 rounded-full overflow-hidden border border-[#D1D3CD] shadow-2xs shrink-0 bg-white">
+                <Image
+                  src={profileData.avatarUrl || "/assets/my/my.png"}
+                  alt={profileData.name}
+                  fill
+                  sizes="40px"
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#E4E5E1] shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-[#3FAE64]" aria-hidden="true" />
+                <span className="text-xs text-[#5B5F66] font-medium">
+                  {profileData.statusText}
+                </span>
+              </div>
             </div>
 
             {/* Main Headline (Sentence Case, Confident Display Font) */}
@@ -26,10 +39,18 @@ export function Hero() {
               {profileData.headline}
             </h1>
 
-            {/* Subheadline */}
-            <p className="text-base sm:text-lg text-[#5B5F66] leading-relaxed max-w-[560px]">
-              {profileData.subheadline}
-            </p>
+            {/* Subheadline & Secondary Positioning */}
+            <div className="space-y-2.5">
+              <p className="text-base sm:text-lg text-[#5B5F66] leading-relaxed max-w-[560px]">
+                {profileData.subheadline}
+              </p>
+              {profileData.secondaryPositioning && (
+                <p className="text-xs sm:text-sm font-medium text-[#2F6FED] flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2F6FED]" aria-hidden="true" />
+                  <span>{profileData.secondaryPositioning}</span>
+                </p>
+              )}
+            </div>
 
             {/* Core Technical Capabilities (Sentence Case Pills) */}
             <div className="pt-1">
@@ -37,14 +58,26 @@ export function Hero() {
                 Core technologies
               </p>
               <div className="flex flex-wrap gap-2">
-                {profileData.coreStack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-xs px-2.5 py-1 rounded-md bg-white text-[#14161A] border border-[#E4E5E1] shadow-xs"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {profileData.coreStack.map((tech) => {
+                  const isWeb = ["React", "Next.js", "Tailwind CSS"].includes(tech);
+                  return (
+                    <span
+                      key={tech}
+                      className={`text-xs px-2.5 py-1 rounded-md border shadow-xs flex items-center gap-1.5 ${
+                        isWeb
+                          ? "bg-white text-[#2F6FED] border-[#2F6FED]/30 font-medium"
+                          : "bg-white text-[#14161A] border-[#E4E5E1]"
+                      }`}
+                    >
+                      <span>{tech}</span>
+                      {isWeb && (
+                        <span className="text-[10px] font-medium px-1 rounded bg-[#2F6FED]/10 text-[#2F6FED]">
+                          Web
+                        </span>
+                      )}
+                    </span>
+                  );
+                })}
               </div>
             </div>
 

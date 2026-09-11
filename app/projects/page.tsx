@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: "Production Projects & Case Studies",
   description: "React Native mobile engineering projects: Duracell Energy, Puredrive, and Stain Care Pro.",
   alternates: {
-    canonical: "https://yogendrayadav.dev/projects",
+    canonical: "https://yogendra-portfolio-puce.vercel.app/projects",
   },
   openGraph: {
     title: "Production Projects & Case Studies | Yogendra Yadav",
     description: "Explore technical case studies documenting mobile app architecture, data visualizations, rendering optimizations, and production releases across shipped iOS and Android applications.",
-    url: "https://yogendrayadav.dev/projects",
+    url: "https://yogendra-portfolio-puce.vercel.app/projects",
   },
   twitter: {
     card: "summary_large_image",

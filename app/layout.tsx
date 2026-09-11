@@ -17,7 +17,7 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const baseUrl = "https://yogendrayadav.dev";
+const baseUrl = "https://yogendra-portfolio-puce.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),

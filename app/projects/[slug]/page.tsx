@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
-  const url = `https://yogendrayadav.dev/projects/${project.slug}`;
+  const url = `https://yogendra-portfolio-puce.vercel.app/projects/${project.slug}`;
 
   return {
     title: `${project.title} // Case Study`,

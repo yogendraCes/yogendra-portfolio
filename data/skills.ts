@@ -31,4 +31,9 @@ export const skillsData: SkillCategory[] = [
     technologies: ["Jest", "Render Optimization", "Memoization", "Lazy Loading", "Debugging"],
     productionDepth: "Applied strict React memoization and AppState background listeners, preserving UI thread responsiveness. Unit and component test coverage on open-source mobile projects, CI-enforced on every PR.",
   },
+  {
+    category: "Web & Frontend",
+    technologies: ["React", "Next.js", "Tailwind CSS", "TypeScript", "REST APIs"],
+    productionDepth: "Engineered responsive web applications including client coaching and service management platforms (Acuity Coaching, SaloonApp), structuring domain-driven component hierarchies, custom UI hooks, and reliable API client integrations.",
+  },
 ];

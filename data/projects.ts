@@ -405,4 +405,95 @@ export function getStainSolution(category: string): SolutionStep[] {
       },
     ],
   },
+  {
+    id: "acuity-coaching",
+    slug: "acuity-coaching",
+    title: "Acuity Coaching Web Application",
+    subtitle: "Responsive React.js Frontend, Component Architecture & REST API Integration",
+    category: "Web & Frontend Architecture",
+    summary: "Engineered responsive client web application and dashboard modules for Acuity Coaching. Focused on modular component boundaries, clean REST API transformations, state management, and modern responsive design.",
+    projectType: "employer",
+    isProprietary: true,
+    keyEngineeringDecisions: [
+      "Structured domain-driven React component hierarchies with reusable UI primitives, isolating view rendering from data mutation layers.",
+      "Integrated RESTful API endpoints with typed payload transformations to ensure runtime contract stability.",
+      "Built responsive, accessible layouts using modern CSS utilities optimized across desktop, tablet, and mobile browsers.",
+      "Implemented client-side form validation and error handling boundaries to ensure smooth user onboarding flows.",
+    ],
+    primaryStack: ["React", "TypeScript", "JavaScript", "Tailwind CSS", "REST APIs"],
+    fullStack: [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "REST APIs",
+      "Git",
+      "GitHub",
+    ],
+    role: "Frontend Developer",
+    company: "Cloud Energy Software",
+    period: "2023 – Present",
+    featured: true,
+    technicalHighlight: {
+      label: "MODULAR COMPONENT PATTERN & API ADAPTERS",
+      description: "Built modular React frontend architecture decoupling layout components from backend schema requirements through standardized data adapter hooks.",
+      codeSnippet: {
+        filename: "coachingClient.ts",
+        language: "typescript",
+        code: `export interface CoachingSession {
+  id: string;
+  clientName: string;
+  scheduledAt: string;
+  status: 'confirmed' | 'pending' | 'completed';
+}
+
+export function formatSessionSummary(session: CoachingSession): string {
+  const date = new Date(session.scheduledAt).toLocaleDateString();
+  return \`\${session.clientName}: \${date} (\${session.status})\`;
+}`,
+      },
+    },
+    overview: "Acuity Coaching is a responsive client-facing web application delivering interactive coaching dashboards, session tracking, and user management workflows.",
+    challenges: [
+      "Frontend Component Modularity: Constructing reusable, highly maintainable UI modules that cleanly separate visual display from asynchronous data fetching.",
+      "Multi-Device Responsiveness: Ensuring seamless usability across varying browser viewports from desktop displays down to mobile screens.",
+    ],
+    technicalApproach: [
+      "Modular UI Hierarchy: Decomposed interfaces into clean presentation components and custom data-fetching hooks.",
+      "Responsive Design: Applied responsive utility styling to ensure accessible and fluid layout scaling.",
+    ],
+    outcome: [
+      "Delivered robust, production-ready React web frontend for client coaching operations.",
+      "Established clean component patterns and predictable state flow across core workflows.",
+    ],
+    sections: [
+      {
+        id: "architecture-overview",
+        title: "01. Architecture Overview",
+        content: [
+          "Acuity Coaching web platform was built to provide an intuitive, responsive frontend for coaching management and client interactions.",
+          "The architecture emphasizes clean component separation, reusable design system tokens, and typed API client integration.",
+        ],
+      },
+      {
+        id: "engineering-decisions",
+        title: "02. Key Engineering Decisions",
+        content: [
+          "1. Domain-Driven Components: Divided UI layers into pure presentational components and container hooks to keep code testable and maintainable.",
+          "2. API Layer Isolation: Encapsulated backend HTTP requests within centralized API service modules to buffer UI views against schema shifts.",
+          "3. Adaptive Layouts: Engineered responsive views supporting desktop workspaces and mobile browsing without layout degradation.",
+        ],
+      },
+      {
+        id: "results",
+        title: "03. Results & Delivery Status",
+        content: [
+          "Shipped modular, responsive React frontend integrated with live backend services.",
+          "Architecture discussed in technical interviews under standard employer confidentiality practices.",
+        ],
+      },
+    ],
+  },
 ];
