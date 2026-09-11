@@ -46,23 +46,25 @@ export function ProjectShowcase({ showHeader = true }: ProjectShowcaseProps = {}
         </div>
 
         {/* Category 2: Open Source & Reference Architecture */}
-        <div className="space-y-6 pt-4">
-          <div className="border-b border-[#E4E5E1] pb-3 space-y-1">
-            <h3 className="text-lg sm:text-xl font-semibold text-[#14161A] tracking-tight flex items-center gap-2">
-              <Code className="w-4 h-4 text-[#3FAE64]" aria-hidden="true" />
-              <span>Open-source implementations & prototypes</span>
-            </h3>
-            <p className="text-xs sm:text-sm text-[#5B5F66] leading-relaxed">
-              Public implementations showcasing React Native thread isolation, custom D3 graphics math, and real-time state synchronization.
-            </p>
-          </div>
+        {personalProjects.length > 0 && (
+          <div className="space-y-6 pt-4">
+            <div className="border-b border-[#E4E5E1] pb-3 space-y-1">
+              <h3 className="text-lg sm:text-xl font-semibold text-[#14161A] tracking-tight flex items-center gap-2">
+                <Code className="w-4 h-4 text-[#3FAE64]" aria-hidden="true" />
+                <span>Open-source implementations & prototypes</span>
+              </h3>
+              <p className="text-xs sm:text-sm text-[#5B5F66] leading-relaxed">
+                Public implementations showcasing React Native thread isolation, custom D3 graphics math, and real-time state synchronization.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 gap-6">
-            {personalProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
+            <div className="grid grid-cols-1 gap-6">
+              {personalProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
