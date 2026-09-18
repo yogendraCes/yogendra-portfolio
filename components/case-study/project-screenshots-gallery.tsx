@@ -30,7 +30,7 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
     active?.category?.toLowerCase().includes("tablet") ||
     active?.category?.toLowerCase().includes("ipad");
   const isBrowser =
-    active?.category?.toLowerCase().includes("web") ||
+    (active?.category?.toLowerCase().includes("web") ||
     active?.category?.toLowerCase().includes("browser") ||
     active?.category?.toLowerCase().includes("desktop") ||
     active?.category?.toLowerCase().includes("admin") ||
@@ -42,7 +42,9 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
     active?.category?.toLowerCase().includes("transmission") ||
     active?.url.includes("zenyme") ||
     active?.url.includes("vhp") ||
-    project.slug === "vhp-linear-motions";
+    project.slug === "vhp-linear-motions") &&
+    !active?.url.includes("mobile") &&
+    !active?.category?.toLowerCase().includes("mobile");
 
   const browserDisplayHost = (() => {
     const targetUrl = project.liveDemoUrl || project.links?.demo;

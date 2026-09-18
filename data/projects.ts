@@ -787,19 +787,20 @@ export function formatSessionSummary(session: CoachingSession): string {
     id: "saloon-app",
     slug: "saloon-app",
     title: "Zenyme: Salon Management & Luxury Booking Platform",
-    subtitle: "Next.js 15, TypeScript, Zustand Persistent Store & Multi-Role Booking Workflows",
+    subtitle: "Next.js 15, React 19, TypeScript, Zustand Persistent Store & Anti-Collision Scheduling Matrix",
     category: "Full-Stack Web & Scheduling Architecture",
-    summary: "Full-stack luxury salon management and appointment booking platform deployed on Vercel. Features multi-role access control (Admin, Freelancer, Client), automated stylist commission and booth rent tracking, dynamic 4-step booking funnel, and offline-persistent state management using Zustand.",
+    summary: "Full-stack luxury salon management and appointment booking platform deployed on Vercel. Features Interactive Role Demo switcher (Salon Owner, Freelancer Workspace, Client Booking App), anti-collision scheduling matrix preventing double-bookings, automated stylist commission (70%–80%) & booth rent tracking, dynamic 4-stage booking wizard with 1-tap WhatsApp concierge, and offline-persistent state management via Zustand.",
     projectType: "personal",
     isProprietary: false,
     githubRepoUrl: "https://github.com/yogendraCes/SaloonApp",
     liveDemoUrl: "https://saloon-app-teal.vercel.app/",
     ciBadgeUrl: "https://github.com/yogendraCes/SaloonApp/actions",
     keyEngineeringDecisions: [
-      "Engineered multi-role state segregation using Zustand with local storage persistence, managing distinct administrative, stylist, and client views.",
-      "Designed dynamic 4-step booking workflow (/book) with time-slot calculation, service duration validation, and instant price tallying.",
-      "Implemented automated financial calculation engine tracking staff commissions (70% split), daily chair rent deductions, and net take-home earnings.",
-      "Built typed component architecture using Next.js 15 App Router, React 19, TypeScript, and deployed live to Vercel.",
+      "Engineered multi-role state segregation using Zustand with local storage persistence ('zenyme-storage'), seamlessly coordinating Admin, Freelancer, and Client views.",
+      "Designed 4-stage booking workflow (/book) with real-time anti-collision scheduling matrix algorithm ('hasConflict') eliminating double-bookings across master stylists.",
+      "Implemented interactive Role Switcher bar ('RoleSwitcherBar') allowing instant workspace swapping between Salon Owner Admin, Freelancer Portal, and Client Booking App.",
+      "Built automated stylist compensation engine calculating variable commissions (65%–80%), daily chair rent deductions, and 100% client tip pass-through into instant net payouts.",
+      "Engineered custom warm luxury design system in Tailwind CSS (warm charcoal #1C1A17, artisan taupe #A49A87, sage #A5A58D, stone #968F83) with mobile-first sticky CTA ergonomics.",
     ],
     primaryStack: ["Next.js 15", "TypeScript", "React 19", "Zustand", "Tailwind CSS"],
     fullStack: [
@@ -808,8 +809,6 @@ export function formatSessionSummary(session: CoachingSession): string {
       "TypeScript",
       "Zustand",
       "Tailwind CSS",
-      "React Hook Form",
-      "date-fns",
       "Lucide React",
       "Vercel",
       "ESLint",
@@ -826,24 +825,24 @@ export function formatSessionSummary(session: CoachingSession): string {
         alt: "Zenyme luxury salon web interface with online booking entry and curated styling lookbook",
         category: "Next.js Web Storefront",
         shortLabel: "Luxury Storefront",
-        engineeringContext: "Responsive dark luxury aesthetic built with Next.js 15 App Router and Tailwind CSS, featuring instant appointment CTA, Google rating social proof, and Kerastase ritual consultations.",
+        engineeringContext: "Responsive warm luxury aesthetic built with Next.js 15 App Router, React 19, and Tailwind CSS. Features curated warm charcoal (#1C1A17), artisan taupe (#A49A87), and sage (#A5A58D) palette, verified 4.9★ Google rating proof (520+ reviews in Indiranagar), and Kerastase ritual consultations.",
         technicalDetails: [
-          "Engineered with Next.js 15 App Router, React 19, and Tailwind CSS with custom amber luxury color grading.",
+          "Engineered with Next.js 15 App Router, React 19, and Tailwind CSS with custom warm luxury palette.",
           "SSR layout with instant client hydration and responsive viewport scaling from mobile to ultra-wide displays.",
-          "Direct integration points with the multi-step booking funnel and WhatsApp concierge messaging.",
+          "Direct integration points with the multi-step booking funnel and WhatsApp concierge messaging (+91 98765 43210).",
         ],
       },
       {
         url: "/assets/projects/zenyme/zenyme-book.png",
-        caption: "Multi-Step Booking Funnel (/book)",
+        caption: "4-Stage Anti-Collision Booking Funnel (/book)",
         alt: "Zenyme dynamic 4-step appointment booking wizard with service selection, master stylist picker, and time slots",
         category: "Web Booking Funnel",
         shortLabel: "Booking Engine",
-        engineeringContext: "Interactive 4-stage booking flow (Service, Stylist, Date/Time, Details) with real-time duration and pricing calculation.",
+        engineeringContext: "Interactive 4-stage booking flow (Service, Stylist, Date/Time, Details) with real-time duration, dynamic pricing calculation, and slot conflict mitigation.",
         technicalDetails: [
-          "Stage-isolated form state tracking service selection, master stylist availability, and time slot offsets.",
-          "Dynamic catalog pricing: Signature Haircut (₹600), Balayage (₹3200), Beard Sculpt (₹350), Gold Glow Facial (₹1500), Aromatherapy (₹1800).",
-          "Client-side state persistence preventing data loss during multi-step navigation.",
+          "Anti-collision scheduling algorithm ('hasConflict') checking time window overlaps to prevent double-bookings.",
+          "Dynamic catalog pricing: Signature Haircut (₹600), Balayage (₹3,200), Beard Sculpt (₹350), Gold Glow Facial (₹1,500), Aromatherapy (₹1,800).",
+          "Client-side state persistence preventing data loss during multi-step navigation with 1-tap WhatsApp confirmation link.",
         ],
       },
       {
@@ -852,11 +851,11 @@ export function formatSessionSummary(session: CoachingSession): string {
         alt: "Zenyme admin dashboard with total customers, appointments today, daily revenue, and customer appointment statuses",
         category: "Admin Dashboard",
         shortLabel: "Admin Portal",
-        engineeringContext: "Comprehensive administrative workspace displaying live operational metrics, revenue tracking, and scheduled customer appointments.",
+        engineeringContext: "Comprehensive administrative workspace featuring top Interactive Role Switcher bar, live operational metrics, revenue tracking, and scheduled customer appointments.",
         technicalDetails: [
-          "Aggregated operational metrics tracking Total Customers, Appointments Today, Daily Revenue (₹950), and Month-over-Month Growth.",
+          "Aggregated operational metrics tracking Total Customers (4), Appointments Today (4), Revenue Today (₹950), and Month-over-Month Growth (+24.5%).",
           "Real-time appointment schedule feed with instantaneous status badges ('completed', 'scheduled').",
-          "Role-segregated navigation with quick switching between Salon Owner, Freelancer, and Client views.",
+          "Interactive Role Demo bar ('RoleSwitcherBar') with instant toggling between Salon Owner, Freelancer Workspace, and Client Booking App.",
         ],
       },
       {
@@ -865,58 +864,84 @@ export function formatSessionSummary(session: CoachingSession): string {
         alt: "Zenyme freelancer portal featuring stylist commission split, booth rent deductions, take-home pay calculator, and QR booking link",
         category: "Freelancer Portal",
         shortLabel: "Earnings Calculator",
-        engineeringContext: "Dedicated portal for independent booth-renters and freelance stylists (e.g. Aisha Khan 70% commission, ₹300 booth rent) with real-time payout calculations.",
+        engineeringContext: "Dedicated portal for independent booth-renters and freelance stylists (e.g. Aisha Khan 70% commission, ₹300 booth rent) with real-time payout calculations, QR code generator, and direct booking links.",
         technicalDetails: [
           "Automated take-home pay calculator computing Gross Revenue (₹600), Stylist Share (70% = ₹420), 100% Client Tips (+₹100), and Daily Booth Rent (-₹300) resulting in Net Take-Home Pay (₹220).",
-          "Unique Stylist Direct Booking Link generation with scannable dynamic QR code for Instagram, WhatsApp, and business cards.",
-          "Weekly availability toggle (Mon through Sat) and client appointment management.",
+          "Direct Stylist Booking Link generation with 1-click clipboard copy and scannable QR code generator for Instagram and WhatsApp.",
+          "Weekly availability schedule toggle (Mon–Sun) and assigned client appointment management.",
+        ],
+      },
+      {
+        url: "/assets/projects/zenyme/zenyme-mobile-hero.png",
+        caption: "Responsive Mobile Web Storefront (iOS & Android)",
+        alt: "Zenyme responsive mobile web view with floating booking bar and compact navigation",
+        category: "Responsive Mobile Web",
+        shortLabel: "Mobile Web",
+        engineeringContext: "Mobile-first responsive viewport engineering with sticky bottom booking bar, optimized header layout, and fluid typography across compact touch screens.",
+        technicalDetails: [
+          "Optimized mobile header layout and top announcement ribbon with zero horizontal overflow.",
+          "Touch-friendly sticky bottom appointment booking bar ('Book Slot →') for frictionless mobile conversion.",
+          "Pre-rendered responsive layouts with zero layout shift on iOS Safari and Android Chrome viewports.",
         ],
       },
     ],
     technicalHighlight: {
-      label: "ZUSTAND PERSISTENT MULTI-ROLE STORE",
-      description: "Structured typed state container managing staff commissions, services catalog, and customer appointments with automatic browser storage synchronization.",
+      label: "ANTI-COLLISION SCHEDULING MATRIX & PERSISTENT STORE",
+      description: "Deterministic time-window overlap collision algorithm preventing double-bookings alongside typed Zustand store with automatic 'zenyme-storage' browser synchronization.",
       codeSnippet: {
         filename: "useStore.ts",
         language: "typescript",
-        code: `import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+        code: `/** Convert HH:MM string to total minutes from midnight */
+function toMinutes(time: string): number {
+  const [h, m] = time.split(':').map(Number);
+  return h * 60 + m;
+}
 
-export type UserRole = 'admin' | 'freelancer' | 'client';
+/** Returns true if two time windows overlap */
+function hasConflict(startA: string, durA: number, startB: string, durB: number): boolean {
+  const a1 = toMinutes(startA);
+  const a2 = a1 + durA;
+  const b1 = toMinutes(startB);
+  const b2 = b1 + durB;
+  return a1 < b2 && b1 < a2;
+}
 
-export type Staff = {
-  id: string;
-  name: string;
-  role: string;
-  commissionRate: number;
-  boothRent: number;
-};
+// In Zustand store mutation:
+addAppointment: (app) => {
+  const { appointments, services } = get();
+  const newService = services.find((s) => s.id === app.serviceId);
+  const newDuration = newService?.duration ?? 30;
 
-export type Appointment = {
-  id: string;
-  customerId: string;
-  staffId: string;
-  serviceId: string;
-  date: string;
-  startTime: string;
-  status: 'scheduled' | 'completed' | 'cancelled';
+  const conflict = appointments.some((existing) => {
+    if (existing.staffId !== app.staffId) return false;
+    if (existing.date !== app.date) return false;
+    if (existing.status === 'cancelled') return false;
+    const existingService = services.find((s) => s.id === existing.serviceId);
+    const existingDuration = existingService?.duration ?? 30;
+    return hasConflict(app.startTime, newDuration, existing.startTime, existingDuration);
+  });
+
+  if (conflict) return false;
+  set((state) => ({ appointments: [...state.appointments, app] }));
+  return true;
 };`,
       },
     },
-    overview: "Zenyme is a full-stack luxury salon management and appointment booking platform engineered with Next.js 15 and TypeScript, deployed live on Vercel. Designed for upscale salons, barbershops, and independent freelance stylists, it combines an upscale consumer storefront with a multi-role administrative workspace and automated financial calculation engine.",
+    overview: "Zenyme is a full-stack luxury salon management and appointment booking platform engineered with Next.js 15 and TypeScript, deployed live on Vercel. Designed for upscale salons, barbershops, and independent freelance stylists, it combines an upscale consumer storefront with an interactive multi-role administrative workspace, anti-collision booking engine, and automated financial calculation system.",
     challenges: [
       "Multi-Role Interface Partitioning: Handling separate administrative, booth-renter freelancer, and consumer booking views from a unified state store without leaking role permissions.",
-      "Freelancer Financial Logic: Modeling complex real-world salon compensation combining variable commission splits, daily chair rental fees, and direct client tips into instant net payout calculations.",
-      "Scheduling Conflict Mitigation: Calculating real-time stylist availability, service duration offsets, and overlapping booking prevention across multiple specialists.",
+      "Anti-Collision Scheduling Matrix: Calculating real-time stylist availability, service duration offsets, and overlapping booking prevention across multiple specialists.",
+      "Freelancer Financial Logic: Modeling complex real-world salon compensation combining variable commission splits (65%–80%), daily chair rental fees, and direct client tips into instant net payout calculations.",
     ],
     technicalApproach: [
-      "Zustand Persistent Store: Implemented modular state slices with selective persistence to ensure offline appointment resilience and zero-latency role toggling between Salon Owner, Freelancer, and Client.",
-      "Multi-Step Booking Funnel: Deconstructed appointment reservations into isolated stages (service pick, stylist selection, time-slot reservation, customer confirmation) with instant price and duration tallying.",
+      "Zustand Persistent Store: Implemented modular state slices with selective persistence ('zenyme-storage') to ensure offline appointment resilience and zero-latency role toggling between Salon Owner, Freelancer, and Client.",
+      "Anti-Collision Booking Funnel: Deconstructed appointment reservations into isolated stages (service pick, stylist selection, time-slot reservation, customer confirmation) with instant price, duration, and conflict validation.",
+      "Interactive Multi-Role Switcher: Pinned top-bar simulation toggle enabling portfolio reviewers and evaluators to test all three user personas seamlessly.",
       "Production Vercel Deployment: Deployed on Vercel with automated continuous delivery, responsive layout engineering from mobile devices to desktop displays, and strict TypeScript interfaces.",
     ],
     outcome: [
       "Live production deployment on Vercel (saloon-app-teal.vercel.app) and open-source GitHub repository (yogendraCes/SaloonApp).",
-      "Delivered end-to-end appointment scheduling, commission tracking, QR code stylist sharing, and responsive dark luxury aesthetics.",
+      "Delivered end-to-end appointment scheduling, conflict mitigation, commission tracking, QR code stylist sharing, and warm luxury aesthetics.",
     ],
     sections: [
       {
@@ -924,7 +949,7 @@ export type Appointment = {
         title: "01. Product Scope & Architecture",
         content: [
           "Zenyme was created as a modern web solution for upscale salon owners and independent stylists to streamline appointment scheduling, transparent service pricing, and booth rent tracking.",
-          "The platform is deployed live on Vercel at saloon-app-teal.vercel.app and the codebase is fully open-source on GitHub, serving as a clean reference architecture for Next.js 15 App Router, TypeScript, and Zustand state modeling.",
+          "The platform is deployed live on Vercel at saloon-app-teal.vercel.app and the codebase is fully open-source on GitHub, serving as a clean reference architecture for Next.js 15 App Router, React 19, TypeScript, and Zustand state modeling.",
         ],
       },
       {
@@ -932,8 +957,9 @@ export type Appointment = {
         title: "02. Key Architectural Decisions",
         content: [
           "1. Role-Based State Modeling: Segregated permissions across Admin, Freelancer, and Client roles within a unified store, allowing instantaneous role switching for previewing and operational workflows.",
-          "2. Financial Commission Engine: Built deterministic calculation helpers computing stylist net earnings based on variable commission tiers and fixed daily chair rental fees.",
-          "3. Modular Booking Funnel: Deconstructed appointment flows into isolated step components, maintaining clean form state and validation via React Hook Form and date-fns.",
+          "2. Anti-Collision Scheduling Engine: Built deterministic calculation helpers computing time-window overlaps to prevent double-booking across stylists in real time.",
+          "3. Financial Commission Engine: Built deterministic calculation helpers computing stylist net earnings based on variable commission tiers and fixed daily chair rental fees.",
+          "4. Modular Booking Funnel: Deconstructed appointment flows into isolated step components, maintaining clean form state and validation via React Hook Form and date-fns.",
         ],
         codeSnippet: {
           filename: "useStore.ts",
@@ -942,15 +968,19 @@ export type Appointment = {
   persist(
     (set, get) => ({
       activeRole: 'admin',
-      activeStaffId: 'staff-1',
+      activeStaffId: 's1',
       staff: initialStaff,
       services: initialServices,
       appointments: initialAppointments,
       setActiveRole: (role) => set({ activeRole: role }),
-      addAppointment: (appointment) =>
-        set((state) => ({ appointments: [...state.appointments, appointment] })),
+      setActiveStaffId: (staffId) => set({ activeStaffId: staffId }),
+      addAppointment: (appointment) => {
+        // Anti-collision conflict validation ...
+        set((state) => ({ appointments: [...state.appointments, appointment] }));
+        return true;
+      },
     }),
-    { name: 'saloon-storage' }
+    { name: 'zenyme-storage' }
   )
 );`,
         },
