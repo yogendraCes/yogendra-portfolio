@@ -76,7 +76,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#F3F4F1] text-[#14161A]">
+    <div className="min-h-screen bg-[#0A1118] text-[#E8F1F5]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

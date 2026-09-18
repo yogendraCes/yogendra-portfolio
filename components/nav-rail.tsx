@@ -57,13 +57,13 @@ export function NavRail() {
       {/* DESKTOP PERSISTENT LEFT NAV RAIL (≥ 1024px)                 */}
       {/* ============================================================ */}
       <aside
-        className="hidden lg:flex fixed top-0 left-0 h-screen w-64 flex-col justify-between py-10 px-8 border-r border-[#E4E5E1] bg-[#F3F4F1] z-40"
+        className="hidden lg:flex fixed top-0 left-0 h-screen w-64 flex-col justify-between py-10 px-8 border-r border-[#219EBC]/15 bg-[#070D13] text-[#E8F1F5] z-40"
         aria-label="Sidebar Navigation"
       >
         {/* Top: Identity & Status */}
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <div className="relative w-11 h-11 rounded-full overflow-hidden border border-[#D1D3CD] shadow-2xs shrink-0 bg-white">
+            <div className="relative w-11 h-11 rounded-full overflow-hidden border border-[#38BDF8]/40 shadow-xs shrink-0 bg-[#0A1118]">
               <Image
                 src={profileData.avatarUrl || "/assets/my/my.png"}
                 alt={profileData.name}
@@ -76,17 +76,17 @@ export function NavRail() {
             <div>
               <Link
                 href="/"
-                className="text-base font-semibold text-[#14161A] tracking-tight hover:text-[#2F6FED] transition-colors inline-block"
+                className="text-base font-semibold text-[#E8F1F5] tracking-tight hover:text-[#38BDF8] transition-colors inline-block"
               >
                 {profileData.name}
               </Link>
-              <p className="text-xs text-[#5B5F66] mt-0.5">Senior Mobile Systems Engineer</p>
+              <p className="text-xs text-[#7E9AA8] mt-0.5">Senior Mobile Systems Engineer</p>
             </div>
           </div>
 
           {/* Live Operational Beacon (Truth, never decorative) */}
-          <div className="flex items-center gap-2 text-xs text-[#5B5F66]">
-            <span className="w-2 h-2 rounded-full bg-[#3FAE64] shrink-0" aria-hidden="true" />
+          <div className="flex items-center gap-2 text-xs text-[#7E9AA8]">
+            <span className="w-2 h-2 rounded-full bg-[#10B981] shadow-[0_0_8px_rgba(16,185,129,0.5)] shrink-0" aria-hidden="true" />
             <span>Available for Senior Roles</span>
           </div>
 
@@ -98,15 +98,15 @@ export function NavRail() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`group flex items-center justify-between py-2 text-sm transition-all duration-150 rounded-md px-2 -mx-2 ${
+                  className={`group flex items-center justify-between py-2 text-sm transition-all duration-150 rounded-md px-2.5 -mx-2.5 ${
                     isActive
-                      ? "text-[#14161A] font-semibold bg-white shadow-xs"
-                      : "text-[#5B5F66] hover:text-[#14161A] hover:bg-black/[0.02]"
+                      ? "text-[#38BDF8] font-semibold bg-[#162634] shadow-xs border-l-2 border-[#38BDF8]"
+                      : "text-[#7E9AA8] hover:text-[#E8F1F5] hover:bg-[#162634]/50"
                   }`}
                 >
                   <span>{item.label}</span>
                   {isActive && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2F6FED]" aria-hidden="true" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8] shadow-[0_0_6px_rgba(56,189,248,0.6)]" aria-hidden="true" />
                   )}
                 </Link>
               );
@@ -115,23 +115,23 @@ export function NavRail() {
         </div>
 
         {/* Bottom: Utility Links */}
-        <div className="pt-6 border-t border-[#E4E5E1] space-y-3">
+        <div className="pt-6 border-t border-[#219EBC]/15 space-y-3">
           <Link
             href="/resume"
-            className="flex items-center justify-between text-xs text-[#5B5F66] hover:text-[#14161A] transition-colors py-1"
+            className="flex items-center justify-between text-xs text-[#7E9AA8] hover:text-[#38BDF8] transition-colors py-1"
           >
             <span className="flex items-center gap-1.5">
-              <FileText className="w-3.5 h-3.5" aria-hidden="true" />
+              <FileText className="w-3.5 h-3.5 text-[#38BDF8]" aria-hidden="true" />
               <span>Resume</span>
             </span>
           </Link>
 
           <Link
             href="/contact"
-            className="flex items-center justify-between text-xs text-[#5B5F66] hover:text-[#14161A] transition-colors py-1"
+            className="flex items-center justify-between text-xs text-[#7E9AA8] hover:text-[#38BDF8] transition-colors py-1"
           >
             <span className="flex items-center gap-1.5">
-              <Mail className="w-3.5 h-3.5" aria-hidden="true" />
+              <Mail className="w-3.5 h-3.5 text-[#38BDF8]" aria-hidden="true" />
               <span>Contact</span>
             </span>
           </Link>
@@ -141,9 +141,9 @@ export function NavRail() {
       {/* ============================================================ */}
       {/* MOBILE TOP BAR (< 1024px)                                    */}
       {/* ============================================================ */}
-      <header className="lg:hidden sticky top-0 z-30 w-full bg-[#F3F4F1]/90 backdrop-blur-md border-b border-[#E4E5E1] px-4 py-2.5 flex items-center justify-between">
+      <header className="lg:hidden sticky top-0 z-30 w-full bg-[#070D13]/95 backdrop-blur-md border-b border-[#219EBC]/15 px-4 py-2.5 flex items-center justify-between text-[#E8F1F5]">
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#D1D3CD] shrink-0 bg-white">
+          <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#38BDF8]/40 shrink-0 bg-[#0A1118]">
             <Image
               src={profileData.avatarUrl || "/assets/my/my.png"}
               alt={profileData.name}
@@ -152,10 +152,10 @@ export function NavRail() {
               className="object-cover object-top"
             />
           </div>
-          <span className="text-sm font-semibold text-[#14161A]">{profileData.name}</span>
+          <span className="text-sm font-semibold text-[#E8F1F5]">{profileData.name}</span>
         </Link>
-        <div className="flex items-center gap-2 text-xs text-[#5B5F66]">
-          <span className="w-2 h-2 rounded-full bg-[#3FAE64]" aria-hidden="true" />
+        <div className="flex items-center gap-2 text-xs text-[#7E9AA8]">
+          <span className="w-2 h-2 rounded-full bg-[#10B981] shadow-[0_0_6px_rgba(16,185,129,0.5)] shrink-0" aria-hidden="true" />
           <span>Available</span>
         </div>
       </header>
@@ -164,7 +164,7 @@ export function NavRail() {
       {/* MOBILE FLOATING BOTTOM DOCK (< 1024px)                       */}
       {/* ============================================================ */}
       <nav
-        className="lg:hidden fixed bottom-4 inset-x-4 max-w-sm mx-auto z-50 bg-white/95 backdrop-blur-md border border-[#E4E5E1] rounded-full shadow-lg px-2 py-1.5 flex items-center justify-around text-xs font-medium"
+        className="lg:hidden fixed bottom-4 inset-x-4 max-w-sm mx-auto z-50 bg-[#070D13]/95 backdrop-blur-md border border-[#219EBC]/20 rounded-full shadow-lg px-2 py-1.5 flex items-center justify-around text-xs font-medium text-[#E8F1F5]"
         aria-label="Mobile Navigation Dock"
       >
         {navItems.slice(0, 5).map((item) => {
@@ -175,8 +175,8 @@ export function NavRail() {
               href={item.href}
               className={`px-3 py-1.5 rounded-full transition-all duration-150 ${
                 isActive
-                  ? "bg-[#2F6FED] text-white font-semibold"
-                  : "text-[#5B5F66] hover:text-[#14161A]"
+                  ? "bg-[#38BDF8] text-[#0A1118] font-semibold shadow-xs"
+                  : "text-[#7E9AA8] hover:text-[#E8F1F5]"
               }`}
             >
               {item.label}

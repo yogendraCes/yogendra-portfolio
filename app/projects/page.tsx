@@ -26,16 +26,16 @@ export const metadata: Metadata = {
 
 export default function ProjectsIndexPage() {
   return (
-    <div className="min-h-screen bg-[#F3F4F1] text-[#14161A]">
+    <div className="min-h-screen bg-[#0A1118] text-[#E8F1F5]">
       <NavRail />
       <div className="lg:pl-64 flex flex-col min-h-screen">
         <main id="main-content" className="flex-1 pb-16 lg:pb-0">
-          <div className="py-12 sm:py-16 border-b border-[#E4E5E1] bg-[#F3F4F1]">
+          <div className="py-12 sm:py-16 border-b border-[#219EBC]/15 bg-[#0A1118]">
             <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-              <h1 className="text-3xl sm:text-4xl font-semibold text-[#14161A] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl font-bold text-[#E8F1F5] tracking-tight">
                 Production projects & case studies
               </h1>
-              <p className="text-sm sm:text-base text-[#5B5F66] max-w-[680px] leading-relaxed">
+              <p className="text-sm sm:text-base text-[#7E9AA8] max-w-[680px] leading-relaxed">
                 Technical case studies documenting mobile app architecture, data visualizations, rendering optimizations, and release engineering across shipped iOS and Android applications.
               </p>
             </div>

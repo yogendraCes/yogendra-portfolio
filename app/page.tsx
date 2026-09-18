@@ -12,7 +12,7 @@ import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#F3F4F1] text-[#14161A]">
+    <div className="min-h-screen bg-[#0A1118] text-[#E8F1F5]">
       <NavRail />
       <div className="lg:pl-64 flex flex-col min-h-screen">
         <main id="main-content" className="flex-1 pb-16 lg:pb-0">

@@ -96,17 +96,17 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
   }
 
   return (
-    <div className="w-full bg-[#F3F4F1] border border-[#E4E5E1] rounded-2xl p-4 sm:p-6 overflow-hidden space-y-6">
+    <div className="w-full bg-[#070D13] border border-[#219EBC]/20 rounded-2xl p-4 sm:p-6 overflow-hidden space-y-6">
       {/* Component Header & Store / Demo Quick Links */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#E4E5E1]">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#219EBC]/15">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="w-2 h-2 rounded-full bg-[#3FAE64]" aria-hidden="true" />
-            <span className="text-xs text-[#5B5F66] font-medium">
+            <span className="w-2 h-2 rounded-full bg-[#10B981] shadow-[0_0_6px_rgba(16,185,129,0.5)]" aria-hidden="true" />
+            <span className="text-xs text-[#38BDF8] font-semibold">
               Verified production interface
             </span>
           </div>
-          <h3 className="text-base sm:text-lg font-semibold text-[#14161A] tracking-tight">
+          <h3 className="text-base sm:text-lg font-bold text-[#E8F1F5] tracking-tight">
             {project.title} real interface screens
           </h3>
         </div>
@@ -118,10 +118,10 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
               href={project.links.appStore}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-lg bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-colors flex items-center gap-1.5 shadow-2xs"
+              className="px-3 py-1.5 rounded-lg bg-[#162634] hover:bg-[#1B2F40] border border-[#219EBC]/25 text-[#E8F1F5] text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-2xs"
             >
               <span>App Store</span>
-              <ExternalLink className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#38BDF8]" aria-hidden="true" />
             </a>
           )}
           {project.links?.playStore && (
@@ -129,10 +129,10 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
               href={project.links.playStore}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-lg bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-colors flex items-center gap-1.5 shadow-2xs"
+              className="px-3 py-1.5 rounded-lg bg-[#162634] hover:bg-[#1B2F40] border border-[#219EBC]/25 text-[#E8F1F5] text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-2xs"
             >
               <span>Google Play</span>
-              <ExternalLink className="w-3.5 h-3.5 text-[#3FAE64]" aria-hidden="true" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#10B981]" aria-hidden="true" />
             </a>
           )}
           {project.links?.demo && (
@@ -140,10 +140,10 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
               href={project.links.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-lg bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-colors flex items-center gap-1.5 shadow-2xs"
+              className="px-3 py-1.5 rounded-lg bg-[#38BDF8] hover:bg-[#7DD3FC] border border-[#38BDF8] text-[#0A1118] text-xs font-bold transition-colors flex items-center gap-1.5 shadow-[0_0_12px_rgba(56,189,248,0.25)]"
             >
               <span>Live platform</span>
-              <ExternalLink className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#0A1118]" aria-hidden="true" />
             </a>
           )}
         </div>
@@ -159,13 +159,13 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
               key={screen.url}
               type="button"
               onClick={() => setActiveIndex(idx)}
-              className={`px-3 py-2 rounded-lg text-xs font-medium whitespace-nowrap transition-all flex items-center gap-2 border shrink-0 cursor-pointer ${
+              className={`px-3 py-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-2 border shrink-0 cursor-pointer ${
                 isActive
-                  ? "bg-[#2F6FED] text-white border-[#2F6FED] shadow-xs"
-                  : "bg-white text-[#5B5F66] border-[#E4E5E1] hover:text-[#14161A] hover:bg-[#F3F4F1]"
+                  ? "bg-[#38BDF8] text-[#0A1118] border-[#38BDF8] shadow-[0_0_12px_rgba(56,189,248,0.3)]"
+                  : "bg-[#101D28] text-[#7E9AA8] border-[#219EBC]/20 hover:text-[#E8F1F5] hover:bg-[#162634]"
               }`}
             >
-              <span className="w-4 h-4 rounded-full bg-black/10 flex items-center justify-center text-[10px] font-semibold">
+              <span className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold ${isActive ? "bg-black/20 text-[#0A1118]" : "bg-white/10 text-[#7E9AA8]"}`}>
                 {idx + 1}
               </span>
               <span>{label}</span>
@@ -207,9 +207,9 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
                 </div>
 
                 {/* Hover Zoom Overlay Badge */}
-                <div className="absolute inset-0 rounded-2xl bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity z-30 flex items-center justify-center">
-                  <span className="px-3 py-1.5 rounded-full bg-white text-[#14161A] text-xs font-semibold flex items-center gap-1.5 shadow-lg">
-                    <Maximize2 className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+                <div className="absolute inset-0 rounded-2xl bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity z-30 flex items-center justify-center">
+                  <span className="px-3 py-1.5 rounded-full bg-[#101D28] text-[#38BDF8] border border-[#38BDF8]/40 text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                    <Maximize2 className="w-3.5 h-3.5 text-[#38BDF8]" aria-hidden="true" />
                     <span>Click to zoom</span>
                   </span>
                 </div>
@@ -233,9 +233,9 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-zinc-800" />
 
                 {/* Hover Zoom Overlay Badge */}
-                <div className="absolute inset-0 rounded-[26px] bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity z-30 flex items-center justify-center">
-                  <span className="px-3 py-1.5 rounded-full bg-white text-[#14161A] text-xs font-semibold flex items-center gap-1.5 shadow-lg">
-                    <Maximize2 className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+                <div className="absolute inset-0 rounded-[26px] bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity z-30 flex items-center justify-center">
+                  <span className="px-3 py-1.5 rounded-full bg-[#101D28] text-[#38BDF8] border border-[#38BDF8]/40 text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                    <Maximize2 className="w-3.5 h-3.5 text-[#38BDF8]" aria-hidden="true" />
                     <span>Click to zoom</span>
                   </span>
                 </div>
@@ -257,14 +257,14 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
               <div className="relative w-[220px] sm:w-[240px] rounded-[40px] bg-[#1C1E22] p-3 border border-[#3A3F47] shadow-xl">
                 {/* Top Dynamic Island */}
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-4 bg-black rounded-full z-30 flex items-center justify-between px-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#3FAE64]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
                   <span className="w-1 h-1 rounded-full bg-zinc-800" />
                 </div>
 
                 {/* Hover Zoom Overlay Badge */}
-                <div className="absolute inset-0 rounded-[38px] bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity z-30 flex items-center justify-center">
-                  <span className="px-3 py-1.5 rounded-full bg-white text-[#14161A] text-xs font-semibold flex items-center gap-1.5 shadow-lg">
-                    <Maximize2 className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+                <div className="absolute inset-0 rounded-[38px] bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity z-30 flex items-center justify-center">
+                  <span className="px-3 py-1.5 rounded-full bg-[#101D28] text-[#38BDF8] border border-[#38BDF8]/40 text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                    <Maximize2 className="w-3.5 h-3.5 text-[#38BDF8]" aria-hidden="true" />
                     <span>Click to zoom</span>
                   </span>
                 </div>
@@ -290,30 +290,30 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2">
               {active.category && (
-                <span className="text-xs text-[#2F6FED] font-medium bg-[#2F6FED]/10 px-2.5 py-0.5 rounded-full border border-[#2F6FED]/20">
+                <span className="text-xs text-[#38BDF8] font-semibold bg-[#162634] px-2.5 py-0.5 rounded-full border border-[#38BDF8]/30">
                   {active.category}
                 </span>
               )}
-              <span className="text-xs text-[#7E8490]">
+              <span className="text-xs text-[#7E9AA8] font-medium">
                 Screen {activeIndex + 1} of {screenshots.length}
               </span>
             </div>
 
             {/* Device form factor indicator */}
-            <div className="inline-flex items-center gap-1.5 text-xs text-[#7E8490]">
+            <div className="inline-flex items-center gap-1.5 text-xs text-[#7E9AA8] font-medium">
               {isBrowser ? (
                 <>
-                  <Monitor className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+                  <Monitor className="w-3.5 h-3.5 text-[#38BDF8]" aria-hidden="true" />
                   <span>Web application</span>
                 </>
               ) : isTablet ? (
                 <>
-                  <Tablet className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+                  <Tablet className="w-3.5 h-3.5 text-[#38BDF8]" aria-hidden="true" />
                   <span>Tablet layout</span>
                 </>
               ) : (
                 <>
-                  <Smartphone className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+                  <Smartphone className="w-3.5 h-3.5 text-[#38BDF8]" aria-hidden="true" />
                   <span>Mobile layout</span>
                 </>
               )}
@@ -321,31 +321,31 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
           </div>
 
           <div>
-            <h4 className="text-lg sm:text-xl font-semibold text-[#14161A] tracking-tight">
+            <h4 className="text-lg sm:text-xl font-bold text-[#E8F1F5] tracking-tight">
               {active.caption}
             </h4>
-            <p className="text-sm text-[#5B5F66] leading-relaxed mt-2">
+            <p className="text-sm text-[#7E9AA8] leading-relaxed mt-2">
               {active.engineeringContext || active.alt}
             </p>
           </div>
 
           {/* Technical Implementation Callout */}
-          <div className="bg-white border border-[#E4E5E1] rounded-xl p-4 space-y-2.5 shadow-xs">
-            <div className="text-xs text-[#14161A] font-semibold flex items-center gap-1.5">
-              <Cpu className="w-4 h-4 text-[#2F6FED]" aria-hidden="true" />
+          <div className="bg-[#101D28] border border-[#219EBC]/20 rounded-xl p-4 space-y-2.5 shadow-xs">
+            <div className="text-xs text-[#E8F1F5] font-bold flex items-center gap-1.5">
+              <Cpu className="w-4 h-4 text-[#38BDF8]" aria-hidden="true" />
               <span>Engineering implementation</span>
             </div>
             {active.technicalDetails && active.technicalDetails.length > 0 ? (
-              <ul className="space-y-1.5 text-xs text-[#5B5F66]">
+              <ul className="space-y-1.5 text-xs text-[#7E9AA8]">
                 {active.technicalDetails.map((detail, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <ChevronRight className="w-3.5 h-3.5 text-[#2F6FED] shrink-0 mt-0.5" aria-hidden="true" />
+                    <ChevronRight className="w-3.5 h-3.5 text-[#38BDF8] shrink-0 mt-0.5" aria-hidden="true" />
                     <span>{detail}</span>
                   </li>
                 ))}
               </ul>
             ) : (
-              <p className="text-xs text-[#5B5F66] leading-relaxed">
+              <p className="text-xs text-[#7E9AA8] leading-relaxed">
                 Real screen capture from the production application as deployed on user devices.
                 Demonstrates component architecture, responsive design adaptation, and client data flows.
               </p>
@@ -358,7 +358,7 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
               <button
                 type="button"
                 onClick={handlePrev}
-                className="p-2 rounded-lg bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] transition-colors cursor-pointer"
+                className="p-2 rounded-lg bg-[#162634] hover:bg-[#1B2F40] border border-[#219EBC]/25 text-[#E8F1F5] transition-colors cursor-pointer shadow-2xs"
                 aria-label="Previous screenshot"
               >
                 <ChevronLeft className="w-4 h-4" aria-hidden="true" />
@@ -366,7 +366,7 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
               <button
                 type="button"
                 onClick={handleNext}
-                className="p-2 rounded-lg bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] transition-colors cursor-pointer"
+                className="p-2 rounded-lg bg-[#162634] hover:bg-[#1B2F40] border border-[#219EBC]/25 text-[#E8F1F5] transition-colors cursor-pointer shadow-2xs"
                 aria-label="Next screenshot"
               >
                 <ChevronRight className="w-4 h-4" aria-hidden="true" />
@@ -376,9 +376,9 @@ export function ProjectScreenshotsGallery({ project }: ProjectScreenshotsGallery
             <button
               type="button"
               onClick={() => setIsLightboxOpen(true)}
-              className="text-xs text-[#2F6FED] hover:underline font-medium flex items-center gap-1 cursor-pointer"
+              className="text-xs text-[#38BDF8] hover:underline font-bold flex items-center gap-1 cursor-pointer"
             >
-              <Maximize2 className="w-3.5 h-3.5" aria-hidden="true" />
+              <Maximize2 className="w-3.5 h-3.5 text-[#38BDF8]" aria-hidden="true" />
               <span>Full resolution inspect</span>
             </button>
           </div>

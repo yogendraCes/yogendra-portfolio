@@ -1,59 +1,72 @@
 @import "tailwindcss";
 
 :root {
-  /* "On-Device" Design Tokens */
-  --bg-base: #F3F4F1;
-  --ink-primary: #14161A;
-  --ink-secondary: #5B5F66;
-  --ink-tertiary: #7E8490;
-  --surface: #FFFFFF;
-  --surface-raised: #FFFFFF;
-  --surface-subtle: #E9EAE5;
-  --border-subtle: #E4E5E1;
-  --border-strong: #D1D3CD;
+  /* Abyssal Calm & Bioluminescent Cyan Theme */
+  /* Base & Canvas */
+  --bg-base: #0A1118;
+  --bg-canvas: #0A1118;
+  --surface-deep: #070D13;
+  --surface: #101D28;
+  --surface-raised: #162634;
+  --surface-subtle: rgba(33, 158, 188, 0.08);
 
-  /* Semantic Accents (Mirrors iOS/Android System Roles) */
-  --accent-interactive: #2F6FED;
-  --accent-interactive-hover: #2256BD;
-  --accent-interactive-subtle: rgba(47, 111, 237, 0.08);
-  --accent-live: #3FAE64;
-  --accent-live-subtle: rgba(63, 174, 100, 0.12);
+  /* Typography Colors (High Contrast WCAG AAA/AA) */
+  --ink-primary: #E8F1F5;
+  --ink-secondary: #7E9AA8;
+  --ink-tertiary: rgba(126, 154, 168, 0.70);
 
-  /* Legacy variable mappings for clean backwards compatibility during migration */
-  --bg-canvas: var(--bg-base);
-  --bg-surface: var(--surface);
-  --bg-surface-elevated: var(--surface);
-  --bg-surface-subtle: var(--surface-subtle);
+  /* Accents & Luminescence */
+  --accent-cyan: #38BDF8;
+  --accent-cyan-hover: #7DD3FC;
+  --accent-ocean: #219EBC;
+  --accent-interactive: #38BDF8;
+  --accent-interactive-hover: #7DD3FC;
+  --accent-live: #10B981;
+  --accent-live-subtle: rgba(16, 185, 129, 0.15);
+
+  /* Subtle Hairline Borders */
+  --border-subtle: rgba(33, 158, 188, 0.18);
+  --border-strong: rgba(56, 189, 248, 0.35);
+
+  /* Legacy & Semantic Mappings for complete compatibility */
+  --dominant-navy: #070D13;
+  --secondary-cream: #101D28;
+  --accent-gold: #38BDF8;
   --text-primary: var(--ink-primary);
   --text-secondary: var(--ink-secondary);
   --text-tertiary: var(--ink-tertiary);
-  --text-disabled: #A1A5AD;
+  --text-disabled: rgba(126, 154, 168, 0.40);
   --accent-copper: var(--accent-interactive);
-  --accent-copper-hover: var(--accent-interactive-hover);
-  --accent-copper-muted: var(--accent-interactive-subtle);
-  --accent-copper-border: rgba(47, 111, 237, 0.25);
   --status-success: var(--accent-live);
   --status-warning: #F59E0B;
-  --status-info: #2F6FED;
+  --status-info: #38BDF8;
 
-  /* Elevation Shadows (Soft & Natural) */
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
-  --shadow-floating: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  /* Elevation Shadows & Soft Ambient Glow */
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.4), 0 0 1px 1px rgba(33, 158, 188, 0.12);
+  --shadow-floating: 0 10px 30px -4px rgba(0, 0, 0, 0.6), 0 0 24px rgba(56, 189, 248, 0.12);
 }
 
 @theme {
-  --color-bg-base: #F3F4F1;
-  --color-ink-primary: #14161A;
-  --color-ink-secondary: #5B5F66;
-  --color-ink-tertiary: #7E8490;
-  --color-surface: #FFFFFF;
-  --color-surface-subtle: #E9EAE5;
-  --color-border-subtle: #E4E5E1;
-  --color-border-strong: #D1D3CD;
+  --color-bg-base: #0A1118;
+  --color-surface-deep: #070D13;
+  --color-surface: #101D28;
+  --color-surface-raised: #162634;
+  --color-surface-subtle: rgba(33, 158, 188, 0.08);
 
-  --color-accent-interactive: #2F6FED;
-  --color-accent-interactive-hover: #2256BD;
-  --color-accent-live: #3FAE64;
+  --color-ink-primary: #E8F1F5;
+  --color-ink-secondary: #7E9AA8;
+  --color-ink-tertiary: rgba(126, 154, 168, 0.70);
+
+  --color-border-subtle: rgba(33, 158, 188, 0.18);
+  --color-border-strong: rgba(56, 189, 248, 0.35);
+
+  --color-accent-interactive: #38BDF8;
+  --color-accent-interactive-hover: #7DD3FC;
+  --color-accent-live: #10B981;
+
+  --color-dominant-navy: #070D13;
+  --color-secondary-cream: #101D28;
+  --color-accent-gold: #38BDF8;
 
   --font-display: "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: var(--font-ibm-plex-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -71,7 +84,7 @@
 }
 
 html {
-  color-scheme: light;
+  color-scheme: dark;
   scroll-behavior: smooth;
   background-color: var(--bg-base);
 }
@@ -82,55 +95,47 @@ body {
   font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
-  caret-color: var(--accent-interactive);
+  caret-color: var(--accent-cyan);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* System Native Text Selection */
+/* System Native Text Selection with Soft Cyan Highlight */
 ::selection {
-  background-color: rgba(47, 111, 237, 0.18);
-  color: #14161A;
+  background-color: rgba(56, 189, 248, 0.25);
+  color: #FFFFFF;
 }
 
-/* Subtle Technical Paper Texture */
+/* Atmospheric Ambient Grid Texture */
 .bg-grid-pattern {
-  background-size: 32px 32px;
+  background-size: 36px 36px;
   background-image: 
-    radial-gradient(circle at 1px 1px, rgba(20, 22, 26, 0.05) 1px, transparent 0);
+    radial-gradient(circle at 1px 1px, rgba(56, 189, 248, 0.07) 1px, transparent 0);
 }
 
-/* Glassmorphic Surfaces for Floating Nav & Overlays */
+/* Velvet Glassmorphic Surfaces */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(16, 29, 40, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-subtle);
 }
 
 .glass-panel-elevated {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(22, 38, 52, 0.90);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(56, 189, 248, 0.25);
   box-shadow: var(--shadow-floating);
-}
-
-/* Code & Spec Box */
-.arch-block {
-  background-color: #FFFFFF;
-  border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  font-family: var(--font-mono), monospace;
 }
 
 /* Focus Ring Accessibility */
 :focus-visible {
-  outline: 2px solid var(--accent-interactive);
+  outline: 2px solid var(--accent-cyan);
   outline-offset: 2px;
 }
 
-/* Custom Light Scrollbar */
+/* Custom Soothing Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -141,12 +146,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-strong);
+  background: rgba(33, 158, 188, 0.28);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ink-secondary);
+  background: rgba(56, 189, 248, 0.50);
 }
 
 /* Reduced Motion Fallbacks */

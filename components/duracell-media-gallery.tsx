@@ -121,17 +121,17 @@ export function DuracellMediaGallery() {
   const activeScreen = screens.find((s) => s.id === activeScreenId) || screens[0];
 
   return (
-    <div className="w-full bg-[#F3F4F1] border border-[#E4E5E1] rounded-2xl p-4 sm:p-6 overflow-hidden space-y-6">
+    <div className="w-full bg-[#070D13] border border-[#219EBC]/20 rounded-2xl p-4 sm:p-6 overflow-hidden space-y-6">
       {/* Component Header & Store Quick Links */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#E4E5E1]">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#219EBC]/15">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="w-2 h-2 rounded-full bg-[#3FAE64]" aria-hidden="true" />
-            <span className="text-xs text-[#5B5F66] font-medium">
+            <span className="w-2 h-2 rounded-full bg-[#10B981] shadow-[0_0_6px_rgba(16,185,129,0.5)]" aria-hidden="true" />
+            <span className="text-xs text-[#38BDF8] font-semibold">
               Shipped product screens
             </span>
           </div>
-          <h4 className="text-base sm:text-lg font-semibold text-[#14161A] tracking-tight">
+          <h4 className="text-base sm:text-lg font-bold text-[#E8F1F5] tracking-tight">
             Duracell Energy mobile app interface
           </h4>
         </div>
@@ -142,19 +142,19 @@ export function DuracellMediaGallery() {
             href="https://apps.apple.com/in/app/duracell-energy/id6460931680"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-1.5 rounded-lg bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-colors flex items-center gap-1.5 shadow-2xs"
+            className="px-3 py-1.5 rounded-lg bg-[#162634] hover:bg-[#1B2F40] border border-[#219EBC]/25 text-[#E8F1F5] text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-2xs"
           >
             <span>App Store</span>
-            <ExternalLink className="w-3.5 h-3.5 text-[#2F6FED]" />
+            <ExternalLink className="w-3.5 h-3.5 text-[#38BDF8]" />
           </a>
           <a
             href="https://play.google.com/store/apps/details?id=com.duracell"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-1.5 rounded-lg bg-white hover:bg-[#F3F4F1] border border-[#E4E5E1] text-[#14161A] text-xs font-medium transition-colors flex items-center gap-1.5 shadow-2xs"
+            className="px-3 py-1.5 rounded-lg bg-[#162634] hover:bg-[#1B2F40] border border-[#219EBC]/25 text-[#E8F1F5] text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-2xs"
           >
             <span>Google Play</span>
-            <ExternalLink className="w-3.5 h-3.5 text-[#3FAE64]" />
+            <ExternalLink className="w-3.5 h-3.5 text-[#10B981]" />
           </a>
         </div>
       </div>
@@ -168,13 +168,13 @@ export function DuracellMediaGallery() {
             <button
               key={screen.id}
               onClick={() => setActiveScreenId(screen.id)}
-              className={`px-3 py-2 rounded-lg text-xs font-medium whitespace-nowrap transition-all flex items-center gap-2 border shrink-0 cursor-pointer ${
+              className={`px-3 py-2 rounded-lg text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-2 border shrink-0 cursor-pointer ${
                 isActive
-                  ? "bg-[#2F6FED] text-white border-[#2F6FED] shadow-xs"
-                  : "bg-white text-[#5B5F66] border-[#E4E5E1] hover:text-[#14161A] hover:bg-[#F3F4F1]"
+                  ? "bg-[#38BDF8] text-[#0A1118] border-[#38BDF8] shadow-[0_0_12px_rgba(56,189,248,0.3)]"
+                  : "bg-[#101D28] text-[#7E9AA8] border-[#219EBC]/20 hover:text-[#E8F1F5] hover:bg-[#162634]"
               }`}
             >
-              <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-[#5B5F66]"}`} />
+              <Icon className={`w-3.5 h-3.5 ${isActive ? "text-[#0A1118]" : "text-[#7E9AA8]"}`} />
               <span>{screen.shortLabel}</span>
             </button>
           );
@@ -190,14 +190,14 @@ export function DuracellMediaGallery() {
             <div className="relative w-[230px] sm:w-[250px] rounded-[40px] bg-[#1C1E22] p-3 border border-[#3A3F47] shadow-xl">
               {/* Top Dynamic Island */}
               <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-4 bg-black rounded-full z-30 flex items-center justify-between px-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#3FAE64]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]" />
                 <span className="w-1 h-1 rounded-full bg-zinc-800" />
               </div>
 
               {/* Hover Zoom Overlay Badge */}
-              <div className="absolute inset-0 rounded-[38px] bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity z-30 flex items-center justify-center">
-                <span className="px-3 py-1.5 rounded-full bg-white text-[#14161A] text-xs font-semibold flex items-center gap-1.5 shadow-lg">
-                  <Maximize2 className="w-3.5 h-3.5 text-[#2F6FED]" />
+              <div className="absolute inset-0 rounded-[38px] bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity z-30 flex items-center justify-center">
+                <span className="px-3 py-1.5 rounded-full bg-[#101D28] text-[#38BDF8] border border-[#38BDF8]/40 text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                  <Maximize2 className="w-3.5 h-3.5 text-[#38BDF8]" />
                   <span>Click to zoom</span>
                 </span>
               </div>
@@ -220,33 +220,33 @@ export function DuracellMediaGallery() {
         {/* Right Column: Engineering Context */}
         <div className="md:col-span-7 space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs text-[#2F6FED] font-medium bg-[#2F6FED]/10 px-2.5 py-0.5 rounded-full border border-[#2F6FED]/20">
+            <span className="text-xs text-[#38BDF8] font-semibold bg-[#162634] px-2.5 py-0.5 rounded-full border border-[#38BDF8]/30">
               {activeScreen.badge}
             </span>
-            <span className="text-xs text-[#7E8490]">
+            <span className="text-xs text-[#7E9AA8] font-medium">
               Screen {screens.findIndex((s) => s.id === activeScreenId) + 1} of {screens.length}
             </span>
           </div>
 
           <div>
-            <h3 className="text-lg sm:text-xl font-semibold text-[#14161A] tracking-tight">
+            <h3 className="text-lg sm:text-xl font-bold text-[#E8F1F5] tracking-tight">
               {activeScreen.title}
             </h3>
-            <p className="text-sm text-[#5B5F66] leading-relaxed mt-1">
+            <p className="text-sm text-[#7E9AA8] leading-relaxed mt-1">
               {activeScreen.engineeringContext}
             </p>
           </div>
 
           {/* Technical Implementation Callout */}
-          <div className="bg-white border border-[#E4E5E1] rounded-xl p-4 space-y-2 shadow-xs">
-            <div className="text-xs text-[#14161A] font-semibold flex items-center gap-1.5">
-              <Cpu className="w-4 h-4 text-[#2F6FED]" />
+          <div className="bg-[#101D28] border border-[#219EBC]/20 rounded-xl p-4 space-y-2 shadow-xs">
+            <div className="text-xs text-[#E8F1F5] font-bold flex items-center gap-1.5">
+              <Cpu className="w-4 h-4 text-[#38BDF8]" />
               <span>Engineering implementation</span>
             </div>
-            <ul className="space-y-1.5 text-xs text-[#5B5F66]">
+            <ul className="space-y-1.5 text-xs text-[#7E9AA8]">
               {activeScreen.technicalDetails.map((detail, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <ChevronRight className="w-3.5 h-3.5 text-[#2F6FED] shrink-0 mt-0.5" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#38BDF8] shrink-0 mt-0.5" />
                   <span>{detail}</span>
                 </li>
               ))}
@@ -258,22 +258,22 @@ export function DuracellMediaGallery() {
       {/* Lightbox Modal for High-Resolution Inspection */}
       {isLightboxOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
           onClick={() => setIsLightboxOpen(false)}
         >
           <div
-            className="relative max-w-3xl w-full bg-white border border-[#E4E5E1] rounded-2xl overflow-hidden p-6 space-y-4 shadow-2xl"
+            className="relative max-w-3xl w-full bg-[#101D28] border border-[#219EBC]/30 rounded-2xl overflow-hidden p-6 space-y-4 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-[#E4E5E1]">
+            <div className="flex items-center justify-between pb-3 border-b border-[#219EBC]/15">
               <div>
-                <h3 className="font-semibold text-base text-[#14161A]">{activeScreen.title}</h3>
-                <span className="text-xs text-[#2F6FED]">{activeScreen.badge}</span>
+                <h3 className="font-bold text-base text-[#E8F1F5]">{activeScreen.title}</h3>
+                <span className="text-xs text-[#38BDF8] font-semibold">{activeScreen.badge}</span>
               </div>
               <button
                 onClick={() => setIsLightboxOpen(false)}
-                className="p-1.5 rounded-lg bg-[#F3F4F1] hover:bg-[#E4E5E1] text-[#14161A] transition-colors cursor-pointer"
+                className="p-1.5 rounded-lg bg-[#162634] hover:bg-[#1B2F40] text-[#E8F1F5] transition-colors cursor-pointer"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />

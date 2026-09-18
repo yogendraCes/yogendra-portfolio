@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect, useCallback, useSyncExternalStore } from "react";
 import Image from "next/image";
 import { Wifi, Battery, MoveHorizontal } from "lucide-react";
+import { SlidingPillTabs } from "./ui/sliding-pill-tabs";
 
 const heroScreens = [
   {
@@ -216,31 +217,20 @@ export function HeroDevice3D() {
         </div>
       </div>
 
-      {/* App Switcher Controls */}
-      <div className="flex flex-wrap items-center justify-center gap-1.5 mt-4 max-w-[340px]">
-        {heroScreens.map((screen) => {
-          const isActive = screen.id === selectedScreenId;
-          return (
-            <button
-              key={screen.id}
-              type="button"
-              onClick={() => setSelectedScreenId(screen.id)}
-              className={`px-2.5 py-1 rounded-full text-xs font-medium transition-all border cursor-pointer ${
-                isActive
-                  ? "bg-[#2F6FED] text-white border-[#2F6FED] shadow-2xs"
-                  : "bg-white text-[#5B5F66] border-[#E4E5E1] hover:text-[#14161A] hover:bg-[#F3F4F1]"
-              }`}
-            >
-              {screen.label}
-            </button>
-          );
-        })}
+      {/* App Switcher Controls with Sliding Spring Pill */}
+      <div className="flex justify-center mt-4 max-w-[340px]">
+        <SlidingPillTabs
+          options={heroScreens}
+          activeId={selectedScreenId}
+          onChange={setSelectedScreenId}
+          size="sm"
+        />
       </div>
 
       {/* Tactile Interaction Hint */}
       {!prefersReducedMotion && (
-        <div className="flex items-center gap-1.5 text-xs text-[#7E8490] mt-2 font-normal">
-          <MoveHorizontal className="w-3.5 h-3.5 text-[#2F6FED]" aria-hidden="true" />
+        <div className="flex items-center gap-1.5 text-xs text-[#7E9AA8] mt-2 font-medium">
+          <MoveHorizontal className="w-3.5 h-3.5 text-[#38BDF8]" aria-hidden="true" />
           <span>Drag to inspect 3D device</span>
         </div>
       )}

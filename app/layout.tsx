@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { profileData } from "@/data/profile";
+import { ScrollProgress } from "@/components/scroll-progress";
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-ibm-plex-sans",
@@ -144,11 +145,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#F3F4F1] text-[#14161A]">
+      <body className="min-h-full flex flex-col bg-[#0A1118] text-[#E8F1F5]">
+        <ScrollProgress />
         {/* Accessible Skip to Content Link */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#2F6FED] text-white text-xs font-semibold rounded-md shadow-md"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#101D28] text-[#E8F1F5] text-xs font-semibold rounded-md shadow-md border border-[#38BDF8] focus:outline-none focus:ring-2 focus:ring-[#38BDF8]"
         >
           Skip to main content
         </a>
