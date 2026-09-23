@@ -51,7 +51,7 @@ export function CTASection() {
   ];
 
   return (
-    <section id="contact" className="w-full py-14 sm:py-20 border-b border-[#219EBC]/15 bg-[#0A1118] relative">
+    <section id="contact" className="w-full py-14 sm:py-20 border-b border-[#219EBC]/15 bg-[#0A1118] relative scroll-mt-24 sm:scroll-mt-28">
       <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Section Header */}
         <div className="max-w-[680px] space-y-2">

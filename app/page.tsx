@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0A1118] text-[#E8F1F5]">
       <NavRail />
-      <div className="lg:pl-64 flex flex-col min-h-screen">
-        <main id="main-content" className="flex-1 pb-16 lg:pb-0">
+      <div className="flex flex-col min-h-screen pt-14 sm:pt-18">
+        <main id="main-content" className="flex-1">
           <Hero />
           <ProjectShowcase />
           <ArchitecturePhilosophy />

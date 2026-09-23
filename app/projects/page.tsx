@@ -28,8 +28,8 @@ export default function ProjectsIndexPage() {
   return (
     <div className="min-h-screen bg-[#0A1118] text-[#E8F1F5]">
       <NavRail />
-      <div className="lg:pl-64 flex flex-col min-h-screen">
-        <main id="main-content" className="flex-1 pb-16 lg:pb-0">
+      <div className="flex flex-col min-h-screen pt-14 sm:pt-18">
+        <main id="main-content" className="flex-1">
           <div className="py-12 sm:py-16 border-b border-[#219EBC]/15 bg-[#0A1118]">
             <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
               <h1 className="text-3xl sm:text-4xl font-bold text-[#E8F1F5] tracking-tight">
